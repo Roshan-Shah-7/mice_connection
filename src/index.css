@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&family=Montserrat:wght@600&display=swap');
+
+@import "tailwindcss";
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+body,
+p {
+  font-family: 'Lato', sans-serif;
+}
+
+button,
+nav,
+.btn {
+  font-family: 'Montserrat', sans-serif;
+}
+/* Swiper Navigation Styles */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #0e332e !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    color: #D4AF37 !important;
+}
+
+.swiper-pagination-bullet {
+    background: #0e332e !important;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background: #D4AF37 !important;
+    opacity: 1;
+}
