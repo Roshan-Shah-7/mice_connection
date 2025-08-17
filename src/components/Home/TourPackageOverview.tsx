@@ -278,9 +278,9 @@ const TourPackageOverview = () => {
                             className="tourSwiper"
                         >
                             {tourPackages.map((tour) => (
-                                <SwiperSlide key={tour.id} className="tour-card">
+                                <SwiperSlide key={tour.id} style={{ width: '320px' }}>
                                     {/* Card with full-width image */}
-                                    <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-xl transform transition-all duration-500 hover:shadow-2xl">
+                                    <div className="relative aspect-[3/4] rounded-2xl overflow-hidden shadow-xl transform transition-all duration-500 hover:shadow-2xl">
                                         {/* Background Image */}
                                         <div
                                             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 hover:scale-110"

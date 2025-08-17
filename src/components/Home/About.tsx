@@ -240,7 +240,7 @@ const About = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                         <div ref={addToImageRefs} className="overflow-hidden rounded-xl shadow-lg">
                             <img
-                                src="/src/assets/home/homeMission.webp"
+                                src="/assets/home/homeMission.webp"
                                 alt="Team collaborating on event planning"
                                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                             />
