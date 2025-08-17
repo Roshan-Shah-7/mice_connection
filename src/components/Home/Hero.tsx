@@ -176,7 +176,7 @@ const Hero = () => {
                 </h1>
                 <p
                     ref={subtitleRef}
-                    className="text-sm sm:text-base lg:text-lg text-gray-700 max-w-md lg:max-w-xl opacity-0"
+                    className="text-sm m-auto md:m-0 sm:text-base lg:text-lg text-gray-700 max-w-md lg:max-w-xl opacity-0"
                     itemProp="description: The MICE Connection"
                 >
                     Crafting world-class Meetings, Incentives, Conferences, and Exhibitions
