@@ -187,7 +187,7 @@ const Hero = () => {
             {/* Lazy-loaded Video with performance optimizations */}
             <div ref={videoRef} className="video-wrapper opacity-0">
                 <LazyVideo
-                    src="/src/assets/home/hero.mp4"
+                    src="/assets/home/hero.mp4"
                     poster="/src/assets/home/hero-poster.jpg" // Add a poster image
                     className="w-full h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover rounded-xl md:rounded-3xl"
                     aria-label="Hero video showcasing event management services"

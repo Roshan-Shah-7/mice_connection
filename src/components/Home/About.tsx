@@ -210,21 +210,21 @@ const About = () => {
                     <div className="grid grid-cols-2 gap-4">
                         <div ref={addToImageRefs} className="overflow-hidden rounded-xl shadow-lg">
                             <img
-                                src="/src/assets/home/homeAbout.webp"
+                                src="/assets/home/homeAbout.webp"
                                 alt="Beautiful landscape of Nepal"
                                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                             />
                         </div>
                         <div ref={addToImageRefs} className="overflow-hidden rounded-xl shadow-lg">
                             <img
-                                src="/src/assets/home/homeConference.webp"
+                                src="/assets/home/homeConference.webp"
                                 alt="Modern conference hall in Nepal"
                                 className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                             />
                         </div>
                         <div ref={addToImageRefs} className="overflow-hidden rounded-xl shadow-lg col-span-2">
                             <img
-                                src="/src/assets/home/homeevent.webp"
+                                src="/assets/home/homeevent.webp"
                                 alt="Professional event management team"
                                 className="w-full h-64 object-cover transition-transform duration-500 hover:scale-110"
                             />
