@@ -154,13 +154,6 @@ const About = () => {
         }
     };
 
-    // Function to add refs to service cards
-    const addToCardRefs = (el: HTMLDivElement | null) => {
-        if (el && !cardRefs.current.includes(el)) {
-            cardRefs.current.push(el);
-        }
-    };
-
     return (
         <section
             ref={containerRef}
@@ -257,69 +250,6 @@ const About = () => {
                     </div>
                 </div>
 
-                {/* MICE Services */}
-                <div className="mb-16">
-                    <h3 className="text-2xl font-semibold text-[#0e332e] mb-6 text-center">Our MICE Services</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <div
-                            ref={addToCardRefs}
-                            className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                        >
-                            <div className="w-16 h-16 bg-[#0e332e]/10 rounded-full flex items-center justify-center mb-4">
-                                <svg className="w-8 h-8 text-[#0e332e]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                                </svg>
-                            </div>
-                            <h4 className="text-xl font-semibold text-[#0e332e] mb-3">Meetings</h4>
-                            <p className="text-gray-700">
-                                Professional meeting planning with state-of-the-art venues and seamless logistics for productive gatherings.
-                            </p>
-                        </div>
-                        <div
-                            ref={addToCardRefs}
-                            className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                        >
-                            <div className="w-16 h-16 bg-[#0e332e]/10 rounded-full flex items-center justify-center mb-4">
-                                <svg className="w-8 h-8 text-[#0e332e]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" />
-                                </svg>
-                            </div>
-                            <h4 className="text-xl font-semibold text-[#0e332e] mb-3">Incentives</h4>
-                            <p className="text-gray-700">
-                                Unique incentive programs that motivate and reward teams with unforgettable experiences in Nepal.
-                            </p>
-                        </div>
-                        <div
-                            ref={addToCardRefs}
-                            className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                        >
-                            <div className="w-16 h-16 bg-[#0e332e]/10 rounded-full flex items-center justify-center mb-4">
-                                <svg className="w-8 h-8 text-[#0e332e]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                            </div>
-                            <h4 className="text-xl font-semibold text-[#0e332e] mb-3">Conferences</h4>
-                            <p className="text-gray-700">
-                                World-class conference management with cutting-edge technology and exceptional attendee experiences.
-                            </p>
-                        </div>
-                        <div
-                            ref={addToCardRefs}
-                            className="bg-white p-6 rounded-xl shadow-lg transform transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
-                        >
-                            <div className="w-16 h-16 bg-[#0e332e]/10 rounded-full flex items-center justify-center mb-4">
-                                <svg className="w-8 h-8 text-[#0e332e]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                </svg>
-                            </div>
-                            <h4 className="text-xl font-semibold text-[#0e332e] mb-3">Exhibitions</h4>
-                            <p className="text-gray-700">
-                                Comprehensive exhibition services from planning to execution, creating impactful brand experiences.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
                 {/* Founder Section */}
                 <div
                     ref={founderRef}
@@ -341,6 +271,7 @@ const About = () => {
                                 <span className="bg-[#0e332e]/10 text-[#0e332e] px-3 py-1 rounded-full text-sm">Tourism Expert</span>
                                 <span className="bg-[#0e332e]/10 text-[#0e332e] px-3 py-1 rounded-full text-sm">Industry Leader</span>
                                 <span className="bg-[#0e332e]/10 text-[#0e332e] px-3 py-1 rounded-full text-sm">Global Vision</span>
+                                <span className="bg-[#0e332e]/10 text-[#0e332e] px-3 py-1 rounded-full text-sm">Women Empowerment</span>
                             </div>
                         </div>
                         <div className="md:col-span-1">
@@ -354,59 +285,6 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* Structured data for SEO */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Organization",
-                        "name": "The MICE Connection",
-                        "description": "A venture dedicated to showcasing Nepal as a world-class destination for Meetings, Incentives, Conferences, and Exhibitions (MICE).",
-                        "founder": {
-                            "@type": "Person",
-                            "name": "Shradha Chhetri",
-                            "jobTitle": "Managing Director",
-                            "description": "With prior experience as COO of the Nepal Association of Tour & Travel Agents (NATTA) and as Executive Director for international events, Ms. Shradha brings proven expertise and vision to Nepal's MICE sector."
-                        },
-                        "serviceType": ["Meetings", "Incentives", "Conferences", "Exhibitions"],
-                        "areaServed": "Nepal",
-                        "knowsAbout": ["Event Management", "Tourism", "Conference Planning", "Incentive Programs", "Exhibition Management"],
-                        "hasOfferCatalog": {
-                            "@type": "OfferCatalog",
-                            "name": "MICE Services",
-                            "itemListElement": [
-                                {
-                                    "@type": "Offer",
-                                    "itemOffered": {
-                                        "@type": "Service",
-                                        "name": "Meeting Planning"
-                                    }
-                                },
-                                {
-                                    "@type": "Offer",
-                                    "itemOffered": {
-                                        "@type": "Service",
-                                        "name": "Incentive Programs"
-                                    }
-                                },
-                                {
-                                    "@type": "Offer",
-                                    "itemOffered": {
-                                        "@type": "Service",
-                                        "name": "Conference Management"
-                                    }
-                                },
-                                {
-                                    "@type": "Offer",
-                                    "itemOffered": {
-                                        "@type": "Service",
-                                        "name": "Exhibition Services"
-                                    }
-                                }
-                            ]
-                        }
-                    })}
-                </script>
             </div>
         </section>
     );

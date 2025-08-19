@@ -259,26 +259,6 @@ const LatestWork = () => {
                         Explore All Projects
                     </button>
                 </div>
-
-                {/* Structured data for SEO */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "CreativeWork",
-                        "name": "Latest Work - The MICE Connection",
-                        "description": "Showcase of recent MICE events and projects organized by The MICE Connection",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "The MICE Connection"
-                        },
-                        "exampleOfWork": latestWorks.map(work => ({
-                            "@type": "CreativeWork",
-                            "name": work.title,
-                            "description": work.description,
-                            "dateCreated": work.year
-                        }))
-                    })}
-                </script>
             </div>
 
         </section>

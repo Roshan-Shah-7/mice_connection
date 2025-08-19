@@ -291,32 +291,6 @@ const ServicesOverview = () => {
                         Contact Us for Your Event
                     </button>
                 </div>
-
-                {/* Structured data for SEO */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Service",
-                        "name": "MICE Services",
-                        "description": "Comprehensive MICE (Meetings, Incentives, Conferences, and Exhibitions) services in Nepal",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "The MICE Connection"
-                        },
-                        "serviceType": [
-                            "Incentive Travel",
-                            "Meetings",
-                            "Trade Shows",
-                            "Conferences",
-                            "Sales Missions",
-                            "Event Management",
-                            "Training Programs",
-                            "Festival Management",
-                            "Tour Services"
-                        ],
-                        "areaServed": "Nepal"
-                    })}
-                </script>
             </div>
 
         </section>

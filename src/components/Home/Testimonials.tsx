@@ -317,37 +317,6 @@ const Testimonials = () => {
                         </button>
                     </div>
                 </div>
-
-                {/* Structured data for SEO */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Review",
-                        "name": "Client Testimonials - The MICE Connection",
-                        "description": "Reviews and testimonials from clients who have worked with The MICE Connection",
-                        "itemReviewed": {
-                            "@type": "Organization",
-                            "name": "The MICE Connection"
-                        },
-                        "review": testimonials.map(testimonial => ({
-                            "@type": "Review",
-                            "author": {
-                                "@type": "Person",
-                                "name": testimonial.name,
-                                "worksFor": {
-                                    "@type": "Organization",
-                                    "name": testimonial.company
-                                }
-                            },
-                            "reviewRating": {
-                                "@type": "Rating",
-                                "ratingValue": testimonial.rating,
-                                "bestRating": "5"
-                            },
-                            "reviewBody": testimonial.testimonial
-                        }))
-                    })}
-                </script>
             </div>
 
         </section>

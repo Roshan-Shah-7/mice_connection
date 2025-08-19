@@ -338,28 +338,6 @@ const TourPackageOverview = () => {
                         </button>
                     </div>
                 </div>
-
-                {/* Structured data for SEO */}
-                <script type="application/ld+json">
-                    {JSON.stringify({
-                        "@context": "https://schema.org",
-                        "@type": "Trip",
-                        "name": "Nepal Tour Packages",
-                        "description": "Curated tour packages for exploring Nepal's cultural heritage, adventure activities, luxury experiences, and wildlife safaris",
-                        "provider": {
-                            "@type": "Organization",
-                            "name": "The MICE Connection"
-                        },
-                        "subTrip": tourPackages.map(tour => ({
-                            "@type": "Trip",
-                            "name": tour.name,
-                            "description": tour.description,
-                            "duration": tour.duration,
-                            "price": tour.price,
-                            "priceCurrency": "USD"
-                        }))
-                    })}
-                </script>
             </div>
 
         </section>

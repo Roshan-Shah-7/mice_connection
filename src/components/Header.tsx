@@ -36,7 +36,7 @@ const Header: React.FC = () => {
 
   const navLinksRight = [
     { label: "About Nepal", href: "#" },
-    { label: "Packages", href: "#" },
+    { label: "Tour Packages", href: "#" },
     { label: "Events", href: "#" },
   ];
 
