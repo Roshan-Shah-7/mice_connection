@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useLocation } from 'react-router-dom';
 import { tourPackages, type TourPackage } from '../data/tourPackagesData';
 
 const TourPackageDetail: React.FC = () => {
@@ -8,6 +8,13 @@ const TourPackageDetail: React.FC = () => {
     const [currency, setCurrency] = useState<'USD' | 'NPR'>('USD');
     const [activeTab, setActiveTab] = useState<'overview' | 'itinerary' | 'gallery'>('overview');
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the page on route change
+    }, [location.pathname]); // Trigger on route path change
+
 
     useEffect(() => {
         const foundTour = tourPackages.find(p => p.slug === slug);
@@ -136,80 +143,80 @@ const TourPackageDetail: React.FC = () => {
                                 <h3 className="text-2xl font-bold text-[#143a31] mb-4">Highlights</h3>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
                                     {tour.highlights.map((item: string, index: number) => (
-                                            <div key={index} className="flex items-start">
-                                                <div className="flex-shrink-0 mt-1">
-                                                    <div className="w-6 h-6 rounded-full bg-[#fcd00e]/20 flex items-center justify-center">
-                                                        <svg className="w-4 h-4 text-[#143a31]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <p className="ml-3 text-gray-700">{item}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-    
-                                    <h3 className="text-2xl font-bold text-[#143a31] mb-4">What's Included</h3>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                                        {tour.includes.map((item: string, index: number) => (
-                                            <div key={index} className="flex items-start">
-                                                <div className="flex-shrink-0 mt-1">
-                                                    <div className="w-6 h-6 rounded-full bg-[#fcd00e]/20 flex items-center justify-center">
-                                                        <svg className="w-4 h-4 text-[#143a31]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                                <p className="ml-3 text-gray-700">{item}</p>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </>
-                            )}
-    
-                            {activeTab === 'itinerary' && (
-                                <>
-                                    <h2 className="text-3xl font-bold text-[#143a31] mb-6">Detailed Itinerary</h2>
-                                    <div className="space-y-6">
-                                        {tour.itinerary.map((day: { day: number; title: string; description: string; }, index: number) => (
-                                            <div key={index} className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
-                                                <div className="bg-[#f9f9f9] px-6 py-4 border-b border-gray-200">
-                                                    <h3 className="text-xl font-semibold text-[#143a31]">Day {day.day}: {day.title}</h3>
-                                                </div>
-                                                <div className="p-6">
-                                                    <p className="text-gray-700">{day.description}</p>
-                                                </div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                </>
-                            )}
-    
-                            {activeTab === 'gallery' && (
-                                <>
-                                    <h2 className="text-3xl font-bold text-[#143a31] mb-6">Tour Gallery</h2>
-                                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                        {tour.gallery.map((image: string, index: number) => (
-                                            <div
-                                                key={index}
-                                                className="relative group overflow-hidden rounded-xl shadow-md cursor-pointer"
-                                                onClick={() => openLightbox(image)}
-                                            >
-                                                <img
-                                                    src={image}
-                                                    alt={`Gallery image ${index + 1}`}
-                                                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                                                />
-                                                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                                                    <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                        <div key={index} className="flex items-start">
+                                            <div className="flex-shrink-0 mt-1">
+                                                <div className="w-6 h-6 rounded-full bg-[#fcd00e]/20 flex items-center justify-center">
+                                                    <svg className="w-4 h-4 text-[#143a31]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                                                     </svg>
                                                 </div>
                                             </div>
-                                        ))}
-                                    </div>
-                                </>
-                            )}
+                                            <p className="ml-3 text-gray-700">{item}</p>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <h3 className="text-2xl font-bold text-[#143a31] mb-4">What's Included</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                                    {tour.includes.map((item: string, index: number) => (
+                                        <div key={index} className="flex items-start">
+                                            <div className="flex-shrink-0 mt-1">
+                                                <div className="w-6 h-6 rounded-full bg-[#fcd00e]/20 flex items-center justify-center">
+                                                    <svg className="w-4 h-4 text-[#143a31]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                            <p className="ml-3 text-gray-700">{item}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
+                        )}
+
+                        {activeTab === 'itinerary' && (
+                            <>
+                                <h2 className="text-3xl font-bold text-[#143a31] mb-6">Detailed Itinerary</h2>
+                                <div className="space-y-6">
+                                    {tour.itinerary.map((day: { day: number; title: string; description: string; }, index: number) => (
+                                        <div key={index} className="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+                                            <div className="bg-[#f9f9f9] px-6 py-4 border-b border-gray-200">
+                                                <h3 className="text-xl font-semibold text-[#143a31]">Day {day.day}: {day.title}</h3>
+                                            </div>
+                                            <div className="p-6">
+                                                <p className="text-gray-700">{day.description}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
+                        )}
+
+                        {activeTab === 'gallery' && (
+                            <>
+                                <h2 className="text-3xl font-bold text-[#143a31] mb-6">Tour Gallery</h2>
+                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                                    {tour.gallery.map((image: string, index: number) => (
+                                        <div
+                                            key={index}
+                                            className="relative group overflow-hidden rounded-xl shadow-md cursor-pointer"
+                                            onClick={() => openLightbox(image)}
+                                        >
+                                            <img
+                                                src={image}
+                                                alt={`Gallery image ${index + 1}`}
+                                                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                                            />
+                                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
+                                                <svg className="w-12 h-12 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </>
+                        )}
                     </div>
 
                     {/* Right Column - Quick Facts & Booking */}
@@ -290,7 +297,7 @@ const TourPackageDetail: React.FC = () => {
                 </div>
 
                 {/* Related Packages (Cross-Selling) */}
-                <div className="mt-16">
+                {/* <div className="mt-16">
                     <h3 className="text-3xl font-bold text-[#143a31] mb-8 text-center">You Might Also Like</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {tourPackages
@@ -328,7 +335,7 @@ const TourPackageDetail: React.FC = () => {
                                 </div>
                             ))}
                     </div>
-                </div>
+                </div> */}
             </section>
 
             {/* Lightbox Modal */}

@@ -17,6 +17,7 @@ const AboutNepal: React.FC = () => {
     const eventsRef = useRef<HTMLDivElement>(null);
     const ctaRef = useRef<HTMLDivElement>(null);
 
+
     useEffect(() => {
         // Hero animation
         if (heroRef.current) {

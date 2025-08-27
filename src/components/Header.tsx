@@ -104,10 +104,10 @@ const Header: React.FC = () => {
           <div className="flex items-center gap-2">
             <span className="font-light">Follow Us:</span>
             <div className="flex gap-3 text-lg">
-              <a href="https://www.instagram.com/themiceconnectionnepal?igsh=anoyb3ZwN3RqOGly" aria-label="Instagram" className="hover:scale-110 duration-300"><FaInstagram /></a>
+              <a href="https://www.instagram.com/themiceconnectionnepal?igsh=anoyb3ZwN3RqOGly" target="_blank" aria-label="Instagram" className="hover:scale-110 duration-300"><FaInstagram /></a>
               <a href="https://www.facebook.com/themiceconnection/" target="_blank" aria-label="Facebook" className="hover:scale-110 duration-300"><FaFacebook /></a>
-              <a href="https://www.tiktok.com/@themiceconnection?_t=ZS-8zDsxZUgPmJ&_r=1" aria-label="TikTok" className="hover:scale-110 duration-300"><FaTiktok /></a>
-              <a href="https://www.linkedin.com/company/the-mice-connection/" aria-label="LinkedIn" className="hover:scale-110 duration-300"><FaLinkedin /></a>
+              <a href="https://www.tiktok.com/@themiceconnection?_t=ZS-8zDsxZUgPmJ&_r=1" target="_blank" aria-label="TikTok" className="hover:scale-110 duration-300"><FaTiktok /></a>
+              <a href="https://www.linkedin.com/company/the-mice-connection/" target="_blank" aria-label="LinkedIn" className="hover:scale-110 duration-300"><FaLinkedin /></a>
             </div>
           </div>
           <a href="/contact">

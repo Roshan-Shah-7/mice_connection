@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, useNavigate, Link, useLocation } from 'react-router-dom';
 import { aboutNepalDestinations, type Destination } from '../data/aboutNepalDestinationsData';
 import { tourPackages } from '../data/tourPackagesData';
 
@@ -11,6 +11,13 @@ const DetailDestination: React.FC = () => {
         (dest.relatedTourPackageSlug === slug) ||
         (dest.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-*|-*$/g, '') === slug)
     );
+
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the page on route change
+    }, [location.pathname]); // Trigger on route path change
+
 
     useEffect(() => {
         if (!destination) {
