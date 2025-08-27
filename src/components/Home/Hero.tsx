@@ -168,7 +168,7 @@ const Hero = () => {
             <div className="content text-center md:text-start w-full space-y-4 md:flex justify-between items-end">
                 <h1
                     ref={titleRef}
-                    className="text-2xl text-[#0e332e] sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-snug mt-20 md:mt-28 opacity-0"
+                    className="text-2xl text-[#0e332e] sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-snug mt-10 opacity-0"
                     itemProp="headline: The MICE Connection"
                 >
                     <span className="block">Revolutionizing Events,</span>

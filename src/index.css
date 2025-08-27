@@ -17,28 +17,33 @@ p {
   font-family: 'Lato', sans-serif;
 }
 
+body {
+  padding-top: 8rem;
+}
+
 button,
 nav,
 .btn {
   font-family: 'Montserrat', sans-serif;
 }
+
 /* Swiper Navigation Styles */
 .swiper-button-next,
 .swiper-button-prev {
-    color: #0e332e !important;
+  color: #0e332e !important;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-    color: #D4AF37 !important;
+  color: #D4AF37 !important;
 }
 
 .swiper-pagination-bullet {
-    background: #0e332e !important;
-    opacity: 0.5;
+  background: #0e332e !important;
+  opacity: 0.5;
 }
 
 .swiper-pagination-bullet-active {
-    background: #D4AF37 !important;
-    opacity: 1;
+  background: #D4AF37 !important;
+  opacity: 1;
 }

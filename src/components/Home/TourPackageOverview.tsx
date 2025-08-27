@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -14,17 +15,12 @@ import 'swiper/swiper-bundle.css';
 gsap.registerPlugin(ScrollTrigger);
 
 // Define TypeScript interfaces
-interface TourPackage {
-    id: number;
-    name: string;
-    description: string;
-    price?: string;
-    duration?: string;
-    image: string;
-    buttonText: string;
-}
+
+// Define TypeScript interfaces (now simpler as data comes from tourPackagesData.ts)
+import { tourPackages } from '../../data/tourPackagesData'; // Import tourPackages from the data file
 
 const TourPackageOverview = () => {
+    const navigate = useNavigate(); // Initialize useNavigate
     const containerRef = useRef<HTMLDivElement | null>(null);
     const headingRef = useRef<HTMLHeadingElement | null>(null);
     const introRef = useRef<HTMLParagraphElement | null>(null);
@@ -120,82 +116,6 @@ const TourPackageOverview = () => {
     useEffect(() => {
         setIsSwiperInitialized(true);
     }, []);
-
-    // Tour package data with TypeScript typing
-    const tourPackages: TourPackage[] = [
-        {
-            id: 1,
-            name: "Luxury Incentive Tour in Nepal",
-            description: "Experience the perfect blend of luxury and adventure in the heart of the Himalayas with our exclusive incentive tour package.",
-            price: "$2,499",
-            duration: "7 Days / 6 Nights",
-            image: "/src/assets/tours/luxury-incentive.jpg",
-            buttonText: "View Details"
-        },
-        {
-            id: 2,
-            name: "Executive Conference Retreat",
-            description: "Host your next corporate conference in Nepal's most prestigious venues with state-of-the-art facilities and impeccable service.",
-            price: "$3,299",
-            duration: "5 Days / 4 Nights",
-            image: "/src/assets/tours/conference-retreat.jpg",
-            buttonText: "Start Your Journey"
-        },
-        {
-            id: 3,
-            name: "Cultural Immersion Experience",
-            description: "Discover Nepal's rich cultural heritage with guided tours to ancient temples, palaces, and traditional villages.",
-            price: "$1,899",
-            duration: "8 Days / 7 Nights",
-            image: "/src/assets/tours/cultural-immersion.jpg",
-            buttonText: "View Details"
-        },
-        {
-            id: 4,
-            name: "Himalayan Adventure Package",
-            description: "Challenge yourself with thrilling trekking adventures in the Himalayas, complete with expert guides and premium accommodations.",
-            price: "$2,799",
-            duration: "10 Days / 9 Nights",
-            image: "/src/assets/tours/himalayan-adventure.jpg",
-            buttonText: "Start Your Journey"
-        },
-        {
-            id: 5,
-            name: "Wellness & Yoga Retreat",
-            description: "Rejuvenate your mind and body with our exclusive wellness retreat in serene Himalayan settings with expert yoga instructors.",
-            price: "$1,599",
-            duration: "6 Days / 5 Nights",
-            image: "/src/assets/tours/wellness-retreat.jpg",
-            buttonText: "View Details"
-        },
-        {
-            id: 6,
-            name: "Wildlife Safari Experience",
-            description: "Explore Nepal's diverse wildlife with guided safaris in Chitwan and Bardia National Parks, staying in luxury jungle lodges.",
-            price: "$1,799",
-            duration: "5 Days / 4 Nights",
-            image: "/src/assets/tours/wildlife-safari.jpg",
-            buttonText: "Start Your Journey"
-        },
-        {
-            id: 7,
-            name: "Spiritual Journey",
-            description: "Embark on a transformative spiritual journey through Nepal's sacred sites, monasteries, and meditation centers.",
-            price: "$1,299",
-            duration: "7 Days / 6 Nights",
-            image: "/src/assets/tours/spiritual-journey.jpg",
-            buttonText: "View Details"
-        },
-        {
-            id: 8,
-            name: "Luxury Honeymoon Package",
-            description: "Celebrate your love in the most romantic settings Nepal has to offer, with private luxury accommodations and exclusive experiences.",
-            price: "$3,599",
-            duration: "8 Days / 7 Nights",
-            image: "/src/assets/tours/honeymoon-package.jpg",
-            buttonText: "Start Your Journey"
-        }
-    ];
 
     return (
         <section
@@ -294,19 +214,19 @@ const TourPackageOverview = () => {
                                         <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-white">
                                             {/* Title (Serif) */}
                                             <h3 className="text-2xl md:text-3xl font-serif font-bold mb-3">
-                                                {tour.name}
+                                                {tour.title}
                                             </h3>
 
                                             {/* Description (Sans-serif) */}
                                             <p className="text-base md:text-lg font-sans mb-4 text-gray-100">
-                                                {tour.description}
+                                                {tour.description.length > 120 ? tour.description.substring(0, 120) + '...' : tour.description}
                                             </p>
 
                                             {/* Price / Duration (Optional) */}
-                                            {(tour.price || tour.duration) && (
+                                            {(tour.priceUSD || tour.duration) && (
                                                 <div className="flex items-center mb-6 text-[#D4AF37] text-sm">
-                                                    {tour.price && (
-                                                        <span className="mr-4">{tour.price}</span>
+                                                    {tour.priceUSD && (
+                                                        <span className="mr-4">{tour.priceUSD}</span>
                                                     )}
                                                     {tour.duration && (
                                                         <span>{tour.duration}</span>
@@ -315,8 +235,14 @@ const TourPackageOverview = () => {
                                             )}
 
                                             {/* CTA Button */}
-                                            <button className="px-6 py-3 bg-[#D4AF37] text-white font-medium rounded-full transition-all duration-500 hover:bg-[#0e332e] transform hover:scale-105">
-                                                {tour.buttonText}
+                                            <button
+                                                className="px-6 py-3 bg-[#D4AF37] text-white font-medium rounded-full transition-all duration-500 hover:bg-[#0e332e] transform hover:scale-105"
+                                                onClick={() => {
+                                                    const slug = tour.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-*|-*$/g, '');
+                                                    navigate(`/tour-packages/${slug}`);
+                                                }}
+                                            >
+                                                {tour.category === "Trekking" ? "Start Your Journey" : "View Details"}
                                             </button>
                                         </div>
                                     </div>
@@ -333,9 +259,11 @@ const TourPackageOverview = () => {
                         <p className="text-gray-700 mb-6">
                             Can't find exactly what you're looking for? We can create a custom tour package tailored to your interests, budget, and schedule. Whether it's a family vacation, corporate retreat, or special celebration, we'll craft the perfect Nepalese experience for you.
                         </p>
-                        <button className="px-8 py-3 bg-transparent border-2 border-[#0e332e] text-[#0e332e] font-medium rounded-full hover:bg-[#0e332e] hover:text-white transform transition-all duration-500 hover:scale-105">
-                            Create Custom Tour
-                        </button>
+                        <a href="/contact">
+                            <button className="px-8 py-3 bg-transparent border-2 border-[#0e332e] text-[#0e332e] font-medium rounded-full hover:bg-[#0e332e] hover:text-white transform transition-all duration-500 hover:scale-105">
+                                Create Custom Tour
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
