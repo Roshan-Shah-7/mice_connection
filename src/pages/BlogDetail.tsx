@@ -60,6 +60,12 @@ const BlogDetail = () => {
         };
     }, [blogPost]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the page on route change
+    }, [location.pathname]); // Trigger on route path change
+
+
+
     // Handle newsletter subscription
     const handleSubscribe = (e: React.FormEvent) => {
         e.preventDefault();

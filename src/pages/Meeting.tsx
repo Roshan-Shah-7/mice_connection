@@ -270,6 +270,12 @@ const MeetingsPage = () => {
         navigate('/contact');
     };
 
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the page on route change
+    }, [location.pathname]); // Trigger on route path change
+
+
+
     // Render star rating
     const renderRating = (rating: number) => {
         return (

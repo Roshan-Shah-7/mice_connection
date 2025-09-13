@@ -15,14 +15,6 @@ const About = () => {
     const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-    // Combined ref function for founder section
-    const setFounderRef = (el: HTMLDivElement | null) => {
-        founderRef.current = el;
-        if (el && !cardRefs.current.includes(el)) {
-            cardRefs.current.push(el);
-        }
-    };
-
     // Combined ref function for mission section
     const setMissionRef = (el: HTMLDivElement | null) => {
         missionRef.current = el;
@@ -308,50 +300,6 @@ const About = () => {
                             <p className="text-gray-700 leading-relaxed">
                                 At The MICE Connection, events are more than logistics—they're opportunities to connect people, ideas, and cultures. Together, let's create experiences that inspire and leave lasting memories.
                             </p>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Founder Section */}
-                <div
-                    ref={setFounderRef}
-                    className="bg-white p-6 md:p-8 rounded-2xl shadow-lg transition-all duration-300 hover:shadow-xl"
-                >
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                        <div className="md:col-span-2 order-2 md:order-1">
-                            <h3 className="text-2xl font-semibold text-[#0e332e] mb-6 text-center md:text-left">Meet Our Founder</h3>
-                            <h4 className="text-xl font-semibold text-[#0e332e] mb-2">Shradha Chhetri</h4>
-                            <p className="text-gray-700 mb-4 italic">Managing Director, The MICE Connection</p>
-                            <p className="text-gray-700 mb-4 leading-relaxed">
-                                With prior experience as COO of the Nepal Association of Tour & Travel Agents (NATTA) and as Executive Director for international events, Ms. Shradha brings proven expertise and vision to Nepal's MICE sector.
-                            </p>
-                            <p className="text-gray-700 mb-6 leading-relaxed">
-                                Her leadership has been instrumental in bridging Nepal's rich cultural heritage with global event standards, positioning the country as a premier destination for international MICE activities.
-                            </p>
-                            <div className="mt-6 flex flex-wrap gap-3">
-                                {['Event Management', 'Tourism Expert', 'Industry Leader', 'Global Vision', 'Women Empowerment'].map((skill, index) => (
-                                    <span
-                                        key={index}
-                                        className="bg-[#0e332e]/10 text-[#0e332e] px-3 py-1 rounded-full text-sm transition-all duration-300 hover:bg-[#0e332e] hover:text-white cursor-default"
-                                    >
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                        <div className="md:col-span-1 order-1 md:order-2 flex justify-center">
-                            <div ref={addToImageRefs} className="overflow-hidden rounded-xl shadow-lg group max-w-xs w-full">
-                                <div className="aspect-square relative overflow-hidden">
-                                    <img
-                                        src="/src/assets/mice/founder.jpg"
-                                        alt="Shradha Chhetri, Managing Director of The MICE Connection"
-                                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                        onError={addImageFallback}
-                                        loading="lazy"
-                                    />
-                                    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,198 +1,141 @@
-
-import { useRef, useEffect, useState } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import { TbBuildingCommunity, TbGift, TbUsers, TbPodium, TbArrowRight } from 'react-icons/tb';
+import CategoryCard from './CategoryCard';
 
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger);
+const categories = [
+    {
+        icon: <TbUsers size={28} className="text-blue-600" />,
+        title: 'Meetings',
+        description: 'Productive & professional setups',
+        image: '/assets/tour/meetings.jpg',
+        path: '/services/meetings'
+    },
+    {
+        icon: <TbGift size={28} className="text-green-600" />,
+        title: 'Incentives',
+        description: 'Rewarding travel experiences',
+        image: '/assets/tour/incentives.jpg',
+        path: '/services/incentives'
+    },
+    {
+        icon: <TbBuildingCommunity size={28} className="text-purple-600" />,
+        title: 'Conferences',
+        description: 'Large-scale corporate events',
+        image: '/assets/tour/conferences.jpg',
+        path: '/services/conferences'
+    },
+    {
+        icon: <TbPodium size={28} className="text-red-600" />,
+        title: 'Exhibitions',
+        description: 'Showcasing products & services',
+        image: '/assets/tour/exhibitions.jpg',
+        path: '/services/exhibitions'
+    },
+];
 
-// Lazy-loaded Video Component
-interface LazyVideoProps {
-    src: string;
-    poster?: string;
-    className?: string;
-    [key: string]: any;
-}
+const Hero: React.FC = () => {
+    const containerRef = useRef<HTMLElement>(null);
 
-const LazyVideo = ({ src, poster, className, ...props }: LazyVideoProps) => {
-    const videoRef = useRef<HTMLDivElement>(null);
-    const [isVisible, setIsVisible] = useState(false);
-    const observerRef = useRef<IntersectionObserver | null>(null);
+    useGSAP(() => {
+        const tl = gsap.timeline({
+            defaults: { ease: 'power3.out', duration: 1 }
+        });
 
-    useEffect(() => {
-        observerRef.current = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    if (observerRef.current) {
-                        observerRef.current.unobserve(entry.target);
-                    }
-                }
-            },
-            {
-                root: null,
-                rootMargin: '200px', // Load video 200px before it comes into view
-                threshold: 0.1
-            }
-        );
-
-        if (videoRef.current) {
-            observerRef.current.observe(videoRef.current);
-        }
-
-        return () => {
-            if (observerRef.current && videoRef.current) {
-                observerRef.current.unobserve(videoRef.current);
-            }
-        };
-    }, []);
-
-    return (
-        <div ref={videoRef} className="video-container">
-            {isVisible ? (
-                <video
-                    src={src}
-                    poster={poster}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                    className={className}
-                    {...props}
-                >
-                    Your browser does not support the video tag. Please try viewing this page in a modern browser.
-                </video>
-            ) : (
-                <div
-                    className={`${className} bg-gray-200 flex items-center justify-center`}
-                    style={{ backgroundImage: poster ? `url(${poster})` : 'none' }}
-                >
-                    <div className="text-gray-500">Loading video...</div>
-                </div>
-            )}
-        </div>
-    );
-};
-
-const Hero = () => {
-    const containerRef = useRef(null);
-    const titleRef = useRef(null);
-    const subtitleRef = useRef(null);
-    const videoRef = useRef(null);
-
-    // GSAP animations with proper cleanup
-    useGSAP(
-        () => {
-            // Initial animations - optimized for performance
-            const tl = gsap.timeline({
-                defaults: {
-                    ease: 'power3.out',
-                    duration: 1
-                }
-            });
-
-            // Text animations with stagger for smooth performance
-            tl.fromTo(
-                titleRef.current,
-                {
-                    y: 50,
-                    opacity: 0,
-                    scale: 0.95
-                },
-                {
-                    y: 0,
-                    opacity: 1,
-                    scale: 1,
-                    duration: 1.2,
-                    force3D: true // Hardware acceleration
-                }
+        tl.fromTo('.hero-media-container',
+            { x: -100, opacity: 0 },
+            { x: 0, opacity: 1, duration: 1.5 }
+        )
+            .fromTo('.hero-content > *',
+                { x: 50, opacity: 0 },
+                { x: 0, opacity: 1, stagger: 0.2 },
+                "-=1"
             )
-                .fromTo(
-                    subtitleRef.current,
-                    {
-                        y: 30,
-                        opacity: 0
-                    },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 0.8
-                    },
-                    '-=0.6' // Overlap with title animation
-                )
-                .fromTo(
-                    videoRef.current,
-                    {
-                        scale: 1.1,
-                        opacity: 0,
-                        filter: 'blur(10px)'
-                    },
-                    {
-                        scale: 1,
-                        opacity: 1,
-                        filter: 'blur(0px)',
-                        duration: 1.5,
-                        ease: 'power2.out'
-                    },
-                    '-=0.4'
-                );
+            .fromTo('.category-card',
+                { y: 50, opacity: 0 },
+                { y: 0, opacity: 1, stagger: 0.15 },
+                "-=0.5"
+            )
+            .fromTo('.nav-buttons',
+                { y: 30, opacity: 0 },
+                { y: 0, opacity: 1 },
+                "-=0.5"
+            );
 
-            // Parallax effect on scroll - optimized with ScrollTrigger
-            gsap.to(videoRef.current, {
-                yPercent: -20,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: 'top top',
-                    end: 'bottom top',
-                    scrub: 1, // Smooth scrubbing
-                    invalidateOnRefresh: true // Recalculate on resize
-                }
-            });
-        },
-        {
-            scope: containerRef,
-        }
-    );
+    }, { scope: containerRef });
 
     return (
         <section
             ref={containerRef}
-            className="w-full min-h-screen relative mx-auto max-w-[1440px] px-4 md:px-6 flex flex-col md:justify-start gap-6 py-10"
-            itemScope
-            itemType="https://schema.org/Organization"
+            className="w-full flex"
+            aria-labelledby="hero-title"
         >
-            {/* Text Content with accessibility improvements */}
-            <div className="content text-center md:text-start w-full space-y-4 md:flex justify-between items-end">
-                <h1
-                    ref={titleRef}
-                    className="text-2xl text-[#0e332e] sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-bold leading-snug mt-10 opacity-0"
-                    itemProp="headline: The MICE Connection"
-                >
-                    <span className="block">Revolutionizing Events,</span>
-                    <span className="block">Elevating Experiences</span>
-                </h1>
-                <p
-                    ref={subtitleRef}
-                    className="text-sm m-auto md:m-0 sm:text-base lg:text-lg text-gray-700 max-w-md lg:max-w-xl opacity-0"
-                    itemProp="description: The MICE Connection"
-                >
-                    Crafting world-class Meetings, Incentives, Conferences, and Exhibitions
-                    with Nepalese warmth and global precision.
-                </p>
-            </div>
+            <div className="w-full grid grid-cols-1 lg:flex">
+                {/* Left Column - Video */}
+                <div className="hero-media-container w-full lg:w-[50%] flex items-center justify-start">
+                    <div className="h-[90vh] w-full overflow-hidden shadow-2xl">
+                        <video
+                            src="/assets/home/hero.mp4"
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full h-full object-cover"
+                            aria-label="Promotional video for The MICE Connection's services in Nepal"
+                        >
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
 
-            {/* Lazy-loaded Video with performance optimizations */}
-            <div ref={videoRef} className="video-wrapper opacity-0">
-                <LazyVideo
-                    src="/assets/home/hero.mp4"
-                    poster="/src/assets/home/hero-poster.jpg" // Add a poster image
-                    className="w-full h-[60vh] md:h-[70vh] lg:h-[80vh] object-cover rounded-xl md:rounded-3xl"
-                    aria-label="Hero video showcasing event management services"
-                    title="Professional Event Management Services: The MICE Connection"
-                />
+                {/* Right Column - Content */}
+                <div className="hero-content w-full lg:w-[40%] flex flex-col justify-center p-8 md:p-12 lg:p-16">
+                    <div className="mx-auto lg:mx-0 w-full">
+                        <h1
+                            id="hero-title"
+                            className="text-4xl md:text-5xl font-bold text-[#0e332e] leading-tight mb-6"
+                        >
+                            Let us plan your perfect
+                            <br />
+                            <span className="text-[#ffc400] bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">
+                                Nepal Experience
+                            </span>
+                        </h1>
+                        <p className="text-lg text-gray-700 mb-10 leading-relaxed">
+                            The MICE Connection offers custom-crafted packages for unforgettable corporate meetings, incentives, conferences, and exhibitions across the nation.
+                        </p>
+
+                        <div className="mb-10">
+                            <h2 className="text-xl font-semibold text-gray-800 mb-6 flex items-center">
+                                Explore Our Services
+                                <TbArrowRight className="ml-2 text-amber-600" />
+                            </h2>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                {categories.map((cat, index) => (
+                                    <CategoryCard
+                                        key={index}
+                                        icon={cat.icon}
+                                        title={cat.title}
+                                        description={cat.description}
+                                        image={cat.image}
+                                        path={cat.path}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <button className="bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                                Get Started
+                                <TbArrowRight className="ml-2" />
+                            </button>
+                            <button className="border border-gray-300 hover:border-amber-500 text-gray-700 hover:text-amber-600 font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center">
+                                Learn More
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );

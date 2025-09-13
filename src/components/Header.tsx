@@ -1,278 +1,214 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useRef } from "react";
+import { Link } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin, FaChevronDown } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
-import gsap from "gsap";
+import { motion, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
+import { navLinksLeft, navLinksRight, servicesLinks } from '../constants';
+import { useClickOutside } from '../hooks/useClickOutside';
+
+const NavLink: React.FC<{ to: string; children: React.ReactNode; onClick?: () => void }> = ({ to, children, onClick }) => (
+  <Link
+    to={to}
+    onClick={onClick}
+    className="relative text-gray-700 transition-colors hover:text-[#0c3b32] after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#0c3b32] after:transition-all after:duration-300 hover:after:w-full"
+  >
+    {children}
+  </Link>
+);
+
+const MobileNavLink: React.FC<{ to: string; children: React.ReactNode; onClick?: () => void }> = ({ to, children, onClick }) => (
+  <Link
+    to={to}
+    onClick={onClick}
+    className="block w-full py-3 text-center text-lg text-gray-700 transition-colors hover:bg-gray-100 hover:text-[#0c3b32]"
+  >
+    {children}
+  </Link>
+);
 
 const Header: React.FC = () => {
-  const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const servicesDropdownRef = useRef<HTMLDivElement>(null);
-  const mobileServicesRef = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
-  // Animate mobile menu toggle
-  useEffect(() => {
-    if (mobileMenuRef.current) {
-      if (isOpen) {
-        gsap.to(mobileMenuRef.current, {
-          height: "auto",
-          opacity: 1,
-          duration: 0.4,
-          ease: "power2.out",
-        });
-      } else {
-        gsap.to(mobileMenuRef.current, {
-          height: 0,
-          opacity: 0,
-          duration: 0.3,
-          ease: "power2.in",
-        });
-        setIsMobileServicesOpen(false);
-      }
-    }
-  }, [isOpen]);
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
+  useClickOutside(servicesDropdownRef, () => setIsServicesOpen(false));
 
-  // Animate desktop services dropdown
-  useEffect(() => {
-    if (servicesDropdownRef.current) {
-      if (isServicesOpen) {
-        gsap.to(servicesDropdownRef.current, {
-          height: "auto",
-          opacity: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      } else {
-        gsap.to(servicesDropdownRef.current, {
-          height: 0,
-          opacity: 0,
-          duration: 0.2,
-          ease: "power2.in",
-        });
-      }
-    }
-  }, [isServicesOpen]);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(prev => !prev);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
-  // Animate mobile services dropdown
-  useEffect(() => {
-    if (mobileServicesRef.current) {
-      if (isMobileServicesOpen) {
-        gsap.to(mobileServicesRef.current, {
-          height: "auto",
-          opacity: 1,
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      } else {
-        gsap.to(mobileServicesRef.current, {
-          height: 0,
-          opacity: 0,
-          duration: 0.2,
-          ease: "power2.in",
-        });
-      }
-    }
-  }, [isMobileServicesOpen]);
-
-  const navLinksLeft = [
-    { label: "About Nepal", href: "/about-nepal" },
-    { label: "Tour Packages", href: "/tour-packages" },
-    { label: "Events", href: "/events" },
-    { label: "Our Services", href: "#", hasDropdown: true },
+  const socialLinks = [
+    { href: "https://www.instagram.com/themiceconnectionnepal?igsh=anoyb3ZwN3RqOGly", icon: FaInstagram, label: "Instagram" },
+    { href: "https://www.facebook.com/themiceconnection/", icon: FaFacebook, label: "Facebook" },
+    { href: "https://www.tiktok.com/@themiceconnection?_t=ZS-8zDsxZUgPmJ&_r=1", icon: FaTiktok, label: "TikTok" },
+    { href: "https://www.linkedin.com/company/the-mice-connection/", icon: FaLinkedin, label: "LinkedIn" },
   ];
 
-  const navLinksRight = [
-    { label: "About Us", href: "/about" },
-    { label: "Gallery", href: "/gallery" },
-    { label: "Blogs", href: "/blogs" },
-    { label: "Contact Us", href: "/contact" },
-  ];
+  const dropdownVariants: Variants = {
+    hidden: { opacity: 0, y: -10, height: 0 },
+    visible: { opacity: 1, y: 0, height: "auto", transition: { duration: 0.3, ease: "easeOut" } },
+    exit: { opacity: 0, y: -10, height: 0, transition: { duration: 0.2, ease: "easeIn" } },
+  };
 
-  const servicesLinks = [
-    { label: "Meetings", href: "/services/meetings" },
-    { label: "Incentives", href: "/services/incentives" },
-    { label: "Conferences", href: "/services/conferences" },
-    { label: "Exhibitions", href: "/services/exhibitions" },
-  ];
+  const mobileMenuVariants: Variants = {
+    hidden: { opacity: 0, height: 0, transition: { duration: 0.3, ease: "easeIn" } },
+    visible: { opacity: 1, height: "auto", transition: { duration: 0.4, ease: "easeOut" } },
+    exit: { opacity: 0, height: 0, transition: { duration: 0.3, ease: "easeIn" } },
+  };
+
+  const mobileSubmenuVariants: Variants = {
+    hidden: { opacity: 0, height: 0 },
+    visible: { opacity: 1, height: 'auto', transition: { duration: 0.3, ease: "easeOut" } },
+    exit: { opacity: 0, height: 0, transition: { duration: 0.2, ease: "easeIn" } },
+  };
 
   return (
-    <header className="w-full fixed top-0 left-0 z-50 bg-white shadow-md">
-      {/* Top bar (hidden on mobile) */}
-      <div className="border-b border-gray-300 hidden md:block">
-        <div className="max-w-[1440px] mx-auto flex justify-between items-center px-6 py-2 text-sm text-gray-700">
-          <div className="flex items-center gap-2">
-            <span className="font-light">Follow Us:</span>
-            <div className="flex gap-3 text-lg">
-              <a href="https://www.instagram.com/themiceconnectionnepal?igsh=anoyb3ZwN3RqOGly" target="_blank" aria-label="Instagram" className="hover:scale-110 duration-300"><FaInstagram /></a>
-              <a href="https://www.facebook.com/themiceconnection/" target="_blank" aria-label="Facebook" className="hover:scale-110 duration-300"><FaFacebook /></a>
-              <a href="https://www.tiktok.com/@themiceconnection?_t=ZS-8zDsxZUgPmJ&_r=1" target="_blank" aria-label="TikTok" className="hover:scale-110 duration-300"><FaTiktok /></a>
-              <a href="https://www.linkedin.com/company/the-mice-connection/" target="_blank" aria-label="LinkedIn" className="hover:scale-110 duration-300"><FaLinkedin /></a>
+    <header className="w-full fixed top-0 left-0 z-50 bg-white/80 backdrop-blur-md shadow-sm">
+      {/* Top bar */}
+      <div className="border-b border-gray-200 hidden lg:block">
+        <div className="max-w-[1540px] mx-auto flex justify-between items-center px-6 py-2 text-sm text-gray-600">
+          <div className="flex items-center gap-4">
+            <span className="font-medium">Follow Us:</span>
+            <div className="flex gap-4 text-lg">
+              {socialLinks.map(({ href, icon: Icon, label }) => (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="text-gray-500 hover:text-[#0e332e] transition-transform hover:scale-110 duration-300">
+                  <Icon />
+                </a>
+              ))}
             </div>
           </div>
-          <a href="/contact">
-            <button className="bg-[#0e332e] cursor-pointer text-white px-4 py-2 rounded-md hover:bg-[#145f4a] transition hover:scale-105 duration-300">
-              Schedule Now
+          <Link to="/contact">
+            <button className="bg-[#0e332e] text-white px-5 py-2 rounded-full font-semibold text-xs tracking-wide uppercase hover:bg-[#145f4a] transition-all hover:scale-105 duration-300 shadow-md hover:shadow-lg">
+              Book Now
             </button>
-          </a>
+          </Link>
         </div>
       </div>
 
-      {/* Navigation */}
-      <nav className="max-w-[1440px] mx-auto flex items-center 
-      justify-between px-4 md:px-6 py-5">
+      {/* Main Navigation */}
+      <nav className="max-w-[1540px] mx-auto flex items-center justify-between px-4 md:px-6 py-4">
         {/* Left nav */}
-        <ul className="hidden md870:flex gap-6 font-medium text-gray-800">
+        <ul className="hidden lg:flex items-center gap-8 font-medium text-base">
           {navLinksLeft.map((link) => (
             <li key={link.label} className="relative">
               {link.hasDropdown ? (
                 <div
-                  className="flex items-center gap-1 transition-colors hover:text-[#0c3b32] cursor-pointer"
+                  className="relative flex items-center gap-1.5 text-gray-700 transition-colors hover:text-[#0c3b32] cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#0c3b32] after:transition-all after:duration-300 hover:after:w-full"
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onMouseLeave={() => setIsServicesOpen(false)}
+                  ref={servicesDropdownRef}
                 >
                   <span>{link.label}</span>
-                  <FaChevronDown className={`text-xs transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-
-                  {/* Services dropdown */}
-                  <div
-                    ref={servicesDropdownRef}
-                    className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden"
-                    style={{ height: 0, opacity: 0 }}
-                  >
-                    <div className="py-2">
-                      {servicesLinks.map((service) => (
-                        <a
-                          key={service.label}
-                          href={service.href}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f0f7f5] hover:text-[#0c3b32]"
-                        >
-                          {service.label}
-                        </a>
-                      ))}
-                    </div>
-                  </div>
+                  <motion.div animate={{ rotate: isServicesOpen ? 180 : 0 }}>
+                    <FaChevronDown className="text-xs" />
+                  </motion.div>
+                  <AnimatePresence>
+                    {isServicesOpen && (
+                      <motion.div
+                        variants={dropdownVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        className="absolute top-full left-0 mt-3 w-56 bg-white rounded-lg shadow-xl overflow-hidden border border-gray-100"
+                      >
+                        <div className="py-2">
+                          {servicesLinks.map((service) => (
+                            <Link key={service.label} to={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f0f7f5] hover:text-[#0c3b32] transition-colors duration-200">
+                              {service.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               ) : (
-                <a
-                  href={link.href}
-                  className="transition-colors hover:text-[#0c3b32]"
-                >
-                  {link.label}
-                </a>
+                <NavLink to={link.href}>{link.label}</NavLink>
               )}
             </li>
           ))}
         </ul>
 
-        {/* Logo center */}
-        <a href="/" className="flex flex-col items-center">
+        {/* Logo */}
+        <Link to="/">
           <img
             src="/logo.webp"
             alt="The MICE Connection"
-            className="object-contain w-28 md:w-30 md870:bg-white md870:-mt-10 lg:w-34"
+            className="object-contain h-12 lg:h-20 lg:-mt-16 lg:p-2 xl:h-24"
           />
-        </a>
+        </Link>
 
         {/* Right nav */}
-        <ul className="hidden md870:flex gap-6 font-medium text-gray-800">
+        <ul className="hidden lg:flex items-center gap-8 font-medium text-base">
           {navLinksRight.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
-                className="transition-colors hover:text-[#0c3b32]"
-              >
-                {link.label}
-              </a>
+              <NavLink to={link.href}>{link.label}</NavLink>
             </li>
           ))}
         </ul>
 
-        {/* Mobile menu toggle - shown from 0 to 869px */}
+        {/* Mobile menu toggle */}
         <button
-          className="md870:hidden text-2xl ml-4"
-          onClick={() => setIsOpen((prev) => !prev)}
+          className="lg:hidden text-2xl z-50 text-gray-800"
+          onClick={toggleMobileMenu}
           aria-label="Toggle menu"
         >
-          {isOpen ? <HiX /> : <HiMenu />}
+          {isMobileMenuOpen ? <HiX /> : <HiMenu />}
         </button>
       </nav>
 
       {/* Mobile menu dropdown */}
-      <div
-        ref={mobileMenuRef}
-        className="md870:hidden flex flex-col items-center gap-4 font-medium text-gray-800 bg-white shadow-md overflow-hidden h-0 opacity-0"
-      >
-        {navLinksLeft.map((link) => (
-          <div key={link.label} className="w-full text-center">
-            {link.hasDropdown ? (
-              <div className="flex flex-col items-center">
-                <button
-                  className="flex items-center gap-1 transition-colors hover:text-[#0c3b32]"
-                  onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                >
-                  <span>{link.label}</span>
-                  <FaChevronDown className={`text-xs transition-transform ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                {/* Mobile services dropdown */}
-                <div
-                  ref={mobileServicesRef}
-                  className="flex flex-col items-center gap-2 mt-2 overflow-hidden w-full"
-                  style={{ height: 0, opacity: 0 }}
-                >
-                  {servicesLinks.map((service) => (
-                    <a
-                      key={service.label}
-                      href={service.href}
-                      className="transition-colors hover:text-[#0c3b32] text-sm"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      {service.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-            ) : (
-              <a
-                href={link.href}
-                className="transition-colors hover:text-[#0c3b32] block py-2"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </a>
-            )}
-          </div>
-        ))}
-
-        {navLinksRight.map((link) => (
-          <a
-            key={link.label}
-            href={link.href}
-            className="transition-colors hover:text-[#0c3b32] py-2"
-            onClick={() => setIsOpen(false)}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            variants={mobileMenuVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="lg:hidden w-full bg-white shadow-lg overflow-hidden"
           >
-            {link.label}
-          </a>
-        ))}
-      </div>
-
-      <style>{`
-        @media (min-width: 870px) {
-          .md870\\:flex {
-            display: flex !important;
-          }
-          .md870\\:hidden {
-            display: none !important;
-          }
-          .md870\\:-mt-10 {
-            margin-top: -2.5rem !important;
-          }
-          .md870\\:bg-white {
-            background-color: #fff !important;
-          }
-        }
-      `}</style>
+            {[...navLinksLeft, ...navLinksRight].map((link) => (
+              <div key={link.label} className="w-full border-b border-gray-200 last:border-b-0">
+                {link.hasDropdown ? (
+                  <div>
+                    <button
+                      className="w-full flex justify-center items-center gap-2 py-3 text-lg text-gray-700"
+                      onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    >
+                      <span>{link.label}</span>
+                      <motion.div animate={{ rotate: isMobileServicesOpen ? 180 : 0 }}>
+                        <FaChevronDown className="text-sm" />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence>
+                      {isMobileServicesOpen && (
+                        <motion.div
+                          variants={mobileSubmenuVariants}
+                          initial="hidden"
+                          animate="visible"
+                          exit="exit"
+                          className="overflow-hidden bg-gray-50"
+                        >
+                          {servicesLinks.map((service) => (
+                            <MobileNavLink key={service.label} to={service.href} onClick={closeMobileMenu}>
+                              <span className="text-base font-normal">{service.label}</span>
+                            </MobileNavLink>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : (
+                  <MobileNavLink to={link.href} onClick={closeMobileMenu}>
+                    {link.label}
+                  </MobileNavLink>
+                )}
+              </div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };

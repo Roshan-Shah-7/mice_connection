@@ -345,6 +345,11 @@ const ConferencesPage = () => {
         navigate('/contact');
     };
 
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the page on route change
+    }, [location.pathname]); // Trigger on route path change
+
+
     // Filter venues by category
     const filteredVenues = activeVenue === 'all'
         ? conferenceVenues

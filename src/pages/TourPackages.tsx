@@ -1,576 +1,267 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { tourPackages } from '../data/tourPackagesData';
+import type { TourPackage, Currency } from '../types/tourTypes';
+import TourCard from '../components/TourPackages/TourCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const toSlug = (title: string) => {
-    return title
-        .toLowerCase()
-        .replace(/ /g, '-')
-        .replace(/[^\w-]+/g, '');
-};
-
-export interface TourPackage {
-    id: number;
-    title: string;
-    description: string;
-    duration: string;
-    priceUSD: string;
-    priceNPR: string;
-    image: string;
-    category: string;
-    difficulty: 'Easy' | 'Moderate' | 'Challenging';
-    highlights: string[];
-    includes: string[];
-    groupSize: string;
-    bestSeason: string;
-    itinerary: { day: number; title: string; description: string; }[];
-    gallery: string[];
-    slug?: string;
-}
-
-
-import { tourPackages } from '../data/tourPackagesData';
-
-const TourPackages: React.FC = () => {
+// --- HERO COMPONENT ---
+const Hero: React.FC<{ currency: Currency, onCurrencyChange: (c: Currency) => void }> = ({ currency, onCurrencyChange }) => {
     const heroRef = useRef<HTMLDivElement>(null);
-    const packagesRef = useRef<HTMLDivElement>(null);
-    const categoriesRef = useRef<HTMLDivElement>(null);
-    const featuredRef = useRef<HTMLDivElement>(null);
-    const bookingRef = useRef<HTMLDivElement>(null);
-    const [currency, setCurrency] = useState<'USD' | 'NPR'>('USD');
-
-    const categories = [
-        { name: "All", icon: "🌍", count: tourPackages.length },
-        { name: "Trekking", icon: "🏔️", count: tourPackages.filter(p => p.category === "Trekking").length },
-        { name: "Cultural", icon: "🏛️", count: tourPackages.filter(p => p.category === "Cultural").length },
-        { name: "Adventure", icon: "🪂", count: tourPackages.filter(p => p.category === "Adventure").length },
-        { name: "Wildlife", icon: "🦒", count: tourPackages.filter(p => p.category === "Wildlife").length },
-        { name: "Spiritual", icon: "🙏", count: tourPackages.filter(p => p.category === "Spiritual").length }
-    ];
 
     useEffect(() => {
-        // Hero animation
-        if (heroRef.current) {
-            gsap.fromTo(heroRef.current,
-                { opacity: 0, y: 50 },
-                { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
-            );
-        }
+        const ctx = gsap.context(() => {
+            const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.2 } });
 
-        // Categories animation
-        if (categoriesRef.current) {
-            gsap.fromTo(categoriesRef.current.children,
-                { opacity: 0, y: 30 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    scrollTrigger: {
-                        trigger: categoriesRef.current,
-                        start: 'top 80%',
-                    }
-                }
-            );
-        }
-
-        // Packages animation
-        if (packagesRef.current) {
-            gsap.fromTo(packagesRef.current.children,
-                { opacity: 0, y: 50 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    scrollTrigger: {
-                        trigger: packagesRef.current,
-                        start: 'top 80%',
-                    }
-                }
-            );
-        }
-
-        // Featured animation
-        if (featuredRef.current) {
-            gsap.fromTo(featuredRef.current.children,
-                { opacity: 0, scale: 0.9 },
-                {
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.8,
+            tl.from('.hero-content > *', { opacity: 0, y: 40, stagger: 0.1, duration: 0.8 })
+                .from('.hero-main-image-container', { opacity: 0, scale: 0.8, rotation: -5 }, "-=0.6")
+                .from('.hero-polaroid', {
+                    opacity: 0,
+                    y: (i) => (i === 0 ? 100 : -100),
+                    rotation: (i) => (i === 0 ? 30 : -30),
                     stagger: 0.2,
-                    scrollTrigger: {
-                        trigger: featuredRef.current,
-                        start: 'top 80%',
-                    }
-                }
-            );
-        }
+                    duration: 1.5,
+                    ease: 'elastic.out(1, 0.6)'
+                }, "-=1")
+                .from('.hero-deco', { opacity: 0, scale: 0, duration: 0.8 }, "-=1");
 
-        // Booking animation
-        if (bookingRef.current) {
-            gsap.fromTo(bookingRef.current,
-                { opacity: 0, y: 50 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    scrollTrigger: {
-                        trigger: bookingRef.current,
-                        start: 'top 80%',
-                    }
+            gsap.to('.hero-bg-shape', {
+                y: (i) => (i === 0 ? -150 : 100),
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: heroRef.current,
+                    start: 'top top',
+                    end: 'bottom top',
+                    scrub: 1.5
                 }
-            );
-        }
+            });
+
+        }, heroRef);
+        return () => ctx.revert();
     }, []);
 
-    const getDifficultyColor = (difficulty: string) => {
-        switch (difficulty) {
-            case 'Easy': return 'bg-green-500';
-            case 'Moderate': return 'bg-yellow-500';
-            case 'Challenging': return 'bg-red-500';
-            default: return 'bg-gray-500';
-        }
+    return (
+        <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-brand-light">
+            <div className="absolute inset-0 z-0">
+                <div className="hero-bg-shape absolute -top-20 -left-20 w-72 h-72 bg-brand-yellow/10 rounded-full blur-3xl animate-pulse-slow"></div>
+                <div className="hero-bg-shape absolute -bottom-20 -right-20 w-96 h-96 bg-brand-dark/10 rounded-full blur-3xl animate-pulse-slow"></div>
+            </div>
+
+            <div className="absolute top-6 right-6 z-30">
+                <div className="bg-[#fcd00e] backdrop-blur-sm rounded-full shadow-md p-1 flex border border-neutral-200">
+                    <button onClick={() => onCurrencyChange('USD')} className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-300 ${currency === 'USD' ? 'bg-[#11342f] text-white' : 'text-neutral-600 hover:bg-neutral-100'}`}>
+                        $ USD
+                    </button>
+                    <button onClick={() => onCurrencyChange('NPR')} className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-300 ${currency === 'NPR' ? 'bg-[#11342f] text-white' : 'text-neutral-600 hover:bg-neutral-100'}`}>
+                        ₨ NPR
+                    </button>
+                </div>
+            </div>
+
+            <div className="relative z-10 w-full container mx-auto px-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div className="space-y-8">
+                        <div className="hero-content inline-flex items-center space-x-3 bg-white text-brand-dark rounded-full px-4 py-2 shadow-sm border border-neutral-200/80">
+                            <div className="relative flex h-3 w-3">
+                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-green opacity-75"></span>
+                                <span className="relative inline-flex rounded-full h-3 w-3 bg-brand-green"></span>
+                            </div>
+                            <span className="font-semibold text-sm tracking-wide">The MICE Connection</span>
+                        </div>
+
+                        <h1 className="hero-content text-5xl md:text-6xl font-extrabold text-brand-dark leading-tight">
+                            Your Gateway to
+                            <span className="block bg-clip-text text-transparent bg-yellow-500 drop-shadow-sm mt-2">Nepal Wonders</span>
+                        </h1>
+
+                        <p className="hero-content text-lg text-neutral-600 leading-relaxed max-w-lg">
+                            Embark on unforgettable journeys through majestic mountains, ancient temples, and vibrant cultures. Your adventure of a lifetime awaits.
+                        </p>
+
+                        <div className="hero-content grid grid-cols-3 gap-4 text-center border-t border-b border-neutral-200 py-6">
+                            <div>
+                                <div className="text-4xl font-extrabold text-brand-dark">98%</div>
+                                <div className="text-sm text-neutral-600 mt-1 tracking-wide">Happy Travelers</div>
+                            </div>
+                            <div>
+                                <div className="text-4xl font-extrabold text-brand-dark">15+</div>
+                                <div className="text-sm text-neutral-600 mt-1 tracking-wide">Years Experience</div>
+                            </div>
+                            <div>
+                                <div className="text-4xl font-extrabold text-brand-dark">50+</div>
+                                <div className="text-sm text-neutral-600 mt-1 tracking-wide">Unique Packages</div>
+                            </div>
+                        </div>
+
+                        <div className="hero-content flex flex-col sm:flex-row gap-4">
+                            <button onClick={() => document.getElementById('tours-section')?.scrollIntoView({ behavior: 'smooth' })} className="bg-[#10362e] text-white px-7 py-3.5 rounded-xl font-bold text-base hover:shadow-lg transition-all duration-300 transform hover:scale-105 border-2 border-neutral-200 hover:border-brand-dark">
+                                Browse All Tours
+                            </button>
+                        </div>
+                    </div>
+                    <div className="hidden lg:block relative h-[550px] w-full">
+                        <div className="hero-main-image-container absolute top-0 left-0 w-[70%] h-[80%] rounded-3xl shadow-2xl overflow-hidden">
+                            <img src={tourPackages[0].image} alt={tourPackages[0].title} className="w-full h-full object-cover" />
+                        </div>
+
+                        <div className="hero-polaroid absolute bottom-0 right-0 w-[45%] bg-white p-2.5 rounded-xl shadow-2xl transform rotate-6">
+                            <img src={tourPackages[3].image} alt={tourPackages[3].title} className="w-full h-auto object-cover rounded-md" />
+                            <p className="text-center text-xs text-neutral-600 mt-2 font-semibold tracking-wide">CHITWAN WILDLIFE</p>
+                        </div>
+
+                        <div className="hero-polaroid absolute top-[10%] right-[15%] w-[35%] bg-white p-2 rounded-lg shadow-xl transform -rotate-8">
+                            <img src={tourPackages[2].image} alt={tourPackages[2].title} className="w-full h-auto object-cover rounded" />
+                        </div>
+
+                        <div className="hero-deco absolute bottom-[20%] left-[-5%] w-32 h-32 border-4 border-yellow-500/50 rounded-full"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
+};
+
+
+// --- MAIN PAGE COMPONENT ---
+const TourPackagesPage: React.FC = () => {
+    const navigate = useNavigate();
+    const [currency, setCurrencyState] = useState<Currency>(() => {
+        const savedCurrency = localStorage.getItem('selectedCurrency');
+        return (savedCurrency === 'USD' || savedCurrency === 'NPR') ? savedCurrency : 'USD';
+    });
+    const [activeCategory, setActiveCategory] = useState('All');
+    const [difficultyFilter, setDifficultyFilter] = useState('All');
+    const [searchQuery, setSearchQuery] = useState('');
+    const [sortOption, setSortOption] = useState('featured');
+
+    const setCurrency = (newCurrency: Currency) => {
+        setCurrencyState(newCurrency);
+        localStorage.setItem('selectedCurrency', newCurrency);
     };
 
-    const getPrice = (tour: TourPackage) => {
-        return currency === 'USD' ? tour.priceUSD : tour.priceNPR;
+    const categories = useMemo(() => [
+        { name: "All", icon: "🌍" }, { name: "Trekking", icon: "🏔️" }, { name: "Cultural", icon: "🏛️" }, { name: "Adventure", icon: "🪂" }, { name: "Wildlife", icon: "🦒" }, { name: "Spiritual", icon: "🙏" }, { name: "Biking", icon: "🚴" }
+    ], []);
+
+    const difficulties = useMemo(() => ["All", "Easy", "Moderate", "Challenging"], []);
+
+    const filteredAndSortedTours = useMemo(() => {
+        let result: TourPackage[] = [...tourPackages];
+
+        if (activeCategory !== 'All') {
+            result = result.filter(tour => tour.category === activeCategory);
+        }
+
+        if (difficultyFilter !== 'All') {
+            result = result.filter(tour => tour.difficulty === difficultyFilter);
+        }
+
+        if (searchQuery) {
+            const query = searchQuery.toLowerCase();
+            result = result.filter(tour =>
+                tour.title.toLowerCase().includes(query) ||
+                tour.description.toLowerCase().includes(query) ||
+                tour.category.toLowerCase().includes(query)
+            );
+        }
+
+        switch (sortOption) {
+            case 'price-low':
+                result.sort((a, b) => parseFloat(a.priceUSD.replace('$', '').replace(',', '')) - parseFloat(b.priceUSD.replace('$', '').replace(',', '')));
+                break;
+            case 'price-high':
+                result.sort((a, b) => parseFloat(b.priceUSD.replace('$', '').replace(',', '')) - parseFloat(a.priceUSD.replace('$', '').replace(',', '')));
+                break;
+            case 'duration':
+                result.sort((a, b) => parseInt(a.duration) - parseInt(b.duration));
+                break;
+        }
+
+        return result;
+    }, [activeCategory, difficultyFilter, searchQuery, sortOption]);
+
+    const handleClearFilters = () => {
+        setActiveCategory('All');
+        setDifficultyFilter('All');
+        setSearchQuery('');
+        setSortOption('featured');
     };
 
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-brand-light font-sans">
+            <Hero currency={currency} onCurrencyChange={setCurrency} />
 
-            {/* Modern Hero Section - Different Design */}
-            <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-blue-50 via-white to-orange-50">
-                {/* Animated Background Elements */}
-                <div className="absolute inset-0 overflow-hidden">
-                    <div className="absolute top-20 left-10 w-72 h-72 bg-[#fcd00e]/20 rounded-full blur-3xl animate-pulse"></div>
-                    <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#143a31]/20 rounded-full blur-3xl animate-pulse"></div>
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[#fcd00e]/30 to-[#143a31]/30 rounded-full blur-2xl animate-pulse"></div>
-                </div>
+            <section id="tours-section" className="py-20">
+                <div className="container mx-auto px-6">
+                    <div className="text-center mb-12">
+                        <h2 className="text-4xl font-extrabold text-brand-dark mb-3">Discover Your Next Adventure</h2>
+                        <p className="text-lg text-neutral-600 max-w-3xl mx-auto">Find the perfect experience from our curated list of tours across the beautiful landscapes of Nepal.</p>
+                    </div>
 
-                {/* Content */}
-                <div className="relative z-10 w-full">
-                    <div className="container mx-auto px-6 py-20">
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                            {/* Left Content */}
-                            <div className="space-y-8">
-                                {/* Badge */}
-                                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#143a31] to-[#0f2821] text-white rounded-full px-6 py-3 shadow-lg">
-                                    <div className="w-3 h-3 bg-[#fcd00e] rounded-full animate-pulse"></div>
-                                    <span className="font-medium">DISCOVER NEPAL TOURS</span>
-                                </div>
-
-                                {/* Main Title with Split Design */}
-                                <div className="space-y-2">
-                                    <h1 className="text-6xl md:text-7xl font-bold text-[#143a31] leading-tight">
-                                        Explore Nepal's
-                                    </h1>
-                                    <h1 className="text-6xl md:text-7xl font-bold text-[#fcd00e] leading-tight">
-                                        Hidden Treasures
-                                    </h1>
-                                </div>
-
-                                {/* Subtitle */}
-                                <p className="text-xl text-gray-700 leading-relaxed max-w-2xl">
-                                    Embark on unforgettable journeys through majestic Himalayas, ancient temples, and vibrant cultures.
-                                    Your adventure of a lifetime awaits in the heart of the Himalayas.
-                                </p>
-
-                                {/* Interactive Stats */}
-                                <div className="grid grid-cols-3 gap-4">
-                                    <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
-                                        <div className="text-3xl font-bold text-[#143a31] group-hover:text-[#fcd00e] transition-colors duration-300 mb-1">20+</div>
-                                        <div className="text-sm text-gray-600">Tour Packages</div>
-                                    </div>
-                                    <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
-                                        <div className="text-3xl font-bold text-[#143a31] group-hover:text-[#fcd00e] transition-colors duration-300 mb-1">98%</div>
-                                        <div className="text-sm text-gray-600">Happy Travelers</div>
-                                    </div>
-                                    <div className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
-                                        <div className="text-3xl font-bold text-[#143a31] group-hover:text-[#fcd00e] transition-colors duration-300 mb-1">24/7</div>
-                                        <div className="text-sm text-gray-600">Support</div>
+                    {/* Control Panel */}
+                    <div className="sticky top-30 bg-white/70 backdrop-blur-lg p-4 rounded-2xl shadow-lg border border-neutral-200 z-20 mb-12">
+                        <div className="space-y-4">
+                            {/* Row 1: Category & Difficulty */}
+                            <div className="flex flex-col lg:flex-row gap-4">
+                                <div className="flex-grow">
+                                    <label className="block text-sm font-bold text-brand-dark mb-2">Category</label>
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        {categories.map((category) => (
+                                            <button key={category.name} onClick={() => setActiveCategory(category.name)} className={`flex items-center space-x-2 px-3 py-1.5 rounded-lg transition-all duration-300 text-sm font-semibold border ${activeCategory === category.name ? 'bg-[#11342f] text-white border-brand-dark' : 'bg-white text-neutral-700 border-neutral-200 hover:bg-neutral-100'}`}>
+                                                <span>{category.icon}</span>
+                                                <span>{category.name}</span>
+                                            </button>
+                                        ))}
                                     </div>
                                 </div>
-
-                                {/* Modern CTA Buttons */}
-                                <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                                    <button className="group relative bg-gradient-to-r from-[#143a31] to-[#0f2821] text-white px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 overflow-hidden">
-                                        <span className="relative z-10">Explore Tours</span>
-                                        <div className="absolute inset-0 bg-gradient-to-r from-[#fcd00e] to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                    </button>
-                                    <button className="group relative bg-white text-[#143a31] px-8 py-4 rounded-2xl font-semibold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 border-2 border-[#143a31] overflow-hidden">
-                                        <span className="relative z-10">Custom Tour</span>
-                                        <div className="absolute inset-0 bg-gradient-to-r from-[#143a31] to-[#0f2821] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                        <span className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                                    </button>
+                                <div className="flex-shrink-0">
+                                    <label className="block text-sm font-bold text-brand-dark mb-2">Difficulty</label>
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        {difficulties.map((level) => (
+                                            <button key={level} onClick={() => setDifficultyFilter(level)} className={`px-3 py-1.5 rounded-lg transition-all duration-300 text-sm font-semibold border ${difficultyFilter === level ? 'bg-[#11342f] text-white border-brand-dark' : 'bg-white text-neutral-700 border-neutral-200 hover:bg-neutral-100'}`}>
+                                                {level}
+                                            </button>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
 
-                            {/* Right Content - Modern Card Stack */}
-                            <div className="relative">
-                                <div className="relative">
-                                    {/* Main Card */}
-                                    <div className="relative bg-white rounded-3xl shadow-2xl p-2 transform rotate-6 hover:rotate-0 transition-transform duration-500">
-                                        <img
-                                            src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                                            alt="Everest Base Camp"
-                                            className="w-full h-80 object-cover rounded-2xl"
-                                        />
-                                        <div className="absolute bottom-4 left-4 right-4">
-                                            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4">
-                                                <h3 className="font-bold text-[#143a31]">Everest Base Camp</h3>
-                                                <div className="flex justify-between items-center mt-2">
-                                                    <span className="text-sm text-gray-600">14 Days</span>
-                                                    <span className="font-bold text-[#fcd00e]">{getPrice(tourPackages[0])}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* Floating Cards */}
-                                    <div className="absolute -top-8 -left-8 w-48 h-32 bg-gradient-to-br from-[#fcd00e] to-yellow-400 rounded-2xl shadow-xl transform -rotate-12 hover:rotate-0 transition-transform duration-500 p-4">
-                                        <div className="text-white text-sm font-bold">Popular Tours</div>
-                                        <div className="text-white/80 text-xs mt-1">Starting from {getPrice(tourPackages[2])}</div>
-                                    </div>
-
-                                    <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-gradient-to-br from-[#143a31] to-[#0f2821] rounded-full shadow-xl transform rotate-12 hover:rotate-0 transition-transform duration-500 flex items-center justify-center">
-                                        <div className="text-white text-center">
-                                            <div className="text-2xl font-bold">20+</div>
-                                            <div className="text-xs">Packages</div>
-                                        </div>
-                                    </div>
-
-                                    {/* Decorative Elements */}
-                                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-4 border-[#fcd00e]/30 rounded-full animate-spin-slow"></div>
-                                </div>
+                            {/* Row 2: Search and Sort */}
+                            <div className="flex flex-col md:flex-row items-center gap-4 pt-4 border-t border-neutral-200">
+                                <input type="text" placeholder="Search by keyword..." className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent transition" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+                                <select className="w-full md:w-auto px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent transition" value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
+                                    <option value="featured">Sort by: Featured</option>
+                                    <option value="price-low">Price: Low to High</option>
+                                    <option value="price-high">Price: High to Low</option>
+                                    <option value="duration">Duration</option>
+                                </select>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                {/* Bottom Wave */}
-                <div className="absolute bottom-0 left-0 right-0">
-                    <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0 120L60 110C120 100 240 80 360 70C480 60 600 60 720 65C840 70 960 80 1080 85C1200 90 1320 90 1380 90L1440 90V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white" />
-                    </svg>
-                </div>
-            </section>
-
-            {/* Modern Categories Section */}
-            <section ref={categoriesRef} className="relative py-16 px-6 bg-gradient-to-br from-gray-50 to-white">
-                <div className="container mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-[#143a31] mb-4">Choose Your Adventure Type</h2>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Select your preferred category to discover the perfect tour experience
-                        </p>
-                    </div>
-
-                    <div className="flex flex-wrap justify-center gap-6">
-                        {categories.map((category, index) => (
-                            <div
-                                key={index}
-                                className="group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border-2 border-transparent hover:border-[#fcd00e]"
-                            >
-                                <div className="text-center">
-                                    <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">{category.icon}</div>
-                                    <div className="font-bold text-[#143a31] text-lg mb-1">{category.name}</div>
-                                    <div className="text-sm text-gray-500">{category.count} tours available</div>
-                                </div>
-                                <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-[#fcd00e] group-hover:w-full transition-all duration-300"></div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Modern Tour Packages Section */}
-            <section ref={packagesRef} className="relative py-16 px-6 bg-white">
-                <div className="container mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-4xl font-bold text-[#143a31] mb-4">Featured Tour Packages</h2>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Handpicked tours that showcase the best of Nepal's natural beauty and cultural heritage
-                        </p>
-                    </div>
-
-                    {/* Currency Toggle */}
-                    <div className="mb-10 m-auto w-fit">
-                        <div className="bg-white rounded-full shadow-lg p-1 flex border border-gray-200">
-                            <button
-                                onClick={() => setCurrency('USD')}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center ${currency === 'USD'
-                                    ? 'bg-[#143a31] text-white'
-                                    : 'text-gray-600 hover:bg-gray-100'
-                                    }`}
-                            >
-                                <span className="mr-1">$</span> USD
-                            </button>
-                            <button
-                                onClick={() => setCurrency('NPR')}
-                                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center ${currency === 'NPR'
-                                    ? 'bg-[#143a31] text-white'
-                                    : 'text-gray-600 hover:bg-gray-100'
-                                    }`}
-                            >
-                                <span className="mr-1">₨</span> NPR
+                    {filteredAndSortedTours.length > 0 ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {filteredAndSortedTours.map((tour, index) => (
+                                <TourCard key={tour.id} tour={tour} currency={currency} index={index} navigate={navigate} />
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="text-center py-16 bg-white rounded-2xl border border-neutral-200">
+                            <div className="text-6xl mb-4" role="img" aria-label="Magnifying glass">🔍</div>
+                            <h3 className="text-2xl font-bold text-brand-dark mb-2">No Tours Found</h3>
+                            <p className="text-neutral-600 mb-6">We couldn't find any tours matching your criteria. Try adjusting the filters!</p>
+                            <button onClick={handleClearFilters} className="bg-brand-dark text-white px-6 py-3 rounded-lg font-semibold hover:bg-brand-yellow hover:text-brand-dark transition-all duration-300">
+                                Clear All Filters
                             </button>
                         </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {tourPackages.map((tour) => (
-                            <div key={tour.id} className="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
-                                {/* Image with Overlay */}
-                                <div className="relative h-64 overflow-hidden">
-                                    <img
-                                        src={tour.image}
-                                        alt={tour.title}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-
-                                    {/* Category Badge */}
-                                    <div className="absolute top-4 left-4 bg-[#fcd00e] text-[#143a31] px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                                        {tour.category}
-                                    </div>
-
-                                    {/* Difficulty Badge */}
-                                    <div className="absolute top-4 right-4 flex items-center space-x-1 bg-black/50 backdrop-blur-sm rounded-full px-3 py-1">
-                                        <div className={`w-2 h-2 rounded-full ${getDifficultyColor(tour.difficulty)}`}></div>
-                                        <span className="text-white text-xs">{tour.difficulty}</span>
-                                    </div>
-
-                                    {/* Price and Duration */}
-                                    <div className="absolute bottom-4 left-4 right-4">
-                                        <div className="flex justify-between items-end">
-                                            <div>
-                                                <div className="text-white text-sm opacity-80">{tour.duration}</div>
-                                                <div className="text-white text-2xl font-bold">{getPrice(tour)}</div>
-                                            </div>
-                                            <div className="text-white text-xs bg-white/20 backdrop-blur-sm rounded-full px-3 py-1">
-                                                {tour.groupSize}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Content */}
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold text-[#143a31] mb-3">{tour.title}</h3>
-                                    <div className="flex items-center space-x-2 text-sm text-gray-600 mb-2">
-                                        <span>⏱️</span>
-                                        <span>{tour.duration}</span>
-                                    </div>
-                                    <div className="flex items-center space-x-2 text-sm text-gray-600 mb-4">
-                                        <span>👥</span>
-                                        <span>{tour.groupSize}</span>
-                                    </div>
-
-                                    {/* Action Button */}
-                                    <a href={`/tour-packages/${toSlug(tour.title)}`} className="w-full">
-                                        <button className="w-full bg-gradient-to-r from-[#143a31] to-[#0f2821] text-white py-3 rounded-lg font-semibold hover:from-[#fcd00e] hover:to-yellow-400 hover:text-[#143a31] transition-all duration-300">
-                                            View Details
-                                        </button>
-                                    </a>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* Modern Featured Tours Section */}
-            <section ref={featuredRef} className="relative py-16 px-6 bg-gradient-to-br from-gray-50 to-white">
-                <div className="container mx-auto">
-                    <div className="text-center mb-12">
-                        <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-[#fcd00e] to-yellow-400 text-[#143a31] rounded-full px-6 py-3 mb-4 shadow-lg">
-                            <span className="font-medium">MOST POPULAR</span>
-                        </div>
-                        <h2 className="text-4xl font-bold text-[#143a31] mb-4">Top Selling Tours</h2>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Our most sought-after experiences that travelers love the most
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {/* Featured Tour 1 */}
-                        <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                            <div className="relative h-80">
-                                <img
-                                    src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                    alt="Everest Base Camp"
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                                <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-bold">
-                                    BESTSELLER
-                                </div>
-                            </div>
-
-                            <div className="p-8">
-                                <div className="flex justify-between items-start mb-4">
-                                    <h3 className="text-2xl font-bold text-[#143a31]">Everest Base Camp Trek</h3>
-                                    <div className="text-right">
-                                        <div className="text-3xl font-bold text-[#fcd00e]">{getPrice(tourPackages[0])}</div>
-                                        <div className="text-sm text-gray-500">per person</div>
-                                    </div>
-                                </div>
-
-                                <p className="text-gray-600 mb-6 leading-relaxed">
-                                    The ultimate trekking adventure to the base camp of the world's highest mountain.
-                                    Experience breathtaking views and rich Sherpa culture.
-                                </p>
-
-                                <div className="grid grid-cols-2 gap-4 mb-6">
-                                    <div className="flex items-center space-x-2">
-                                        <span className="text-[#fcd00e]">⏱️</span>
-                                        <span className="text-sm text-gray-600">14 Days</span>
-                                    </div>
-                                    <div className="flex items-center space-x-2">
-                                        <span className="text-[#fcd00e]">🏔️</span>
-                                        <span className="text-sm text-gray-600">5,545m Max</span>
-                                    </div>
-                                    <div className="flex items-center space-x-2">
-                                        <span className="text-[#fcd00e]">👥</span>
-                                        <span className="text-sm text-gray-600">2-12 people</span>
-                                    </div>
-                                    <div className="flex items-center space-x-2">
-                                        <span className="text-[#fcd00e]">🎯</span>
-                                        <span className="text-sm text-gray-600">Challenging</span>
-                                    </div>
-                                </div>
-
-                                <button className="w-full bg-gradient-to-r from-[#143a31] to-[#0f2821] text-white py-3 rounded-lg font-semibold hover:from-[#fcd00e] hover:to-yellow-400 hover:text-[#143a31] transition-all duration-300">
-                                    Book This Tour
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Featured Tour 2 */}
-                        <div className="group relative bg-white rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 overflow-hidden">
-                            <div className="relative h-80">
-                                <img
-                                    src="/public/assets/nepal/kathmandu.webp"
-                                    alt="Kathmandu Valley"
-                                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                                <div className="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
-                                    FAMILY FRIENDLY
-                                </div>
-                            </div>
-
-                            <div className="p-8">
-                                <div className="flex justify-between items-start mb-4">
-                                    <h3 className="text-2xl font-bold text-[#143a31]">Kathmandu Valley Cultural Tour</h3>
-                                    <div className="text-right">
-                                        <div className="text-3xl font-bold text-[#fcd00e]">{getPrice(tourPackages[2])}</div>
-                                        <div className="text-sm text-gray-500">per person</div>
-                                    </div>
-                                </div>
-
-                                <p className="text-gray-600 mb-6 leading-relaxed">
-                                    Explore the rich cultural heritage of Kathmandu Valley with its ancient temples,
-                                    palaces, and vibrant local culture.
-                                </p>
-
-                                <div className="grid grid-cols-2 gap-4 mb-6">
-                                    <div className="flex items-center space-x-2">
-                                        <span className="text-[#fcd00e]">⏱️</span>
-                                        <span className="text-sm text-gray-600">5 Days</span>
-                                    </div>
-                                    <div className="flex items-center space-x-2">
-                                        <span className="text-[#fcd00e]">🏛️</span>
-                                        <span className="text-sm text-gray-600">7 UNESCO Sites</span>
-                                    </div>
-                                    <div className="flex items-center space-x-2">
-                                        <span className="text-[#fcd00e]">👥</span>
-                                        <span className="text-sm text-gray-600">2-20 people</span>
-                                    </div>
-                                    <div className="flex items-center space-x-2">
-                                        <span className="text-[#fcd00e]">🎯</span>
-                                        <span className="text-sm text-gray-600">Easy</span>
-                                    </div>
-                                </div>
-
-                                <button className="w-full bg-gradient-to-r from-[#143a31] to-[#0f2821] text-white py-3 rounded-lg font-semibold hover:from-[#fcd00e] hover:to-yellow-400 hover:text-[#143a31] transition-all duration-300">
-                                    Book This Tour
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Modern Booking Section */}
-            <section ref={bookingRef} className="relative py-16 px-6 bg-gradient-to-br from-[#143a31] to-[#0f2821] overflow-hidden">
-                <div className="absolute inset-0 bg-black/20"></div>
-                <div className="absolute top-0 left-0 w-full h-full opacity-10">
-                    <div className="absolute top-20 left-20 w-96 h-96 border-4 border-[#fcd00e] rounded-full"></div>
-                    <div className="absolute bottom-20 right-20 w-64 h-64 border-4 border-[#fcd00e] rounded-full"></div>
-                </div>
-
-                <div className="container mx-auto relative z-10">
-                    <div className="max-w-4xl mx-auto text-center">
-                        <div className="inline-flex items-center space-x-2 bg-[#fcd00e]/20 backdrop-blur-sm rounded-full px-6 py-3 mb-8">
-                            <div className="w-3 h-3 bg-[#fcd00e] rounded-full animate-pulse"></div>
-                            <span className="text-[#fcd00e] font-medium">READY FOR ADVENTURE?</span>
-                        </div>
-
-                        <h2 className="text-5xl font-bold text-white mb-8 leading-tight">
-                            Book Your Dream Tour Today
-                        </h2>
-
-                        <p className="text-xl text-white/90 mb-12 leading-relaxed">
-                            Start your Nepalese adventure with confidence. Our expert team is here to help you create unforgettable memories in the Himalayas.
-                        </p>
-
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                            <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-[#fcd00e]/50 transition-all duration-300">
-                                <div className="w-16 h-16 bg-[#fcd00e]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#fcd00e]/30 transition-colors duration-300">
-                                    <span className="text-2xl">🎯</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-2">Expert Guidance</h3>
-                                <p className="text-white/80 text-sm">Professional guides with years of experience</p>
-                            </div>
-                            <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-[#fcd00e]/50 transition-all duration-300">
-                                <div className="w-16 h-16 bg-[#fcd00e]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#fcd00e]/30 transition-colors duration-300">
-                                    <span className="text-2xl">💰</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-2">Best Price Guarantee</h3>
-                                <p className="text-white/80 text-sm">Competitive prices with no hidden fees</p>
-                            </div>
-                            <div className="group bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 hover:border-[#fcd00e]/50 transition-all duration-300">
-                                <div className="w-16 h-16 bg-[#fcd00e]/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#fcd00e]/30 transition-colors duration-300">
-                                    <span className="text-2xl">🛡️</span>
-                                </div>
-                                <h3 className="text-xl font-bold text-white mb-2">Safe & Secure</h3>
-                                <p className="text-white/80 text-sm">Your safety is our top priority</p>
-                            </div>
-                        </div>
-
-                        <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                            {/* <button className="group relative bg-[#fcd00e] text-[#143a31] px-10 py-5 rounded-full font-bold text-lg hover:bg-yellow-300 transition-all duration-300 transform hover:scale-105 shadow-2xl overflow-hidden">
-                                <span className="relative z-10">Book Now</span>
-                                <div className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-yellow-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                            </button> */}
-                            <a href="/contact">
-                                <button className="group relative bg-transparent border-2 border-[#fcd00e] text-[#fcd00e] px-10 py-5 rounded-full font-bold text-lg hover:bg-[#fcd00e] hover:text-[#143a31] transition-all duration-300 transform hover:scale-105 overflow-hidden">
-                                    <span className="relative z-10">Contact Us</span>
-                                    <div className="absolute inset-0 bg-gradient-to-r from-[#fcd00e] to-yellow-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                </button>
-                            </a>
-                        </div>
-                    </div>
+                    )}
                 </div>
             </section>
         </div>
     );
 };
 
-export default TourPackages;
+export default TourPackagesPage;

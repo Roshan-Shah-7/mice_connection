@@ -23,6 +23,12 @@ const EventDetail: React.FC = () => {
         }
     }, [event]);
 
+    useEffect(() => {
+        window.scrollTo(0, 0); // Scroll to the top of the page on route change
+    }, [location.pathname]); // Trigger on route path change
+
+
+
     if (!event) {
         return (
             <div className="flex items-center justify-center min-h-screen bg-gray-100">

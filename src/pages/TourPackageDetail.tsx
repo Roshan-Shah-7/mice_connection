@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
-import { tourPackages, type TourPackage } from '../data/tourPackagesData';
+import { tourPackages } from '../data/tourPackagesData';
+import type { TourPackage } from '../types/tourTypes';
 
 const TourPackageDetail: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();

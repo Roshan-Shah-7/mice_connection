@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -19,14 +21,29 @@ import PrivacyPage from './pages/Privacy';
 import TermsOfServicePage from './pages/Term';
 import EventsPage from './pages/Events';
 import EventDetail from './pages/EventDetail';
+import Loader from './components/Loader';
 
 const App = () => {
+  const [loading, setLoading] = useState(true);
+  const [contentVisible, setContentVisible] = useState(false);
+  const [loaderAnimationComplete, setLoaderAnimationComplete] = useState(false);
+
+  useEffect(() => {
+    // This effect ensures the main content fades in after the loader is gone.
+    if (!loading && loaderAnimationComplete) {
+      // Short delay to ensure loader is fully faded out before content fades in
+      const timer = setTimeout(() => setContentVisible(true), 100);
+      return () => clearTimeout(timer);
+    }
+  }, [loading]);
+
   return (
     <Router>
-      <main>
+      {loading && <Loader onLoaded={() => setLoading(false)} onAnimationComplete={() => setLoaderAnimationComplete(true)} />}
+      <main className={`transition-opacity duration-700 ${contentVisible ? 'opacity-100' : 'opacity-0'}`}>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={loaderAnimationComplete ? <Home /> : null} />
           <Route path="/about-nepal" element={<AboutNepal />} />
           <Route path="/tour-packages" element={<TourPackages />} />
           <Route path="/tour-packages/:slug" element={<TourPackageDetail />} />
@@ -52,3 +69,5 @@ const App = () => {
 }
 
 export default App
+
+
