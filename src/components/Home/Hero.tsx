@@ -71,7 +71,7 @@ const Hero: React.FC = () => {
             className="w-full flex"
             aria-labelledby="hero-title"
         >
-            <div className="w-full grid grid-cols-1 lg:flex">
+            <div className="w-full grid grid-cols-1 lg:flex mt-12 lg:mt-20 xl:mt-26">
                 {/* Left Column - Video */}
                 <div className="hero-media-container w-full lg:w-[50%] flex items-center justify-start">
                     <div className="h-[90vh] w-full overflow-hidden shadow-2xl">

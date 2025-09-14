@@ -1,16 +1,16 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useNavigate } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Link, useNavigate } from 'react-router-dom';
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const IncentivesPage = () => {
     const navigate = useNavigate();
-    const [activeTab, setActiveTab] = useState('all');
+    // const [activeTab, setActiveTab] = useState('all');
     const heroRef = useRef<HTMLDivElement>(null);
     const whyNepalRef = useRef<HTMLDivElement>(null);
     const experiencesRef = useRef<HTMLDivElement>(null);
@@ -47,7 +47,7 @@ const IncentivesPage = () => {
             title: 'Wellness & Mindfulness',
             description: 'Yoga, meditation, holistic therapies',
             details: 'Rejuvenate mind and body with wellness experiences set in serene natural environments. Enjoy guided yoga sessions, meditation retreats, and holistic healing therapies.',
-            image: 'https://images.unsplash.com/photo-1506126613408-cca07d5b1561?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+            image: '/assets/incentives/yoga.webp'
         },
         {
             icon: '🍷',
@@ -61,77 +61,77 @@ const IncentivesPage = () => {
             title: 'Custom Experiences',
             description: 'Tailored packages for corporate brands',
             details: 'Create unique incentive programs tailored to your company\'s specific goals and brand identity. We design bespoke experiences that align with your corporate culture and objectives.',
-            image: ''
+            image: '/assets/incentives/custom.webp'
         }
     ];
 
     // Sample programs data
-    const samplePrograms = [
-        {
-            title: 'Kathmandu Luxury Escape',
-            duration: '3 Days',
-            description: 'Heritage tours, gala dinner, spa experiences',
-            highlights: [
-                'Private guided tour of UNESCO World Heritage Sites',
-                'Gala dinner with traditional cultural performances',
-                'Luxury spa treatments at 5-star hotel',
-                'Shopping excursion for authentic handicrafts'
-            ],
-            image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
-        },
-        {
-            title: 'Adventure & Wellness Retreat',
-            duration: '5 Days',
-            description: 'Pokhara, paragliding, yoga retreat',
-            highlights: [
-                'Scenic flight to Pokhara with mountain views',
-                'Paragliding experience over Phewa Lake',
-                'Daily yoga and meditation sessions',
-                'Boating on Phewa Lake and visit to Peace Pagoda'
-            ],
-            image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
-        },
-        {
-            title: 'Himalayan Reward Journey',
-            duration: '7 Days',
-            description: 'Everest Heli tour, Chitwan safari, Lumbini',
-            highlights: [
-                'Helicopter tour to Mount Everest Base Camp',
-                'Wildlife safari in Chitwan National Park',
-                'Visit to Lumbini, birthplace of Buddha',
-                'Traditional Tharu cultural evening'
-            ],
-            image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
-        }
-    ];
+    // const samplePrograms = [
+    //     {
+    //         title: 'Kathmandu Luxury Escape',
+    //         duration: '3 Days',
+    //         description: 'Heritage tours, gala dinner, spa experiences',
+    //         highlights: [
+    //             'Private guided tour of UNESCO World Heritage Sites',
+    //             'Gala dinner with traditional cultural performances',
+    //             'Luxury spa treatments at 5-star hotel',
+    //             'Shopping excursion for authentic handicrafts'
+    //         ],
+    //         image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+    //     },
+    //     {
+    //         title: 'Adventure & Wellness Retreat',
+    //         duration: '5 Days',
+    //         description: 'Pokhara, paragliding, yoga retreat',
+    //         highlights: [
+    //             'Scenic flight to Pokhara with mountain views',
+    //             'Paragliding experience over Phewa Lake',
+    //             'Daily yoga and meditation sessions',
+    //             'Boating on Phewa Lake and visit to Peace Pagoda'
+    //         ],
+    //         image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+    //     },
+    //     {
+    //         title: 'Himalayan Reward Journey',
+    //         duration: '7 Days',
+    //         description: 'Everest Heli tour, Chitwan safari, Lumbini',
+    //         highlights: [
+    //             'Helicopter tour to Mount Everest Base Camp',
+    //             'Wildlife safari in Chitwan National Park',
+    //             'Visit to Lumbini, birthplace of Buddha',
+    //             'Traditional Tharu cultural evening'
+    //         ],
+    //         image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80'
+    //     }
+    // ];
 
     // Gallery images data
-    const galleryImages = [
-        {
-            image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            caption: 'Helicopter tour over the Himalayas'
-        },
-        {
-            image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            caption: 'Traditional cultural performance'
-        },
-        {
-            image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            caption: 'Luxury resort accommodation'
-        },
-        {
-            image: 'https://images.unsplash.com/photo-1506126613408-cca07d5b1561?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            caption: 'Wellness and yoga retreat'
-        },
-        {
-            image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            caption: 'Exclusive dining experience'
-        },
-        {
-            image: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            caption: 'Team building activities'
-        }
-    ];
+    // const galleryImages = [
+    //     {
+    //         image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    //         caption: 'Helicopter tour over the Himalayas'
+    //     },
+    //     {
+    //         image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    //         caption: 'Traditional cultural performance'
+    //     },
+    //     {
+    //         image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    //         caption: 'Luxury resort accommodation'
+    //     },
+    //     {
+    //         image: 'https://images.unsplash.com/photo-1506126613408-cca07d5b1561?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    //         caption: 'Wellness and yoga retreat'
+    //     },
+    //     {
+    //         image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    //         caption: 'Exclusive dining experience'
+    //     },
+    //     {
+    //         image: 'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+    //         caption: 'Team building activities'
+    //     }
+    // ];
 
     // Animation effects
     useEffect(() => {
@@ -342,14 +342,14 @@ const IncentivesPage = () => {
                             <span>Memorable Rewards</span>
                         </div>
                     </div>
-                    <a href="/contact">
+                    <Link to="/contact">
                         <button
                             onClick={handleGetInTouch}
                             className="px-8 py-4 bg-[#fcd00d] text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
                         >
                             Design Your Incentive Trip
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -405,11 +405,11 @@ const IncentivesPage = () => {
                                 </div>
                             </div>
                             <div className="md:w-1/2">
-                                {/* <img
+                                <img
                                     className="w-full h-full object-cover"
-                                    src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                    src="/assets/incentives/Incentives.webp"
                                     alt="Team enjoying incentive trip in Nepal"
-                                /> */}
+                                />
                             </div>
                         </div>
                     </div>
@@ -426,7 +426,7 @@ const IncentivesPage = () => {
                         </p>
                     </div>
 
-                    <div className="flex justify-center mb-10">
+                    {/* <div className="flex justify-center mb-10">
                         <div className="inline-flex bg-gray-100 p-1 rounded-lg">
                             {['all', 'adventure', 'luxury', 'cultural'].map((tab) => (
                                 <button
@@ -444,7 +444,7 @@ const IncentivesPage = () => {
                                 </button>
                             ))}
                         </div>
-                    </div>
+                    </div> */}
 
                     <div ref={experiencesRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {incentiveExperiences.map((experience, index) => (
@@ -474,7 +474,7 @@ const IncentivesPage = () => {
             </div>
 
             {/* Sample Programs */}
-            <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+            {/* <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#1f423b] mb-4">Sample Programs</h2>
@@ -553,19 +553,16 @@ const IncentivesPage = () => {
                             ))}
                         </Swiper>
 
-                        {/* Custom Navigation */}
                         <div className="program-button-next text-[#1f423b] after:text-2xl"></div>
                         <div className="program-button-prev text-[#1f423b] after:text-2xl"></div>
 
-                        {/* Custom Pagination */}
                         <div className="program-pagination mt-8"></div>
                     </div>
                 </div>
-            </div>
-
+            </div> */}
 
             {/* Visual Gallery */}
-            <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+            {/* <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-[#1f423b] mb-4">Experience Gallery</h2>
@@ -622,15 +619,13 @@ const IncentivesPage = () => {
                             ))}
                         </Swiper>
 
-                        {/* Custom Navigation */}
                         <div className="gallery-button-next text-[#1f423b] after:text-2xl"></div>
                         <div className="gallery-button-prev text-[#1f423b] after:text-2xl"></div>
 
-                        {/* Custom Pagination */}
                         <div className="gallery-pagination mt-8"></div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* Call-to-Action Banner */}
             <div
@@ -667,14 +662,14 @@ const IncentivesPage = () => {
                                 <span className="text-gray-700">Unforgettable experiences</span>
                             </div>
                         </div>
-                        <a href="/contact">
+                        <Link to="/contact">
                             <button
                                 onClick={handleGetInTouch}
                                 className="px-8 py-4 bg-[#fcd00d] text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
                             >
                                 Start Planning
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

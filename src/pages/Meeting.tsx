@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useNavigate } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Link, useNavigate } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -55,46 +53,6 @@ const MeetingsPage = () => {
             title: 'On-site Support',
             description: 'Dedicated event managers for seamless execution',
             details: 'Professional on-site support throughout your event. Our dedicated event managers coordinate all aspects in real-time, troubleshoot issues, and ensure everything runs according to plan.'
-        }
-    ];
-
-    // Featured venues data with enhanced details
-    const featuredVenues = [
-        {
-            name: 'Soaltee Kathmandu',
-            image: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            capacity: 'Conference Hall – 500 pax',
-            facilities: 'AV Equipment, High-speed WiFi, Catering Services',
-            location: 'Tahachal, Kathmandu',
-            description: 'Luxury hotel with extensive conference facilities and beautiful gardens, ideal for prestigious corporate events.',
-            rating: 4.8
-        },
-        {
-            name: 'Hyatt Regency Kathmandu',
-            image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            capacity: 'Grand Ballroom – 700 pax',
-            facilities: 'Hybrid Meeting Capabilities, Simultaneous Translation, Event Planning',
-            location: 'Boudhanath, Kathmandu',
-            description: 'Modern business hotel with state-of-the-art meeting spaces and exceptional service standards.',
-            rating: 4.7
-        },
-        {
-            name: 'Temple Tree Resort, Pokhara',
-            image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            capacity: 'Lakeside Pavilion – 300 pax',
-            facilities: 'Outdoor Venue, Natural Lighting, Scenic Views',
-            location: 'Lakeside, Pokhara',
-            description: 'Stunning lakeside resort offering unique outdoor venues with panoramic mountain views.',
-            rating: 4.9
-        },
-        {
-            name: 'Hotel Yak & Yeti',
-            image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            capacity: 'Convention Center – 1000 pax',
-            facilities: 'Multiple Breakout Rooms, Exhibition Space, Catering',
-            location: 'Durbar Marg, Kathmandu',
-            description: 'Heritage hotel with extensive convention facilities in the heart of Kathmandu\'s business district.',
-            rating: 4.6
         }
     ];
 
@@ -275,27 +233,6 @@ const MeetingsPage = () => {
     }, [location.pathname]); // Trigger on route path change
 
 
-
-    // Render star rating
-    const renderRating = (rating: number) => {
-        return (
-            <div className="flex items-center">
-                {[...Array(5)].map((_, i) => (
-                    <svg
-                        key={i}
-                        className={`w-4 h-4 ${i < Math.floor(rating) ? 'text-[#fcd00d]' : 'text-gray-300'}`}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                ))}
-                <span className="ml-1 text-sm text-gray-600">{rating}</span>
-            </div>
-        );
-    };
-
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
             {/* Hero Section */}
@@ -315,34 +252,14 @@ const MeetingsPage = () => {
                     <p className="text-xl md:text-2xl text-gray-200 mb-6 max-w-3xl mx-auto">
                         Tailored corporate meeting solutions in Nepal's world-class venues, designed for productivity and prestige.
                     </p>
-                    <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-                        <div className="flex items-center justify-center text-white">
-                            <svg className="w-5 h-5 mr-2 text-[#fcd00d]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            <span>10+ Successful Events</span>
-                        </div>
-                        <div className="flex items-center justify-center text-white">
-                            <svg className="w-5 h-5 mr-2 text-[#fcd00d]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            <span>25+ Premium Venues</span>
-                        </div>
-                        <div className="flex items-center justify-center text-white">
-                            <svg className="w-5 h-5 mr-2 text-[#fcd00d]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                            </svg>
-                            <span>98% Client Satisfaction</span>
-                        </div>
-                    </div>
-                    <a href="/contact">
+                    <Link to="/contact">
                         <button
                             onClick={handleGetInTouch}
                             className="px-8 py-4 bg-[#fcd00d] text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
                         >
                             Plan Your Meeting
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -480,134 +397,6 @@ const MeetingsPage = () => {
                 </div>
             </div>
 
-            {/* Showcase Featured Venues - Swiper */}
-            <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#1f423b] mb-4">Featured Venues</h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Premium locations equipped for world-class corporate events
-                        </p>
-                    </div>
-
-                    <div ref={venuesRef} className="relative">
-                        <Swiper
-                            modules={[Navigation, Pagination, Autoplay]}
-                            spaceBetween={30}
-                            slidesPerView={1}
-                            navigation={{
-                                nextEl: '.swiper-button-next',
-                                prevEl: '.swiper-button-prev',
-                            }}
-                            pagination={{
-                                clickable: true,
-                                el: '.swiper-pagination',
-                            }}
-                            autoplay={{
-                                delay: 5000,
-                                disableOnInteraction: false,
-                            }}
-                            breakpoints={{
-                                640: {
-                                    slidesPerView: 2,
-                                },
-                                1024: {
-                                    slidesPerView: 3,
-                                },
-                            }}
-                            className="venues-swiper"
-                        >
-                            {featuredVenues.map((venue, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
-                                        <div className="h-56 overflow-hidden relative">
-                                            <img
-                                                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                                                src={venue.image}
-                                                alt={venue.name}
-                                            />
-                                            <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1 text-sm font-medium text-[#1f423b]">
-                                                {renderRating(venue.rating)}
-                                            </div>
-                                        </div>
-                                        <div className="p-6 flex-grow flex flex-col">
-                                            <h3 className="text-xl font-bold text-[#1f423b] mb-2">{venue.name}</h3>
-                                            <div className="flex items-center text-sm text-gray-500 mb-3">
-                                                <svg className="w-4 h-4 mr-1 text-[#fcd00d]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                                                </svg>
-                                                {venue.location}
-                                            </div>
-                                            <div className="mb-3">
-                                                <span className="inline-block px-3 py-1 text-sm font-semibold text-white bg-[#1f423b] rounded-full">
-                                                    {venue.capacity}
-                                                </span>
-                                            </div>
-                                            <p className="text-gray-600 mb-4 flex-grow">{venue.description}</p>
-                                            <div className="text-sm text-gray-600 mb-4">
-                                                <span className="font-medium">Facilities:</span> {venue.facilities}
-                                            </div>
-                                            <button
-                                                onClick={handleGetInTouch}
-                                                className="w-full py-2 bg-[#fcd00d] text-[#1f423b] font-medium rounded-lg hover:bg-opacity-90 transition duration-300"
-                                            >
-                                                Inquire About This Venue
-                                            </button>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-
-                        {/* Custom Navigation */}
-                        <div className="swiper-button-next text-[#1f423b] after:text-2xl"></div>
-                        <div className="swiper-button-prev text-[#1f423b] after:text-2xl"></div>
-
-                        {/* Custom Pagination */}
-                        <div className="swiper-pagination mt-8"></div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Case Studies Section */}
-            <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#1f423b] mb-4">Proven Excellence in Corporate Meetings</h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Discover how we've helped organizations achieve their event goals
-                        </p>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {caseStudies.map((study, index) => (
-                            <div key={index} className="bg-gray-50 rounded-2xl shadow-xl overflow-hidden">
-                                <div className="md:flex h-full">
-                                    <div className="md:w-2/5">
-                                        <img
-                                            className="w-full h-48 md:h-full object-cover"
-                                            src={study.image}
-                                            alt={study.title}
-                                        />
-                                    </div>
-                                    <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-center">
-                                        <h3 className="text-xl font-bold text-[#1f423b] mb-2">{study.title}</h3>
-                                        <p className="text-gray-600 mb-6">{study.description}</p>
-                                        <div className="grid grid-cols-2 gap-4">
-                                            {study.stats.map((stat, idx) => (
-                                                <div key={idx} className="bg-white p-3 rounded-lg shadow-sm">
-                                                    <div className="text-xl font-bold text-[#fcd00d]">{stat.value}</div>
-                                                    <div className="text-sm text-gray-600">{stat.label}</div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
 
             {/* Call-to-Action Banner */}
             <div
@@ -645,14 +434,14 @@ const MeetingsPage = () => {
                                 <span className="text-gray-700">Customizable packages</span>
                             </div>
                         </div>
-                        <a href="/contact">
+                        <Link to="/contact">
                             <button
                                 onClick={handleGetInTouch}
                                 className="px-8 py-4 bg-[#fcd00d] text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
                             >
                                 Get in Touch
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

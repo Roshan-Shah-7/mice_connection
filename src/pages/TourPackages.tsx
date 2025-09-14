@@ -50,7 +50,7 @@ const Hero: React.FC<{ currency: Currency, onCurrencyChange: (c: Currency) => vo
                 <div className="hero-bg-shape absolute -bottom-20 -right-20 w-96 h-96 bg-brand-dark/10 rounded-full blur-3xl animate-pulse-slow"></div>
             </div>
 
-            <div className="absolute top-6 right-6 z-30">
+            <div className="absolute top-30 right-6 z-30">
                 <div className="bg-[#fcd00e] backdrop-blur-sm rounded-full shadow-md p-1 flex border border-neutral-200">
                     <button onClick={() => onCurrencyChange('USD')} className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-300 ${currency === 'USD' ? 'bg-[#11342f] text-white' : 'text-neutral-600 hover:bg-neutral-100'}`}>
                         $ USD

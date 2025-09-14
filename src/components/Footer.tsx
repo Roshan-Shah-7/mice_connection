@@ -264,6 +264,9 @@ const Footer = () => {
                         <p className="text-gray-400 text-sm mb-4 md:mb-0">
                             © {new Date().getFullYear()} The MICE Connection. All rights reserved.
                         </p>
+                        <p className='text-gray-400 text-sm mb-4 md:mb-0'>
+                            Developed by: <a href="https://linktrix.tech/" className='hover:text-white duration-500'>Link Trix Pvt. Ltd.</a>
+                        </p>
                         <div className="flex space-x-6 text-sm">
                             <a href="/privacy" className="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                                 Privacy Policy

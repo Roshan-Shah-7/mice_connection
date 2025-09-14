@@ -1,16 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useNavigate } from 'react-router-dom';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Link, useNavigate } from 'react-router-dom';
 import 'swiper/swiper-bundle.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ExhibitionsPage = () => {
     const navigate = useNavigate();
-    const [activeVenue, setActiveVenue] = useState('all');
     const heroRef = useRef<HTMLDivElement>(null);
     const whyNepalRef = useRef<HTMLDivElement>(null);
     const servicesRef = useRef<HTMLDivElement>(null);
@@ -62,92 +59,6 @@ const ExhibitionsPage = () => {
             title: 'Hybrid Solutions',
             description: 'Virtual exhibition platforms',
             details: 'Cutting-edge hybrid exhibition solutions combining physical and virtual experiences. We provide virtual exhibition platforms, live streaming, interactive digital content, and online networking opportunities to extend your reach beyond physical boundaries.'
-        }
-    ];
-
-    // Exhibition venues data
-    const exhibitionVenues = [
-        {
-            name: 'Bhrikuti Mandap International Convention Centre',
-            category: 'convention',
-            image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            capacity: 'Up to 300 exhibition booths',
-            location: 'Kathmandu',
-            description: 'Nepal\'s premier exhibition venue with large floor space and modern facilities for major trade shows.',
-            features: 'Exhibition halls, meeting rooms, catering services, ample parking'
-        },
-        {
-            name: 'Soaltee Kathmandu',
-            category: 'luxury',
-            image: 'https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            capacity: 'Up to 100 exhibition booths',
-            location: 'Kathmandu',
-            description: 'Luxury hotel with elegant exhibition spaces and beautiful gardens for outdoor exhibitions.',
-            features: 'Ballroom, exhibition halls, garden spaces, business center'
-        },
-        {
-            name: 'International Exhibition Centre, Bhaktapur',
-            category: 'convention',
-            image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            capacity: 'Up to 500 exhibition booths',
-            location: 'Bhaktapur',
-            description: 'Modern exhibition facility designed specifically for large-scale trade fairs and exhibitions.',
-            features: 'Multiple exhibition halls, conference rooms, food courts, parking facilities'
-        },
-        {
-            name: 'Hotel Yak & Yeti',
-            category: 'luxury',
-            image: 'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            capacity: 'Up to 80 exhibition booths',
-            location: 'Kathmandu',
-            description: 'Heritage hotel with versatile exhibition spaces in the heart of Kathmandu\'s business district.',
-            features: 'Exhibition hall, breakout rooms, business center, fine dining'
-        },
-        {
-            name: 'Pokhara Exhibition Centre',
-            category: 'convention',
-            image: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            capacity: 'Up to 200 exhibition booths',
-            location: 'Pokhara',
-            description: 'Scenic exhibition venue with mountain views, perfect for specialized trade shows and exhibitions.',
-            features: 'Exhibition hall, outdoor spaces, meeting rooms, catering services'
-        },
-        {
-            name: 'Nepal Art Council Gallery',
-            category: 'unique',
-            image: 'https://images.unsplash.com/photo-1571003120398-11c0e4e3cb1b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            capacity: 'Up to 50 exhibition booths',
-            location: 'Kathmandu',
-            description: 'Cultural venue ideal for art exhibitions, craft fairs, and specialized trade shows.',
-            features: 'Gallery spaces, exhibition halls, cultural ambiance, central location'
-        }
-    ];
-
-    // Case studies data
-    const caseStudies = [
-        {
-            title: 'International Trade Expo 2023',
-            description: 'Major trade exhibition with 200+ exhibitors and 10,000+ visitors',
-            image: 'https://images.unsplash.com/photo-1590766940554-153a0b48a919?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            stats: [
-                { value: '200+', label: 'Exhibitors' },
-                { value: '10,000+', label: 'Visitors' },
-                { value: '5', label: 'Days' },
-                { value: '15', label: 'Countries' }
-            ],
-            highlights: 'Complete exhibition management, booth design, marketing campaign, and post-event follow-up.'
-        },
-        {
-            title: 'Nepal Tourism & Travel Expo',
-            description: 'Specialized tourism exhibition featuring travel industry stakeholders',
-            image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            stats: [
-                { value: '150+', label: 'Exhibitors' },
-                { value: '7,500+', label: 'Visitors' },
-                { value: '3', label: 'Days' },
-                { value: '25', label: 'B2B Meetings' }
-            ],
-            highlights: 'Themed booth designs, industry-specific networking events, and hybrid exhibition components.'
         }
     ];
 
@@ -350,12 +261,6 @@ const ExhibitionsPage = () => {
     }, [location.pathname]); // Trigger on route path change
 
 
-
-    // Filter venues by category
-    const filteredVenues = activeVenue === 'all'
-        ? exhibitionVenues
-        : exhibitionVenues.filter(venue => venue.category === activeVenue);
-
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
             {/* Hero Section */}
@@ -390,14 +295,14 @@ const ExhibitionsPage = () => {
                             <span>Flawless Execution</span>
                         </div>
                     </div>
-                    <a href="/contact">
+                    <Link to="/contact">
                         <button
                             onClick={handleGetInTouch}
                             className="px-8 py-4 bg-[#fcd00d] text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
                         >
                             Plan Your Exhibition
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
 
@@ -455,7 +360,7 @@ const ExhibitionsPage = () => {
                             <div className="md:w-1/2">
                                 <img
                                     className="w-full h-full object-cover"
-                                    src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                    src="/assets/about/About4.webp"
                                     alt="Exhibition in Nepal"
                                 />
                             </div>
@@ -494,150 +399,6 @@ const ExhibitionsPage = () => {
                 </div>
             </div>
 
-            {/* Exhibition Venues in Nepal */}
-            <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#1f423b] mb-4">Exhibition Venues in Nepal</h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Premium locations equipped for world-class exhibitions and trade shows
-                        </p>
-                    </div>
-
-                    <div className="flex justify-center mb-10">
-                        <div className="inline-flex bg-gray-100 p-1 rounded-lg">
-                            {['all', 'convention', 'luxury', 'unique'].map((category) => (
-                                <button
-                                    key={category}
-                                    onClick={() => setActiveVenue(category)}
-                                    className={`px-4 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${activeVenue === category
-                                        ? 'bg-white text-[#1f423b] shadow'
-                                        : 'text-gray-600 hover:text-[#1f423b]'
-                                        }`}
-                                >
-                                    {category === 'all' && 'All Venues'}
-                                    {category === 'convention' && 'Convention Centers'}
-                                    {category === 'luxury' && 'Luxury Hotels'}
-                                    {category === 'unique' && 'Unique Venues'}
-                                </button>
-                            ))}
-                        </div>
-                    </div>
-
-                    <div ref={venuesRef} className="relative">
-                        <Swiper
-                            modules={[Navigation, Pagination, Autoplay]}
-                            spaceBetween={30}
-                            slidesPerView={1}
-                            navigation={{
-                                nextEl: '.venue-button-next',
-                                prevEl: '.venue-button-prev',
-                            }}
-                            pagination={{
-                                clickable: true,
-                                el: '.venue-pagination',
-                            }}
-                            autoplay={{
-                                delay: 5000,
-                                disableOnInteraction: false,
-                            }}
-                            breakpoints={{
-                                640: {
-                                    slidesPerView: 2,
-                                },
-                                1024: {
-                                    slidesPerView: 3,
-                                },
-                            }}
-                            className="venues-swiper"
-                        >
-                            {filteredVenues.map((venue, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
-                                        <div className="h-56 overflow-hidden relative">
-                                            <img
-                                                className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                                                src={venue.image}
-                                                alt={venue.name}
-                                            />
-                                            <div className="absolute top-4 right-4 bg-white bg-opacity-90 rounded-full px-3 py-1 text-sm font-medium text-[#1f423b]">
-                                                {venue.capacity}
-                                            </div>
-                                        </div>
-                                        <div className="p-6 flex-grow flex flex-col">
-                                            <h3 className="text-xl font-bold text-[#1f423b] mb-2">{venue.name}</h3>
-                                            <div className="flex items-center text-sm text-gray-500 mb-3">
-                                                <svg className="w-4 h-4 mr-1 text-[#fcd00d]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                                                </svg>
-                                                {venue.location}
-                                            </div>
-                                            <p className="text-gray-600 mb-4 flex-grow">{venue.description}</p>
-                                            <div className="text-sm text-gray-600 mb-4">
-                                                <span className="font-medium">Features:</span> {venue.features}
-                                            </div>
-                                            <button
-                                                onClick={handleGetInTouch}
-                                                className="w-full py-2 bg-[#fcd00d] text-[#1f423b] font-medium rounded-lg hover:bg-opacity-90 transition duration-300"
-                                            >
-                                                Inquire About This Venue
-                                            </button>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-
-                        {/* Custom Navigation */}
-                        <div className="venue-button-next text-[#1f423b] after:text-2xl"></div>
-                        <div className="venue-button-prev text-[#1f423b] after:text-2xl"></div>
-
-                        {/* Custom Pagination */}
-                        <div className="venue-pagination mt-8"></div>
-                    </div>
-                </div>
-            </div>
-
-            {/* Case Study / Past Exhibition Showcase */}
-            <div className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#1f423b] mb-4">Success Stories</h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Discover how we've delivered exceptional exhibition experiences
-                        </p>
-                    </div>
-
-                    <div ref={caseStudyRef} className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        {caseStudies.map((study, index) => (
-                            <div key={index} className="bg-gray-50 rounded-2xl shadow-xl overflow-hidden">
-                                <div className="md:flex h-full">
-                                    <div className="md:w-2/5">
-                                        <img
-                                            className="w-full h-48 md:h-full object-cover"
-                                            src={study.image}
-                                            alt={study.title}
-                                        />
-                                    </div>
-                                    <div className="md:w-3/5 p-6 md:p-8 flex flex-col justify-center">
-                                        <h3 className="text-xl font-bold text-[#1f423b] mb-2">{study.title}</h3>
-                                        <p className="text-gray-600 mb-6">{study.description}</p>
-                                        <div className="grid grid-cols-2 gap-4 mb-6">
-                                            {study.stats.map((stat, idx) => (
-                                                <div key={idx} className="bg-white p-3 rounded-lg shadow-sm">
-                                                    <div className="text-xl font-bold text-[#fcd00d]">{stat.value}</div>
-                                                    <div className="text-sm text-gray-600">{stat.label}</div>
-                                                </div>
-                                            ))}
-                                        </div>
-                                        <p className="text-sm text-gray-600 italic">{study.highlights}</p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
 
             {/* Why Choose The MICE Connection? */}
             <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
@@ -700,14 +461,14 @@ const ExhibitionsPage = () => {
                                 <span className="text-gray-700">Exceptional results</span>
                             </div>
                         </div>
-                        <a href="/contact">
+                        <Link to="/contact">
                             <button
                                 onClick={handleGetInTouch}
                                 className="px-8 py-4 bg-[#fcd00d] text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
                             >
                                 Get in Touch
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

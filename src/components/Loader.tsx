@@ -178,17 +178,8 @@ const Loader: React.FC<LoaderProps> = ({ onLoaded, onAnimationComplete }) => {
             </div>
 
             {/* Compass Element */}
-            <div className="absolute top-6 right-6 w-12 h-12 opacity-80">
-                <div className="relative w-full h-full">
-                    <div className="absolute inset-0 bg-white rounded-full shadow-md border border-gray-200"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                        <div className="w-1 h-4 bg-red-600 absolute -translate-y-2.5"></div>
-                        <div className="w-1 h-4 bg-gray-800 absolute translate-y-2.5"></div>
-                        <div className="h-1 w-4 bg-gray-800 absolute -translate-x-2.5"></div>
-                        <div className="h-1 w-4 bg-gray-800 absolute translate-x-2.5"></div>
-                        <div className="w-1.5 h-1.5 bg-gray-900 rounded-full"></div>
-                    </div>
-                </div>
+            <div className="absolute top-6 right-6 w-12 h-12 lg:w-20 xl:w-30">
+                <img src="/compass.webp" alt="" className='rounded-full'/>
             </div>
         </div>
     );

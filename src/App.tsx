@@ -22,6 +22,7 @@ import TermsOfServicePage from './pages/Term';
 import EventsPage from './pages/Events';
 import EventDetail from './pages/EventDetail';
 import Loader from './components/Loader';
+import ScrollToTop from './components/ScrollToTop';
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -39,6 +40,7 @@ const App = () => {
 
   return (
     <Router>
+      <ScrollToTop />
       {loading && <Loader onLoaded={() => setLoading(false)} onAnimationComplete={() => setLoaderAnimationComplete(true)} />}
       <main className={`transition-opacity duration-700 ${contentVisible ? 'opacity-100' : 'opacity-0'}`}>
         <Header />

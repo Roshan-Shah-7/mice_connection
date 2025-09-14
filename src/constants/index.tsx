@@ -14,7 +14,7 @@ export const navLinksLeft: NavLink[] = [
 export const navLinksRight: NavLink[] = [
     { label: "About Us", href: "/about" },
     { label: "Gallery", href: "/gallery" },
-    // { label: "Blogs", href: "/blogs" },
+    { label: "Blogs", href: "/blogs" },
     { label: "Contact Us", href: "/contact" },
 ];
 
