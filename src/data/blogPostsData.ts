@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
     `,
         date: "March 15, 2024",
         category: "Wellness & Retreats",
-        imageUrl: "/public/assets/blog/europ-mountain.webp",
+        imageUrl: "/assets/blog/europ-mountain.webp",
         featured: true,
         views: 2210,
         tags: ["Alpine Wellness", "Mountain Retreats", "Well-being"],
@@ -233,7 +233,7 @@ export const blogPosts: BlogPost[] = [
   `,
         date: "January 15, 2025",
         category: "Trekking Adventures",
-        imageUrl: "/public/assets/blog/arctic-Expeditions.webp",
+        imageUrl: "/assets/blog/arctic-Expeditions.webp",
         views: 3120,
         featured: true,
         tags: ["Arctic", "Adventure", "Expedition"],
@@ -274,7 +274,5 @@ export const blogPosts: BlogPost[] = [
         tags: ["Food", "Culinary", "Cuisine"],
         slug: generateSlug("Culinary Tours: A Taste of World Cuisines")
     }
-
-
 ];
 

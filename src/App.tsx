@@ -42,7 +42,7 @@ const App = () => {
     <Router>
       <ScrollToTop />
       {loading && <Loader onLoaded={() => setLoading(false)} onAnimationComplete={() => setLoaderAnimationComplete(true)} />}
-      <main className={`transition-opacity duration-700 ${contentVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <main className={`transition-opacity duration-700 ${contentVisible ? 'opacity-100 block' : 'opacity-0 overflow-hidden hidden'}`}>
         <Header />
         <Routes>
           <Route path="/" element={loaderAnimationComplete ? <Home /> : null} />
