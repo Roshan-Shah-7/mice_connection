@@ -10,13 +10,14 @@ interface LoaderProps {
 }
 
 const bootMessages = [
-    "Checking your travel itineraries...",
-    "Validating your passport...",
-    "Mapping scenic routes...",
-    "Preparing cultural insights...",
-    "Finalizing adventure details...",
-    "Ensuring sustainable travel practices...",
-    "Ready to explore!",
+"Validating Your Passport",
+"Reviewing Travel Itineraries",
+"Mapping Scenic Routes",
+"Assigning Your Personal Guide",
+"Preparing Cultural Insights",
+"Finalizing Adventure Details",
+"Ensuring Sustainable Travel Practices",
+"Camera and Microphone: Ready, Set, Go!",
 ];
 
 const Loader: React.FC<LoaderProps> = ({ onLoaded, onAnimationComplete }) => {

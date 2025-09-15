@@ -16,6 +16,7 @@ interface Event {
     imageUrl: string;
     category: string;
     featured?: boolean;
+    slug?: string;
 }
 
 const EventsPage = () => {
@@ -30,7 +31,8 @@ const EventsPage = () => {
         description: work.description,
         imageUrl: work.image,
         category: "Corporate",
-        featured: false
+        featured: false,
+        slug: work.slug
     }));
 
     const filteredEvents = events;
@@ -198,8 +200,7 @@ const EventsPage = () => {
                                         <button
                                             className="w-full py-3 px-4 bg-[#10362e] text-white font-medium rounded-lg hover:bg-[#fcd10b] hover:text-[#10362e] transition-all duration-300 flex items-center justify-center group"
                                             onClick={() => {
-                                                const slug = event.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-*|-*$/g, '');
-                                                navigate(`/event-detail/${slug}`);
+                                                navigate(`/event-detail/${event.slug}`);
                                             }}
                                         >
                                             View Details

@@ -238,8 +238,7 @@ const TourPackageOverview = () => {
                                             <button
                                                 className="px-6 py-3 bg-[#D4AF37] text-white font-medium rounded-full transition-all duration-500 hover:bg-[#0e332e] transform hover:scale-105"
                                                 onClick={() => {
-                                                    const slug = tour.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-*|-*$/g, '');
-                                                    navigate(`/tour-packages/${slug}`);
+                                                    navigate(`/tour-packages/${tour.slug}`);
                                                 }}
                                             >
                                                 {tour.category === "Trekking" ? "Start Your Journey" : "View Details"}
