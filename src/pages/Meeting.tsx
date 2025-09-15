@@ -21,7 +21,7 @@ const MeetingsPage = () => {
         {
             icon: '🏨',
             title: 'Venue Selection',
-            description: 'Partnerships with 5-star hotels, convention centers, and boutique spaces',
+            description: 'Partnerships with 4-star hotels, convention centers, and boutique spaces',
             details: 'We partner with Nepal\'s premier venues to offer the perfect setting for your corporate event. From intimate boardrooms to grand convention centers, we have access to spaces that combine modern amenities with authentic Nepali hospitality.'
         },
         {
@@ -53,33 +53,6 @@ const MeetingsPage = () => {
             title: 'On-site Support',
             description: 'Dedicated event managers for seamless execution',
             details: 'Professional on-site support throughout your event. Our dedicated event managers coordinate all aspects in real-time, troubleshoot issues, and ensure everything runs according to plan.'
-        }
-    ];
-
-
-    // Case studies data
-    const caseStudies = [
-        {
-            title: 'Global Tech Summit 2023',
-            description: 'International technology conference for 500+ delegates',
-            image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            stats: [
-                { value: '500+', label: 'Attendees' },
-                { value: '25', label: 'Countries' },
-                { value: '95%', label: 'Satisfaction' },
-                { value: '3', label: 'Days' }
-            ]
-        },
-        {
-            title: 'Asia-Pacific Finance Forum',
-            description: 'High-level financial sector meeting with government officials',
-            image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-            stats: [
-                { value: '300+', label: 'Delegates' },
-                { value: '18', label: 'Countries' },
-                { value: '12', label: 'Speakers' },
-                { value: '2', label: 'Days' }
-            ]
         }
     ];
 

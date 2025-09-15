@@ -9,6 +9,7 @@ import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/module
 
 // Import Swiper styles
 import 'swiper/swiper-bundle.css';
+import { Link } from 'react-router-dom';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -312,11 +313,11 @@ const Testimonials = () => {
                         <p className="text-gray-700 mb-6">
                             Join our list of satisfied clients and let us help you create an unforgettable event experience.
                         </p>
-                        <a href="/contact" className='cursor-pointer'>
+                        <Link to="/contact" className='cursor-pointer'>
                             <button className="px-8 py-3 bg-[#0e332e] text-white font-medium rounded-full hover:bg-[#D4AF37] hover:text-[#0e332e] transform transition-all duration-500 hover:scale-105">
                                 Get in Touch
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

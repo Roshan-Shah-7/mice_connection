@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { Link } from 'react-router-dom';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -307,11 +308,11 @@ const About = () => {
                 {/* Call to Action */}
                 <div className="text-center mt-16">
                     <h3 className="text-2xl font-semibold text-[#0e332e] mb-6">Ready to Create Unforgettable Events?</h3>
-                    <a href="/contact">
+                    <Link to="/contact">
                         <button className="bg-[#0e332e] text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-[#1a4d47] hover:shadow-lg transform hover:-translate-y-1">
                             Contact Us Today
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

@@ -44,49 +44,49 @@ const ActivitiesSection: React.FC = () => {
             name: "Paragliding", 
             description: "Soar above Pokhara", 
             gradient: "from-blue-500 to-blue-600",
-            image: "https://images.unsplash.com/photo-1590123558259216-8c467a31c65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/paragliding.webp"
         },
         { 
             icon: "🚣", 
-            name: "White Water Rafting", 
+            name: "Rafting", 
             description: "Thrilling river adventures", 
             gradient: "from-cyan-500 to-cyan-600",
-            image: "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/rafting.webp"
         },
         { 
             icon: "🪢", 
             name: "Bungee Jumping", 
             description: "160m jump", 
             gradient: "from-red-500 to-red-600",
-            image: "https://images.unsplash.com/photo-1635863138276-d4c473c52ef4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/bungee-jumping.webp"
         },
         { 
             icon: "🧗", 
             name: "Rock Climbing", 
             description: "Scale new heights", 
             gradient: "from-gray-600 to-gray-700",
-            image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/rock-climbing.webp"
         },
         { 
             icon: "🚵", 
             name: "Mountain Biking", 
             description: "Off-road trails", 
             gradient: "from-green-500 to-green-600",
-            image: "https://images.unsplash.com/photo-1571068316341-6d20f2b9ef6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/mountain-biking.webp"
         },
         { 
             icon: "🐘", 
             name: "Jungle Safari", 
             description: "Wildlife encounters", 
             gradient: "from-yellow-600 to-yellow-700",
-            image: "https://images.unsplash.com/photo-1599059813005-11265ba4c8a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/jungle-safari.webp"
         },
         { 
             icon: "🚁", 
             name: "Helicopter Tours", 
             description: "Aerial mountain views", 
             gradient: "from-purple-500 to-purple-600",
-            image: "https://images.unsplash.com/photo-1445109673451-c511bb51bd0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/helicopter-tours.webp"
         },
         { 
             icon: "🎈", 
@@ -100,14 +100,14 @@ const ActivitiesSection: React.FC = () => {
             name: "Zip Lining", 
             description: "World's steepest zip line", 
             gradient: "from-indigo-500 to-indigo-600",
-            image: "https://images.unsplash.com/photo-1590071089561-2085df92ef4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/zip-line.webp"
         },
         { 
             icon: "🌄", 
             name: "Canyoning", 
             description: "Waterfall descents", 
             gradient: "from-teal-500 to-teal-600",
-            image: "https://images.unsplash.com/photo-1598887147662-4ce0ed4b1d5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/canyoning.webp"
         },
         { 
             icon: "🙏", 
@@ -121,21 +121,21 @@ const ActivitiesSection: React.FC = () => {
             name: "Honey Hunting", 
             description: "Traditional cliff harvesting", 
             gradient: "from-amber-500 to-amber-600",
-            image: "https://images.unsplash.com/photo-1558645832-ea4a8c6eab5b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/honey-hunting.webp"
         },
         { 
             icon: "🏛️", 
             name: "Cultural Tours", 
             description: "UNESCO heritage sites", 
             gradient: "from-rose-500 to-rose-600",
-            image: "https://images.unsplash.com/photo-1544735716-392fe2489ffc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/cultural-tour.webp"
         },
         { 
             icon: "🎪", 
             name: "Festival Experiences", 
             description: "Cultural celebrations", 
             gradient: "from-violet-500 to-violet-600",
-            image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            image: "/assets/advanture/festival.webp"
         }
     ];
 
@@ -153,7 +153,7 @@ const ActivitiesSection: React.FC = () => {
                     }}
                 >
                     <div 
-                        className="absolute w-80 h-56 rounded-2xl overflow-hidden shadow-2xl transform -translate-x-1/2 -translate-y-1/2"
+                        className="absolute w-80 h-56 lg:h-80 lg:w-120 rounded-2xl overflow-hidden shadow-2xl transform -translate-x-1/2 -translate-y-1/2"
                         style={{
                             left: mousePosition.x,
                             top: mousePosition.y,
@@ -184,7 +184,7 @@ const ActivitiesSection: React.FC = () => {
                     </p>
                 </div>
                 
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
                     {activities.map((activity, index) => (
                         <div 
                             key={index} 
@@ -193,7 +193,7 @@ const ActivitiesSection: React.FC = () => {
                             onMouseLeave={() => setHoveredActivity(null)}
                         >
                             <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-20 transition-opacity duration-300 rounded-2xl" style={{ background: `linear-gradient(to bottom right, ${activity.gradient})` }}></div>
-                            <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                            <div className="relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 w-55 h-46">
                                 <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">{activity.icon}</div>
                                 <h3 className="text-lg font-bold text-[#143a31] mb-2 text-center">{activity.name}</h3>
                                 <p className="text-sm text-gray-600 text-center">{activity.description}</p>

@@ -3,6 +3,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { TbBuildingCommunity, TbGift, TbUsers, TbPodium, TbArrowRight } from 'react-icons/tb';
 import CategoryCard from './CategoryCard';
+import { Link } from 'react-router-dom';
 
 const categories = [
     {
@@ -90,7 +91,7 @@ const Hero: React.FC = () => {
                 </div>
 
                 {/* Right Column - Content */}
-                <div className="hero-content w-full lg:w-[40%] flex flex-col justify-center p-8 md:p-12 lg:p-16">
+                <div className="hero-content w-full lg:w-[45%] flex flex-col justify-center p-8 md:p-12 lg:p-16">
                     <div className="mx-auto lg:mx-0 w-full">
                         <h1
                             id="hero-title"
@@ -126,13 +127,17 @@ const Hero: React.FC = () => {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
-                                Get Started
-                                <TbArrowRight className="ml-2" />
-                            </button>
-                            <button className="border border-gray-300 hover:border-amber-500 text-gray-700 hover:text-amber-600 font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center">
-                                Learn More
-                            </button>
+                            <Link to="/contact">
+                                <button className="bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                                    Get Started
+                                    <TbArrowRight className="ml-2" />
+                                </button>
+                            </Link>
+                            <Link to="/about">
+                                <button className="border border-gray-300 hover:border-amber-500 text-gray-700 hover:text-amber-600 font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center">
+                                    Learn More
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

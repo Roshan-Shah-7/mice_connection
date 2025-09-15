@@ -83,24 +83,24 @@ const Hero: React.FC<{ currency: Currency, onCurrencyChange: (c: Currency) => vo
 
                         <div className="hero-content grid grid-cols-3 gap-4 text-center border-t border-b border-neutral-200 py-6">
                             <div>
-                                <div className="text-4xl font-extrabold text-brand-dark">98%</div>
+                                <div className="text-4xl font-extrabold text-brand-dark">85%</div>
                                 <div className="text-sm text-neutral-600 mt-1 tracking-wide">Happy Travelers</div>
                             </div>
                             <div>
-                                <div className="text-4xl font-extrabold text-brand-dark">15+</div>
-                                <div className="text-sm text-neutral-600 mt-1 tracking-wide">Years Experience</div>
+                                <div className="text-4xl font-extrabold text-brand-dark">24/7</div>
+                                <div className="text-sm text-neutral-600 mt-1 tracking-wide">Support</div>
                             </div>
                             <div>
-                                <div className="text-4xl font-extrabold text-brand-dark">50+</div>
+                                <div className="text-4xl font-extrabold text-brand-dark">10+</div>
                                 <div className="text-sm text-neutral-600 mt-1 tracking-wide">Unique Packages</div>
                             </div>
                         </div>
 
-                        <div className="hero-content flex flex-col sm:flex-row gap-4">
-                            <button onClick={() => document.getElementById('tours-section')?.scrollIntoView({ behavior: 'smooth' })} className="bg-[#10362e] text-white px-7 py-3.5 rounded-xl font-bold text-base hover:shadow-lg transition-all duration-300 transform hover:scale-105 border-2 border-neutral-200 hover:border-brand-dark">
-                                Browse All Tours
-                            </button>
-                        </div>
+                        <button onClick={() => document.getElementById('tours-section')?.scrollIntoView({ behavior: 'smooth' })}
+                            className="bg-[#1c4038] text-white px-7 py-4 rounded-xl font-bold text-base hover:shadow-lg 
+                            transition-all duration-300 transform hover:scale-105 border-2 border-neutral-200 cursor-pointer">
+                            Browse All Tours
+                        </button>
                     </div>
                     <div className="hidden lg:block relative h-[550px] w-full">
                         <div className="hero-main-image-container absolute top-0 left-0 w-[70%] h-[80%] rounded-3xl shadow-2xl overflow-hidden">
@@ -143,7 +143,7 @@ const TourPackagesPage: React.FC = () => {
     };
 
     const categories = useMemo(() => [
-        { name: "All", icon: "🌍" }, { name: "Trekking", icon: "🏔️" }, { name: "Cultural", icon: "🏛️" }, { name: "Adventure", icon: "🪂" }, { name: "Wildlife", icon: "🦒" }, { name: "Spiritual", icon: "🙏" }, { name: "Biking", icon: "🚴" }
+        { name: "All", icon: "🗺️" }, {name: "Women Centric", icon: "👯‍♀️"}, { name: "Cultural", icon: "🏛️" }, { name: "Adventure", icon: "🪂" }, { name: "Wildlife", icon: "🦒" }, { name: "Spiritual", icon: "🙏" }, { name: "Family", icon: "👨‍👩‍👧‍👦" }
     ], []);
 
     const difficulties = useMemo(() => ["All", "Easy", "Moderate", "Challenging"], []);

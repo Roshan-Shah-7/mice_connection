@@ -78,7 +78,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoaded, onAnimationComplete }) => {
             role="status"
         >
             {/* Rest of the loader content remains the same */}
-            <div className="">
+            <div className="hidden lg:block">
                 {TravelLottieView}
             </div>
 

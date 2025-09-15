@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -22,8 +22,6 @@ const EventsPage = () => {
     const navigate = useNavigate();
     const heroRef = useRef<HTMLDivElement>(null);
     const eventsRef = useRef<HTMLDivElement>(null);
-    const [activeFilter, setActiveFilter] = useState<string>('all');
-
     const events: Event[] = latestWorks.map(work => ({
         id: work.id,
         title: work.title,
@@ -35,11 +33,7 @@ const EventsPage = () => {
         featured: false
     }));
 
-    const categories = ['all', 'Corporate'];
-
-    const filteredEvents = activeFilter === 'all'
-        ? events
-        : events.filter(event => event.category === activeFilter);
+    const filteredEvents = events;
 
     useEffect(() => {
         // Hero section animation
@@ -73,7 +67,6 @@ const EventsPage = () => {
         // Events section animation
         if (eventsRef.current) {
             const sectionTitle = eventsRef.current.querySelector('.section-title');
-            const filterButtons = eventsRef.current.querySelectorAll('.filter-btn');
             const eventCards = eventsRef.current.querySelectorAll('.event-card');
 
             gsap.fromTo(sectionTitle,
@@ -90,20 +83,6 @@ const EventsPage = () => {
                 }
             );
 
-            gsap.fromTo(filterButtons,
-                { y: 30, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.6,
-                    stagger: 0.05,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: filterButtons[0],
-                        start: "top 80%"
-                    }
-                }
-            );
 
             gsap.fromTo(eventCards,
                 { y: 80, opacity: 0 },
@@ -165,21 +144,6 @@ const EventsPage = () => {
                         </p>
                     </div>
 
-                    {/* Filter Buttons */}
-                    <div className="flex flex-wrap justify-center gap-3 mb-12">
-                        {categories.map((category) => (
-                            <button
-                                key={category}
-                                className={`filter-btn px-5 py-2 rounded-full font-medium transition-all duration-300 ${activeFilter === category
-                                    ? 'bg-[#10362e] text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                    }`}
-                                onClick={() => setActiveFilter(category)}
-                            >
-                                {category.charAt(0).toUpperCase() + category.slice(1)}
-                            </button>
-                        ))}
-                    </div>
 
                     {/* Events Grid with Unique Layout */}
                     <div className="relative">
@@ -261,14 +225,11 @@ const EventsPage = () => {
                         Partner with The MICE Connection to bring your vision to life with our expert event planning and management services.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href="/contact">
+                        <Link to="/contact">
                             <button className="bg-[#fcd10b] text-[#10362e] font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
                                 Get Started
                             </button>
-                        </a>
-                        {/* <button className="bg-transparent border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-[#10362e] transition-all duration-300">
-                            View Our Services
-                        </button> */}
+                        </Link>
                     </div>
                 </div>
             </div>

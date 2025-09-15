@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -248,11 +248,11 @@ const LatestWork = () => {
 
                 {/* View All Projects Button */}
                 <div className="text-center mt-16">
-                    <a href="/events">
+                    <Link to="/events">
                         <button className="px-8 py-3 bg-transparent border-2 border-[#0e332e] text-[#0e332e] font-medium rounded-full hover:bg-[#0e332e] hover:text-white transition-all duration-300 hover:shadow-lg">
                             Explore All Projects
                         </button>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </section>

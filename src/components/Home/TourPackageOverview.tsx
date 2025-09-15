@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
@@ -259,11 +259,11 @@ const TourPackageOverview = () => {
                         <p className="text-gray-700 mb-6">
                             Can't find exactly what you're looking for? We can create a custom tour package tailored to your interests, budget, and schedule. Whether it's a family vacation, corporate retreat, or special celebration, we'll craft the perfect Nepalese experience for you.
                         </p>
-                        <a href="/contact">
+                        <Link to="/contact">
                             <button className="px-8 py-3 bg-transparent border-2 border-[#0e332e] text-[#0e332e] font-medium rounded-full hover:bg-[#0e332e] hover:text-white transform transition-all duration-500 hover:scale-105">
                                 Create Custom Tour
                             </button>
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

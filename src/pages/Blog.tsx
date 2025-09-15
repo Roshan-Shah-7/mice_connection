@@ -311,13 +311,7 @@ const BlogPage = () => {
                                 </div>
                                 <div className="mt-6 flex items-center justify-between">
                                     <div className="flex items-center">
-                                        <div className="flex-shrink-0">
-                                            <span className="h-10 w-10 rounded-full bg-[#fcd00d]/20 flex items-center justify-center text-[#1f423b] font-bold">
-                                                {featuredPost.author.charAt(0)}
-                                            </span>
-                                        </div>
                                         <div className="ml-3">
-                                            <p className="text-sm font-medium text-[#1f423b]">{featuredPost.author}</p>
                                             <div className="flex space-x-1 text-sm text-gray-500">
                                                 <span>{featuredPost.date}</span>
                                                 <span>•</span>
@@ -527,12 +521,6 @@ const BlogPage = () => {
                                 )}
 
                                 <div className="flex items-center justify-between">
-                                    <div className="flex items-center">
-                                        <span className="h-8 w-8 rounded-full bg-[#fcd00d]/20 flex items-center justify-center text-[#1f423b] font-bold text-sm mr-2">
-                                            {post.author.charAt(0)}
-                                        </span>
-                                        <span className="text-sm text-gray-700">{post.author}</span>
-                                    </div>
                                     <button
                                         onClick={() => navigate(`/blogs/${post.slug}`)}
                                         className="text-[#1f423b] hover:text-[#fcd00d] font-medium text-sm flex items-center transition-colors duration-300"

@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import { Link } from 'react-router-dom';
 // import { FaTiktok } from 'react-icons/fa';
 
 // Register GSAP plugins
@@ -158,12 +159,12 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {quickLinks.map((link, index) => (
                                 <li key={index}>
-                                    <a
-                                        href={link.href}
+                                    <Link
+                                        to={link.href}
                                         className="text-gray-300 hover:text-[#D4AF37] transition-colors duration-300"
                                     >
                                         {link.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -175,12 +176,12 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {services.map((service, index) => (
                                 <li key={index}>
-                                    <a
-                                        href={service.href}
+                                    <Link
+                                        to={service.href}
                                         className="text-gray-300 hover:text-[#D4AF37] transition-colors duration-300"
                                     >
                                         {service.name}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -268,12 +269,12 @@ const Footer = () => {
                             Developed by: <a href="https://linktrix.tech/" className='hover:text-white duration-500'>Link Trix Pvt. Ltd.</a>
                         </p>
                         <div className="flex space-x-6 text-sm">
-                            <a href="/privacy" className="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+                            <Link to="/privacy" className="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                                 Privacy Policy
-                            </a>
-                            <a href="/terms" className="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
+                            </Link>
+                            <Link to="/terms" className="text-gray-400 hover:text-[#D4AF37] transition-colors duration-300">
                                 Terms of Service
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

@@ -3,6 +3,290 @@ import { type TourPackage } from '../types/tourTypes';
 
 export const tourPackages: TourPackage[] =
     [
+        // Women Centric
+        {
+            "id": 31,
+            "title": "Cultural Heritage & Crafts Tour for Women",
+            "slug": "cultural-heritage-crafts-tour-women",
+            "description": "Step into the rich cultural heritage of Nepal with a specially curated 4-day Cultural Heritage & Crafts Tour for Women. Explore the artistic treasures of Kathmandu, Patan, Bhaktapur, Bungamati, and Khokana while engaging in immersive craft workshops, interacting with inspiring women artisans, and witnessing the beauty of Nepal’s timeless traditions. This unique experience offers hands-on sessions in pottery, painting, woodcarving, and jewelry-making, along with visits to women-led enterprises and vibrant markets. Discover the artistry, history, and cultural resilience of Nepalese women through this unforgettable journey!",
+            "duration": "5 Days",
+            "priceUSD": "$650",
+            "priceNPR": "रू 78,000",
+            "image": "/assets/women/women-culture.webp",
+            "category": "Women Centric",
+            "difficulty": "Easy",
+            "highlights": [
+                "Guided tours of Kathmandu, Patan, Bhaktapur & their UNESCO sites.",
+                "Pottery, painting & woodcarving workshops in Bhaktapur & Bungamati.",
+                "Traditional jewelry-making sessions in Patan.",
+                "Visit to women-led enterprises & artisan communities.",
+                "Handicraft shopping at women-owned outlets.",
+                "Evening cultural performances by women artists."
+            ],
+            "includes": [
+                "All private transportation for arrival, departure, and sightseeing.",
+                "Entrance fees to all monuments and sites as per itinerary.",
+                "English speaking female tour guide.",
+                "Accommodation in boutique hotels.",
+                "All meals (breakfast, lunch, dinner) including special dinners as mentioned.",
+                "All craft workshop fees and materials.",
+                "All applicable government taxes and service charges."
+            ],
+            "groupSize": "Small Groups (Max 12)",
+            "bestSeason": "Year-round",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival and Cultural Exploration in Kathmandu",
+                    "description": "Arrive in Kathmandu and check-in at a charming boutique hotel. Begin with a welcome session and introduction to the tour. Embark on a guided tour of UNESCO World Heritage Sites, including Swayambhunath (Monkey Temple) and Pashupatinath Temple. Visit women-led enterprises showcasing local handicrafts and sustainable products. In the evening, enjoy a traditional cultural performance by women artists, featuring dance and music."
+                },
+                {
+                    "day": 2,
+                    "title": "Bhaktapur & Pottery Workshops",
+                    "description": "After breakfast, drive to Bhaktapur, a city renowned for its well-preserved architecture and ancient traditions. Take part in an interactive pottery workshop, learning the traditional techniques from local women artisans. Participate in a painting and woodcarving session, guided by skilled women craftsmen. Explore the historic Bhaktapur Durbar Square. Shop for handmade crafts and souvenirs at women-owned outlets. End the day with a special Newari dinner at a traditional restaurant."
+                },
+                {
+                    "day": 3,
+                    "title": "Patan and Bungamati Crafts Experience",
+                    "description": "Start the morning with a visit to Patan, the city of fine arts. Join a traditional jewelry-making session with women artisans. Explore Patan Durbar Square, famous for its temples, courtyards, and museums. In the afternoon, travel to Bungamati and Khokana, two villages preserving ancient craftsmanship. Interact with local women artisans and experience an authentic cultural exchange over a home-cooked dinner."
+                },
+                {
+                    "day": 4,
+                    "title": "Handicraft Shopping & Leisure",
+                    "description": "Explore the bustling Asan Bazaar and Thamel, famous for handcrafted goods, pashminas, and souvenirs. Meet local vendors and artisans, learning the stories behind their creations. Spend the rest of the day at leisure, indulging in shopping, café hopping, or exploring on your own."
+                },
+                {
+                    "day": 5,
+                    "title": "Departure",
+                    "description": "Depart with a heart full of memories and a bag filled with treasures from Nepal’s rich artistic heritage."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/bhaktapur-pottery.webp",
+                "/assets/nepal/patan-durbar-square.webp",
+                "/assets/nepal/asan-bazaar.webp"
+            ]
+        },
+        {
+            "id": 32,
+            "title": "Women's Wellness Escape",
+            "slug": "womens-wellness-escape-retreat",
+            "description": "Take a break from the everyday hustle and immerse yourself in a 4-day Women's Wellness Escape, designed for relaxation, self-care, and inner balance. This thoughtfully curated retreat combines yoga, mindfulness, spa treatments, cultural exploration, and creativity in the serene landscapes of Nepal. Whether you're a wellness enthusiast or simply looking to recharge, this journey offers the perfect blend of tranquility and cultural immersion.",
+            "duration": "4 Days",
+            "priceUSD": "$550",
+            "priceNPR": "रू 66,000",
+            "image": "/assets/women/women-wellness.webp",
+            "category": "Women Centric",
+            "difficulty": "Easy",
+            "highlights": [
+                "Yoga, meditation, sound healing & spa treatments for deep relaxation.",
+                "Scenic beauty, hiking & Buddhist teachings for a holistic wellness experience.",
+                "Hands-on art workshop with women artisans to nurture creativity.",
+                "Stay in serene retreats that blend modern comfort with Nepali culture."
+            ],
+            "includes": [
+                "All transportation for arrival, departure, and excursions.",
+                "Wellness activities: yoga, meditation, sound healing sessions.",
+                "Spa treatments using Himalayan herbs and oils.",
+                "Creative art workshops with materials included.",
+                "Accommodation in serene wellness retreat.",
+                "All meals (organic and wellness-focused cuisine).",
+                "English speaking wellness guide and instructors.",
+                "All applicable taxes and service charges."
+            ],
+            "groupSize": "Small Groups (Max 10)",
+            "bestSeason": "Year-round",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu – Yoga & Sound Healing",
+                    "description": "Warm Nepali welcome upon arrival and transfer to a serene retreat blending modern comfort with Nepali aesthetics. Calming yoga session with an experienced instructor to unwind from travel fatigue. Sound healing therapy using Tibetan singing bowls to restore inner peace. Organic dinner featuring wellness-focused Nepali flavors."
+                },
+                {
+                    "day": 2,
+                    "title": "Day Trip to Namobuddha – Yoga, Hiking & Monastic Serenity",
+                    "description": "Scenic drive to Namobuddha, a sacred Buddhist site with breathtaking Himalayan views. Gentle hike to Namobuddha Monastery, surrounded by peaceful nature. Yoga session in the tranquil monastery setting, harmonizing body and mind. Vegetarian lunch prepared by monks, followed by an insightful session on Buddhist teachings. Return to Kathmandu in the evening for relaxation at your retreat."
+                },
+                {
+                    "day": 3,
+                    "title": "Spa Indulgence & Creative Art Workshop",
+                    "description": "Rejuvenating spa treatments using Himalayan herbs and oils, with options like massages, herbal wraps, and aromatherapy sessions. Hands-on art workshop with local women artisans: pottery, bead-making, and traditional painting. Wellness-focused dinner and reflection on the day's experiences."
+                },
+                {
+                    "day": 4,
+                    "title": "Sunrise Meditation & Departure",
+                    "description": "Sunrise meditation or yoga session to embrace gratitude and mindfulness. Nutritious breakfast followed by leisure time for visiting local markets for wellness products or relaxing at the retreat. Farewell transfer to the airport with renewed energy and cherished memories."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/namobuddha-retreat.webp",
+                "/assets/nepal/yoga-himalayas.webp",
+                "/assets/nepal/spa-treatment.webp"
+            ]
+        },
+        {
+            "id": 33,
+            "title": "Women-Only Luxury Travel Experience",
+            "slug": "women-only-luxury-travel-nepal",
+            "description": "Designed for solo female travelers seeking luxury, comfort, and safety, this 8-day exclusive tour offers an indulgent journey through Nepal's breathtaking landscapes, rich culture, and rejuvenating wellness experiences. From helicopter rides to Everest to Ayurvedic spa treatments, every detail is curated to offer the ultimate luxury experience while celebrating empowerment and adventure.",
+            "duration": "8 Days",
+            "priceUSD": "$3,200",
+            "priceNPR": "रू 384,000",
+            "image": "/assets/women/women-luxury.webp",
+            "category": "Women Centric",
+            "difficulty": "Easy",
+            "highlights": [
+                "5-star boutique hotels with women-only wings",
+                "Private Everest helicopter tour with brunch at Everest View Hotel",
+                "Personalized spa treatments, wellness plans & Ayurvedic consultations",
+                "Curated meals with gourmet wine pairings & mocktail options",
+                "Private yoga & meditation sessions with renowned instructors",
+                "Boutique shopping tours with expert female guides",
+                "24/7 personal assistant for special requests & itinerary adjustments"
+            ],
+            "includes": [
+                "Private luxury transportation throughout the tour",
+                "Accommodation in 5-star boutique hotels with women-only wings",
+                "All meals with gourmet wine pairings and premium dining experiences",
+                "Everest helicopter tour with brunch at Everest View Hotel",
+                "All domestic flights (Kathmandu-Pokhara, Chitwan-Kathmandu)",
+                "Private yoga sessions, spa treatments, and wellness consultations",
+                "Expert female guides for all tours and activities",
+                "All entrance fees, permits, and luxury experiences",
+                "24/7 personal assistant service",
+                "All applicable taxes and service charges"
+            ],
+            "groupSize": "Exclusive Small Group (Max 8)",
+            "bestSeason": "Year-round",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu – A Grand Welcome",
+                    "description": "Private transfer to a heritage luxury hotel in Kathmandu. Spa treatment to unwind after your journey. Gourmet welcome dinner, setting the tone for your indulgent adventure."
+                },
+                {
+                    "day": 2,
+                    "title": "Cultural Immersion in Style",
+                    "description": "Morning private yoga session in a serene setting. Guided cultural tour of UNESCO World Heritage Sites: Pashupatinath, Boudhanath, and Bhaktapur Durbar Square. Rooftop lunch with breathtaking valley views. Boutique shopping in Patan for handcrafted jewelry & artifacts. High tea at a hilltop venue, overlooking Kathmandu Valley."
+                },
+                {
+                    "day": 3,
+                    "title": "Helicopter Adventure to Everest",
+                    "description": "Breathtaking helicopter ride to the Everest region. Luxury breakfast at Everest View Hotel, with panoramic Himalayan views. Return to Kathmandu for a wellness session or poolside relaxation."
+                },
+                {
+                    "day": 4,
+                    "title": "Fly to Pokhara – The City of Lakes",
+                    "description": "Fly to Pokhara and check into a luxury resort with valley views. Scenic boat ride on Phewa Lake, admiring Annapurna's reflections. Private lakeside dinner under the stars for a magical evening."
+                },
+                {
+                    "day": 5,
+                    "title": "Wellness and Relaxation in Pokhara",
+                    "description": "Outdoor yoga session by the lake, followed by Ayurvedic spa treatments. Afternoon at leisure—explore villages or unwind by the infinity pool. Sunset farm-to-table dining experience with organic Nepali cuisine."
+                },
+                {
+                    "day": 6,
+                    "title": "Safari & Riverside Luxury in Chitwan",
+                    "description": "Private transfer to Chitwan, checking into a luxury jungle lodge. Exclusive jeep safari in Chitwan National Park, spotting rhinos & Bengal tigers. Riverside dinner under the stars, with the soothing jungle sounds."
+                },
+                {
+                    "day": 7,
+                    "title": "Return to Kathmandu & Farewell",
+                    "description": "Flight back to Kathmandu for a guided shopping tour in Thamel & Patan. Optional hilltop hike for one last panoramic view of Nepal. Traditional farewell dinner with cultural performances. Optional night out at Club LOD (#53 in World's Top 100 Clubs) for a final celebration."
+                },
+                {
+                    "day": 8,
+                    "title": "Departure",
+                    "description": "Luxury airport transfer, taking home unforgettable memories of Nepal."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/everest-helicopter.webp",
+                "/assets/nepal/luxury-resort.webp",
+                "/assets/nepal/gourmet-dining.webp",
+                "/assets/nepal/luxury-spa.webp"
+            ]
+        },
+        {
+            "id": 34,
+            "title": "Nature & Photography Tour",
+            "slug": "nature-photography-tour-kathmandu-rara-lake",
+            "description": "Designed for nature enthusiasts, aspiring photographers, and women seeking serenity, this 7-day immersive photography tour takes you from the cultural wonders of Kathmandu to the untouched landscapes of Rara Lake. With expert guidance, breathtaking locations, and hands-on workshops, this journey will help you enhance your photography skills while embracing Nepal’s beauty.",
+            "duration": "7 Days",
+            "priceUSD": "$950",
+            "priceNPR": "रू 114,000",
+            "image": "/assets/nepal/chitwan.webp",
+            "category": "Photography",
+            "difficulty": "Moderate",
+            "highlights": [
+                "Daily guided photography walks & workshops to enhance skills",
+                "Capture Nepal’s largest lake, a paradise for nature photographers",
+                "Cultural immersion, documenting village life and traditions",
+                "Scenic diversity, from Kathmandu’s heritage sites to Rara’s untouched wilderness",
+                "Stunning sunrise and sunset photography at Rara Lake",
+                "Wildlife photography opportunities in Rara National Park",
+                "Astrophotography under clear night skies"
+            ],
+            "includes": [
+                "All airport and hotel transfers by private vehicle",
+                "Domestic flights (Kathmandu-Nepalgunj-Talcha-Kathmandu)",
+                "Accommodation in hotels and local lodges/teahouses",
+                "All meals during the tour (breakfast, lunch, dinner)",
+                "Professional photography guide and instructor",
+                "All photography workshops and sessions",
+                "Rara National Park entry permits and fees",
+                "Porters for carrying photography equipment during treks",
+                "First aid kit and emergency oxygen supply",
+                "All government taxes and service charges"
+            ],
+            "groupSize": "Small Group (Max 8 participants)",
+            "bestSeason": "Spring (March-May) and Autumn (September-November) :cite[2]:cite[3]",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu – Introduction to Photography",
+                    "description": "Warm welcome and transfer to your hotel. Photography briefing by a professional, covering techniques for landscapes and wildlife. Evening photography stroll in Thamel, capturing vibrant markets and street life."
+                },
+                {
+                    "day": 2,
+                    "title": "Kathmandu Heritage Photography Walk",
+                    "description": "Morning photography session at Swayambhunath Stupa, capturing panoramic city views. Afternoon shoot at Pashupatinath Temple & Boudhanath Stupa, focusing on portraits and spiritual moments. Evening mini photography workshop to refine techniques and review shots."
+                },
+                {
+                    "day": 3,
+                    "title": "Scenic Flight to Nepalgunj & Journey to Rara Lake",
+                    "description": "Flight to Nepalgunj, then transfer to Talcha Airport near Rara Lake. Trek to Rara Lake, Nepal's largest lake, surrounded by pristine wilderness. Evening campfire dinner with stargazing and storytelling. :cite[1]:cite[5]"
+                },
+                {
+                    "day": 4,
+                    "title": "Sunrise & Lakeside Photography",
+                    "description": "Capture Rara Lake at sunrise, focusing on reflections and landscapes. Guided nature photography walk, exploring wildflowers, remote villages, and mountain vistas. Evening storytelling session by the campfire, sharing photography insights. :cite[1]:cite[2]"
+                },
+                {
+                    "day": 5,
+                    "title": "Nature Photography Workshop & Cultural Immersion",
+                    "description": "Morning workshop on composition, lighting, and capturing nature's essence. Afternoon village visit, photographing daily life, traditional attire, and crafts. Relax with lakeside tea, reviewing your best shots of the day. :cite[1]:cite[5]"
+                },
+                {
+                    "day": 6,
+                    "title": "Return to Kathmandu & Farewell Presentation",
+                    "description": "Trek back to Talcha for flights to Nepalgunj and Kathmandu. Leisure time for art galleries, handicraft shopping, or photography prop hunting. Farewell dinner with a slideshow presentation of your photography journey. :cite[1]"
+                },
+                {
+                    "day": 7,
+                    "title": "Departure",
+                    "description": "Morning relaxation & final photography moments before heading to the airport. Depart with a collection of stunning photos and unforgettable memories."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/rara-lake-sunrise.webp",
+                "/assets/nepal/swayambhunath-panorama.webp",
+                "/assets/nepal/murma-village-culture.webp",
+                "/assets/nepal/rara-wildlife.webp",
+                "/assets/nepal/himalayan-stargazing.webp"
+            ]
+        },
+
         {
             "id": 14,
             "title": "Kailash Manasarovar",
@@ -395,14 +679,14 @@ export const tourPackages: TourPackage[] =
         },
         {
             "id": 18,
-            "title": "Ghorepani Poonhill Trek",
+            "title": "Ghorepani Poonhill",
             "slug": "ghorepani-poonhill-trek",
             "description": "8 Nights / 9 Days trek starting and ending at Kathmandu, offering stunning views of the Annapurna range and a glimpse into Gurung culture.",
             "duration": "9 Days",
             "priceUSD": "$850",
             "priceNPR": "रू 102,000",
-            "image": "/public/assets/packages/poonhillTrek.webp",
-            "category": "Trekking",
+            "image": "/assets/packages/poonhillTrek.webp",
+            "category": "Adventure",
             "difficulty": "Moderate",
             "highlights": [
                 "Enjoy the bustling Thamel area in Kathmandu.",
@@ -497,7 +781,7 @@ export const tourPackages: TourPackage[] =
             "priceUSD": "$1100",
             "priceNPR": "रू 132,000",
             "image": "/assets/packages/chitwan.webp",
-            "category": "Cultural",
+            "category": "Wildlife",
             "difficulty": "Easy",
             "highlights": [
                 "Visit to Swayambhunath Stupa (Monkey Temple) with stunning views and history of Kathmandu Valley.",
@@ -670,8 +954,8 @@ export const tourPackages: TourPackage[] =
             "duration": "9 Days",
             "priceUSD": "$950",
             "priceNPR": "रू 114,000",
-            "image": "/public/assets/packages/mardi.webp",
-            "category": "Trekking",
+            "image": "/assets/packages/mardi.webp",
+            "category": "Adventure",
             "difficulty": "Challenging",
             "highlights": [
                 "Explore bustling Thamel area in Kathmandu.",
@@ -763,7 +1047,7 @@ export const tourPackages: TourPackage[] =
             "duration": "3 Days",
             "priceUSD": "$400",
             "priceNPR": "रू 48,000",
-            "image": "/public/assets/packages/Koshi.webp",
+            "image": "/assets/packages/Koshi.webp",
             "category": "Wildlife",
             "difficulty": "Easy",
             "highlights": [
@@ -822,7 +1106,7 @@ export const tourPackages: TourPackage[] =
             "priceUSD": "$2000",
             "priceNPR": "रू 240,000",
             "image": "/assets/nepal/everest.webp",
-            "category": "Trekking",
+            "category": "Adventure",
             "difficulty": "Challenging",
             "highlights": [
                 "Warm welcome and briefing in Kathmandu.",
@@ -1102,7 +1386,7 @@ export const tourPackages: TourPackage[] =
             "duration": "11 Nights / 12 Days",
             "priceUSD": "$1500",
             "priceNPR": "रू 180,000",
-            "image": "/public/assets/packages/Nepal_India.webp",
+            "image": "/assets/packages/Nepal_India.webp",
             "category": "Spiritual",
             "difficulty": "Moderate",
             "highlights": [
@@ -1199,7 +1483,7 @@ export const tourPackages: TourPackage[] =
             "duration": "9 Days",
             "priceUSD": "$900",
             "priceNPR": "रू 108,000",
-            "image": "/public/assets/packages/buddhist.webp",
+            "image": "/assets/packages/buddhist.webp",
             "category": "Spiritual",
             "difficulty": "Easy",
             "highlights": [
@@ -1273,6 +1557,91 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/lumbini.webp",
                 "/assets/nepal/kathmandu.webp",
                 "/assets/nepal/Annapurna.webp"
+            ]
+        },
+        {
+            "id": 35,
+            "title": "Family Tour in Nepal",
+            "slug": "family-tour-nepal",
+            "description": "An 8-day family adventure through Nepal's diverse landscapes and cultural heritage. This carefully curated tour offers the perfect blend of cultural exploration, natural beauty, and wildlife experiences, making it ideal for families with children. From UNESCO World Heritage Sites in Kathmandu to the serene lakes of Pokhara and the wild jungles of Chitwan, this journey creates unforgettable memories for the whole family.",
+            "duration": "8 Days",
+            "priceUSD": "$850",
+            "priceNPR": "रू 102,000",
+            "image": "/assets/gallery/mr-namdoe.webp",
+            "category": "Family",
+            "difficulty": "Easy",
+            "highlights": [
+                "UNESCO World Heritage Sites: Pashupatinath Temple, Boudhanath Stupa, and Patan Durbar Square",
+                "Tranquil stay by Phewa Lake and relaxed lakeside ambiance",
+                "Sunrise from Sarangkot with panoramic Himalayan views",
+                "Tharu cultural dance performance and village experience",
+                "Cable car ride to Chandragiri Hills for stunning Himalayan vistas",
+                "Elephant-back or jeep safari to spot rhinos, deer, birds, and possibly Bengal tigers",
+                "Family-friendly activities suitable for all ages",
+                "Comfortable transportation and family-oriented accommodations"
+            ],
+            "includes": [
+                "All airport and hotel transfers by private vehicle",
+                "Accommodation in family-friendly hotels and resorts",
+                "All meals (breakfast, lunch, dinner) throughout the tour",
+                "Domestic flight (Kathmandu-Pokhara if flight option chosen)",
+                "All entrance fees to monuments and heritage sites",
+                "Professional English-speaking tour guide",
+                "Wildlife safari activities in Chitwan National Park",
+                "Cable car ride to Chandragiri Hills",
+                "All government taxes and service charges",
+                "First aid kit and emergency support"
+            ],
+            "groupSize": "Private Family Group",
+            "bestSeason": "Year-round (Best: September-November and February-April)",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu",
+                    "description": "Upon arrival at Tribhuvan International Airport in Kathmandu, you will be warmly welcomed and transferred to your hotel. After checking in, you can spend your evening relaxing or exploring the vibrant streets of Thamel, known for its shops, cafes, and lively atmosphere. Dinner will be served at your hotel or a nearby restaurant where you can enjoy traditional Nepali cuisine."
+                },
+                {
+                    "day": 2,
+                    "title": "Kathmandu Sightseeing",
+                    "description": "Your day will begin with visits to some of Kathmandu's most iconic heritage sites. You will explore the sacred Hindu temple of Pashupatinath, followed by visits to Swayambhu Nath and Boudhanath Stupa. After lunch, your journey continues to Patan Durbar Square, famous for its ancient royal palace and exquisite Newari architecture. Evening at leisure to unwind at the tranquil Garden of Dreams or explore local culture."
+                },
+                {
+                    "day": 3,
+                    "title": "Journey from Kathmandu to Pokhara",
+                    "description": "After breakfast, travel to Pokhara by scenic 6-7 hour drive or 25-minute domestic flight. Upon arrival, check into your hotel and relax. In the evening, visit the charming Lakeside area where you can stroll along Phewa Lake shore or take a peaceful boat ride. Pokhara's serene environment offers a refreshing contrast to Kathmandu's bustling streets."
+                },
+                {
+                    "day": 4,
+                    "title": "Exploring Pokhara",
+                    "description": "Start your day early by heading to Sarangkot hill to witness spectacular sunrise over the Himalayas. Visit notable landmarks including Davis Falls, Gupteshwor Cave, and Bindhyabasini Temple. Explore the International Mountain Museum and Seti River Gorge. Evening free to enjoy time by Phewa Lake or browse local markets in Lakeside."
+                },
+                {
+                    "day": 5,
+                    "title": "Pokhara to Chitwan National Park",
+                    "description": "Depart Pokhara after breakfast and drive approximately 4-5 hours to Chitwan National Park. Check into a jungle resort and attend a briefing on wildlife activities. Enjoy an entertaining cultural program featuring traditional Tharu dances, providing insight into the indigenous people of the region. Dinner at the resort."
+                },
+                {
+                    "day": 6,
+                    "title": "Wildlife Safari in Chitwan",
+                    "description": "Embark on an elephant or jeep safari in search of the park's famous inhabitants including one-horned rhinoceroses, deer, and various bird species. Enjoy a canoe ride along the Rapti River to spot crocodiles and water birds. Optional guided nature walk or bird watching tour. Relaxing evening at the resort."
+                },
+                {
+                    "day": 7,
+                    "title": "Drive Back to Kathmandu from Chitwan",
+                    "description": "After breakfast, begin the 5-6 hour drive back to Kathmandu through scenic plains and hilly roads. Check into your hotel and have the rest of the day at leisure. Optional relaxation at hotel, last-minute shopping in Thamel, or enjoying local cuisine."
+                },
+                {
+                    "day": 8,
+                    "title": "Morning Visit to Chandragiri Hills and Final Departure",
+                    "description": "Morning excursion to Chandragiri Hills via cable car for panoramic views of the Himalayan range including Mt. Everest. Visit the Shiva temple and enjoy hill station ambiance. Return to hotel briefly before transfer to Tribhuvan International Airport for your onward journey."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/family-pokhara-lake.webp",
+                "/assets/nepal/chitwan-safari-family.webp",
+                "/assets/nepal/chandragiri-cable-car.webp",
+                "/assets/nepal/tharu-cultural-show.webp",
+                "/assets/nepal/kathmandu-heritage-family.webp"
             ]
         },
     ]

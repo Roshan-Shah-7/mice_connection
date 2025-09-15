@@ -8,8 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 type Service = {
     id: number;
     name: string;
-    category: string;
-    description: string;
     details?: string;
     highlights?: string[];
     imageUrl: string;
@@ -31,39 +29,118 @@ const GalleryPage: React.FC = () => {
         {
             id: 1,
             name: 'The Unsilenced: Documentary',
-            category: 'event',
-            description: 'Iconic landmarks with expert storytelling',
-            details: 'Our sightseeing tours take you to the most iconic landmarks with expert guides who bring history to life. Experience the culture, architecture, and stories behind each destination.',
-            highlights: ['Expert local guides', 'Skip-the-line access', 'Small group sizes', 'Multilingual options'],
             imageUrl: '/assets/gallery/Unsilenced.webp'
         },
         {
             id: 2,
             name: 'HONORING CHINESE PARAGLIDER IN NEPAL',
-            category: 'event',
-            description: 'Conquer peaks with breathtaking vistas',
-            details: 'Challenge yourself with our trekking adventures that take you to breathtaking mountain peaks. Our experienced guides ensure your safety while you enjoy stunning vistas.',
-            highlights: ['Certified mountain guides', 'All equipment provided', 'Accommodation included', 'Meals during trek'],
-            imageUrl: '/public/assets/about/About2.webp'
+            imageUrl: '/assets/gallery/ch1.webp'
         },
         {
             id: 3,
-            name: 'Seminar',
-            category: 'seminar',
-            description: 'Opulent experiences in exclusive destinations',
-            details: 'Indulge in the finest experiences with our luxury tours. Stay in exclusive properties, enjoy private transfers, and savor gourmet dining experiences.',
-            highlights: ['5-star accommodations', 'Private transfers', 'Personal concierge', 'Exclusive access'],
-            imageUrl: '/public/assets/about/About3.webp'
+            name: 'Chinese Paraglider 2',
+            imageUrl: '/assets/gallery/ch2.webp'
         },
         {
             id: 4,
-            name: 'Seminar',
-            category: 'seminar',
-            description: 'Holistic rejuvenation in serene settings',
-            details: 'Rejuvenate your mind, body, and soul at our wellness retreats. Experience holistic therapies, meditation sessions, and wellness workshops in serene settings.',
-            highlights: ['Spa treatments', 'Yoga and meditation', 'Nutrition workshops', 'Wellness consultations'],
-            imageUrl: '/public/assets/about/About4.webp'
+            name: 'Documentary Scene 2',
+            imageUrl: '/assets/gallery/doc2.webp'
         },
+        {
+            id: 5,
+            name: 'Documentary Scene 3',
+            imageUrl: '/assets/gallery/doc3.webp'
+        },
+        {
+            id: 6,
+            name: 'Event Highlight',
+            imageUrl: '/assets/gallery/event.webp'
+        },
+        {
+            id: 7,
+            name: 'Everest Expedition',
+            imageUrl: '/assets/gallery/everest.webp'
+        },
+        {
+            id: 8,
+            name: 'Everest Expedition 3',
+            imageUrl: '/assets/gallery/everest3.webp'
+        },
+        {
+            id: 9,
+            name: 'Himalayan Golden Nepal 1',
+            imageUrl: '/assets/gallery/hgn1.webp'
+        },
+        {
+            id: 10,
+            name: 'Himalayan Golden Nepal 2',
+            imageUrl: '/assets/gallery/hgn2.webp'
+        },
+        {
+            id: 11,
+            name: 'Himalayan Golden Nepal 3',
+            imageUrl: '/assets/gallery/hgn3.webp'
+        },
+        {
+            id: 12,
+            name: 'Horing 1',
+            imageUrl: '/assets/gallery/horing1.webp'
+        },
+        {
+            id: 13,
+            name: 'Horing 2',
+            imageUrl: '/assets/gallery/hor2.webp'
+        },
+        {
+            id: 14,
+            name: 'Horing 3',
+            imageUrl: '/assets/gallery/hor3.webp'
+        },
+        {
+            id: 15,
+            name: 'Ladies Event 1',
+            imageUrl: '/assets/gallery/lades1.webp'
+        },
+        {
+            id: 16,
+            name: 'Ladies Event 2',
+            imageUrl: '/assets/gallery/lades2.webp'
+        },
+        {
+            id: 17,
+            name: 'Ladies Event 3',
+            imageUrl: '/assets/gallery/lades3.webp'
+        },
+        {
+            id: 18,
+            name: 'Mr. Namdoe',
+            imageUrl: '/assets/gallery/mr-namdoe.webp'
+        },
+        {
+            id: 19,
+            name: 'Mr. Nana',
+            imageUrl: '/assets/gallery/mr-nana.webp'
+        },
+        {
+            id: 20,
+            name: 'Mr. Suresh',
+            imageUrl: '/assets/gallery/mr-suresh.webp'
+        },
+        {
+            id: 21,
+            name: 'Mr. Suresh 2',
+            imageUrl: '/assets/gallery/mr-suresh2.webp'
+        },
+        {
+            id: 22,
+            name: 'Volleyball Match',
+            imageUrl: '/assets/gallery/volly.webp'
+        },
+        {
+            id: 23,
+            name: 'Volleyball Match 2',
+            imageUrl: '/assets/gallery/volly2.webp'
+        }
     ];
 
     // Set up GSAP animations
@@ -215,13 +292,6 @@ const GalleryPage: React.FC = () => {
                                         {/* Image background with varying heights for Pinterest style */}
                                         <div className={`w-full ${height} bg-cover bg-center`} style={{ backgroundImage: `url(${service.imageUrl})` }}>
 
-                                            {/* Category badge */}
-                                            <div className="absolute top-4 left-4">
-                                                <span className="inline-block px-3 py-1 bg-white bg-opacity-90 text-[#133830] rounded-full text-xs font-bold uppercase tracking-wider">
-                                                    {service.category}
-                                                </span>
-                                            </div>
-
                                             {/* Eye icon that follows mouse */}
                                             {hoveredCard === index && (
                                                 <div
@@ -258,12 +328,6 @@ const GalleryPage: React.FC = () => {
                     <div className="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
                         <div className="p-6 md:p-8">
                             <div className="flex justify-between items-start mb-6">
-                                <div>
-                                    <span className="inline-block px-3 py-1 bg-[#133830] bg-opacity-10 text-white rounded-full text-xs font-bold mb-3">
-                                        {selectedService.category.toUpperCase()}
-                                    </span>
-                                    <h2 className="text-2xl md:text-3xl font-bold text-[#133830]">{selectedService.name}</h2>
-                                </div>
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
@@ -280,24 +344,6 @@ const GalleryPage: React.FC = () => {
                                 <div className="h-150 rounded-xl bg-cover bg-center" style={{ backgroundImage: `url(${selectedService.imageUrl})` }}>
                                 </div>
                             </div>
-                            {/* <div className="mb-6">
-                                <h3 className="text-lg font-bold text-[#133830] mb-3">Overview</h3>
-                                <p className="text-gray-600">{selectedService.details || selectedService.description}</p>
-                            </div>
-                            <div className="flex flex-col sm:flex-row gap-4">
-                                <button className="px-6 py-3 bg-[#133830] text-white font-bold rounded-lg hover:bg-[#0a1f1a] transition duration-300 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                                    </svg>
-                                    Inquire Now
-                                </button>
-                                <button className="px-6 py-3 bg-[#fcd00d] text-[#133830] font-bold rounded-lg hover:bg-[#e6bb0c] transition duration-300 flex items-center justify-center">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                    </svg>
-                                    Book Experience
-                                </button>
-                            </div> */}
                         </div>
                     </div>
                 </div>

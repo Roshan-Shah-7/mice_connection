@@ -118,7 +118,7 @@ const TourPackageDetail: React.FC = () => {
                         >
                             Itinerary
                         </button>
-                        <button
+                        {/* <button
                             onClick={() => setActiveTab('gallery')}
                             className={`py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'gallery'
                                 ? 'border-[#143a31] text-[#143a31]'
@@ -126,7 +126,7 @@ const TourPackageDetail: React.FC = () => {
                                 }`}
                         >
                             Gallery
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </section>
@@ -279,7 +279,7 @@ const TourPackageDetail: React.FC = () => {
                                     <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                                     </svg>
-                                    +977 1 123456
+                                    +977-9851363229
                                 </div>
                             </div>
 
@@ -288,55 +288,16 @@ const TourPackageDetail: React.FC = () => {
                                     <span className="text-xl font-bold text-[#143a31]">Price:</span>
                                     <span className="text-3xl font-bold text-[#fcd00e]">{getPrice(tour)}</span>
                                 </div>
-                                <button className="w-full bg-gradient-to-r from-[#143a31] to-[#0f2821] text-white py-4 rounded-lg font-semibold text-lg hover:from-[#fcd00e] hover:to-yellow-400 hover:text-[#143a31] transition-all duration-300 shadow-md">
-                                    Book This Tour Now
-                                </button>
+                                <Link to="/contact" className="cursor-pointer">
+                                    <button className="w-full bg-gradient-to-r from-[#143a31] to-[#0f2821] text-white py-4 rounded-lg font-semibold text-lg hover:from-[#fcd00e] hover:to-yellow-400 hover:text-[#143a31] transition-all duration-300 shadow-md">
+                                        Book This Tour Now
+                                    </button>
+                                </Link>
                                 <p className="text-center text-gray-500 text-xs mt-3">No booking fees • Best price guarantee</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                {/* Related Packages (Cross-Selling) */}
-                {/* <div className="mt-16">
-                    <h3 className="text-3xl font-bold text-[#143a31] mb-8 text-center">You Might Also Like</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {tourPackages
-                            .filter(p => p.id !== tour.id && p.category === tour.category)
-                            .slice(0, 3)
-                            .map((relatedTour: TourPackage) => (
-                                <div key={relatedTour.id} className="group relative bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden">
-                                    <div className="relative h-48">
-                                        <img
-                                            src={relatedTour.image}
-                                            alt={relatedTour.title}
-                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                                        />
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                                            <h4 className="text-white text-lg font-bold">{relatedTour.title}</h4>
-                                        </div>
-                                    </div>
-                                    <div className="p-4">
-                                        <div className="flex justify-between items-center mb-3">
-                                            <span className="text-gray-600 text-sm">{relatedTour.duration}</span>
-                                            <span className="text-[#fcd00e] font-bold">{getPrice(relatedTour)}</span>
-                                        </div>
-                                        <div className="flex justify-between items-center mb-3">
-                                            <span className={`px-2 py-1 rounded-full text-xs font-bold text-white ${getDifficultyColor(relatedTour.difficulty)}`}>
-                                                {relatedTour.difficulty}
-                                            </span>
-                                            <span className="text-gray-600 text-sm">{relatedTour.category}</span>
-                                        </div>
-                                        <Link to={`/tour-packages/${relatedTour.slug}`}>
-                                            <button className="w-full bg-gradient-to-r from-[#143a31] to-[#0f2821] text-white py-2 rounded-lg text-sm font-semibold hover:from-[#fcd00e] hover:to-yellow-400 hover:text-[#143a31] transition-all duration-300">
-                                                View Details
-                                            </button>
-                                        </Link>
-                                    </div>
-                                </div>
-                            ))}
-                    </div>
-                </div> */}
             </section>
 
             {/* Lightbox Modal */}
