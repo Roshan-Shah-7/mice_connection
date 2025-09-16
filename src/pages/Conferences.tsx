@@ -59,6 +59,18 @@ const ConferencesPage = () => {
             title: 'On-Site Management',
             description: 'Event coordinators, help desk, multilingual staff',
             details: 'Dedicated on-site team ensuring flawless execution of your conference. Our professional event coordinators, help desk staff, and multilingual team members provide comprehensive support throughout the event.'
+        },
+        {
+            icon: '📋',
+            title: 'Program Development',
+            description: 'Agenda planning, speaker coordination',
+            details: 'End-to-end conference program development including agenda structuring, speaker recruitment and management, content coordination, and timeline optimization to create engaging and impactful conference experiences.'
+        },
+        {
+            icon: '🎪',
+            title: 'Exhibition Management',
+            description: 'Booth design, vendor coordination',
+            details: 'Complete exhibition management services including floor plan design, exhibitor coordination, booth construction, and sponsor activation. We handle all aspects of trade show integration within your conference.'
         }
     ];
 

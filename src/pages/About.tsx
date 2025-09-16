@@ -134,6 +134,11 @@ const AboutPage = () => {
             title: 'Cultural & Leisure Tours',
             description: 'Immersive experiences that highlight Nepal\'s beauty and heritage.',
             icon: '🏔️'
+        },
+        {
+            title: 'Women-Centric Tours',
+            description: 'Empowering journeys designed for women travelers, focusing on safety, wellness, and authentic local experiences.',
+            icon: '👩'
         }
     ];
 

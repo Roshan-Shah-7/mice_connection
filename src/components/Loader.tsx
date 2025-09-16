@@ -17,7 +17,7 @@ const bootMessages = [
 "Preparing Cultural Insights",
 "Finalizing Adventure Details",
 "Ensuring Sustainable Travel Practices",
-"Camera and Microphone: Ready, Set, Go!",
+"Camera and Mic: Ready, Set, Go!",
 ];
 
 const Loader: React.FC<LoaderProps> = ({ onLoaded, onAnimationComplete }) => {

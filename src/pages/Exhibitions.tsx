@@ -59,6 +59,18 @@ const ExhibitionsPage = () => {
             title: 'Hybrid Solutions',
             description: 'Virtual exhibition platforms',
             details: 'Cutting-edge hybrid exhibition solutions combining physical and virtual experiences. We provide virtual exhibition platforms, live streaming, interactive digital content, and online networking opportunities to extend your reach beyond physical boundaries.'
+        },
+        {
+            icon: '🍽️',
+            title: 'Exhibition Catering & Hospitality',
+            description: 'Refreshments, VIP lounges, networking events',
+            details: 'Premium catering and hospitality services designed for exhibitions. We provide refreshment stations, VIP lounges, networking receptions, and custom catering options that keep exhibitors and attendees energized throughout the event.'
+        },
+        {
+            icon: '📊',
+            title: 'Analytics & ROI Measurement',
+            description: 'Lead capture, engagement metrics, performance reports',
+            details: 'Comprehensive analytics and measurement tools to track exhibition success. We implement lead capture systems, measure visitor engagement, provide detailed performance reports, and help you calculate ROI to demonstrate the value of your exhibition participation.'
         }
     ];
 

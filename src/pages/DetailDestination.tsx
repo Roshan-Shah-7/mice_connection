@@ -5,7 +5,7 @@ import { tourPackages } from '../data/tourPackagesData';
 import {
     FaArrowLeft, FaMapMarkerAlt, FaClock, FaCalendarAlt,
     FaMoneyBillWave, FaHiking, FaHotel, FaUtensils,
-    FaLeaf, FaHistory, FaPhotoVideo,
+    FaLeaf, FaHistory,
     FaHeart, FaShare, FaMap, FaGlobe, FaUsers, FaStar,
     FaUmbrellaBeach, FaTree, FaMonument, FaMountain
 } from 'react-icons/fa';
@@ -173,7 +173,7 @@ const DetailDestination: React.FC = () => {
                                 { id: 'history', label: 'History', icon: <FaHistory /> },
                                 { id: 'significance', label: 'Significance', icon: <FaMonument /> },
                                 { id: 'travelinfo', label: 'Travel Info', icon: <FaUmbrellaBeach /> },
-                                { id: 'gallery', label: 'Gallery', icon: <FaPhotoVideo /> },
+                                // { id: 'gallery', label: 'Gallery', icon: <FaPhotoVideo /> },
                                 { id: 'packages', label: 'Packages', icon: <FaUsers /> }
                             ].map((tab) => (
                                 <button
@@ -404,13 +404,12 @@ const DetailDestination: React.FC = () => {
                         )}
 
                         {/* Gallery Tab */}
-                        {activeTab === 'gallery' && (
+                        {/* {activeTab === 'gallery' && (
                             <div>
                                 <h2 className="text-3xl font-bold text-[#10362e] mb-8 flex items-center gap-2">
                                     <FaPhotoVideo className="text-[#fcd10b]" /> Photo Gallery
                                 </h2>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                    {/* Main image */}
                                     <div className="md:col-span-2 lg:col-span-3 aspect-video overflow-hidden rounded-xl">
                                         <img
                                             src={destination.image}
@@ -418,7 +417,6 @@ const DetailDestination: React.FC = () => {
                                             className="w-full h-full object-cover"
                                         />
                                     </div>
-                                    {/* Additional images - in a real app, these would come from the data */}
                                     {[1, 2, 3, 4, 5, 6].map((item) => (
                                         <div key={item} className="aspect-square overflow-hidden rounded-xl">
                                             <div className="w-full h-full bg-gray-200 flex items-center justify-center">
@@ -428,7 +426,7 @@ const DetailDestination: React.FC = () => {
                                     ))}
                                 </div>
                             </div>
-                        )}
+                        )} */}
 
                         {/* Packages Tab */}
                         {activeTab === 'packages' && relatedPackages.length > 0 && (

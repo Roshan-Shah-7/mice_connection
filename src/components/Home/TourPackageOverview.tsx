@@ -236,7 +236,7 @@ const TourPackageOverview = () => {
 
                                             {/* CTA Button */}
                                             <button
-                                                className="px-6 py-3 bg-[#D4AF37] text-white font-medium rounded-full transition-all duration-500 hover:bg-[#0e332e] transform hover:scale-105"
+                                                className="px-6 py-3 bg-[#D4AF37] cursor-pointer text-white font-medium rounded-full transition-all duration-500 hover:bg-[#0e332e] transform hover:scale-105"
                                                 onClick={() => {
                                                     navigate(`/tour-packages/${tour.slug}`);
                                                 }}

@@ -58,7 +58,8 @@ const IntroductionSection: React.FC = () => {
                 "Chitwan National Park - UNESCO site with Bengal tigers",
                 "Sagarmatha National Park - Includes Mount Everest",
                 "Bardia National Park - Remote wilderness area",
-                "Koshi Tappu Wildlife Reserve - Birdwatcher's paradise"
+                "Koshi Tappu Wildlife Reserve - Birdwatcher's paradise",
+                "Shuklaphanta National Park - Grassland birds"
             ]
         }
     ];

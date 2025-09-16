@@ -132,7 +132,7 @@ export const tourPackages: TourPackage[] =
             "duration": "8 Days",
             "priceUSD": "$3,200",
             "priceNPR": "रू 384,000",
-            "image": "/assets/women/women-luxury.webp",
+            "image": "/assets/gallery/lades1.webp",
             "category": "Women Centric",
             "difficulty": "Easy",
             "highlights": [

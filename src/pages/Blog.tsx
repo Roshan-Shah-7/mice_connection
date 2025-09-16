@@ -1,6 +1,7 @@
 import type { Category, Tag } from '../data/blogPostsData';
 import { blogPosts } from '../data/blogPostsData';
 import { useEffect, useRef, useState } from 'react';
+import { formatDate } from '../utils/dateFormatter';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -54,7 +55,17 @@ const BlogPage = () => {
     });
 
     // Get recent posts (excluding featured post)
-    const recentPosts = sortedByDate.filter(post => !post.featured).slice(0, 3);
+    const recentPosts = sortedByDate.slice(0, 3);
+
+    // Filtered and sorted blog posts for the main grid
+    const mainBlogPosts = blogPosts
+        .filter(post => {
+            const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
+            const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
+            return matchesCategory && matchesSearch;
+        })
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()); // Sort by date, newest first
 
     // Sort blog posts by views (highest first)
     const sortedByViews = [...blogPosts].sort((a, b) => {
@@ -64,8 +75,8 @@ const BlogPage = () => {
     // Get popular posts (excluding featured post)
     const popularPosts = sortedByViews.filter(post => !post.featured).slice(0, 3);
 
-    // Filter blog posts based on selected category and search query
-    const filteredBlogPosts = blogPosts.filter(post => {
+    // Filtered and sorted blog posts for the main grid
+    const filteredBlogPosts = mainBlogPosts.filter(post => {
         const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
         const matchesSearch = post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             post.excerpt.toLowerCase().includes(searchQuery.toLowerCase());
@@ -313,7 +324,7 @@ const BlogPage = () => {
                                     <div className="flex items-center">
                                         <div className="ml-3">
                                             <div className="flex space-x-1 text-sm text-gray-500">
-                                                <span>{featuredPost.date}</span>
+                                                <span>{formatDate(featuredPost.date)}</span>
                                                 <span>•</span>
                                                 <span>{featuredPost.views} views</span>
                                             </div>
@@ -357,7 +368,7 @@ const BlogPage = () => {
                                         <h4 className="font-medium text-[#1f423b] hover:text-[#fcd00d] transition-colors duration-300 cursor-pointer">
                                             {post.title}
                                         </h4>
-                                        <p className="text-sm text-gray-500 mt-1">{post.date}</p>
+                                        <p className="text-sm text-gray-500 mt-1">{formatDate(post.date)}</p>
                                     </div>
                                 </div>
                             ))}
@@ -495,7 +506,7 @@ const BlogPage = () => {
                             </div>
                             <div className="p-6">
                                 <div className="flex justify-between items-center mb-2">
-                                    <span className="text-sm text-gray-500">{post.date}</span>
+                                    <span className="text-sm text-gray-500">{formatDate(post.date)}</span>
                                     {post.views && (
                                         <div className="flex items-center text-sm text-gray-500">
                                             <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

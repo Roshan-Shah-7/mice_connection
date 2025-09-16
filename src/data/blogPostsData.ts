@@ -273,6 +273,130 @@ export const blogPosts: BlogPost[] = [
         views: 2430,
         tags: ["Food", "Culinary", "Cuisine"],
         slug: generateSlug("Culinary Tours: A Taste of World Cuisines")
-    }
+    },
+    {
+        id: 7,
+        title: "Wellness Cruises: Floating Retreats for Mind and Body",
+        excerpt: "Sail into serenity with wellness-focused cruises in 2025 — blending luxury travel, spa treatments, and mindful activities on the open sea.",
+        content: `
+  <p class="mb-4">In 2025, cruising is evolving beyond traditional sightseeing to become an immersive wellness journey. Wellness cruises combine world-class spa facilities, healthy dining, and mindful practices with the allure of ocean travel — creating floating sanctuaries for relaxation and rejuvenation.</p>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Why Choose a Wellness Cruise?</h3>
+  <p class="mb-4">Unlike standard cruises, wellness cruises focus on holistic well-being. Guests can enjoy sunrise yoga on deck, spa treatments inspired by global traditions, and workshops on nutrition, mindfulness, and fitness — all while sailing to breathtaking destinations.</p>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Key Features Onboard</h3>
+  <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+      <li>Dedicated spa and wellness centers with ocean-view treatment rooms.</li>
+      <li>Organic and plant-based cuisine curated by celebrity nutritionists.</li>
+      <li>Meditation pods, hydrotherapy pools, and salt therapy lounges.</li>
+      <li>Workshops on stress management, digital detox, and sleep optimization.</li>
+  </ul>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Top Destinations for Wellness Cruises</h3>
+  <p class="mb-4">Wellness cruises in 2025 sail to some of the most restorative regions on Earth. Think the sun-kissed Greek Isles, the serene Norwegian fjords, and the coral-fringed coasts of the Maldives. Each stop offers shore excursions like forest bathing, guided hikes, and cultural immersions.</p>
+
+  <blockquote class="border-l-4 pl-4 italic text-gray-600 mb-4">
+  "Let the sea set you free, and wellness transform you."
+  </blockquote>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Planning Your Voyage</h3>
+  <p class="mb-4">When booking, look for cruise lines certified in sustainability and wellness programming. Many offer all-inclusive packages with spa credits, guided excursions, and expert-led workshops. By choosing a wellness cruise, you’ll embark on a journey that nourishes both body and soul while supporting responsible tourism.</p>
+
+  <p class="mb-4">In 2025, wellness cruises redefine the meaning of travel — not just a trip but a transformative experience that floats you closer to your healthiest self.</p>
+    `,
+        date: "June 10, 2025",
+        category: "Wellness & Retreats",
+        imageUrl: "/assets/blog/wellness.webp",
+        views: 1980,
+        featured: true,
+        tags: ["Wellness Cruises", "Mindfulness", "Luxury Travel"],
+        slug: generateSlug("Wellness Cruises: Floating Retreats for Mind and Body")
+    },
+    {
+        id: 8,
+        title: "Hidden Gems of Nepal: Beyond the Usual Trails",
+        excerpt: "Step off the beaten path and explore Nepal’s lesser-known wonders — from untouched mountain valleys to vibrant cultural hubs in 2025.",
+        content: `
+  <p class="mb-4">Nepal is celebrated for Everest and the Annapurna Circuit, but in 2025, adventurous travelers are discovering a new side of this Himalayan nation. Beyond the famous peaks lies a tapestry of hidden valleys, ancient towns, and cultural treasures waiting to be explored.</p>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Why Explore Nepal’s Hidden Gems?</h3>
+  <p class="mb-4">Popular trekking routes can get crowded, but Nepal offers countless lesser-known destinations with breathtaking scenery and authentic experiences. Exploring these areas supports local communities and preserves traditional lifestyles, making your journey more impactful.</p>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Offbeat Destinations to Discover</h3>
+  <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+      <li><strong>Rara Lake:</strong> Nepal’s largest lake, located in a remote national park with pristine forests and turquoise waters.</li>
+      <li><strong>Tsum Valley:</strong> A sacred Himalayan valley near the Tibetan border, rich in Buddhist culture and monasteries.</li>
+      <li><strong>Badimalika Temple:</strong> A spiritual pilgrimage site in the far west, offering panoramic mountain views and untouched trails.</li>
+      <li><strong>Koshi Tappu Wildlife Reserve:</strong> A bird-watcher’s paradise in the Terai region, home to rare species and river dolphins.</li>
+  </ul>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Cultural Experiences</h3>
+  <p class="mb-4">Beyond landscapes, Nepal’s heritage is deeply rooted in festivals, handicrafts, and culinary traditions. In 2025, consider joining local homestays, learning traditional weaving, or participating in regional festivals like Indra Jatra or Tiji.</p>
+
+  <blockquote class="border-l-4 pl-4 italic text-gray-600 mb-4">
+  "Nepal’s beauty lies not only in its peaks but in its people and hidden valleys."
+  </blockquote>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Responsible Travel Tips</h3>
+  <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+      <li>Hire local guides to ensure authentic insights and direct benefits to communities.</li>
+      <li>Pack eco-friendly gear and avoid single-use plastics.</li>
+      <li>Respect local customs and dress modestly in rural areas and sacred sites.</li>
+      <li>Travel during off-season months for a more serene experience and to ease overtourism.</li>
+  </ul>
+
+  <p class="mb-4">By venturing beyond Nepal’s popular trails, you’ll discover untouched beauty, warm hospitality, and cultural richness — while contributing to sustainable tourism development. Make 2025 the year you see Nepal differently.</p>
+    `,
+        date: "August 12, 2025",
+        category: "Trekking Adventures",
+        imageUrl: "/assets/blog/nepal.webp",
+        views: 1750,
+        featured: true,
+        tags: ["Nepal", "Hidden Gems", "Adventure Travel"],
+        slug: generateSlug("Hidden Gems of Nepal: Beyond the Usual Trails")
+    },
+    {
+        id: 9,
+        title: "Wellness in the Himalayas: Yoga and Meditation Retreats 2025",
+        excerpt: "Reconnect with nature and yourself at Nepal’s and India’s Himalayan retreats — blending yoga, meditation, and holistic healing in 2025.",
+        content: `
+  <p class="mb-4">In 2025, the Himalayas are emerging as one of the world’s leading destinations for wellness tourism. With crisp mountain air, spiritual energy, and ancient traditions, yoga and meditation retreats here offer an unparalleled experience for self-discovery and renewal.</p>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Why Choose the Himalayas for Wellness?</h3>
+  <p class="mb-4">The Himalayas have long been a sanctuary for sages and seekers. Today, wellness travelers come here to practice yoga, meditate in serene monasteries, and immerse themselves in mindfulness programs led by experienced gurus and wellness experts.</p>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Top Retreat Destinations</h3>
+  <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+      <li><strong>Pokhara, Nepal:</strong> Lakeside yoga centers and panoramic mountain views create a peaceful backdrop for daily practice.</li>
+      <li><strong>Namobuddha, Nepal:</strong> A sacred Buddhist site offering meditation courses and monastic stays in a tranquil environment.</li>
+      <li><strong>Rishikesh, India:</strong> The world’s yoga capital by the Ganges River, home to immersive teacher trainings and ashrams.</li>
+      <li><strong>Dharamshala, India:</strong> A hub for Tibetan culture and meditation retreats surrounded by cedar forests.</li>
+  </ul>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Experiences You Can Expect</h3>
+  <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+      <li>Daily yoga sessions tailored to all skill levels.</li>
+      <li>Guided meditation and breathwork for stress relief and clarity.</li>
+      <li>Workshops on Ayurveda, nutrition, and mindfulness living.</li>
+      <li>Nature walks, herbal teas, and eco-friendly accommodations.</li>
+  </ul>
+
+  <blockquote class="border-l-4 pl-4 italic text-gray-600 mb-4">
+  "In the stillness of the mountains, find the stillness within yourself."
+  </blockquote>
+
+  <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Tips for Planning Your Retreat</h3>
+  <p class="mb-4">Book well in advance, especially for peak seasons (spring and autumn). Look for retreats with ethical practices, local staff, and eco-conscious operations. Prepare for digital detox and embrace the opportunity to disconnect from your usual routine.</p>
+
+  <p class="mb-4">Whether you’re seeking inner peace, stress relief, or a holistic reset, the Himalayan yoga and meditation retreats of 2025 provide transformative experiences that nurture your mind, body, and spirit.</p>
+    `,
+        date: "September 12, 2025",
+        category: "Wellness & Retreats",
+        imageUrl: "/assets/blog/yoga.webp",
+        views: 1620,
+        featured: true,
+        tags: ["Yoga Retreat", "Meditation", "Himalayas"],
+        slug: generateSlug("Wellness in the Himalayas: Yoga and Meditation Retreats 2025")
+    },
 ];
 
