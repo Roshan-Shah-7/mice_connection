@@ -220,7 +220,7 @@ const AboutPage = () => {
                         <div className="lg:w-1/2">
                             <div className="space-y-6">
                                 <p className="text-lg text-gray-700 leading-relaxed">
-                                    At The MICE Connection Pvt. Ltd., we don't just manage events—we create transformative experiences.
+                                    At The MICE Connection Pvt. Ltd., we don't just manage events we create transformative experiences.
                                     Our journey began with a vision: to redefine event management in Nepal and beyond.
                                 </p>
                                 <p className="text-lg text-gray-700 leading-relaxed">
@@ -228,7 +228,7 @@ const AboutPage = () => {
                                     delivering events that inspire, connect, and elevate brands to new heights.
                                 </p>
                                 <p className="text-lg text-gray-700 leading-relaxed">
-                                    We believe that events are not just gatherings—they are powerful platforms for storytelling,
+                                    We believe that events are not just gatherings they are powerful platforms for storytelling,
                                     networking, and transformation. Every detail matters, and every moment counts.
                                 </p>
                                 <div className="bg-[#0e332e] bg-opacity-5 p-6 rounded-2xl mt-8 border-l-4 border-[#D4AF37]">
