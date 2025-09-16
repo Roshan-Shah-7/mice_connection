@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import flag from '/flag.png'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -45,21 +46,21 @@ const StatsSection: React.FC = () => {
         { category: 'geography', id: 3, initial: 0, target: 70, label: "Lowest Point (Kechana Kalan)", icon: "📉", suffix: "m", duration: 2 },
         { category: 'geography', id: 4, initial: 0, target: 6000, label: "Rivers & Streams", icon: "🌊", suffix: "+", duration: 2.5 },
         { category: 'geography', id: 5, initial: 0, target: 5358, label: "Lakes", icon: "🏞️", suffix: "", duration: 2.5 },
-        
+
         // Culture
         { category: 'culture', id: 6, initial: 0, target: 123, label: "Languages Spoken", icon: "🗣️", suffix: "+", duration: 2 },
         { category: 'culture', id: 7, initial: 0, target: 125, label: "Ethnic Groups", icon: "👨‍👩‍👧‍👦", suffix: "+", duration: 2 },
         { category: 'culture', id: 8, initial: 0, target: 10, label: "UNESCO Heritage Sites", icon: "🏛️", suffix: "", duration: 2 },
-        { category: 'culture', id: 9, initial: 0, target: 366, label: "Annual Festivals", icon: "🎉", suffix: "", duration: 2 },
+        { category: 'culture', id: 9, initial: 0, target: 1, label: "the only non-rectangular flag in the world", icon: <img src={flag} alt="Nepal Flag" className="h-8 w-8 object-contain" />, suffix: "", duration: 2 },
         { category: 'culture', id: 10, initial: 0, target: 81, label: "Percent Hindu Population", icon: "🕉️", suffix: "%", duration: 2 },
-        
+
         // Tourism
         { category: 'tourism', id: 11, initial: 0, target: 1.1, label: "Annual Tourists (Millions)", icon: "✈️", suffix: "M+", duration: 2 },
         { category: 'tourism', id: 12, initial: 0, target: 13.1, label: "Tourism Growth Rate", icon: "📈", suffix: "%", duration: 2 },
         { category: 'tourism', id: 13, initial: 0, target: 12, label: "National Parks", icon: "🌳", suffix: "", duration: 2 },
         { category: 'tourism', id: 14, initial: 0, target: 6, label: "Conservation Areas", icon: "🦌", suffix: "", duration: 2 },
         { category: 'tourism', id: 15, initial: 0, target: 1310, label: "Mountain Peaks", icon: "⛰️", suffix: "", duration: 2.5 },
-        
+
         // Biodiversity
         { category: 'biodiversity', id: 16, initial: 0, target: 870, label: "Bird Species", icon: "🦜", suffix: "", duration: 2 },
         { category: 'biodiversity', id: 17, initial: 0, target: 185, label: "Mammal Species", icon: "🐅", suffix: "", duration: 2 },
@@ -68,8 +69,8 @@ const StatsSection: React.FC = () => {
         { category: 'biodiversity', id: 20, initial: 0, target: 4, label: "Climate Zones", icon: "🌤️", suffix: "", duration: 2 },
     ];
 
-    const filteredStats = activeCategory === 'all' 
-        ? statsData 
+    const filteredStats = activeCategory === 'all'
+        ? statsData
         : statsData.filter(stat => stat.category === activeCategory);
 
     return (
@@ -80,11 +81,11 @@ const StatsSection: React.FC = () => {
                 backgroundPosition: 'center',
                 backgroundAttachment: 'fixed'
             }}>
-            
+
             {/* Animated background elements */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
                 {[...Array(15)].map((_, i) => (
-                    <div 
+                    <div
                         key={i}
                         className="absolute rounded-full"
                         style={{
@@ -111,17 +112,16 @@ const StatsSection: React.FC = () => {
                         From the world's highest peaks to rich cultural heritage, Nepal offers incredible diversity in a compact geographical area
                     </p>
                 </div>
-                
+
                 {/* Category Filter */}
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
                     {statsCategories.map((category) => (
                         <button
                             key={category.id}
-                            className={`flex items-center space-x-2 px-5 py-3 rounded-full font-medium transition-all duration-300 ${
-                                activeCategory === category.id
+                            className={`flex items-center space-x-2 px-5 py-3 rounded-full font-medium transition-all duration-300 ${activeCategory === category.id
                                     ? 'bg-[#fcd00e] text-[#143a31] shadow-lg'
                                     : 'bg-white/10 text-white/90 hover:bg-white/20 backdrop-blur-sm'
-                            }`}
+                                }`}
                             onClick={() => setActiveCategory(category.id)}
                         >
                             <span className="text-xl">{category.icon}</span>
@@ -129,13 +129,13 @@ const StatsSection: React.FC = () => {
                         </button>
                     ))}
                 </div>
-                
+
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                     {filteredStats.map((stat) => (
-                        <StatCard 
-                            key={stat.id} 
-                            stat={stat} 
-                            isVisible={isVisible} 
+                        <StatCard
+                            key={stat.id}
+                            stat={stat}
+                            isVisible={isVisible}
                         />
                     ))}
                 </div>
@@ -147,11 +147,15 @@ const StatsSection: React.FC = () => {
                         <ul className="space-y-3 text-white/90">
                             <li className="flex items-start">
                                 <span className="text-[#fcd00e] mr-2">•</span>
-                                <span>Nepal has the only non-rectangular flag in the world</span>
+                                <span>Kumari, a living goddess, is worshipped in Nepal</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-[#fcd00e] mr-2">•</span>
-                                <span>Kumari, a living goddess, is worshipped in Nepal</span>
+                                <span>Nepali youth continue to be recruited into international armed forces for their exceptional courage and dedication.</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-[#fcd00e] mr-2">•</span>
+                                <span>To this day, members of the British royal family are protected by highly trained Nepali soldiers.</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-[#fcd00e] mr-2">•</span>
@@ -163,7 +167,7 @@ const StatsSection: React.FC = () => {
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20">
                         <h3 className="text-2xl font-bold text-[#fcd00e] mb-4">Tourist Essentials</h3>
                         <ul className="space-y-3 text-white/90">
@@ -212,13 +216,13 @@ const StatCard: React.FC<{ stat: any, isVisible: boolean }> = ({ stat, isVisible
     useEffect(() => {
         if (isVisible && !animated && numberRef.current) {
             setAnimated(true);
-            
+
             // Animate the card entrance
             gsap.fromTo(cardRef.current,
                 { opacity: 0, y: 30, scale: 0.9 },
                 { opacity: 1, y: 0, scale: 1, duration: 0.8, ease: 'back.out(1.7)' }
             );
-            
+
             // Animate the number counting
             gsap.to(numberRef.current, {
                 innerText: stat.target,
@@ -226,7 +230,7 @@ const StatCard: React.FC<{ stat: any, isVisible: boolean }> = ({ stat, isVisible
                 snap: { innerText: 1 },
                 stagger: 1,
                 ease: "power2.out",
-                onUpdate: function() {
+                onUpdate: function () {
                     if (numberRef.current) {
                         const value = Math.floor(Number(numberRef.current.innerText));
                         numberRef.current.innerText = value.toLocaleString();
@@ -237,17 +241,21 @@ const StatCard: React.FC<{ stat: any, isVisible: boolean }> = ({ stat, isVisible
     }, [isVisible, stat.target, stat.duration, animated]);
 
     return (
-        <div 
+        <div
             ref={cardRef}
             className="group relative bg-white/10 backdrop-blur-md rounded-2xl p-5 text-center border border-white/20 hover:border-[#fcd00e]/50 transition-all duration-500 cursor-pointer stat-card"
         >
             <div className="absolute -inset-1 bg-gradient-to-r from-[#fcd00e]/10 to-[#143a31]/10 rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             <div className="relative z-10">
-                <div className="text-3xl mb-3 transform group-hover:scale-110 transition-transform duration-500">
-                    {stat.icon}
+                <div className="flex justify-center items-center text-3xl mb-3 transform group-hover:scale-110 transition-transform duration-500">
+                    {typeof stat.icon === 'string' ? (
+                        <span>{stat.icon}</span>
+                    ) : (
+                        stat.icon
+                    )}
                 </div>
-                <div 
-                    ref={numberRef} 
+                <div
+                    ref={numberRef}
                     className="text-3xl font-bold text-[#fcd00e] mb-2"
                 >
                     {stat.initial}
