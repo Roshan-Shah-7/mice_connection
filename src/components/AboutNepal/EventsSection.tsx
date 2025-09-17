@@ -369,7 +369,7 @@ const EventsSection: React.FC = () => {
                 <div className="text-sm">Main Religions</div>
               </div>
               <div className="bg-white/10 rounded-xl p-4 text-center">
-                <div className="text-3xl font-bold text-[#fcd00e]">366</div>
+                <div className="text-3xl font-bold text-[#fcd00e]">365</div>
                 <div className="text-sm">Days of Celebration</div>
               </div>
             </div>

@@ -51,7 +51,7 @@ const StatsSection: React.FC = () => {
         { category: 'culture', id: 6, initial: 0, target: 123, label: "Languages Spoken", icon: "🗣️", suffix: "+", duration: 2 },
         { category: 'culture', id: 7, initial: 0, target: 125, label: "Ethnic Groups", icon: "👨‍👩‍👧‍👦", suffix: "+", duration: 2 },
         { category: 'culture', id: 8, initial: 0, target: 10, label: "UNESCO Heritage Sites", icon: "🏛️", suffix: "", duration: 2 },
-        { category: 'culture', id: 9, initial: 0, target: 1, label: "the only non-rectangular flag in the world", icon: <img src={flag} alt="Nepal Flag" className="h-8 w-8 object-contain" />, suffix: "", duration: 2 },
+        { category: 'culture', id: 9, initial: 0, target: 1, label: "The only non-rectangular flag in the world", icon: <img src={flag} alt="Nepal Flag" className="h-8 w-8 object-contain" />, suffix: "", duration: 2 },
         { category: 'culture', id: 10, initial: 0, target: 81, label: "Percent Hindu Population", icon: "🕉️", suffix: "%", duration: 2 },
 
         // Tourism
