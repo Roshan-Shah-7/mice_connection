@@ -222,15 +222,6 @@ const TourPackageOverview = () => {
                                                 {tour.description.length > 120 ? tour.description.substring(0, 120) + '...' : tour.description}
                                             </p>
 
-                                            {/* Price / Duration (Optional) */}
-                                            {(tour.priceUSD || tour.duration) && (
-                                                <div className="flex items-center mb-6 text-[#D4AF37] text-sm">
-                                                    {tour.duration && (
-                                                        <span>{tour.duration}</span>
-                                                    )}
-                                                </div>
-                                            )}
-
                                             {/* CTA Button */}
                                             <button
                                                 className="px-6 py-3 bg-[#D4AF37] cursor-pointer text-white font-medium rounded-full transition-all duration-500 hover:bg-[#0e332e] transform hover:scale-105"
