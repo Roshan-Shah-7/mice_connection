@@ -403,31 +403,6 @@ const DetailDestination: React.FC = () => {
                             </div>
                         )}
 
-                        {/* Gallery Tab */}
-                        {/* {activeTab === 'gallery' && (
-                            <div>
-                                <h2 className="text-3xl font-bold text-[#10362e] mb-8 flex items-center gap-2">
-                                    <FaPhotoVideo className="text-[#fcd10b]" /> Photo Gallery
-                                </h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                                    <div className="md:col-span-2 lg:col-span-3 aspect-video overflow-hidden rounded-xl">
-                                        <img
-                                            src={destination.image}
-                                            alt={destination.name}
-                                            className="w-full h-full object-cover"
-                                        />
-                                    </div>
-                                    {[1, 2, 3, 4, 5, 6].map((item) => (
-                                        <div key={item} className="aspect-square overflow-hidden rounded-xl">
-                                            <div className="w-full h-full bg-gray-200 flex items-center justify-center">
-                                                <span className="text-gray-500">Image {item}</span>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        )} */}
-
                         {/* Packages Tab */}
                         {activeTab === 'packages' && relatedPackages.length > 0 && (
                             <div>
@@ -456,7 +431,6 @@ const DetailDestination: React.FC = () => {
                                                     {pkg.description.substring(0, 100)}...
                                                 </p>
                                                 <div className="flex justify-between items-center mb-4">
-                                                    <span className="text-2xl font-bold text-[#10362e]">${pkg.priceUSD}</span>
                                                     <span className="flex items-center text-yellow-400">
                                                         {'★'.repeat(5)}
                                                     </span>
