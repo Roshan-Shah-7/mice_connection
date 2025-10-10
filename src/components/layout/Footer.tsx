@@ -78,7 +78,7 @@ const Footer = () => {
             {/* Background decorative element */}
             <div className="absolute inset-0 opacity-5">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37] rounded-full filter blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#D4AF37] rounded-full filter blur-3xl"></div>
+                <div className="absolute bottom-50 left-50 w-80 h-80 bg-[#D4AF37] rounded-full filter blur-3xl"></div>
             </div>
 
             <div className="relative z-10 max-w-[1440px] mx-auto px-4 md:px-6">
@@ -89,6 +89,10 @@ const Footer = () => {
                         <p className="text-gray-300 mb-6">
                             Your premier destination for exceptional MICE (Meetings, Incentives, Conferences, and Exhibitions) services in Nepal and beyond.
                         </p>
+                        <div className="mt-6">
+                            <h5 className="text-md font-semibold mb-2 text-[#D4AF37]">Member of:</h5>
+                            <img src="/assets/partners/patner.png" alt="PATA International" className="h-12 md:h-20 lg:h-30" />
+                        </div>
                     </div>
 
                     {/* Quick Links */}
