@@ -188,7 +188,7 @@ const ContactPage = () => {
                 {/* Main Content */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
                     {/* Contact Form */}
-                    <div ref={formRef} className="bg-white rounded-2xl shadow-xl p-8">
+                    <div ref={formRef} className="bg-white rounded-2xl shadow-xl p-8 h-fit sticky top-20">
                         <h2 className="text-2xl font-bold text-[#1f423b] mb-6">Send Us a Message</h2>
 
                         {submitSuccess && (
@@ -325,7 +325,7 @@ const ContactPage = () => {
                                         </div>
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="text-lg font-medium text-gray-900">Our Location</h3>
+                                        <h3 className="text-lg font-medium text-gray-900">Our Location (Nepal Office)</h3>
                                         <p className="mt-1 text-gray-600">
                                             Chakrapath, Kathmandu<br />
                                             Hotel Mandala Norling Lords Prime
@@ -349,7 +349,7 @@ const ContactPage = () => {
                                     </div>
                                 </div>
 
-                                {/* India Office */}
+                                {/* U.K. Office */}
                                 <div className="flex items-start">
                                     <div className="flex-shrink-0 mt-1">
                                         <div className="w-10 h-10 rounded-full bg-[#fcd00d]/20 flex items-center justify-center">
@@ -359,9 +359,27 @@ const ContactPage = () => {
                                         </div>
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="text-lg font-medium text-gray-900">Phone Number (India Office)</h3>
+                                        <h3 className="text-lg font-medium text-gray-900">Phone Number (U.K. Office)</h3>
                                         <p className="mt-1 text-gray-600">
-                                            +91-8750297762 <br />
+                                            +44 7848826226 <br />
+                                            (Ms. Nisha Budhathoki, Head of Operations)
+                                        </p>
+                                    </div>
+                                </div>
+
+                                {/* India Office */}
+                                <div className="flex items-start">
+                                    <div className="flex-shrink-0 mt-1">
+                                        <div className="w-10 h-10 rounded-full bg-[#fcd00d]/20 flex items-center justify-center">
+                                            <svg className="w-6 h-6 text-[#1f423b]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div className="ml-4">
+                                        <h3 className="text-lg font-medium text-gray-900">Email Address (India Office)</h3>
+                                        <p className="mt-1 text-gray-600">
+                                            sales@themiceconnection.com <br />miceconnectionpvtltd@gmail.com<br />
                                             (Ms. Madhu Kaithwas, Business Development Manager)
                                         </p>
                                     </div>
@@ -376,16 +394,15 @@ const ContactPage = () => {
                                         </div>
                                     </div>
                                     <div className="ml-4">
-                                        <h3 className="text-lg font-medium text-gray-900">Email Address</h3>
+                                        <h3 className="text-lg font-medium text-gray-900">Email Address (Nepal Office)</h3>
                                         <p className="mt-1 text-gray-600">
-                                            info@themiceconnection.com<br />
-                                            sales@themiceconnection.com<br />
-                                            miceconnectionpvtltd@gmail.com
+                                            info@themiceconnection.com <br />miceconnectionpvtltd@gmail.com
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
 
                         {/* Business Hours */}
                         <div ref={hoursRef} className="bg-white rounded-2xl shadow-xl p-8">

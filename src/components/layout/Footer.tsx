@@ -90,7 +90,7 @@ const Footer = () => {
                             Your premier destination for exceptional MICE (Meetings, Incentives, Conferences, and Exhibitions) services in Nepal and beyond.
                         </p>
                         <div className="mt-6">
-                            <h5 className="text-md font-semibold mb-2 text-[#D4AF37]">Member of:</h5>
+                            <h5 className="text-md font-semibold mb-2 text-[#D4AF37]">Proudly Associated with:</h5>
                             <img src="/assets/partners/patner.png" alt="PATA International" className="h-12 md:h-20 lg:h-30" />
                         </div>
                     </div>
