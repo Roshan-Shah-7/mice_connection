@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { tourPackages } from '../data/tourPackagesData';
-import type { TourPackage, Currency } from '../types/tourTypes';
+import type { TourPackage } from '../types/tourTypes';
 import TourCard from '../components/TourPackages/TourCard';
 
 gsap.registerPlugin(ScrollTrigger);
 
 // --- HERO COMPONENT ---
-const Hero: React.FC<{ currency: Currency, onCurrencyChange: (c: Currency) => void }> = ({ currency, onCurrencyChange }) => {
+const Hero: React.FC = () => {
     const heroRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -50,16 +50,6 @@ const Hero: React.FC<{ currency: Currency, onCurrencyChange: (c: Currency) => vo
                 <div className="hero-bg-shape absolute -bottom-20 -right-20 w-96 h-96 bg-brand-dark/10 rounded-full blur-3xl animate-pulse-slow"></div>
             </div>
 
-            <div className="absolute top-30 right-6 z-30">
-                <div className="bg-[#fcd00e] backdrop-blur-sm rounded-full shadow-md p-1 flex border border-neutral-200">
-                    <button onClick={() => onCurrencyChange('USD')} className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-300 ${currency === 'USD' ? 'bg-[#11342f] text-white' : 'text-neutral-600 hover:bg-neutral-100'}`}>
-                        $ USD
-                    </button>
-                    <button onClick={() => onCurrencyChange('NPR')} className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-300 ${currency === 'NPR' ? 'bg-[#11342f] text-white' : 'text-neutral-600 hover:bg-neutral-100'}`}>
-                        ₨ NPR
-                    </button>
-                </div>
-            </div>
 
             <div className="relative z-10 w-full container mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -128,25 +118,18 @@ const Hero: React.FC<{ currency: Currency, onCurrencyChange: (c: Currency) => vo
 // --- MAIN PAGE COMPONENT ---
 const TourPackagesPage: React.FC = () => {
     const navigate = useNavigate();
-    const [currency, setCurrencyState] = useState<Currency>(() => {
-        const savedCurrency = localStorage.getItem('selectedCurrency');
-        return (savedCurrency === 'USD' || savedCurrency === 'NPR') ? savedCurrency : 'USD';
-    });
     const [activeCategory, setActiveCategory] = useState('All');
     const [difficultyFilter, setDifficultyFilter] = useState('All');
     const [searchQuery, setSearchQuery] = useState('');
     const [sortOption, setSortOption] = useState('featured');
-
-    const setCurrency = (newCurrency: Currency) => {
-        setCurrencyState(newCurrency);
-        localStorage.setItem('selectedCurrency', newCurrency);
-    };
+    const [tourTypeFilter, setTourTypeFilter] = useState('All');
 
     const categories = useMemo(() => [
-        { name: "All", icon: "🗺️" }, {name: "Women Centric", icon: "👯‍♀️"}, { name: "Cultural", icon: "🏛️" }, { name: "Adventure", icon: "🪂" }, { name: "Wildlife", icon: "🦒" }, { name: "Spiritual", icon: "🙏" }, { name: "Family", icon: "👨‍👩‍👧‍👦" }
+        { name: "All", icon: "🗺️" }, { name: "Women Centric", icon: "👯‍♀️" }, { name: "Cultural", icon: "🏛️" }, { name: "Educational", icon: "📚" }, { name: "Adventure", icon: "🪂" }, { name: "Wildlife", icon: "🦒" }, { name: "Spiritual", icon: "🙏" }, { name: "Family", icon: "👨‍👩‍👧‍👦" }
     ], []);
 
     const difficulties = useMemo(() => ["All", "Easy", "Moderate", "Challenging"], []);
+    const tourTypes = useMemo(() => ["All", "FIT (Individual/Small Group)", "Group (Large/Private)"], []);
 
     const filteredAndSortedTours = useMemo(() => {
         let result: TourPackage[] = [...tourPackages];
@@ -159,6 +142,28 @@ const TourPackagesPage: React.FC = () => {
             result = result.filter(tour => tour.difficulty === difficultyFilter);
         }
 
+        if (tourTypeFilter !== 'All') {
+            result = result.filter(tour => {
+                const groupSize = tour.groupSize.toLowerCase();
+                const isFIT = groupSize.includes('small') ||
+                    groupSize.includes('flexible') ||
+                    groupSize.includes('exclusive') ||
+                    groupSize.includes('max');
+
+                const isLargeGroup = groupSize.includes('group') ||
+                    groupSize.includes('minimum') ||
+                    groupSize.includes('participants');
+
+                if (tourTypeFilter === 'FIT (Individual/Small Group)') {
+                    return isFIT;
+                }
+                if (tourTypeFilter === 'Group (Large/Private)') {
+                    return isLargeGroup;
+                }
+                return true;
+            });
+        }
+
         if (searchQuery) {
             const query = searchQuery.toLowerCase();
             result = result.filter(tour =>
@@ -169,36 +174,31 @@ const TourPackagesPage: React.FC = () => {
         }
 
         switch (sortOption) {
-            case 'price-low':
-                result.sort((a, b) => parseFloat(a.priceUSD.replace('$', '').replace(',', '')) - parseFloat(b.priceUSD.replace('$', '').replace(',', '')));
-                break;
-            case 'price-high':
-                result.sort((a, b) => parseFloat(b.priceUSD.replace('$', '').replace(',', '')) - parseFloat(a.priceUSD.replace('$', '').replace(',', '')));
-                break;
             case 'duration':
                 result.sort((a, b) => parseInt(a.duration) - parseInt(b.duration));
                 break;
         }
 
         return result;
-    }, [activeCategory, difficultyFilter, searchQuery, sortOption]);
+    }, [activeCategory, difficultyFilter, searchQuery, sortOption, tourTypeFilter]);
 
     const handleClearFilters = () => {
         setActiveCategory('All');
         setDifficultyFilter('All');
+        setTourTypeFilter('All');
         setSearchQuery('');
         setSortOption('featured');
     };
 
     return (
         <div className="min-h-screen bg-brand-light font-sans">
-            <Hero currency={currency} onCurrencyChange={setCurrency} />
+            <Hero />
 
             <section id="tours-section" className="py-20">
                 <div className="container mx-auto px-6">
                     <div className="text-center mb-12">
-                        <h2 className="text-4xl font-extrabold text-brand-dark mb-3">Discover Your Next Adventure</h2>
-                        <p className="text-lg text-neutral-600 max-w-3xl mx-auto">Find the perfect experience from our curated list of tours across the beautiful landscapes of Nepal.</p>
+                        <h2 className="text-4xl font-extrabold text-brand-dark mb-3">Discover Your Next Adventure for FIT/Groups</h2>
+                        <p className="text-lg text-neutral-600 max-w-3xl mx-auto">Whether you're a solo traveler, a small group of friends, or a large private group, we have the perfect experience for you. Explore our curated list of tours across the beautiful landscapes of Nepal.</p>
                     </div>
 
                     {/* Control Panel */}
@@ -227,6 +227,16 @@ const TourPackagesPage: React.FC = () => {
                                         ))}
                                     </div>
                                 </div>
+                                <div className="flex-shrink-0">
+                                    <label className="block text-sm font-bold text-brand-dark mb-2">Tour Type</label>
+                                    <div className="flex flex-wrap items-center gap-2">
+                                        {tourTypes.map((type) => (
+                                            <button key={type} onClick={() => setTourTypeFilter(type)} className={`px-3 py-1.5 rounded-lg transition-all duration-300 text-sm font-semibold border ${tourTypeFilter === type ? 'bg-[#11342f] text-white border-brand-dark' : 'bg-white text-neutral-700 border-neutral-200 hover:bg-neutral-100'}`}>
+                                                {type}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
 
                             {/* Row 2: Search and Sort */}
@@ -234,8 +244,6 @@ const TourPackagesPage: React.FC = () => {
                                 <input type="text" placeholder="Search by keyword..." className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent transition" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                                 <select className="w-full md:w-auto px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent transition" value={sortOption} onChange={(e) => setSortOption(e.target.value)}>
                                     <option value="featured">Sort by: Featured</option>
-                                    <option value="price-low">Price: Low to High</option>
-                                    <option value="price-high">Price: High to Low</option>
                                     <option value="duration">Duration</option>
                                 </select>
                             </div>
@@ -245,7 +253,7 @@ const TourPackagesPage: React.FC = () => {
                     {filteredAndSortedTours.length > 0 ? (
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                             {filteredAndSortedTours.map((tour, index) => (
-                                <TourCard key={tour.id} tour={tour} currency={currency} index={index} navigate={navigate} />
+                                <TourCard key={tour.id} tour={tour} index={index} navigate={navigate} />
                             ))}
                         </div>
                     ) : (

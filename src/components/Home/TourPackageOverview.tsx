@@ -225,9 +225,6 @@ const TourPackageOverview = () => {
                                             {/* Price / Duration (Optional) */}
                                             {(tour.priceUSD || tour.duration) && (
                                                 <div className="flex items-center mb-6 text-[#D4AF37] text-sm">
-                                                    {tour.priceUSD && (
-                                                        <span className="mr-4">{tour.priceUSD}</span>
-                                                    )}
                                                     {tour.duration && (
                                                         <span>{tour.duration}</span>
                                                     )}

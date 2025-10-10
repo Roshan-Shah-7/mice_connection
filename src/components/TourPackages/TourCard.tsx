@@ -1,14 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import type { NavigateFunction } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import type { TourPackage, Currency } from '../../types/tourTypes';
+import type { TourPackage } from '../../types/tourTypes';
 
 gsap.registerPlugin(ScrollTrigger);
 
 interface TourCardProps {
     tour: TourPackage;
-    currency: Currency;
     index: number;
     isRecommended?: boolean;
     recommendationReason?: string;
@@ -22,29 +21,9 @@ const StatIcon: React.FC<{ icon: string; label: string; value: string; }> = ({ i
     </div>
 );
 
-const TourCard: React.FC<TourCardProps> = ({ tour, currency, index, isRecommended, recommendationReason, navigate }) => {
+const TourCard: React.FC<TourCardProps> = ({ tour, isRecommended, recommendationReason, navigate }) => {
     const cardRef = useRef(null);
 
-    useEffect(() => {
-        const el = cardRef.current;
-        if (el) {
-            gsap.fromTo(el,
-                { opacity: 0, y: 50 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 0.7,
-                    delay: (index % 3) * 0.1,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        trigger: el,
-                        start: 'top 95%',
-                        toggleActions: 'play none none none',
-                    }
-                }
-            );
-        }
-    }, [index]);
 
     const getDifficultyClass = (difficulty: 'Easy' | 'Moderate' | 'Challenging') => {
         switch (difficulty) {
@@ -55,9 +34,6 @@ const TourCard: React.FC<TourCardProps> = ({ tour, currency, index, isRecommende
         }
     };
 
-    const getPrice = (tour: TourPackage) => {
-        return currency === 'USD' ? tour.priceUSD : tour.priceNPR;
-    };
 
     return (
         <div
@@ -92,12 +68,8 @@ const TourCard: React.FC<TourCardProps> = ({ tour, currency, index, isRecommende
                 )}
 
                 <div className="mt-auto pt-4 border-t border-neutral-100">
-                    <div className="flex justify-between items-center">
-                        <div className="flex flex-col">
-                            <span className="text-sm text-neutral-600">From</span>
-                            <span className="text-xl font-extrabold text-brand-dark">{getPrice(tour)}</span>
-                        </div>
-                        <div className="bg-[#10362e] text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-brand-yellow hover:text-brand-dark transition-all duration-300 transform group-hover:scale-105">
+                    <div className="flex justify-center items-center">
+                        <div className="bg-[#10362e] text-white px-5 py-2.5 rounded-lg font-semibold text-sm hover:bg-brand-yellow hover:text-brand-dark transition-all duration-300 transform group-hover:scale-105 w-full text-center">
                             View Details
                         </div>
                     </div>

@@ -4,8 +4,7 @@ export interface TourPackage {
     title: string;
     description: string;
     duration: string;
-    priceUSD: string;
-    priceNPR: string;
+    priceRange: string;
     image: string;
     category: string;
     difficulty: 'Easy' | 'Moderate' | 'Challenging';

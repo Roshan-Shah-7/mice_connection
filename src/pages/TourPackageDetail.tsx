@@ -2,13 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useParams, Link, useLocation } from 'react-router-dom';
 import { tourPackages } from '../data/tourPackagesData';
 import type { TourPackage } from '../types/tourTypes';
+import BookingForm from '../components/TourBooking/BookingForm';
 
 const TourPackageDetail: React.FC = () => {
     const { slug } = useParams<{ slug: string }>();
     const [tour, setTour] = useState<TourPackage | undefined>(undefined);
-    const [currency, setCurrency] = useState<'USD' | 'NPR'>('USD');
     const [activeTab, setActiveTab] = useState<'overview' | 'itinerary' | 'gallery'>('overview');
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [isBookingFormOpen, setIsBookingFormOpen] = useState(false);
 
     const location = useLocation();
 
@@ -44,9 +45,6 @@ const TourPackageDetail: React.FC = () => {
         }
     };
 
-    const getPrice = (tour: TourPackage) => {
-        return currency === 'USD' ? tour.priceUSD : tour.priceNPR;
-    };
 
     const openLightbox = (image: string) => {
         setSelectedImage(image);
@@ -81,12 +79,11 @@ const TourPackageDetail: React.FC = () => {
                                 </svg>
                                 {tour.duration}
                             </span>
-                            <span className="flex items-center">
+                            <span className="flex items-center text-white/80">
                                 <svg className="w-5 h-5 mr-1 text-[#fcd00e]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z" />
-                                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z" clipRule="evenodd" />
+                                    <path fillRule="evenodd" d="M3 6a2 2 0 012-2h10a2 2 0 012 2v.282c.83.095 1.62.33 2.333.682V6a4 4 0 00-4-4H5a4 4 0 00-4 4v10a4 4 0 004 4h10a4 4 0 004-4v-.282a8.006 8.006 0 01-2.333-.682V16a2 2 0 01-2 2H5a2 2 0 01-2-2V6zm14.718-2.582A8.006 8.006 0 0017 4.282V6a2 2 0 01-2 2H5a2 2 0 01-2-2V4.282c.83-.095 1.62-.33 2.333-.682A8.006 8.006 0 0117.718 3.418zM12 11a1 1 0 10-2 0v3a1 1 0 102 0v-3z" clipRule="evenodd" />
                                 </svg>
-                                {getPrice(tour)}
+                                Price Range: {tour.priceRange}
                             </span>
                             <span className={`px-3 py-1 rounded-full text-xs font-bold text-white ${getDifficultyColor(tour.difficulty)}`}>
                                 {tour.difficulty}
@@ -118,15 +115,6 @@ const TourPackageDetail: React.FC = () => {
                         >
                             Itinerary
                         </button>
-                        {/* <button
-                            onClick={() => setActiveTab('gallery')}
-                            className={`py-4 px-1 border-b-2 font-medium text-sm ${activeTab === 'gallery'
-                                ? 'border-[#143a31] text-[#143a31]'
-                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                                }`}
-                        >
-                            Gallery
-                        </button> */}
                     </div>
                 </div>
             </section>
@@ -223,29 +211,6 @@ const TourPackageDetail: React.FC = () => {
                     {/* Right Column - Quick Facts & Booking */}
                     <div className="lg:col-span-1">
                         <div className="bg-white border border-gray-200 rounded-xl shadow-lg p-6 sticky top-28">
-                            {/* Currency Toggle */}
-                            <div className="w-fit mb-4">
-                                <div className="bg-white rounded-full shadow-lg p-1 flex border border-gray-200">
-                                    <button
-                                        onClick={() => setCurrency('USD')}
-                                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center ${currency === 'USD'
-                                            ? 'bg-[#143a31] text-white'
-                                            : 'text-gray-600 hover:bg-gray-100'
-                                            }`}
-                                    >
-                                        <span className="mr-1">$</span> USD
-                                    </button>
-                                    <button
-                                        onClick={() => setCurrency('NPR')}
-                                        className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center ${currency === 'NPR'
-                                            ? 'bg-[#143a31] text-white'
-                                            : 'text-gray-600 hover:bg-gray-100'
-                                            }`}
-                                    >
-                                        <span className="mr-1">₨</span> NPR
-                                    </button>
-                                </div>
-                            </div>
                             <h3 className="text-2xl font-bold text-[#143a31] mb-6">Quick Facts</h3>
                             <div className="space-y-4 mb-6">
                                 <div className="flex justify-between items-center pb-3 border-b border-gray-100">
@@ -270,6 +235,18 @@ const TourPackageDetail: React.FC = () => {
                                     <span className="font-semibold text-gray-700">Best Season:</span>
                                     <span className="text-gray-600">{tour.bestSeason}</span>
                                 </div>
+                                <div className="flex justify-between items-center pb-3 border-b border-gray-100">
+                                    <span className="font-semibold text-gray-700">Price Range:</span>
+                                    <span className="text-gray-600">{tour.priceRange}</span>
+                                </div>
+                            </div>
+
+                            {/* Trip Cost Section */}
+                            <div className="mb-6 p-4 bg-[#f9f9f9] rounded-lg">
+                                <h4 className="font-semibold text-[#143a31] mb-2">How Much Does This Trip Cost?</h4>
+                                <p className="text-gray-600 text-sm mb-3">
+                                    Our trips are fully customizable to meet your unique requirements and group size. The final price is tailored based on your chosen services and accommodation, ensuring a personalized and seamless holiday experience that fits your taste and budget. We believe an unforgettable journey is crafted around your individual needs.
+                                </p>
                             </div>
 
                             <div className="mb-6 p-4 bg-[#f9f9f9] rounded-lg">
@@ -284,21 +261,27 @@ const TourPackageDetail: React.FC = () => {
                             </div>
 
                             <div className="border-t border-gray-200 pt-6">
-                                <div className="flex justify-between items-center mb-4">
-                                    <span className="text-xl font-bold text-[#143a31]">Price:</span>
-                                    <span className="text-3xl font-bold text-[#fcd00e]">{getPrice(tour)}</span>
-                                </div>
-                                <Link to="/contact" className="cursor-pointer">
-                                    <button className="w-full bg-gradient-to-r from-[#143a31] to-[#0f2821] text-white py-4 rounded-lg font-semibold text-lg hover:from-[#fcd00e] hover:to-yellow-400 hover:text-[#143a31] transition-all duration-300 shadow-md">
-                                        Book This Tour Now
-                                    </button>
-                                </Link>
+
+                                <button
+                                    onClick={() => setIsBookingFormOpen(true)}
+                                    className="w-full bg-gradient-to-r from-[#143a31] to-[#0f2821] text-white py-4 rounded-lg font-semibold text-lg hover:from-[#fcd00e] hover:to-yellow-400 hover:text-[#143a31] transition-all duration-300 shadow-md"
+                                >
+                                    Book This Tour Now
+                                </button>
                                 <p className="text-center text-gray-500 text-xs mt-3">No booking fees • Best price guarantee</p>
+                                <p className="text-center text-gray-500 text-xs mt-3">The packages are customisable based on clients requirements and prices are subject to change.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {isBookingFormOpen && tour && (
+                <BookingForm
+                    tourTitle={tour.title}
+                    onClose={() => setIsBookingFormOpen(false)}
+                />
+            )}
 
             {/* Lightbox Modal */}
             {selectedImage && (

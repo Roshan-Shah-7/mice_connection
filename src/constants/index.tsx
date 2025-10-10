@@ -1,12 +1,18 @@
-type NavLink = {
+export type NavLink = {
     label: string;
     href: string;
     hasDropdown?: boolean;
 };
 
+export type ServiceLink = {
+    label: string;
+    href: string;
+};
+
 export const navLinksLeft: NavLink[] = [
     { label: "About Nepal", href: "/about-nepal" },
     { label: "Tour Packages", href: "/tour-packages" },
+    // { label: "International Tours", href: "/international-tours" },
     { label: "Events", href: "/events" },
     { label: "Our Services", href: "#", hasDropdown: true },
 ];
@@ -18,7 +24,7 @@ export const navLinksRight: NavLink[] = [
     { label: "Contact Us", href: "/contact" },
 ];
 
-export const servicesLinks = [
+export const servicesLinks: ServiceLink[] = [
     { label: "Meetings", href: "/services/meetings" },
     { label: "Incentives", href: "/services/incentives" },
     { label: "Conferences", href: "/services/conferences" },

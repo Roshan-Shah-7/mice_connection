@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useLottie } from 'lottie-react';
-import planeAnimation from '../model/plane.json';
-import bottomArrow from '../model/arrow.json';
-import travel from '../model/travel.json';
+import planeAnimation from '../../model/plane.json';
+import bottomArrow from '../../model/arrow.json';
+import travel from '../../model/travel.json';
 
 interface LoaderProps {
-    onLoaded: () => void;
-    onAnimationComplete: () => void;
+    onLoaded?: () => void;
+    onAnimationComplete?: () => void;
 }
 
 const bootMessages = [
@@ -49,6 +49,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoaded, onAnimationComplete }) => {
     const { View: TravelLottieView } = useLottie(travelLottieOptions);
 
     useEffect(() => {
+        if (!onLoaded || !onAnimationComplete) return;
         const intervals: number[] = [];
         bootMessages.forEach((_, index) => {
             const timer = setTimeout(() => {
@@ -70,6 +71,16 @@ const Loader: React.FC<LoaderProps> = ({ onLoaded, onAnimationComplete }) => {
         });
         return () => intervals.forEach(timer => clearTimeout(timer));
     }, [onLoaded, onAnimationComplete]);
+
+    if (!onLoaded) {
+        return (
+            <div className="fixed inset-0 z-[100] flex items-center justify-center bg-white/80 backdrop-blur-sm">
+                <div className="w-40 h-40 lg:w-56 lg:h-56 opacity-90">
+                    {LottieView}
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div

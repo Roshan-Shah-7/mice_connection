@@ -165,6 +165,10 @@ const StatsSection: React.FC = () => {
                                 <span className="text-[#fcd00e] mr-2">•</span>
                                 <span>Nepal was never colonized by any foreign power</span>
                             </li>
+                            <li className="flex items-start">
+                                <span className="text-[#fcd00e] mr-2">•</span>
+                                <span>We respectfully celebrate festivals and occasions from all religions.</span>
+                            </li>
                         </ul>
                     </div>
 

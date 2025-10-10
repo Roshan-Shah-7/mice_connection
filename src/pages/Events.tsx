@@ -69,7 +69,6 @@ const EventsPage = () => {
         // Events section animation
         if (eventsRef.current) {
             const sectionTitle = eventsRef.current.querySelector('.section-title');
-            const eventCards = eventsRef.current.querySelectorAll('.event-card');
 
             gsap.fromTo(sectionTitle,
                 { y: 50, opacity: 0 },
@@ -86,20 +85,6 @@ const EventsPage = () => {
             );
 
 
-            gsap.fromTo(eventCards,
-                { y: 80, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 0.8,
-                    stagger: 0.1,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: eventCards[0],
-                        start: "top 80%"
-                    }
-                }
-            );
         }
     }, [filteredEvents]);
 

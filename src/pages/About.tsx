@@ -89,7 +89,7 @@ const AboutPage = () => {
         {
             icon: '✨',
             title: 'Innovation',
-            description: 'Creative event concepts that push boundaries and create memorable experiences.'
+            description: 'Creative concepts that push boundaries and create memorable experiences.'
         },
         {
             icon: '🎯',
@@ -131,14 +131,29 @@ const AboutPage = () => {
             icon: '🎪'
         },
         {
+            title: 'Destination Weddings',
+            description: 'Unforgettable wedding experiences in breathtaking Nepalese settings.',
+            icon: '💍'
+        },
+        {
+            title: 'Adventure Treks',
+            description: 'Guided treks through stunning landscapes for all skill levels.',
+            icon: '🧗'
+        },
+        {
             title: 'Cultural & Leisure Tours',
-            description: 'Immersive experiences that highlight Nepal\'s beauty and heritage.',
+            description: "Immersive experiences that highlight Nepal's beauty and heritage.",
             icon: '🏔️'
         },
         {
             title: 'Women-Centric Tours',
             description: 'Empowering journeys designed for women travelers, focusing on safety, wellness, and authentic local experiences.',
             icon: '👩'
+        },
+        {
+            title: 'Educational Tours',
+            description: 'Engaging and informative tours designed for students and academic groups.',
+            icon: '🎓'
         }
     ];
 
@@ -158,7 +173,7 @@ const AboutPage = () => {
                         </p>
                     </div>
                     <p className="text-lg mb-10 max-w-2xl mx-auto font-light">
-                        With a strong foundation in Meetings, Incentives, Conferences, and Exhibitions (MICE), we blend Nepalese warmth with global precision.
+                        With a strong foundation in Meetings, Incentives, Conferences, and Exhibitions (MICE), as well as tours and treks, we blend Nepalese warmth with global precision.
                     </p>
                     <button
                         onClick={() => window.scrollTo({ top: storyRef.current?.offsetTop ? storyRef.current.offsetTop - 100 : 0, behavior: 'smooth' })}
@@ -220,15 +235,15 @@ const AboutPage = () => {
                         <div className="lg:w-1/2">
                             <div className="space-y-6">
                                 <p className="text-lg text-gray-700 leading-relaxed">
-                                    At The MICE Connection Pvt. Ltd., we don't just manage events we create transformative experiences.
-                                    Our journey began with a vision: to redefine event management in Nepal and beyond.
+                                    At The MICE Connection Pvt. Ltd., we don't just manage events, tours, and treks—we create transformative experiences.
+                                    Our journey began with a vision: to redefine event management and travel in Nepal and beyond.
                                 </p>
                                 <p className="text-lg text-gray-700 leading-relaxed">
-                                    Today, we are proud to be a trusted partner for businesses, organizations, and institutions worldwide,
-                                    delivering events that inspire, connect, and elevate brands to new heights.
+                                    Today, we are proud to be a trusted partner for businesses, organizations, and individuals worldwide,
+                                    delivering experiences that inspire, connect, and elevate brands to new heights.
                                 </p>
                                 <p className="text-lg text-gray-700 leading-relaxed">
-                                    We believe that events are not just gatherings they are powerful platforms for storytelling,
+                                    We believe that these are not just gatherings or trips—they are powerful platforms for storytelling,
                                     networking, and transformation. Every detail matters, and every moment counts.
                                 </p>
                                 <div className="bg-[#0e332e] bg-opacity-5 p-6 rounded-2xl mt-8 border-l-4 border-[#D4AF37]">
@@ -268,7 +283,8 @@ const AboutPage = () => {
             </section>
 
             {/* Expertise Section */}
-            <section ref={expertiseRef} className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-[#f8f9fa]">
+            <section ref={expertiseRef} className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-[#f8f9fa] w-full relative overflow-hidden min-h-screen">
+                <img src="/public/assets/about/experties.webp" alt="" className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-full h-full object-cover opacity-4' />
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0e332e] mb-4">
@@ -291,8 +307,8 @@ const AboutPage = () => {
 
             {/* Vision Statement Section */}
             <section ref={visionRef} className="py-28 px-4 md:px-8 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#0e332e] to-[#1a4d47] z-0"></div>
-                <div className="absolute inset-0 opacity-10 bg-cover bg-center z-0" style={{ backgroundImage: 'url("/api/placeholder/1200/800")' }}></div>
+                <div className="absolute w-full h-full right-0 top-0 bg-gradient-to-br from-[#0e332e] to-[#1a4d47] z-0"></div>
+                <div className="absolute inset-0 opacity-20 bg-contain bg-right z-10" style={{ backgroundImage: 'url("/assets/about/our vision.webp")', backgroundRepeat: 'no-repeat' }}></div>
 
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     <div className="mb-12">
@@ -304,12 +320,12 @@ const AboutPage = () => {
 
                     <div className="space-y-8 text-white">
                         <p className="text-xl md:text-2xl font-light">
-                            To become a globally recognized leader in the MICE industry, setting new standards of excellence,
-                            creativity, and client satisfaction—while positioning Nepal as a premier destination for world-class events.
+                            To become a globally recognized leader in the MICE, tour, and trek industry, setting new standards of excellence,
+                            creativity, and client satisfaction—while positioning Nepal as a premier destination for world-class experiences.
                         </p>
                         <p className="text-lg">
-                            At The MICE Connection, we are more than an event agency—we are your partner in success.
-                            Every event we design reflects our passion, dedication, and pursuit of perfection.
+                            At The MICE Connection, we are more than just an agency—we are your partner in success.
+                            Every experience we design reflects our passion, dedication, and pursuit of perfection.
                         </p>
                     </div>
                 </div>
@@ -333,7 +349,7 @@ const AboutPage = () => {
                         Let's Create Something Remarkable Together
                     </h2>
                     <p className="text-xl mb-10 max-w-2xl mx-auto font-light">
-                        Ready to elevate your next event with world-class planning and execution?
+                        Ready to elevate your next event, tour, or trek with world-class planning and execution?
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <button
@@ -346,7 +362,7 @@ const AboutPage = () => {
                             onClick={() => navigate('/events')}
                             className="px-8 py-3 border-2 bg-white text-black font-medium rounded-full hover:bg-white hover:text-[#0e332e] transition-colors duration-300"
                         >
-                            Successful Events
+                            See Our Work
                         </button>
                     </div>
                 </div>

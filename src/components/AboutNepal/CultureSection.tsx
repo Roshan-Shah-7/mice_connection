@@ -80,7 +80,7 @@ const CultureSection: React.FC = () => {
                     {[
                         {
                             title: "Religious Harmony",
-                            description: "Hinduism and Buddhism coexist peacefully, with shared sacred spaces and festivals",
+                            description: "Hinduism and Buddhism coexist peacefully, with shared sacred spaces and festivals. We respectfully celebrate festivals and occasions from all religions.",
                             icon: <FaPray className="text-3xl" />,
                             color: "from-[#143a31] to-[#0f2821]",
                             details: "Nepal is the only officially Hindu nation that also embraces Buddhism with equal reverence."

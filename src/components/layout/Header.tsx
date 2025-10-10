@@ -4,8 +4,8 @@ import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin, FaChevronDown } from "re
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
 import type { Variants } from "framer-motion";
-import { navLinksLeft, navLinksRight, servicesLinks } from '../constants';
-import { useClickOutside } from '../hooks/useClickOutside';
+import { navLinksLeft, navLinksRight, servicesLinks, type NavLink as NavLinkType, type ServiceLink as ServiceLinkType } from '../../constants';
+import { useClickOutside } from '../../hooks/useClickOutside';
 
 const NavLink: React.FC<{ to: string; children: React.ReactNode; onClick?: () => void }> = ({ to, children, onClick }) => (
   <Link
@@ -90,7 +90,7 @@ const Header: React.FC = () => {
       <nav className="max-w-[1540px] mx-auto flex items-center justify-between px-4 md:px-6 py-4">
         {/* Left nav */}
         <ul className="hidden lg:flex items-center gap-8 font-medium text-base">
-          {navLinksLeft.map((link) => (
+          {navLinksLeft.map((link: NavLinkType) => (
             <li key={link.label} className="relative">
               {link.hasDropdown ? (
                 <div
@@ -113,7 +113,7 @@ const Header: React.FC = () => {
                         className="absolute top-full left-0 mt-3 w-56 bg-white rounded-lg shadow-xl overflow-hidden border border-gray-100"
                       >
                         <div className="py-2">
-                          {servicesLinks.map((service) => (
+                          {servicesLinks.map((service: ServiceLinkType) => (
                             <Link key={service.label} to={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f0f7f5] hover:text-[#0c3b32] transition-colors duration-200">
                               {service.label}
                             </Link>
@@ -141,7 +141,7 @@ const Header: React.FC = () => {
 
         {/* Right nav */}
         <ul className="hidden lg:flex items-center gap-8 font-medium text-base">
-          {navLinksRight.map((link) => (
+          {navLinksRight.map((link: NavLinkType) => (
             <li key={link.label}>
               <NavLink to={link.href}>{link.label}</NavLink>
             </li>
@@ -168,7 +168,7 @@ const Header: React.FC = () => {
             exit="exit"
             className="lg:hidden w-full bg-white shadow-lg overflow-hidden"
           >
-            {[...navLinksLeft, ...navLinksRight].map((link) => (
+            {[...navLinksLeft, ...navLinksRight].map((link: NavLinkType) => (
               <div key={link.label} className="w-full border-b border-gray-200 last:border-b-0">
                 {link.hasDropdown ? (
                   <div>
@@ -190,7 +190,7 @@ const Header: React.FC = () => {
                           exit="exit"
                           className="overflow-hidden bg-gray-50"
                         >
-                          {servicesLinks.map((service) => (
+                          {servicesLinks.map((service: ServiceLinkType) => (
                             <MobileNavLink key={service.label} to={service.href} onClick={closeMobileMenu}>
                               <span className="text-base font-normal">{service.label}</span>
                             </MobileNavLink>

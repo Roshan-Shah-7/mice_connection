@@ -18,7 +18,6 @@ gsap.registerPlugin(ScrollTrigger);
 interface Testimonial {
     id: number;
     name: string;
-    company: string;
     testimonial: string;
     rating: number;
     featured?: boolean;
@@ -126,27 +125,42 @@ const Testimonials = () => {
         {
             id: 1,
             name: "Anuska Singh",
-            company: "Kritya Studio",
             testimonial: "The MICE Connection's team is a pleasure to work with. Their expertise and personalized approach made our company retreat a standout success. They tailored every aspect to our needs and exceeded our expectations.",
             rating: 5,
             featured: true
         },
         {
             id: 2,
-            name: "Wilson LA",
-            company: "Australia",
-            testimonial: "The MICE Connection's dedication and professionalism were evident throughout the planning and execution of our international event. They navigated complex logistics with ease, leaving us with a successful event and happy participants.",
+            name: "Roshan Shah",
+            testimonial: "Our recent tour to Nepal organized by The MICE Connection was an absolute dream! Every detail, from accommodation to activities, was perfectly curated. We experienced the true beauty and culture of the region thanks to their exceptional planning.",
             rating: 5,
         },
         {
             id: 3,
             name: "Sano Babu Sunuwar",
-            company: "Babu Adventure Paragliding",
             testimonial: "The MICE Connection's team went above and beyond to make our conference a success in a very short span of time. From strategic planning to flawless execution, their expertise shone through. They truly understand the needs of their clients.",
             rating: 5,
         },
+        {
+            id: 4,
+            name: "Bipendra Chudal",
+            testimonial: "We had an unforgettable adventure trip with The MICE Connection! Their guides were knowledgeable, the itinerary was exciting, and the logistics were seamless. Highly recommend for anyone looking for an authentic travel experience.",
+            rating: 5,
+        },
+        {
+            id: 5,
+            name: "Wilson LA",
+            testimonial: "The MICE Connection's dedication and professionalism were evident throughout the planning and execution of our international event. They navigated complex logistics with ease, leaving us with a successful event and happy participants.",
+            rating: 5,
+        },
+        {
+            id: 6,
+            name: "Manoj Tamang",
+            testimonial: "Thank you, The MICE Connection, for an incredible family vacation! Your attention to our preferences and seamless arrangements made it a truly relaxing and enjoyable experience. We can't wait to book our next trip with you.",
+            rating: 5,
+        },
     ];
-
+ 
     // Render star rating
     const renderRating = (rating: number) => {
         return (
@@ -288,9 +302,6 @@ const Testimonials = () => {
                                                     <h4 className="font-bold text-[#0e332e] group-hover:text-[#D4AF37] transition-colors duration-500" itemProp="author">
                                                         {testimonial.name}
                                                     </h4>
-                                                    <p className="text-xs text-gray-500">
-                                                        {testimonial.company}
-                                                    </p>
                                                 </div>
                                             </div>
                                         </div>
