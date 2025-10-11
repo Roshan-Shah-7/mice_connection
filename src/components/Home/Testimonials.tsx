@@ -124,39 +124,39 @@ const Testimonials = () => {
     const testimonials: Testimonial[] = [
         {
             id: 1,
-            name: "Anuska Singh",
-            testimonial: "The MICE Connection's team is a pleasure to work with. Their expertise and personalized approach made our company retreat a standout success. They tailored every aspect to our needs and exceeded our expectations.",
+            name: "Sarah Chen, Singapore",
+            testimonial: "Our corporate retreat in Bali, organized by The MICE Connection, was executed flawlessly. Their attention to detail and ability to integrate local culture into our agenda made for a truly unique and impactful experience. Highly recommended for international events!",
             rating: 5,
             featured: true
         },
         {
             id: 2,
-            name: "Roshan Shah",
-            testimonial: "Our recent tour to Nepal organized by The MICE Connection was an absolute dream! Every detail, from accommodation to activities, was perfectly curated. We experienced the true beauty and culture of the region thanks to their exceptional planning.",
+            name: "David Miller, UK",
+            testimonial: "The MICE Connection managed our conference in Dubai, and the results were outstanding. From venue selection to speaker coordination, everything was handled with utmost professionalism. Our delegates were thoroughly impressed.",
             rating: 5,
         },
         {
             id: 3,
-            name: "Sano Babu Sunuwar",
-            testimonial: "The MICE Connection's team went above and beyond to make our conference a success in a very short span of time. From strategic planning to flawless execution, their expertise shone through. They truly understand the needs of their clients.",
+            name: "Maria Garcia, Spain",
+            testimonial: "We tasked The MICE Connection with an incentive trip to the Maldives, and they delivered beyond our expectations. The personalized experiences and seamless logistics created an unforgettable reward for our team. Their global reach is truly impressive.",
             rating: 5,
         },
         {
             id: 4,
-            name: "Bipendra Chudal",
-            testimonial: "We had an unforgettable adventure trip with The MICE Connection! Their guides were knowledgeable, the itinerary was exciting, and the logistics were seamless. Highly recommend for anyone looking for an authentic travel experience.",
+            name: "Kenji Tanaka, Japan",
+            testimonial: "Our exhibition booth at the trade show in Berlin was a huge success, thanks to The MICE Connection. Their strategic planning and on-site support ensured maximum engagement and a significant return on investment. They are experts in international event management.",
             rating: 5,
         },
         {
             id: 5,
-            name: "Wilson LA",
-            testimonial: "The MICE Connection's dedication and professionalism were evident throughout the planning and execution of our international event. They navigated complex logistics with ease, leaving us with a successful event and happy participants.",
+            name: "Fatima Zahra, Morocco",
+            testimonial: "The MICE Connection organized our product launch in Paris, and it was a spectacular event. Their creative approach and meticulous execution ensured everything ran smoothly, leaving a lasting impression on our guests.",
             rating: 5,
         },
         {
             id: 6,
-            name: "Manoj Tamang",
-            testimonial: "Thank you, The MICE Connection, for an incredible family vacation! Your attention to our preferences and seamless arrangements made it a truly relaxing and enjoyable experience. We can't wait to book our next trip with you.",
+            name: "Liam O'Connell, Ireland",
+            testimonial: "For our team-building retreat in Thailand, The MICE Connection provided an exceptional experience. The activities were engaging, the accommodation superb, and the overall coordination was impeccable. A truly world-class service!",
             rating: 5,
         },
     ];

@@ -10,7 +10,6 @@ gsap.registerPlugin(ScrollTrigger);
 const AboutPage = () => {
     const navigate = useNavigate();
     const heroRef = useRef<HTMLDivElement>(null);
-    const storyRef = useRef<HTMLDivElement>(null);
     const valuesRef = useRef<HTMLDivElement>(null);
     const timelineRef = useRef<HTMLDivElement>(null);
     const expertiseRef = useRef<HTMLDivElement>(null);
@@ -26,7 +25,7 @@ const AboutPage = () => {
         );
 
         // Section animations with scroll trigger
-        const sections = [storyRef, valuesRef, timelineRef, expertiseRef, visionRef, ctaRef];
+        const sections = [valuesRef, timelineRef, expertiseRef, visionRef, ctaRef];
 
         sections.forEach(section => {
             if (section.current) {
@@ -176,10 +175,10 @@ const AboutPage = () => {
                         With a strong foundation in Meetings, Incentives, Conferences, and Exhibitions (MICE), as well as tours and treks, we blend Nepalese warmth with global precision.
                     </p>
                     <button
-                        onClick={() => window.scrollTo({ top: storyRef.current?.offsetTop ? storyRef.current.offsetTop - 100 : 0, behavior: 'smooth' })}
+                        onClick={() => window.scrollTo({ top: valuesRef.current?.offsetTop ? valuesRef.current.offsetTop - 100 : 0, behavior: 'smooth' })}
                         className="px-8 py-3 bg-[#D4AF37] text-[#0e332e] font-medium rounded-full hover:bg-[#c19c2d] transition-colors duration-300 group"
                     >
-                        Explore Our Story
+                        Learn More
                         <svg className="w-4 h-4 ml-2 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"></path>
                         </svg>
@@ -207,55 +206,78 @@ const AboutPage = () => {
                 </div>
             </section>
 
-            {/* Storytelling / Who We Are Section */}
-            <section ref={storyRef} className="py-20 px-4 md:px-8 bg-white relative">
-                <div className="absolute top-0 left-0 w-full h-72 bg-gradient-to-b from-[#f8f9fa] to-white -z-10"></div>
-
+            {/* Detailed About Us */}
+            <section className="py-20 px-4 md:px-8 bg-white">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0e332e] mb-4">
-                            Our Story
-                        </h2>
+                        <span className="inline-block px-4 py-2 text-sm font-medium bg-[#2a9d8f]/10 text-[#2a9d8f] rounded-full mb-6">
+                            Our Journey
+                        </span>
+                        <h3 className="text-3xl md:text-4xl font-serif font-bold text-[#0e332e] mb-6">About The MICE Connection</h3>
                         <div className="w-24 h-1 bg-[#D4AF37] mx-auto"></div>
                     </div>
 
-                    <div className="flex flex-col lg:flex-row gap-12 items-start">
-                        <div className="lg:w-1/2">
-                            <div className="sticky top-24">
-                                <div className="rounded-2xl overflow-hidden shadow-2xl transform rotate-2 transition-transform duration-700 hover:rotate-0">
-                                    <img
-                                        src="/assets/about/team.webp"
-                                        alt="Team at The MICE Connection"
-                                        className="w-full h-auto object-cover"
-                                    />
-                                </div>
-                            </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
+                            <p>
+                                Welcome to The MICE Connection! We're passionate about transforming the Meetings, Incentives, Conferences, and Exhibitions (MICE) landscape in Nepal and beyond.
+                            </p>
+                            <p>
+                                Nepal is rapidly gaining recognition as a prime MICE destination, thanks to its unique charm and untapped potential. With over a decade of experience in the tourism industry, specializing in managing large-scale events, our dedication to promoting tourism and fostering cross-cultural connections led to the creation of The MICE Connection.
+                            </p>
+                            <p>
+                                My fascination with tourism, combined with Nepal's breathtaking landscapes and rich cultural heritage, inspired this venture. Having explored diverse cultures globally and witnessed tourism's profound impact on local economies, I was driven to contribute meaningfully to this industry. Nepal, nestled in the Himalayas, offers an irresistible blend of tradition, modernity, and unparalleled hospitality—making it an ideal choice for extraordinary event experiences.
+                            </p>
                         </div>
-
-                        <div className="lg:w-1/2">
-                            <div className="space-y-6">
-                                <p className="text-lg text-gray-700 leading-relaxed">
-                                    At The MICE Connection Pvt. Ltd., we don't just manage events, tours, and treks—we create transformative experiences.
-                                    Our journey began with a vision: to redefine event management and travel in Nepal and beyond.
-                                </p>
-                                <p className="text-lg text-gray-700 leading-relaxed">
-                                    Today, we are proud to be a trusted partner for businesses, organizations, and individuals worldwide,
-                                    delivering experiences that inspire, connect, and elevate brands to new heights.
-                                </p>
-                                <p className="text-lg text-gray-700 leading-relaxed">
-                                    We believe that these are not just gatherings or trips—they are powerful platforms for storytelling,
-                                    networking, and transformation. Every detail matters, and every moment counts.
-                                </p>
-                                <div className="bg-[#0e332e] bg-opacity-5 p-6 rounded-2xl mt-8 border-l-4 border-[#D4AF37]">
-                                    <p className="text-white italic font-serif text-lg">
-                                        "That's why we commit to innovation, creativity, and client-centric excellence in everything we do."
-                                    </p>
-                                </div>
+                        <div className="relative">
+                            <img
+                                src="/assets/about/team.webp" // Using the image from the removed "Our Story" section
+                                alt="The MICE Connection Team - Our Story"
+                                className="rounded-2xl shadow-xl w-full h-auto object-cover"
+                            />
+                            <div className="absolute -bottom-4 -left-4 bg-[#D4AF37] p-4 rounded-lg shadow-lg text-white font-bold text-center">
+                                <p className="text-xl">Crafting Unforgettable Moments</p>
                             </div>
                         </div>
                     </div>
+
+                    <div className="mt-16 bg-[#0e332e] text-white p-10 rounded-2xl shadow-xl">
+                        <h4 className="text-2xl font-bold mb-6 text-center font-serif">Our Global & Local Reach</h4>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <p className="text-lg leading-relaxed mb-4 flex items-start">
+                                    <span className="text-3xl mr-3 text-[#D4AF37]">✈️</span>
+                                    At The MICE Connection, we bridge the gap between global organizations and Nepal’s vibrant offerings. We specialize in crafting impactful events, from international conferences, exhibitions, sales missions, and travel trade shows to corporate retreats infused with local essence.
+                                </p>
+                                <p className="text-lg leading-relaxed flex items-start">
+                                    <span className="text-3xl mr-3 text-[#D4AF37]">✅</span>
+                                    Our commitment is to deliver seamless experiences tailored to each client’s needs, from conceptualization to flawless execution.
+                                </p>
+                            </div>
+                            <div>
+                                <p className="text-lg leading-relaxed mb-4 flex items-start">
+                                    <span className="text-3xl mr-3 text-[#D4AF37]">🌐</span>
+                                    But our services extend beyond Nepal! We empower Nepalese groups to shine on the global stage, fostering connections, exchanging ideas, and showcasing Nepal’s expertise worldwide. This unique approach elevates the MICE experience to a whole new level.
+                                </p>
+                                <p className="text-lg leading-relaxed flex items-start">
+                                    <span className="text-3xl mr-3 text-[#D4AF37]">🤝</span>
+                                    Establishing The MICE Connection in Nepal is more than just business; it's a dream to position Nepal firmly on the global MICE map. We are catalysts for cultural exchange, unlocking the true potential of Nepal's tourism.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="text-center mt-16">
+                        <p className="font-bold text-3xl text-[#0e332e] mb-4 font-serif">Connecting Events, Connecting People, Connecting You.</p>
+                        <h4 className="font-bold text-2xl text-[#0e332e] mt-8">Shradha Chhetri</h4>
+                        <p className="text-gray-600 font-medium text-lg">Managing Director, The MICE Connection</p>
+                        <p className="text-sm text-gray-500 mt-4 max-w-xl mx-auto">
+                            Ms. Shradha, with extensive experience as COO at Nepal Association of Tour & Travel Agents (NATTA) and as an Executive Director for international events, brings invaluable expertise in Nepal’s tourism and event management sectors.
+                        </p>
+                    </div>
                 </div>
             </section>
+
 
             {/* Core Values Section */}
             <section ref={valuesRef} className="py-20 px-4 md:px-8 bg-[#f8f9fa] relative overflow-hidden">

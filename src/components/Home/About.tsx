@@ -17,12 +17,6 @@ const About = () => {
     const [hoveredLetter, setHoveredLetter] = useState<string | null>(null);
     const [centerHovered, setCenterHovered] = useState(false);
 
-    // Combined ref function
-    // const setCardRef = (el: HTMLDivElement | null) => {
-    //     if (el && !cardRefs.current.includes(el)) {
-    //         cardRefs.current.push(el);
-    //     }
-    // };
 
     // GSAP animations with proper cleanup
     useGSAP(

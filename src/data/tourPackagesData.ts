@@ -1624,4 +1624,404 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/kathmandu-heritage-family.webp"
             ]
         },
+        {
+            "id": 36,
+            "title": "Nepal Buddhist Circuit",
+            "slug": "nepal-buddhist-circuit",
+            "description": "A 7-day spiritual journey through Nepal's most revered Buddhist sites, including the birthplace of Buddha, Lumbini, and significant monasteries in Kathmandu Valley. This tour offers a deep dive into Buddhist philosophy, meditation, and cultural exploration.",
+            "duration": "7 Days",
+            "priceRange": "$900 - $1100",
+            "image": "/assets/packages/buddhist.webp",
+            "category": "Spiritual",
+            "difficulty": "Easy",
+            "highlights": [
+                "Explore Lumbini, the birthplace of Siddhartha Gautama.",
+                "Visit Maya Devi Temple and Ashoka Pillar.",
+                "Meditation sessions at various monasteries in Lumbini.",
+                "Discover the ancient city of Kapilvastu.",
+                "Cultural immersion at Boudhanath Stupa and Swayambhunath Stupa.",
+                "Visit Kapan Monastery for a spiritual discourse.",
+                "Scenic drives through the serene landscapes of Nepal."
+            ],
+            "includes": [
+                "All private transportation for arrival, departure, and sightseeing.",
+                "Domestic flights (Kathmandu-Bhairahawa-Kathmandu).",
+                "Accommodation in comfortable hotels.",
+                "All meals (breakfast, lunch, dinner).",
+                "English speaking Buddhist tour guide.",
+                "Entrance fees to all monuments and sites as per itinerary.",
+                "Meditation and spiritual guidance sessions.",
+                "All applicable government taxes and service charges."
+            ],
+            "groupSize": "Small to Medium Groups (Max 15)",
+            "bestSeason": "Year-round (Best: October-March)",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu & Spiritual Briefing",
+                    "description": "Arrive at Tribhuvan International Airport, Kathmandu. Transfer to your hotel. Evening spiritual briefing and welcome dinner."
+                },
+                {
+                    "day": 2,
+                    "title": "Kathmandu Valley Buddhist Sites",
+                    "description": "Visit Boudhanath Stupa, one of the largest stupas in the world. Explore Swayambhunath Stupa (Monkey Temple) with panoramic views. Visit Kapan Monastery for a spiritual discourse and meditation."
+                },
+                {
+                    "day": 3,
+                    "title": "Flight to Lumbini & Exploration",
+                    "description": "Morning flight to Bhairahawa. Transfer to Lumbini. Visit Maya Devi Temple, Ashoka Pillar, and the sacred garden. Explore various international monasteries."
+                },
+                {
+                    "day": 4,
+                    "title": "Lumbini & Kapilvastu Excursion",
+                    "description": "Full day exploration of Lumbini and its surrounding areas, including the ancient city of Kapilvastu, where Siddhartha Gautama spent his early life."
+                },
+                {
+                    "day": 5,
+                    "title": "Meditation & Reflection in Lumbini",
+                    "description": "Participate in morning meditation sessions. Free time for personal reflection, exploring more monasteries, or visiting the Lumbini Museum."
+                },
+                {
+                    "day": 6,
+                    "title": "Return to Kathmandu & Leisure",
+                    "description": "Morning flight back to Kathmandu. Check into your hotel. Afternoon at leisure for souvenir shopping or personal exploration."
+                },
+                {
+                    "day": 7,
+                    "title": "Departure",
+                    "description": "After breakfast, transfer to Tribhuvan International Airport for your onward journey."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/lumbini.webp",
+                "/assets/nepal/boudhanath.webp",
+                "/assets/nepal/swayambhunath.webp"
+            ]
+        },
+        {
+            "id": 37,
+            "title": "Luxury Annapurna Base Camp Trek",
+            "slug": "luxury-annapurna-base-camp-trek",
+            "description": "An exclusive 10-day luxury trekking experience to Annapurna Base Camp, combining breathtaking Himalayan scenery with comfort and personalized services. Enjoy premium accommodations, gourmet meals, and expert guides on this unforgettable adventure.",
+            "duration": "10 Days",
+            "priceRange": "$2000 - $2500",
+            "image": "/assets/nepal/Annapurna.webp",
+            "category": "Adventure",
+            "difficulty": "Challenging",
+            "highlights": [
+                "Panoramic views of Annapurna I, Machhapuchhre, and other peaks.",
+                "Luxury tea house accommodations with private bathrooms where available.",
+                "Gourmet meals prepared by experienced cooks.",
+                "Personalized trekking experience with expert guides and porters.",
+                "Acclimatization days for a safe and enjoyable trek.",
+                "Explore traditional Gurung villages and local culture.",
+                "Relaxing spa and massage treatments post-trek."
+            ],
+            "includes": [
+                "Private airport transfers and domestic flights (Kathmandu-Pokhara-Kathmandu).",
+                "Luxury hotel accommodation in Kathmandu and Pokhara.",
+                "Premium tea house accommodation during the trek (best available).",
+                "All meals (breakfast, lunch, dinner) during the trek and in Pokhara.",
+                "Welcome and farewell dinners in Kathmandu.",
+                "Experienced, licensed trekking guide and porters.",
+                "Annapurna Conservation Area Permit (ACAP) and TIMS card.",
+                "High-quality trekking gear (sleeping bag, down jacket on returnable basis).",
+                "First aid kit and emergency oxygen supply.",
+                "Post-trek spa/massage session.",
+                "All government taxes and service charges."
+            ],
+            "groupSize": "Private or Small Group (Max 10)",
+            "bestSeason": "Spring (March-May) and Autumn (September-November)",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu & Luxury Stay",
+                    "description": "Arrive at Kathmandu International Airport. Private luxury transfer to your 5-star hotel. Welcome dinner and trek briefing with your guide."
+                },
+                {
+                    "day": 2,
+                    "title": "Kathmandu Cultural Tour & Flight to Pokhara",
+                    "description": "Morning cultural tour of UNESCO sites in Kathmandu. Afternoon scenic flight to Pokhara. Check into a luxury lakeside resort. Dinner with lake views."
+                },
+                {
+                    "day": 3,
+                    "title": "Trek to Ghandruk (1,940m)",
+                    "description": "Morning drive to Nayapul. Begin your trek to the beautiful Gurung village of Ghandruk. Stay in a premium tea house."
+                },
+                {
+                    "day": 4,
+                    "title": "Trek to Chhomrong (2,170m)",
+                    "description": "Trek through rhododendron forests and terraced fields to Chhomrong, a large village with stunning views of Annapurna South and Machhapuchhre."
+                },
+                {
+                    "day": 5,
+                    "title": "Trek to Dovan (2,600m)",
+                    "description": "Descend to the Chhomrong Khola and ascend to Sinuwa. Continue through dense bamboo and rhododendron forests to Dovan."
+                },
+                {
+                    "day": 6,
+                    "title": "Trek to Deurali (3,230m)",
+                    "description": "Trek through the 'Gateway to ABC' passing through Himalaya and Hinku Cave. Enjoy the serene environment as you approach Deurali."
+                },
+                {
+                    "day": 7,
+                    "title": "Trek to Annapurna Base Camp (4,130m)",
+                    "description": "Today is the big day! Trek through Machhapuchhre Base Camp to Annapurna Base Camp. Witness panoramic views of the Annapurna Sanctuary."
+                },
+                {
+                    "day": 8,
+                    "title": "Return to Bamboo (2,310m)",
+                    "description": "Enjoy sunrise at ABC and then descend back through Machhapuchhre Base Camp to Bamboo. A long but rewarding day."
+                },
+                {
+                    "day": 9,
+                    "title": "Return to Jhinu Danda (1,760m) & Hot Springs",
+                    "description": "Trek back to Jhinu Danda. Relax and rejuvenate in the natural hot springs. Celebrate your achievement with a special dinner."
+                },
+                {
+                    "day": 10,
+                    "title": "Trek to Nayapul & Drive to Pokhara. Departure",
+                    "description": "Final day of trekking to Nayapul. Private transfer to Pokhara for a farewell lunch. Transfer to Pokhara Airport for flight to Kathmandu for your international departure."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/AnnapurnaRegion.webp",
+                "/assets/nepal/mardi-himal-view.webp",
+                "/assets/nepal/luxury-lodge.webp"
+            ]
+        },
+        {
+            "id": 38,
+            "title": "Himalayan Culture & Education Tour",
+            "slug": "himalayan-culture-education-tour",
+            "description": "An immersive 8-day educational tour focusing on the rich culture and traditions of the Himalayan region. This tour combines academic learning with hands-on experiences, suitable for students and cultural enthusiasts.",
+            "duration": "8 Days",
+            "priceRange": "$1100 - $1300",
+            "image": "/assets/nepal/kathmandu.webp",
+            "category": "Educational",
+            "difficulty": "Easy",
+            "highlights": [
+                "Workshops on traditional Nepali arts and crafts.",
+                "Visits to ancient monasteries and Buddhist learning centers.",
+                "Interaction with local communities and cultural exchange programs.",
+                "Lectures on Himalayan history, geography, and ecology.",
+                "Exploration of UNESCO World Heritage Sites in Kathmandu Valley.",
+                "Hands-on cooking classes for traditional Nepali cuisine."
+            ],
+            "includes": [
+                "All private transportation for arrival, departure, and sightseeing.",
+                "Accommodation in 3-star hotels with cultural immersion options.",
+                "All meals (breakfast, lunch, dinner) with authentic local flavors.",
+                "Expert local guides and academic facilitators.",
+                "Entrance fees to all monuments, museums, and educational sites.",
+                "Workshop materials and cultural performance tickets.",
+                "Certificates of participation for educational programs.",
+                "All applicable government taxes and service charges."
+            ],
+            "groupSize": "Student Groups (Min 10, Max 25)",
+            "bestSeason": "Spring (March-May) and Autumn (September-November)",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu & Cultural Welcome",
+                    "description": "Arrive at Kathmandu International Airport. Transfer to hotel. Welcome dinner with a cultural show and an introductory session on Nepali culture and the tour's educational objectives."
+                },
+                {
+                    "day": 2,
+                    "title": "Kathmandu Valley Heritage & Learning",
+                    "description": "Morning visit to Swayambhunath Stupa and Pashupatinath Temple for insights into Hindu-Buddhist harmony. Afternoon workshop on traditional Thangka painting or pottery. Evening lecture on Nepal's historical evolution."
+                },
+                {
+                    "day": 3,
+                    "title": "Bhaktapur & Patan: Art, Architecture & Craft",
+                    "description": "Full-day excursion to Bhaktapur and Patan Durbar Squares. Guided tours focusing on Newari architecture, wood carving, and metal crafts. Interactive session with local artisans."
+                },
+                {
+                    "day": 4,
+                    "title": "Buddhist Philosophy & Meditation in Boudha",
+                    "description": "Visit Boudhanath Stupa and Kapan Monastery. Attend a lecture on basic Buddhist philosophy and participate in a guided meditation session. Discussion on the role of Buddhism in Nepali society."
+                },
+                {
+                    "day": 5,
+                    "title": "Rural Life & Sustainable Practices",
+                    "description": "Day trip to a nearby rural village (e.g., Panauti or Bungamati) to observe traditional farming methods and sustainable living. Interaction with local families and community leaders. Hands-on cooking class for Nepali dishes."
+                },
+                {
+                    "day": 6,
+                    "title": "Himalayan Ecology & Conservation",
+                    "description": "Visit the International Mountain Museum in Pokhara (if applicable) or a local conservation project near Kathmandu. Lecture on Himalayan biodiversity, climate change, and conservation efforts. Evening documentary screening."
+                },
+                {
+                    "day": 7,
+                    "title": "Reflection & Farewell",
+                    "description": "Morning group discussion and reflection on the tour's learning outcomes. Certificate distribution ceremony. Farewell dinner with traditional music and dance."
+                },
+                {
+                    "day": 8,
+                    "title": "Departure",
+                    "description": "Transfer to Tribhuvan International Airport for your onward journey."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/bhaktapur.webp",
+                "/assets/nepal/boudhanath.webp",
+                "/assets/nepal/patan.webp"
+            ]
+        },
+        {
+            "id": 39,
+            "title": "Nepal Wildlife & Environmental Education",
+            "slug": "nepal-wildlife-environmental-education",
+            "description": "A 7-day educational tour focused on Nepal's diverse wildlife and environmental conservation efforts. This program offers students and nature enthusiasts an opportunity to learn about biodiversity, ecological challenges, and sustainable solutions in the context of Nepal's national parks.",
+            "duration": "7 Days",
+            "priceRange": "$1000 - $1200",
+            "image": "/assets/nepal/chitwan.webp",
+            "category": "Educational",
+            "difficulty": "Moderate",
+            "highlights": [
+                "Jungle safaris and nature walks in Chitwan National Park.",
+                "Lectures and discussions on wildlife conservation and biodiversity.",
+                "Visit to Elephant Breeding Center and Gharial Conservation Breeding Center.",
+                "Birdwatching excursions with expert naturalists.",
+                "Interaction with local communities involved in conservation.",
+                "Study of flora and fauna in different ecosystems."
+            ],
+            "includes": [
+                "All private transportation for arrival, departure, and inter-city transfers.",
+                "Accommodation in eco-lodges and resorts near national parks.",
+                "All meals (breakfast, lunch, dinner) with focus on local and sustainable produce.",
+                "Experienced wildlife guides and environmental educators.",
+                "National Park entrance fees and safari activities (jeep, canoe, walking).",
+                "Educational materials and field guides.",
+                "All applicable government taxes and service charges."
+            ],
+            "groupSize": "Small Groups (Min 8, Max 15)",
+            "bestSeason": "Autumn (September-November) and Spring (February-April)",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu & Environmental Briefing",
+                    "description": "Arrive at Kathmandu International Airport. Transfer to hotel. Welcome dinner and an introductory session on Nepal's biodiversity and environmental challenges."
+                },
+                {
+                    "day": 2,
+                    "title": "Kathmandu to Chitwan: Journey to the Jungle",
+                    "description": "Morning scenic drive to Chitwan National Park. Check into an eco-lodge. Afternoon briefing on jungle activities and a nature walk to learn about the local ecosystem."
+                },
+                {
+                    "day": 3,
+                    "title": "Chitwan Wildlife Exploration & Conservation",
+                    "description": "Morning canoe ride on the Rapti River for birdwatching and crocodile spotting. Visit the Elephant Breeding Center for insights into their conservation. Afternoon jeep safari to observe rhinos, deer, and other wildlife in their natural habitat. Evening lecture on anti-poaching efforts."
+                },
+                {
+                    "day": 4,
+                    "title": "Tharu Culture & Riverine Ecosystem Study",
+                    "description": "Morning guided nature walk focusing on the riverine ecosystem and plant species. Visit a Tharu village to learn about their traditional lifestyle and their role in conservation. Evening cultural program by the Tharu community."
+                },
+                {
+                    "day": 5,
+                    "title": "Chitwan to Bardia: The Wild West",
+                    "description": "Morning drive to Bardia National Park (or a similar wildlife area if time/logistics constrain). Check into a wildlife lodge. Afternoon birdwatching session and introduction to Bardia's unique wildlife, including tigers and dolphins."
+                },
+                {
+                    "day": 6,
+                    "title": "Bardia National Park: Deep Dive into Wilderness",
+                    "description": "Full day of exploration in Bardia National Park. Options include a full-day jungle walk (tiger tracking), jeep safari, or rafting on the Karnali River to spot Gangetic dolphins. Evening discussion on human-wildlife conflict and mitigation strategies."
+                },
+                {
+                    "day": 7,
+                    "title": "Departure from Nepal",
+                    "description": "Morning transfer to the nearest airport (e.g., Nepalgunj) for a flight back to Kathmandu, then onward international departure. Or, direct drive back to Kathmandu for departure."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/chitwan-safari-family.webp",
+                "/assets/nepal/elephant-breeding-center.webp",
+                "/assets/nepal/birdwatching.webp"
+            ]
+        },
+        {
+            "id": 40,
+            "title": "Nepal Geography & Geology Expedition",
+            "slug": "nepal-geography-geology-expedition",
+            "description": "A 9-day expedition designed for geography and geology students, exploring Nepal's unique topographical features, seismic activity, and geological formations. This tour combines field studies with expert lectures.",
+            "duration": "9 Days",
+            "priceRange": "$1300 - $1500",
+            "image": "/assets/nepal/AnnapurnaRegion.webp",
+            "category": "Educational",
+            "difficulty": "Moderate",
+            "highlights": [
+                "Study of the Himalayan mountain range formation and tectonics.",
+                "Field visits to geological sites: Gorkha Earthquake epicenter, Seti River Gorge, Devi's Falls.",
+                "Lectures on glaciology, hydrology, and seismic activity in Nepal.",
+                "Exploration of caves and rock formations.",
+                "Understanding the impact of geology on human settlements and culture.",
+                "Topographical mapping and analysis workshops."
+            ],
+            "includes": [
+                "All private transportation for arrival, departure, and field excursions.",
+                "Accommodation in comfortable hotels and guesthouses.",
+                "All meals (breakfast, lunch, dinner).",
+                "Expert geologists and geography professors as guides/lecturers.",
+                "Entrance fees to relevant sites and museums.",
+                "Field equipment (e.g., geological hammers, compasses, maps) for practical sessions.",
+                "Detailed educational handouts and reports.",
+                "Certificates of completion for the expedition.",
+                "All applicable government taxes and service charges."
+            ],
+            "groupSize": "Academic Groups (Min 8, Max 15)",
+            "bestSeason": "Spring (March-May) and Autumn (September-November)",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu & Geological Overview",
+                    "description": "Arrive at Kathmandu International Airport. Transfer to hotel. Welcome dinner and an introductory lecture on the geology and geography of Nepal, focusing on the Himalayan uplift."
+                },
+                {
+                    "day": 2,
+                    "title": "Kathmandu Valley: Tectonic Activity & Urban Geology",
+                    "description": "Morning field visit to the Kathmandu Durbar Square and surrounding areas to observe historical seismic damage and reconstruction efforts. Afternoon lecture on active tectonics and fault lines in the Kathmandu Valley. Visit a local brick factory to understand geological material usage."
+                },
+                {
+                    "day": 3,
+                    "title": "Gorkha Earthquake Site Study",
+                    "description": "Full-day excursion to the Gorkha region, the epicenter of the 2015 earthquake. Field study of the geological impacts, landslides, and recovery efforts. Interaction with local communities about living in a seismically active zone."
+                },
+                {
+                    "day": 4,
+                    "title": "Kathmandu to Pokhara: Geomorphic Landscapes",
+                    "description": "Scenic drive to Pokhara, observing the changing geomorphic landscapes. Afternoon exploration of Pokhara's geological wonders: Seti River Gorge, Devi's Falls, and Gupteshwor Cave. Evening lecture on karst topography and river erosion."
+                },
+                {
+                    "day": 5,
+                    "title": "Pokhara: Glacial & Fluvial Geomorphology",
+                    "description": "Morning boat trip on Phewa Lake, discussing glacial origins. Field visit to the International Mountain Museum to learn about glaciology and the impact of climate change on Himalayan glaciers. Afternoon practical session on topographical mapping."
+                },
+                {
+                    "day": 6,
+                    "title": "Annapurna Region: Mountain Building & Hydrology",
+                    "description": "Day trip to a viewpoint in the Annapurna region (e.g., Sarangkot) to study mountain building processes and observe the hydrological cycle. Discussion on the formation of the Himalayas and its impact on regional weather patterns."
+                },
+                {
+                    "day": 7,
+                    "title": "Return to Kathmandu & Data Analysis",
+                    "description": "Morning drive back to Kathmandu. Afternoon dedicated to data analysis, report writing, and group presentations on findings from field visits. Peer feedback session."
+                },
+                {
+                    "day": 8,
+                    "title": "Urban Development & Environmental Planning",
+                    "description": "Visit a local urban planning department or environmental organization in Kathmandu. Discussion on sustainable development, disaster risk reduction, and environmental policies in a geologically sensitive region."
+                },
+                {
+                    "day": 9,
+                    "title": "Departure",
+                    "description": "Transfer to Tribhuvan International Airport for your onward journey."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/Annapurna.webp",
+                "/assets/nepal/seti-river-gorge.webp",
+                "/assets/nepal/gorkha-earthquake.webp"
+            ]
+        }
     ]
