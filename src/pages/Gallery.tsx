@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
 
-// Define type for service
+// Service type
 type Service = {
     id: number;
     name: string;
@@ -13,249 +12,136 @@ type Service = {
     imageUrl: string;
 };
 
+const services: Service[] = [
+    { id: 1, name: 'The Unsilenced: Documentary', imageUrl: '/assets/gallery/Unsilenced.webp', details: 'A powerful documentary about the untold stories.' },
+    { id: 2, name: 'Chinese Ambassador, economist Mr. Wu Xiabo', imageUrl: '/assets/gallery/ch1.webp', details: 'A Seminar on Economic Challenges and Opportunities and A Cultural Exchange Event.' },
+    { id: 6, name: 'City Image Show Case', imageUrl: '/assets/gallery/event.webp', details: 'Charming Guangzhou Meets Nepal City Image Show Case. Screening of the Guangzhou City Image Film.' },
+    { id: 7, name: 'Everest Summiteers Summit', imageUrl: '/assets/gallery/everest.webp', details: 'A gathering of the brave souls who conquered Everest.' },
+    { id: 11, name: 'Himalayan Guardian Nepal', imageUrl: '/assets/gallery/hgn3.webp', details: 'Launch Event of The Himalayan Guardian Nepal.' },
+    { id: 12, name: 'Honoring Li Shengtao', imageUrl: '/assets/gallery/horing1.webp', details: 'A tribute to the remarkable achievements of Li Shengtao for successfully flying from Mt. Everest.' },
+    { id: 16, name: 'Ladies Tour in Nepal', imageUrl: '/assets/gallery/lades2.webp', details: 'Inspiring moments from our ladies-focused gathering.' },
+    { id: 18, name: 'Mr. Namdoe and Family', imageUrl: '/assets/gallery/mr-namdoe.webp', details: 'A cherished family moment with Mr. Namdoe and his loved ones.' },
+    { id: 20, name: 'Mr. Suresh and Family', imageUrl: '/assets/gallery/mr-suresh.webp', details: 'Joyful moments with Mr. Suresh and his family.' },
+    { id: 22, name: 'Women\'s Volleyball Match', imageUrl: '/assets/gallery/volly.webp', details: 'Lalitpur Queens, winners of TMC in Everest Women\'s Volleyball League.' },
+    { id: 23, name: 'Wedding Celebration', imageUrl: '/assets/gallery/wedding.webp', details: 'A beautiful wedding celebration capturing joyful moments.' },
+];
+
+const getCardDimensions = (index: number) => {
+    const sizes = [
+        { width: 'w-full', height: 'h-auto' }, // Use h-auto for aspect ratio
+        { width: 'w-full', height: 'h-auto' },
+        { width: 'w-full', height: 'h-auto' },
+        { width: 'w-full', height: 'h-auto' },
+    ];
+    return sizes[index % sizes.length];
+};
+
+// Memoized Gallery Card for Performance Optimization
+const GalleryCard = React.memo(({ service, index, setCardRef, onCardClick }: {
+    service: Service;
+    index: number;
+    setCardRef: (index: number) => (el: HTMLDivElement | null) => void;
+    onCardClick: (service: Service) => void;
+}) => {
+    const { width } = getCardDimensions(index);
+
+    return (
+        <div
+            ref={setCardRef(index)}
+            className={`break-inside-avoid group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white mx-auto ${width} cursor-pointer 
+            hover:scale-105 hover:drop-shadow-2xl duration-500 ease-in-out transform`}
+            onClick={() => onCardClick(service)}
+            tabIndex={0}
+            aria-label={`View details for ${service.name}`}
+            role="button"
+        >
+            <div className="relative overflow-hidden">
+                <img
+                    src={service.imageUrl}
+                    alt={service.name}
+                    className="w-full h-auto object-cover"
+                    loading="lazy"
+                    decoding="async"
+                />
+            </div>
+            <div className="reveal-mask absolute inset-0 bg-white z-30"></div>
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 flex items-end">
+                <span className="text-white text-lg font-semibold drop-shadow">{service.name}</span>
+            </div>
+        </div>
+    );
+});
+
+
 const GalleryPage: React.FC = () => {
     const [selectedService, setSelectedService] = useState<Service | null>(null);
-    const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-    const [eyePosition, setEyePosition] = useState({ x: 0, y: 0 });
     const galleryRef = useRef<HTMLDivElement>(null);
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-    // Helper function to set refs properly
-    const setCardRef = (index: number) => (el: HTMLDivElement | null) => {
+    // Memoized ref setter for performance
+    const setCardRef = useCallback((index: number) => (el: HTMLDivElement | null) => {
         cardRefs.current[index] = el;
-    };
-
-    const services: Service[] = [
-        {
-            id: 1,
-            name: 'The Unsilenced: Documentary',
-            imageUrl: '/assets/gallery/Unsilenced.webp'
-        },
-        {
-            id: 2,
-            name: 'HONORING CHINESE PARAGLIDER IN NEPAL',
-            imageUrl: '/assets/gallery/ch1.webp'
-        },
-        {
-            id: 3,
-            name: 'Chinese Paraglider 2',
-            imageUrl: '/assets/gallery/ch2.webp'
-        },
-        {
-            id: 4,
-            name: 'Documentary Scene 2',
-            imageUrl: '/assets/gallery/doc2.webp'
-        },
-        {
-            id: 5,
-            name: 'Documentary Scene 3',
-            imageUrl: '/assets/gallery/doc3.webp'
-        },
-        {
-            id: 6,
-            name: 'Event Highlight',
-            imageUrl: '/assets/gallery/event.webp'
-        },
-        {
-            id: 7,
-            name: 'Everest Expedition',
-            imageUrl: '/assets/gallery/everest.webp'
-        },
-        {
-            id: 8,
-            name: 'Everest Expedition 3',
-            imageUrl: '/assets/gallery/everest3.webp'
-        },
-        {
-            id: 9,
-            name: 'Himalayan Golden Nepal 1',
-            imageUrl: '/assets/gallery/hgn1.webp'
-        },
-        {
-            id: 10,
-            name: 'Himalayan Golden Nepal 2',
-            imageUrl: '/assets/gallery/hgn2.webp'
-        },
-        {
-            id: 11,
-            name: 'Himalayan Golden Nepal 3',
-            imageUrl: '/assets/gallery/hgn3.webp'
-        },
-        {
-            id: 12,
-            name: 'Horing 1',
-            imageUrl: '/assets/gallery/horing1.webp'
-        },
-        {
-            id: 13,
-            name: 'Horing 2',
-            imageUrl: '/assets/gallery/hor2.webp'
-        },
-        {
-            id: 14,
-            name: 'Horing 3',
-            imageUrl: '/assets/gallery/hor3.webp'
-        },
-        {
-            id: 15,
-            name: 'Ladies Event 1',
-            imageUrl: '/assets/gallery/lades1.webp'
-        },
-        {
-            id: 16,
-            name: 'Ladies Event 2',
-            imageUrl: '/assets/gallery/lades2.webp'
-        },
-        {
-            id: 17,
-            name: 'Ladies Event 3',
-            imageUrl: '/assets/gallery/lades3.webp'
-        },
-        {
-            id: 18,
-            name: 'Mr. Namdoe',
-            imageUrl: '/assets/gallery/mr-namdoe.webp'
-        },
-        {
-            id: 19,
-            name: 'Mr. Nana',
-            imageUrl: '/assets/gallery/mr-nana.webp'
-        },
-        {
-            id: 20,
-            name: 'Mr. Suresh',
-            imageUrl: '/assets/gallery/mr-suresh.webp'
-        },
-        {
-            id: 21,
-            name: 'Mr. Suresh 2',
-            imageUrl: '/assets/gallery/mr-suresh2.webp'
-        },
-        {
-            id: 22,
-            name: 'Volleyball Match',
-            imageUrl: '/assets/gallery/volly.webp'
-        },
-        {
-            id: 23,
-            name: 'Volleyball Match 2',
-            imageUrl: '/assets/gallery/volly2.webp'
-        }
-    ];
-
-    // Set up GSAP animations
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            // Reset all masks to closed position (covering the entire card from top)
-            cardRefs.current.forEach((card) => {
-                if (card) {
-                    const mask = card.querySelector('.reveal-mask') as HTMLElement;
-                    if (mask) {
-                        gsap.set(mask, {
-                            y: 0,
-                        });
-                    }
-                }
-            });
-
-            // Create scroll-triggered animations
-            cardRefs.current.forEach((card) => {
-                if (card) {
-                    const mask = card.querySelector('.reveal-mask') as HTMLElement;
-                    if (mask) {
-                        gsap.to(mask, {
-                            y: '100%',
-                            duration: 1.5,
-                            ease: 'power4.out',
-                            scrollTrigger: {
-                                trigger: card,
-                                start: 'top 85%',
-                                end: 'bottom 15%',
-                                toggleActions: 'play none none reverse',
-                            }
-                        });
-                    }
-                }
-            });
-
-            // Cleanup function
-            return () => {
-                ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-            };
-        }
     }, []);
 
-    // Close modal when clicking outside
+    // GSAP animations
     useEffect(() => {
+        if (!galleryRef.current) return;
+
+        // Ensure cardRefs are populated before setting up animations
+        const cards = cardRefs.current.filter(Boolean) as HTMLDivElement[];
+        if (cards.length === 0) return;
+
+        const masks = cards.map(card => card.querySelector('.reveal-mask')).filter(Boolean) as HTMLElement[];
+        gsap.set(masks, { y: 0 });
+
+        const batchAnimation = gsap.to(masks, {
+            y: '100%',
+            duration: 1.2,
+            ease: 'power4.out',
+            stagger: 0.1,
+            scrollTrigger: {
+                trigger: galleryRef.current,
+                start: 'top 80%',
+                end: 'bottom 20%',
+                toggleActions: 'play none none reverse',
+            }
+        });
+
+        return () => {
+            batchAnimation.scrollTrigger?.kill();
+        };
+    }, []);
+
+    // Modal outside click
+    useEffect(() => {
+        if (!selectedService) return;
         const handleOutsideClick = (e: MouseEvent) => {
-            if (selectedService && e.target instanceof Element) {
-                if (e.target.closest('.modal-content') === null) {
-                    setSelectedService(null);
-                }
+            if (e.target instanceof Element && !e.target.closest('.modal-content')) {
+                setSelectedService(null);
             }
         };
         document.addEventListener('mousedown', handleOutsideClick);
-        return () => {
-            document.removeEventListener('mousedown', handleOutsideClick);
-        };
+        return () => document.removeEventListener('mousedown', handleOutsideClick);
     }, [selectedService]);
 
-    // Handle mouse movement for eye icon
-    const handleMouseMove = (e: React.MouseEvent, index: number) => {
-        if (hoveredCard === index && cardRefs.current[index]) {
-            const card = cardRefs.current[index];
-            if (card) {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-
-                // Smooth animation with GSAP
-                gsap.to(eyePosition, {
-                    x,
-                    y,
-                    duration: 0.2,
-                    ease: "power2.out",
-                    onUpdate: () => {
-                        setEyePosition({ ...eyePosition });
-                    }
-                });
-            }
-        }
-    };
-
-    // Get varying dimensions for Pinterest style
-    const getCardDimensions = (index: number) => {
-        // Define different card sizes
-        const sizes = [
-            { width: 'w-full', height: 'h-64' },    // Small
-            { width: 'w-full', height: 'h-80' },    // Medium
-            { width: 'w-full', height: 'h-96' },    // Large
-            { width: 'w-full', height: 'h-72' },    // Medium-small
-        ];
-
-        return sizes[index % sizes.length];
-    };
-
+    // Accessibility: scroll to top on mount
     useEffect(() => {
-        window.scrollTo(0, 0); // Scroll to the top of the page on route change
-    }, [location.pathname]); // Trigger on route path change
+        window.scrollTo(0, 0);
+    }, []);
 
+    const handleCardClick = useCallback((service: Service) => {
+        setSelectedService(service);
+    }, []);
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
             {/* Hero Section */}
             <div className="relative py-24 md:py-32 overflow-hidden">
-                {/* Background Image */}
                 <div
                     className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-                    style={{
-                        backgroundImage: "url('/assets/gallery/GalleryHero.webp')"
-                    }}
-                ></div>
-                {/* Dark Overlay */}
+                    style={{ backgroundImage: "url('/assets/gallery/GalleryHero.webp')" }}
+                />
                 <div className="absolute inset-0 bg-black/40"></div>
-
-                {/* Content */}
                 <div className="container mx-auto px-4 relative z-10 text-center mt-10">
                     <div className="inline-block px-6 py-3 bg-[#fcd00d] text-[#133830] rounded-full mb-8 font-bold transform -rotate-3">
                         THE MICE CONNECTION
@@ -275,49 +161,15 @@ const GalleryPage: React.FC = () => {
             <div ref={galleryRef} className="py-16">
                 <div className="container mx-auto px-4">
                     <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
-                        {services.map((service, index) => {
-                            const { width, height } = getCardDimensions(index);
-                            return (
-                                <div
-                                    key={service.id}
-                                    ref={setCardRef(index)}
-                                    className={`break-inside-avoid group relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 bg-white mx-auto ${width}`}
-                                    onMouseEnter={() => setHoveredCard(index)}
-                                    onMouseLeave={() => setHoveredCard(null)}
-                                    onMouseMove={(e) => handleMouseMove(e, index)}
-                                    onClick={() => setSelectedService(service)}
-                                >
-                                    {/* Image container */}
-                                    <div className="relative overflow-hidden">
-                                        {/* Image background with varying heights for Pinterest style */}
-                                        <div className={`w-full ${height} bg-cover bg-center`} style={{ backgroundImage: `url(${service.imageUrl})` }}>
-
-                                            {/* Eye icon that follows mouse */}
-                                            {hoveredCard === index && (
-                                                <div
-                                                    className="absolute z-20 pointer-events-none"
-                                                    style={{
-                                                        left: `${eyePosition.x}px`,
-                                                        top: `${eyePosition.y}px`,
-                                                        transform: 'translate(-50%, -50%)'
-                                                    }}
-                                                >
-                                                    <div className="bg-white bg-opacity-90 rounded-full p-2 shadow-lg">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-[#133830]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                        </svg>
-                                                    </div>
-                                                </div>
-                                            )}
-                                        </div>
-                                    </div>
-
-                                    {/* Reveal mask - positioned at the top */}
-                                    <div className="reveal-mask absolute inset-0 bg-white z-30"></div>
-                                </div>
-                            );
-                        })}
+                        {services.map((service, index) => (
+                            <GalleryCard
+                                key={service.id}
+                                service={service}
+                                index={index}
+                                setCardRef={setCardRef}
+                                onCardClick={handleCardClick}
+                            />
+                        ))}
                     </div>
                 </div>
             </div>
@@ -325,15 +177,17 @@ const GalleryPage: React.FC = () => {
             {/* Detail Modal */}
             {selectedService && (
                 <div className="fixed inset-0 bg-black/30 flex items-center justify-center z-50 p-4">
-                    <div className="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                    <div className="modal-content bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-in">
                         <div className="p-6 md:p-8">
                             <div className="flex justify-between items-start mb-6">
+                                <h2 className="text-2xl font-bold text-[#133830]">{selectedService.name}</h2>
                                 <button
                                     onClick={(e) => {
                                         e.stopPropagation();
                                         setSelectedService(null);
                                     }}
                                     className="text-gray-400 hover:text-gray-600 transition-colors p-2 rounded-full hover:bg-gray-100"
+                                    aria-label="Close modal"
                                 >
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -341,9 +195,18 @@ const GalleryPage: React.FC = () => {
                                 </button>
                             </div>
                             <div className="mb-6">
-                                <div className="h-150 rounded-xl bg-cover bg-center" style={{ backgroundImage: `url(${selectedService.imageUrl})` }}>
-                                </div>
+                                <div className="h-96 rounded-xl bg-cover bg-center shadow-lg" style={{ backgroundImage: `url(${selectedService.imageUrl})` }} />
                             </div>
+                            {selectedService.details && (
+                                <div className="mb-4 text-gray-700">{selectedService.details}</div>
+                            )}
+                            {selectedService.highlights && (
+                                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                                    {selectedService.highlights.map((hl, idx) => (
+                                        <li key={idx}>{hl}</li>
+                                    ))}
+                                </ul>
+                            )}
                         </div>
                     </div>
                 </div>

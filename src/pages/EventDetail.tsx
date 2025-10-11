@@ -85,28 +85,26 @@ const EventDetail: React.FC = () => {
                         {event.description}
                     </p>
 
-                    <h2 className="text-3xl font-bold text-[#10362e] mb-6">About This Event</h2>
-                    <p className="text-gray-700 leading-relaxed mb-8">
-                        This section can be expanded with more detailed information about the event, such as:
-                    </p>
-
-                    <ul className="list-disc list-inside text-gray-700 space-y-3 mb-8">
-                        <li>Key speakers and their profiles</li>
-                        <li>Detailed agenda or schedule</li>
-                        <li>Photo and video galleries from the event</li>
-                        <li>Testimonials from attendees</li>
-                        <li>Partners and sponsors</li>
-                        <li>Logistics and practical information (e.g., accommodation, transport)</li>
-                    </ul>
-
-                    {/* Example of a sub-section */}
-                    <div className="bg-gray-50 p-6 rounded-lg mb-8">
-                        <h3 className="text-2xl font-bold text-[#10362e] mb-4">Event Highlights</h3>
-                        <p className="text-gray-700 leading-relaxed">
-                            Here you can showcase the most memorable moments or key takeaways from the event.
-                            This could include summaries of keynote speeches, interactive sessions, or networking opportunities.
-                        </p>
-                    </div>
+                    {event.detailImages && event.detailImages.length > 0 && (
+                        <div className="mt-12">
+                            {event.detailImages.map((detail, index) => (
+                                <div key={index} className={`flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center mb-12`}>
+                                    <div className="md:w-1/2 p-4">
+                                        <img
+                                            src={detail.image}
+                                            alt={`Detail image ${index + 1}`}
+                                            className="w-full h-auto rounded-lg shadow-lg"
+                                        />
+                                    </div>
+                                    <div className="md:w-1/2 p-4">
+                                        <p className="text-gray-700 text-lg leading-relaxed">
+                                            {detail.text}
+                                        </p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    )}
 
                     <div className="flex justify-center mt-10">
                         <button
