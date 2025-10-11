@@ -143,18 +143,24 @@ const Testimonials = () => {
         },
         {
             id: 4,
+            name: "Roshan Shah, Nepal",
+            testimonial: "My experience with The MICE Connection was exceptional from start to finish. The team were incredibly professional, attentive, and genuinely passionate about what they do. Every detail from travel planning to event coordination was handled with care and precision.",
+            rating: 4,
+        },
+        {
+            id: 5,
             name: "Kenji Tanaka, Japan",
             testimonial: "Our exhibition booth at the trade show in Berlin was a huge success, thanks to The MICE Connection. Their strategic planning and on-site support ensured maximum engagement and a significant return on investment. They are experts in international event management.",
             rating: 5,
         },
         {
-            id: 5,
+            id: 6,
             name: "Fatima Zahra, Morocco",
             testimonial: "The MICE Connection organized our product launch in Paris, and it was a spectacular event. Their creative approach and meticulous execution ensured everything ran smoothly, leaving a lasting impression on our guests.",
             rating: 5,
         },
         {
-            id: 6,
+            id: 7,
             name: "Liam O'Connell, Ireland",
             testimonial: "For our team-building retreat in Thailand, The MICE Connection provided an exceptional experience. The activities were engaging, the accommodation superb, and the overall coordination was impeccable. A truly world-class service!",
             rating: 5,
