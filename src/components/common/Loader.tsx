@@ -50,7 +50,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoaded, onAnimationComplete }) => {
 
     useEffect(() => {
         if (!onLoaded || !onAnimationComplete) return;
-        const intervals: number[] = [];
+        const intervals: NodeJS.Timeout[] = [];
         bootMessages.forEach((_, index) => {
             const timer = setTimeout(() => {
                 setCompletedMessages(prev => [...prev, index]);
@@ -72,7 +72,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoaded, onAnimationComplete }) => {
         return () => intervals.forEach(timer => clearTimeout(timer));
     }, [onLoaded, onAnimationComplete]);
 
-    if (!onLoaded) {
+    if (!onLoaded && !onAnimationComplete) {
         return (
             <div className="fixed inset-0 z-[100] flex items-center justify-center bg-white/80 backdrop-blur-sm">
                 <div className="w-40 h-40 lg:w-56 lg:h-56 opacity-90">
