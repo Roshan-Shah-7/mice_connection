@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { sendEmail } from '../../api/emailService'; // Import the email service
 
 interface BookingFormProps {
     tourTitle: string;
@@ -16,6 +17,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ tourTitle, onClose }) => {
 
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -39,34 +41,58 @@ const BookingForm: React.FC<BookingFormProps> = ({ tourTitle, onClose }) => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!validate()) return;
+        if (!validate()) {
+            setSubmitStatus('error');
+            return;
+        }
 
         setIsSubmitting(true);
+        setSubmitStatus('idle');
 
-        // Simulate API call delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            const response = await sendEmail({
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                message: formData.message,
+                tourName: formData.tourName,
+                subject: `Tour Booking Inquiry for ${formData.tourName}`,
+            });
 
-        // In a real application, you would send this data to a backend server
-        const subject = `Tour Booking Inquiry for ${formData.tourName}`;
-        const body = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Message: ${formData.message}
-Tour: ${formData.tourName}
-        `.trim();
-
-        const mailtoLink = `mailto:info@themiceconnection.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-        window.location.href = mailtoLink;
-
-        setIsSubmitting(false);
-        alert('Your inquiry has been sent! We will contact you shortly.');
-        onClose();
+            if (response.success) {
+                setSubmitStatus('success');
+                alert('Your inquiry has been sent! We will contact you shortly.');
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                    tourName: tourTitle,
+                });
+                onClose();
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg transform transition-all duration-300 scale-100 hover:scale-[1.02]">
+                {submitStatus === 'success' && (
+                    <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-lg shadow-md z-50">
+                        Inquiry sent successfully!
+                    </div>
+                )}
+                {submitStatus === 'error' && (
+                    <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded-lg shadow-md z-50">
+                        Failed to send inquiry. Please try again.
+                    </div>
+                )}
                 {/* Header */}
                 <div className="bg-gradient-to-r from-[#143a31] to-[#1a4d42] rounded-t-2xl p-6 text-white relative">
                     <button

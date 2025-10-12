@@ -271,7 +271,7 @@ const AboutPage = () => {
                         <p className="font-bold text-3xl text-[#0e332e] mb-4 font-serif">Connecting Events, Connecting People, Connecting You.</p>
                         <h4 className="font-bold text-2xl text-[#0e332e] mt-8">Shradha Chhetri</h4>
                         <p className="text-gray-600 font-medium text-lg">Managing Director, The MICE Connection</p>
-                        <p className="text-sm text-gray-500 mt-4 max-w-xl mx-auto">
+                        <p className="text-sm text-gray-500 mt-1 max-w-xl mx-auto">
                             Ms. Shradha, with extensive experience as COO at Nepal Association of Tour & Travel Agents (NATTA) and as an Executive Director for international events, brings invaluable expertise in Nepal’s tourism and event management sectors.
                         </p>
                     </div>
@@ -306,7 +306,7 @@ const AboutPage = () => {
 
             {/* Expertise Section */}
             <section ref={expertiseRef} className="py-20 px-4 md:px-8 bg-gradient-to-b from-white to-[#f8f9fa] w-full relative overflow-hidden min-h-screen">
-                <img src="/public/assets/about/experties.webp" alt="" className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-full h-full object-cover opacity-4' />
+                <img src="/assets/about/experties.webp" alt="" className='absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-full h-full object-cover opacity-4' />
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#0e332e] mb-4">

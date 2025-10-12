@@ -166,7 +166,10 @@ const LatestWork = () => {
 
                 {/* New Layout: Alternating Image and Text */}
                 <div className="space-y-12 md:space-y-20">
-                    {latestWorks.map((work, index) => (
+                    {latestWorks
+                        .sort((a, b) => parseInt(b.year) - parseInt(a.year)) // Sort by year in descending order
+                        .slice(0, 4)
+                        .map((work, index) => (
                         <div
                             key={work.id}
                             ref={addToCardRefs}

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import { FaTiktok } from 'react-icons/fa';
+import { sendEmail } from '../api/emailService'; // Import the email service
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,8 +14,7 @@ const ContactPage = () => {
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitSuccess, setSubmitSuccess] = useState(false);
-    const [submitError, setSubmitError] = useState('');
+    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
     const formRef = useRef<HTMLDivElement>(null);
     const contactInfoRef = useRef<HTMLDivElement>(null);
@@ -30,26 +29,38 @@ const ContactPage = () => {
     };
 
     // Handle form submission
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setSubmitError('');
+        setSubmitStatus('idle');
 
-        // Simulate form submission
-        setTimeout(() => {
-            setIsSubmitting(false);
-            setSubmitSuccess(true);
-            setFormData({
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: ''
+        try {
+            const response = await sendEmail({
+                name: formData.name,
+                email: formData.email,
+                phone: formData.phone,
+                subject: formData.subject,
+                message: formData.message,
             });
 
-            // Reset success message after 5 seconds
-            setTimeout(() => setSubmitSuccess(false), 5000);
-        }, 1500);
+            if (response.success) {
+                setSubmitStatus('success');
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    subject: '',
+                    message: ''
+                });
+            } else {
+                setSubmitStatus('error');
+            }
+        } catch (error) {
+            console.error('Error sending email:', error);
+            setSubmitStatus('error');
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     // Animation effects
@@ -191,15 +202,15 @@ const ContactPage = () => {
                     <div ref={formRef} className="bg-white rounded-2xl shadow-xl p-8 h-fit sticky top-20">
                         <h2 className="text-2xl font-bold text-[#1f423b] mb-6">Send Us a Message</h2>
 
-                        {submitSuccess && (
+                        {submitStatus === 'success' && (
                             <div className="mb-6 p-4 bg-green-100 text-green-700 rounded-lg">
                                 Thank you for your message! We'll get back to you soon.
                             </div>
                         )}
 
-                        {submitError && (
+                        {submitStatus === 'error' && (
                             <div className="mb-6 p-4 bg-red-100 text-red-700 rounded-lg">
-                                {submitError}
+                                Failed to send message. Please try again.
                             </div>
                         )}
 

@@ -22,9 +22,9 @@ const Footer = () => {
     // Time zones data
     const timeZones: TimeZone[] = [
         { name: "Nepal Time", location: "Kathmandu", timezone: "Asia/Kathmandu", offset: "NPT" },
-        { name: "GMT", location: "London", timezone: "Europe/London", offset: "GMT" },
+        { name: "Indian Time", location: "New Delhi", timezone: "Asia/Kolkata", offset: "IST" },
+        { name: "UK Time", location: "London", timezone: "Europe/London", offset: "BST/GMT" },
         { name: "EST", location: "New York", timezone: "America/New_York", offset: "EST" },
-        { name: "CST", location: "Beijing", timezone: "Asia/Shanghai", offset: "CST" },
         { name: "JST", location: "Tokyo", timezone: "Asia/Tokyo", offset: "JST" },
         { name: "AEST", location: "Sydney", timezone: "Australia/Sydney", offset: "AEST" }
     ];

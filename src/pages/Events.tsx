@@ -23,18 +23,20 @@ const EventsPage = () => {
     const heroRef = useRef<HTMLDivElement>(null);
     const eventsRef = useRef<HTMLDivElement>(null);
     const [imageLoaded, setImageLoaded] = useState(false);
-    
-    const events: Event[] = latestWorks.map(work => ({
-        id: work.id,
-        title: work.title,
-        date: work.year,
-        location: "Nepal",
-        description: work.description,
-        imageUrl: work.image,
-        category: "Corporate",
-        featured: work.id <= 3,
-        slug: work.slug
-    }));
+
+    const events: Event[] = latestWorks
+        .sort((a, b) => parseInt(b.year) - parseInt(a.year)) // Sort by year in descending order
+        .map(work => ({
+            id: work.id,
+            title: work.title,
+            date: work.year,
+            location: "Nepal",
+            description: work.description,
+            imageUrl: work.image,
+            category: "Corporate",
+            featured: work.id <= 3, // Keep featured logic as is for now
+            slug: work.slug
+        }));
 
     useEffect(() => {
         // Enhanced hero section animation
@@ -46,27 +48,27 @@ const EventsPage = () => {
             const floatingElements = heroRef.current.querySelectorAll('.floating-element');
 
             const tl = gsap.timeline();
-            
+
             tl.fromTo(heroTitle,
                 { y: 100, opacity: 0, rotationX: 45 },
                 { y: 0, opacity: 1, rotationX: 0, duration: 1.2, ease: "power3.out" }
             )
-            .fromTo(heroSubtitle,
-                { y: 60, opacity: 0, scale: 0.8 },
-                { y: 0, opacity: 1, scale: 1, duration: 1, ease: "back.out(1.7)" }, "-=0.5"
-            )
-            .fromTo(heroLine,
-                { width: 0, opacity: 0 },
-                { width: "120px", opacity: 1, duration: 1, ease: "power3.out" }, "-=0.3"
-            )
-            .fromTo(heroImage,
-                { scale: 1.3, opacity: 0 },
-                { scale: 1, opacity: 1, duration: 1, ease: "power2.out" }, "-=1"
-            )
-            .fromTo(floatingElements,
-                { y: 30, opacity: 0 },
-                { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.5"
-            );
+                .fromTo(heroSubtitle,
+                    { y: 60, opacity: 0, scale: 0.8 },
+                    { y: 0, opacity: 1, scale: 1, duration: 1, ease: "back.out(1.7)" }, "-=0.5"
+                )
+                .fromTo(heroLine,
+                    { width: 0, opacity: 0 },
+                    { width: "120px", opacity: 1, duration: 1, ease: "power3.out" }, "-=0.3"
+                )
+                .fromTo(heroImage,
+                    { scale: 1.3, opacity: 0 },
+                    { scale: 1, opacity: 1, duration: 1, ease: "power2.out" }, "-=1"
+                )
+                .fromTo(floatingElements,
+                    { y: 30, opacity: 0 },
+                    { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.5"
+                );
         }
 
         // Enhanced events section animation
@@ -123,11 +125,11 @@ const EventsPage = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100/50 overflow-hidden">
             {/* Enhanced Hero Section */}
-            <div ref={heroRef} className="relative h-[85vh] md:h-[90vh] overflow-hidden">
+            <div ref={heroRef} className="relative h-screen overflow-hidden">
                 {/* Background Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#10362e]/60 via-[#10362e]/60 to-[#10362e]/40 z-10"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20 z-10"></div>
-                
+
                 {/* Loading State */}
                 {!imageLoaded && (
                     <div className="absolute inset-0 bg-gray-200 animate-pulse flex items-center justify-center z-5">
@@ -142,9 +144,8 @@ const EventsPage = () => {
                 <img
                     src="/assets/events/eventHero.webp"
                     alt="Event background"
-                    className={`hero-image absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${
-                        imageLoaded ? 'opacity-100' : 'opacity-0'
-                    }`}
+                    className={`hero-image absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'
+                        }`}
                     onLoad={handleImageLoad}
                 />
 
@@ -188,7 +189,7 @@ const EventsPage = () => {
 
             {/* Enhanced Events Section */}
             <div ref={eventsRef} className="py-20 px-6 md:px-12 lg:px-20 relative">
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-[1440px] mx-auto">
                     {/* Section Header */}
                     <div className="text-center mb-16">
                         <div className="inline-flex items-center px-4 py-2 bg-[#10362e]/10 rounded-full mb-4">
@@ -216,9 +217,8 @@ const EventsPage = () => {
                                 <Link
                                     to={`/event-detail/${event.slug}`}
                                     key={event.id}
-                                    className={`event-card group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-8 ${
-                                        event.featured ? 'md:col-span-2 xl:col-span-1' : ''
-                                    }`}
+                                    className={`event-card group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-8 ${event.featured ? 'md:col-span-2 xl:col-span-1' : ''
+                                        }`}
                                 >
                                     {/* Event Image with Enhanced Overlay */}
                                     <div className={`relative overflow-hidden ${event.featured ? 'h-72' : 'h-64'}`}>
@@ -228,18 +228,6 @@ const EventsPage = () => {
                                             alt={event.title}
                                             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
-                                        
-                                        {/* Enhanced Badges */}
-                                        <div className="absolute top-4 right-4 flex flex-col gap-2 z-20">
-                                            <div className="bg-[#fcd10b] text-[#10362e] font-bold py-2 px-4 rounded-full text-sm shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                                                {event.featured ? 'Featured' : 'Event'}
-                                            </div>
-                                            {event.featured && (
-                                                <div className="bg-gradient-to-r from-[#10362e] to-[#1a4d42] text-white text-xs font-semibold py-1 px-3 rounded-full shadow-lg">
-                                                    Premium
-                                                </div>
-                                            )}
-                                        </div>
 
                                         {/* Hover Overlay */}
                                         <div className="absolute inset-0 bg-gradient-to-br from-[#10362e]/20 to-[#fcd10b]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center z-10">
@@ -256,12 +244,11 @@ const EventsPage = () => {
 
                                     {/* Enhanced Event Details */}
                                     <div className="p-6 md:p-8 relative">
-                                        {/* Decorative Element */}
+                                        Decorative Element
                                         <div className="absolute -top-4 left-6 w-8 h-1 bg-gradient-to-r from-[#fcd10b] to-[#f8d947] rounded-full"></div>
 
-                                        <h3 className={`font-bold text-[#10362e] mb-4 group-hover:text-[#fcd10b] transition-colors duration-300 ${
-                                            event.featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
-                                        } leading-tight`}>
+                                        <h3 className={`font-bold text-[#10362e] mb-4 group-hover:text-[#fcd10b] transition-colors duration-300 ${event.featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
+                                            } leading-tight`}>
                                             {event.title}
                                         </h3>
 
