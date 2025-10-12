@@ -430,6 +430,22 @@ const ContactPage = () => {
                                 </div>
                             </div>
                         </div>
+
+
+                        {/* Map Section */}
+                        <div ref={mapRef} className="bg-white rounded-2xl shadow-xl p-8">
+                            <h2 className="text-2xl font-bold text-[#1f423b] mb-6">Our Location (Nepal Office)</h2>
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.341796136542!2d85.3386969760149!3d27.73760182415544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19e153f1d37f%3A0x917d5b60525421fc!2sThe%20MICE%20Connection!5e0!3m2!1sen!2snp!4v1760250277091!5m2!1sen!2snp"
+                                width="100%"
+                                height="450"
+                                style={{ border: 0 }}
+                                allowFullScreen={true}
+                                loading="lazy"
+                                referrerPolicy="no-referrer-when-downgrade"
+                                title="The MICE Connection Location"
+                            ></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
