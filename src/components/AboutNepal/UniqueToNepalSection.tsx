@@ -60,7 +60,7 @@ const UniqueToNepalSection: React.FC = () => {
                                 { title: "Thangka Paintings", description: "Intricate Buddhist religious art on cotton or silk" },
                                 { title: "Khukuri Knives", description: "Traditional curved Nepalese knife with historical significance" },
                                 { title: "Himalayan Singing Bowls", description: "Handcrafted metal bowls used for meditation and healing" },
-                                { title: "Nepali Tea", description: "High-altitude teas with unique flavors from the Himalayas" },
+                                { title: "Nepali Tea", description: "High altitude teas with unique flavors from the Himalayas" },
                                 { title: "Lokta Paper", description: "Traditional handmade paper from the bark of the Daphne plant" },
                                 { title: "Mad Honey", description: "Hallucinogenic honey harvested from cliffs by Gurung communities" },
                                 { title: "Yarsagumba", description: "Rare caterpillar fungus valued in traditional medicine" },

@@ -64,10 +64,11 @@ const Footer = () => {
     ];
 
     const services = [
-        { name: "Meetings", href: "/services/meetings" },
-        { name: "Incentives", href: "/services/incentives" },
-        { name: "Conferences", href: "/services/conferences" },
-        { name: "Exhibitions", href: "/services/exhibitions" },
+        { name: "Tours and Travels", href: "/tours-&-travels" },
+        { name: "Meetings", href: "/meetings" },
+        { name: "Incentives", href: "/incentives" },
+        { name: "Conferences", href: "/conferences" },
+        { name: "Exhibitions", href: "/exhibitions" },
     ];
 
     return (

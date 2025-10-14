@@ -20,10 +20,13 @@ const MeetingPage = lazy(() => import('./pages/Meeting'));
 const IncentivesPage = lazy(() => import('./pages/Incentives'));
 const ConferencesPage = lazy(() => import('./pages/Conferences'));
 const ExhibitionsPage = lazy(() => import('./pages/Exhibitions'));
+const TourPage = lazy(() => import('./pages/Tour'));
 const PrivacyPage = lazy(() => import('./pages/Privacy'));
 const TermsOfServicePage = lazy(() => import('./pages/Term'));
 const EventsPage = lazy(() => import('./pages/Events'));
 const EventDetail = lazy(() => import('./pages/EventDetail'));
+const OurPresencePage = lazy(() => import('./pages/OurPresence'));
+const OurPresenceDetail = lazy(() => import('./pages/OurPresenceDetail'));
 // const InternationalTours = lazy(() => import('./pages/InternationalTours'));
 
 const App = () => {
@@ -53,17 +56,20 @@ const App = () => {
             <Route path="/tour-packages" element={<TourPackages />} />
             <Route path="/tour-packages/:slug" element={<TourPackageDetail />} />
             <Route path="/detaildestation/:slug" element={<DetailDestination />} />
-            <Route path="/events" element={<EventsPage />} />
-            <Route path="/event-detail/:slug" element={<EventDetail />} />
+            <Route path="/managed-experiences" element={<EventsPage />} />
+            <Route path="/managed-experiences-detail/:slug" element={<EventDetail />} />
+            <Route path="/our-presence" element={<OurPresencePage />} />
+            <Route path="/our-presence-detail/:slug" element={<OurPresenceDetail />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/blogs" element={<Blog />} />
             <Route path="/blogs/:slug" element={<BlogDetail />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/contact" element={<ContactPage />} />
-            <Route path="/services/meetings" element={<MeetingPage />} />
-            <Route path="/services/incentives" element={<IncentivesPage />} />
-            <Route path="/services/conferences" element={<ConferencesPage />} />
-            <Route path="/services/exhibitions" element={<ExhibitionsPage />} />
+            <Route path="/tours-&-travels" element={<TourPage />} />
+            <Route path="/meetings" element={<MeetingPage />} />
+            <Route path="/incentives" element={<IncentivesPage />} />
+            <Route path="/conferences" element={<ConferencesPage />} />
+            <Route path="/exhibitions" element={<ExhibitionsPage />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/terms" element={<TermsOfServicePage />} />
           </Routes>

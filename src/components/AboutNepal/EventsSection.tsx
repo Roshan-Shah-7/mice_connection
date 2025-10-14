@@ -165,7 +165,7 @@ const EventsSection: React.FC = () => {
     },
     {
       name: "Indra Jatra",
-      description: "An eight-day festival honoring Lord Indra, the god of rain. The festival features masked dances, religious ceremonies, and the display of the living goddess Kumari.",
+      description: "An eight day festival honoring Lord Indra, the god of rain. The festival features masked dances, religious ceremonies, and the display of the living goddess Kumari.",
       timing: "September",
       image: "/assets/festivals/indra-jatra.webp",
       color: "#4f46e5",
@@ -347,7 +347,7 @@ const EventsSection: React.FC = () => {
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-[#fcd00e] rounded-full mr-3"></span>
-                  <span>Many festivals are UNESCO-recognized cultural heritage</span>
+                  <span>Many festivals are UNESCO recognized cultural heritage</span>
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-[#fcd00e] rounded-full mr-3"></span>

@@ -11,6 +11,7 @@ const About = () => {
     const headingRef = useRef<HTMLHeadingElement>(null);
     const introRef = useRef<HTMLDivElement>(null);
     const missionRef = useRef<HTMLDivElement>(null);
+    const tourTravelRef = useRef<HTMLDivElement>(null); // New ref for Tour and Travel section
     const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
 
@@ -81,6 +82,20 @@ const About = () => {
                 // Mission animation
                 .fromTo(
                     missionRef.current,
+                    {
+                        y: 30,
+                        opacity: 0
+                    },
+                    {
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8
+                    },
+                    '-=0.4'
+                )
+                // Tour and Travel animation
+                .fromTo(
+                    tourTravelRef.current,
                     {
                         y: 30,
                         opacity: 0
@@ -367,6 +382,40 @@ const About = () => {
                                 />
                                 <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Tour and Travel Section */}
+                <div
+                    ref={tourTravelRef}
+                    className="flex flex-col max-w-4xl mx-auto items-center justify-center mb-20 md:mb-24"
+                >
+                    <div className="mb-8 text-center">
+                        <span className="inline-block px-4 py-2 text-sm font-medium bg-[#2a9d8f]/10 text-[#2a9d8f] rounded-full mb-6">
+                            Explore
+                        </span>
+                        <h3 className="text-3xl font-bold text-[#0e332e] mb-6">About Our Tour and Travel Services</h3>
+                    </div>
+                    <div className="space-y-6 text-lg text-gray-700 text-center">
+                        <p>
+                            Beyond MICE, The MICE Connection is your trusted partner for unforgettable tour and travel experiences across Nepal. We specialize in curating personalized itineraries that showcase the best of Nepal's natural beauty, cultural heritage, and adventurous spirit.
+                        </p>
+                        <p>
+                            From serene Himalayan treks and thrilling jungle safaris to cultural tours of ancient cities and spiritual retreats, our expert team ensures every journey is seamless, enriching, and tailored to your preferences.
+                        </p>
+                        <p>
+                            Discover Nepal with us – where every trip is an adventure waiting to unfold.
+                        </p>
+                    </div>
+                    <div className="mt-10 flex justify-center">
+                        <div className="flex items-center space-x-4 p-4 bg-[#0e332e]/5 rounded-2xl">
+                            <div className="flex-shrink-0">
+                                <div className="w-12 h-12 bg-[#2a9d8f] rounded-full flex items-center justify-center">
+                                    <span className="text-white font-bold">2+</span>
+                                </div>
+                            </div>
+                            <p className="text-gray-700">Years of crafting memorable travel experiences</p>
                         </div>
                     </div>
                 </div>

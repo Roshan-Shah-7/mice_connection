@@ -14,7 +14,7 @@ export const aboutNepalDestinations: Destination[] = [
     {
         name: "Kathmandu Valley",
         description: "Cultural heart with ancient temples, palaces, and vibrant markets in Nepal's capital region.",
-        descriptionDetail: "Kathmandu Valley, a UNESCO World Heritage Site, is the historical and cultural heart of Nepal. It's an open-air museum of ancient temples, stupas, and palaces, showcasing exquisite Newari architecture and artistry. Explore the bustling streets of Thamel, the spiritual ambiance of Pashupatinath, the colossal Boudhanath Stupa, and the medieval squares of Patan and Bhaktapur. The valley is a living testament to Nepal's rich religious harmony between Hinduism and Buddhism.",
+        descriptionDetail: "Kathmandu Valley, a UNESCO World Heritage Site, is the historical and cultural heart of Nepal. It's an open air museum of ancient temples, stupas, and palaces, showcasing exquisite Newari architecture and artistry. Explore the bustling streets of Thamel, the spiritual ambiance of Pashupatinath, the colossal Boudhanath Stupa, and the medieval squares of Patan and Bhaktapur. The valley is a living testament to Nepal's rich religious harmony between Hinduism and Buddhism.",
         image: "/assets/nepal/kathmandu.webp",
         highlights: ["7 UNESCO Sites", "Ancient Palaces", "Traditional Crafts", "Vibrant Markets", "Newari Culture", "Pashupatinath Temple", "Boudhanath Stupa", "Swayambhunath"],
         relatedTourPackageSlug: "kathmandu-valley-cultural-tour",
@@ -25,7 +25,7 @@ export const aboutNepalDestinations: Destination[] = [
     {
         name: "Pokhara",
         description: "City of Lakes with stunning mountain views and adventure activities in the Annapurna region.",
-        descriptionDetail: "Nestled in a tranquil valley, Pokhara is renowned for its serene lakes and breathtaking panoramic views of the Annapurna mountain range, including Machhapuchhre (Fishtail Peak). It's a hub for adventure activities like paragliding, zip-lining, and boating on Phewa Lake. The city offers a relaxed atmosphere, beautiful natural landscapes, and access to popular trekking routes like the Annapurna Base Camp and Poon Hill.",
+        descriptionDetail: "Nestled in a tranquil valley, Pokhara is renowned for its serene lakes and breathtaking panoramic views of the Annapurna mountain range, including Machhapuchhre (Fishtail Peak). It's a hub for adventure activities like paragliding, zip lining, and boating on Phewa Lake. The city offers a relaxed atmosphere, beautiful natural landscapes, and access to popular trekking routes like the Annapurna Base Camp and Poon Hill.",
         image: "/assets/nepal/pokhara.webp",
         highlights: ["Fewa Lake", "Paragliding", "Peace Pagoda", "Sarangkot Sunrise", "Boating", "Annapurna Views", "Adventure Sports", "Caves"],
         relatedTourPackageSlug: "pokhara-adventure-package",
@@ -36,7 +36,7 @@ export const aboutNepalDestinations: Destination[] = [
     {
         name: "Chitwan National Park",
         description: "UNESCO World Heritage wildlife sanctuary with diverse flora and fauna.",
-        descriptionDetail: "Chitwan National Park is a lush wildlife sanctuary in the Terai lowlands, famous for its conservation efforts of endangered species. It's one of the best places in Asia to spot the one-horned rhinoceros and Bengal tigers in their natural habitat. Activities include jungle safaris (jeep or elephant back), canoe rides on the Rapti River, bird watching, and cultural tours to Tharu villages, offering a unique blend of adventure and cultural immersion.",
+        descriptionDetail: "Chitwan National Park is a lush wildlife sanctuary in the Terai lowlands, famous for its conservation efforts of endangered species. It's one of the best places in Asia to spot the one horned rhinoceros and Bengal tigers in their natural habitat. Activities include jungle safaris (jeep or elephant back), canoe rides on the Rapti River, bird watching, and cultural tours to Tharu villages, offering a unique blend of adventure and cultural immersion.",
         image: "/assets/nepal/chitwan.webp",
         highlights: ["Rhino Safari", "Elephant Breeding Center", "Tharu Cultural Show", "Canoeing", "Bird Watching", "Jungle Walk", "Wildlife Photography", "Tharu Culture"],
         relatedTourPackageSlug: "chitwan-jungle-safari",
@@ -79,10 +79,10 @@ export const aboutNepalDestinations: Destination[] = [
     },
     {
         name: "Bhaktapur Durbar Square",
-        description: "Well-preserved medieval city with exquisite architecture and traditional crafts.",
-        descriptionDetail: "Bhaktapur Durbar Square is a UNESCO World Heritage Site and one of the best-preserved medieval cities in Nepal. Located about 12 km from Kathmandu, it showcases magnificent palaces, temples, and courtyards dating back to the 12th-15th centuries. The city is famous for its pottery and weaving traditions, and its streets are lined with beautifully preserved buildings featuring intricate woodcarvings and stunning pagoda-style architecture.",
+        description: "Well preserved medieval city with exquisite architecture and traditional crafts.",
+        descriptionDetail: "Bhaktapur Durbar Square is a UNESCO World Heritage Site and one of the best preserved medieval cities in Nepal. Located about 12 km from Kathmandu, it showcases magnificent palaces, temples, and courtyards dating back to the 12th-15th centuries. The city is famous for its pottery and weaving traditions, and its streets are lined with beautifully preserved buildings featuring intricate woodcarvings and stunning pagoda style architecture.",
         image: "/assets/nepal/bhaktapur.webp",
-        highlights: ["Nyatapola Temple", "55-Window Palace", "Pottery Square", "Traditional Crafts", "Golden Gate", "Medieval Architecture", "Wood Carvings", "Cultural Heritage"],
+        highlights: ["Nyatapola Temple", "55 Window Palace", "Pottery Square", "Traditional Crafts", "Golden Gate", "Medieval Architecture", "Wood Carvings", "Cultural Heritage"],
         category: "Cultural",
         rating: "4.7/5",
         bestTime: "Oct-Mar"
@@ -99,8 +99,8 @@ export const aboutNepalDestinations: Destination[] = [
     },
     {
         name: "Rara Lake",
-        description: "Nepal's largest lake nestled in the remote wilderness of far-western Nepal.",
-        descriptionDetail: "Rara Lake is the largest lake in Nepal, located in the remote Rara National Park in the far-western region. Often called the 'Queen of Lakes', its stunning blue waters are surrounded by pine forests and snow-capped mountains, creating a picture-perfect landscape. The area is home to diverse wildlife including red pandas, black bears, and numerous bird species. Due to its remote location, it receives fewer visitors, offering a truly pristine natural experience.",
+        description: "Nepal's largest lake nestled in the remote wilderness of far western Nepal.",
+        descriptionDetail: "Rara Lake is the largest lake in Nepal, located in the remote Rara National Park in the far western region. Often called the 'Queen of Lakes', its stunning blue waters are surrounded by pine forests and snow capped mountains, creating a picture perfect landscape. The area is home to diverse wildlife including red pandas, black bears, and numerous bird species. Due to its remote location, it receives fewer visitors, offering a truly pristine natural experience.",
         image: "/assets/nepal/raraLake.webp",
         highlights: ["Largest Lake", "Pristine Nature", "Wildlife Spotting", "Remote Trekking", "Photography", "Bird Watching", "Tranquility", "Alpine Scenery"],
         category: "Nature",

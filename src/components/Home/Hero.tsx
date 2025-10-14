@@ -1,11 +1,18 @@
 import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { TbBuildingCommunity, TbGift, TbUsers, TbPodium, TbArrowRight } from 'react-icons/tb';
+import { TbBuildingCommunity, TbGift, TbUsers, TbPodium, TbArrowRight, TbPlaneArrival } from 'react-icons/tb';
 import CategoryCard from './CategoryCard';
 import { Link } from 'react-router-dom';
 
 const categories = [
+    {
+        icon: <TbPlaneArrival size={28} className="text-orange-600" />,
+        title: 'Tours',
+        description: 'Curated travel experiences',
+        image: '/assets/tour/tours.jpg',
+        path: '/tours-&-travels'
+    },
     {
         icon: <TbUsers size={28} className="text-blue-600" />,
         title: 'Meetings',
@@ -46,7 +53,7 @@ const Hero: React.FC = () => {
 
         tl.fromTo('.hero-media-container',
             { x: -100, opacity: 0 },
-            { x: 0, opacity: 1, duration: 1.5 }
+            { x: 0, opacity: 1, duration: 1 }
         )
             .fromTo('.hero-content > *',
                 { x: 50, opacity: 0 },

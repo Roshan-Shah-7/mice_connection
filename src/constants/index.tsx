@@ -2,6 +2,7 @@ export type NavLink = {
     label: string;
     href: string;
     hasDropdown?: boolean;
+    subLinks?: NavLink[];
 };
 
 export type ServiceLink = {
@@ -12,8 +13,15 @@ export type ServiceLink = {
 export const navLinksLeft: NavLink[] = [
     { label: "About Nepal", href: "/about-nepal" },
     { label: "Tour Packages", href: "/tour-packages" },
-    // { label: "International Tours", href: "/international-tours" },
-    { label: "Events", href: "/events" },
+    {
+        label: "Highlights",
+        href: "#",
+        hasDropdown: true,
+        subLinks: [
+            { label: "Managed Experiences", href: "/managed-experiences" },
+            { label: "Our Presence", href: "/our-presence" },
+        ],
+    },
     { label: "Our Services", href: "#", hasDropdown: true },
 ];
 
@@ -25,8 +33,9 @@ export const navLinksRight: NavLink[] = [
 ];
 
 export const servicesLinks: ServiceLink[] = [
-    { label: "Meetings", href: "/services/meetings" },
-    { label: "Incentives", href: "/services/incentives" },
-    { label: "Conferences", href: "/services/conferences" },
-    { label: "Exhibitions", href: "/services/exhibitions" },
+    { label: "Tours and Travels", href: "/tours-&-travels" },
+    { label: "Meetings", href: "/meetings" },
+    { label: "Incentives", href: "/incentives" },
+    { label: "Conferences", href: "/conferences" },
+    { label: "Exhibitions", href: "/exhibitions" },
 ];

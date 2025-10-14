@@ -208,7 +208,7 @@ const CultureSection: React.FC = () => {
                                 Nepal's cultural heritage represents one of the world's oldest continuous civilizations, with traditions dating back over 2,000 years. The Kathmandu Valley alone contains seven UNESCO World Heritage Sites within a radius of 20 kilometers, making it one of the most culturally dense regions on Earth.
                             </p>
                             <p className="text-gray-700">
-                                What makes Nepal's culture unique is its living nature—ancient rituals, festivals, and artistic traditions are not museum exhibits but active parts of daily life. This seamless blend of the ancient and modern creates a cultural experience found nowhere else.
+                                What makes Nepal's culture unique is its living nature ancient rituals, festivals, and artistic traditions are not museum exhibits but active parts of daily life. This seamless blend of the ancient and modern creates a cultural experience found nowhere else.
                             </p>
                         </div>
                         <div>

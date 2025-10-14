@@ -4,10 +4,10 @@ export const tourPackages: TourPackage[] =
     [
         // Women Centric
         {
-            "id": 31,
+            "id": 1,
             "title": "Cultural Heritage & Crafts Tour for Women",
             "slug": "cultural-heritage-crafts-tour-women",
-            "description": "Step into the rich cultural heritage of Nepal with a specially curated 4-day Cultural Heritage & Crafts Tour for Women. Explore the artistic treasures of Kathmandu, Patan, Bhaktapur, Bungamati, and Khokana while engaging in immersive craft workshops, interacting with inspiring women artisans, and witnessing the beauty of Nepal’s timeless traditions. This unique experience offers hands-on sessions in pottery, painting, woodcarving, and jewelry-making, along with visits to women-led enterprises and vibrant markets. Discover the artistry, history, and cultural resilience of Nepalese women through this unforgettable journey!",
+            "description": "Step into the rich cultural heritage of Nepal with a specially curated 4 day Cultural Heritage & Crafts Tour for Women. Explore the artistic treasures of Kathmandu, Patan, Bhaktapur, Bungamati, and Khokana while engaging in immersive craft workshops, interacting with inspiring women artisans, and witnessing the beauty of Nepal’s timeless traditions. This unique experience offers hands on sessions in pottery, painting, woodcarving, and jewelry making, along with visits to women led enterprises and vibrant markets. Discover the artistry, history, and cultural resilience of Nepalese women through this unforgettable journey!",
             "duration": "5 Days",
             "priceRange": "$600 - $700",
             "image": "/assets/women/women-culture.webp",
@@ -16,9 +16,9 @@ export const tourPackages: TourPackage[] =
             "highlights": [
                 "Guided tours of Kathmandu, Patan, Bhaktapur & their UNESCO sites.",
                 "Pottery, painting & woodcarving workshops in Bhaktapur & Bungamati.",
-                "Traditional jewelry-making sessions in Patan.",
-                "Visit to women-led enterprises & artisan communities.",
-                "Handicraft shopping at women-owned outlets.",
+                "Traditional jewelry making sessions in Patan.",
+                "Visit to women led enterprises & artisan communities.",
+                "Handicraft shopping at women owned outlets.",
                 "Evening cultural performances by women artists."
             ],
             "includes": [
@@ -36,17 +36,17 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 1,
                     "title": "Arrival and Cultural Exploration in Kathmandu",
-                    "description": "Arrive in Kathmandu and check-in at a charming boutique hotel. Begin with a welcome session and introduction to the tour. Embark on a guided tour of UNESCO World Heritage Sites, including Swayambhunath (Monkey Temple) and Pashupatinath Temple. Visit women-led enterprises showcasing local handicrafts and sustainable products. In the evening, enjoy a traditional cultural performance by women artists, featuring dance and music."
+                    "description": "Arrive in Kathmandu and check in at a charming boutique hotel. Begin with a welcome session and introduction to the tour. Embark on a guided tour of UNESCO World Heritage Sites, including Swayambhunath (Monkey Temple) and Pashupatinath Temple. Visit women led enterprises showcasing local handicrafts and sustainable products. In the evening, enjoy a traditional cultural performance by women artists, featuring dance and music."
                 },
                 {
                     "day": 2,
                     "title": "Bhaktapur & Pottery Workshops",
-                    "description": "After breakfast, drive to Bhaktapur, a city renowned for its well-preserved architecture and ancient traditions. Take part in an interactive pottery workshop, learning the traditional techniques from local women artisans. Participate in a painting and woodcarving session, guided by skilled women craftsmen. Explore the historic Bhaktapur Durbar Square. Shop for handmade crafts and souvenirs at women-owned outlets. End the day with a special Newari dinner at a traditional restaurant."
+                    "description": "After breakfast, drive to Bhaktapur, a city renowned for its well preserved architecture and ancient traditions. Take part in an interactive pottery workshop, learning the traditional techniques from local women artisans. Participate in a painting and woodcarving session, guided by skilled women craftsmen. Explore the historic Bhaktapur Durbar Square. Shop for handmade crafts and souvenirs at women owned outlets. End the day with a special Newari dinner at a traditional restaurant."
                 },
                 {
                     "day": 3,
                     "title": "Patan and Bungamati Crafts Experience",
-                    "description": "Start the morning with a visit to Patan, the city of fine arts. Join a traditional jewelry-making session with women artisans. Explore Patan Durbar Square, famous for its temples, courtyards, and museums. In the afternoon, travel to Bungamati and Khokana, two villages preserving ancient craftsmanship. Interact with local women artisans and experience an authentic cultural exchange over a home-cooked dinner."
+                    "description": "Start the morning with a visit to Patan, the city of fine arts. Join a traditional jewelry making session with women artisans. Explore Patan Durbar Square, famous for its temples, courtyards, and museums. In the afternoon, travel to Bungamati and Khokana, two villages preserving ancient craftsmanship. Interact with local women artisans and experience an authentic cultural exchange over a home cooked dinner."
                 },
                 {
                     "day": 4,
@@ -65,11 +65,12 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/asan-bazaar.webp"
             ]
         },
+
         {
-            "id": 32,
+            "id": 2,
             "title": "Women's Wellness Escape",
             "slug": "womens-wellness-escape-retreat",
-            "description": "Take a break from the everyday hustle and immerse yourself in a 4-day Women's Wellness Escape, designed for relaxation, self-care, and inner balance. This thoughtfully curated retreat combines yoga, mindfulness, spa treatments, cultural exploration, and creativity in the serene landscapes of Nepal. Whether you're a wellness enthusiast or simply looking to recharge, this journey offers the perfect blend of tranquility and cultural immersion.",
+            "description": "Take a break from the everyday hustle and immerse yourself in a 4 day Women's Wellness Escape, designed for relaxation, self care, and inner balance. This thoughtfully curated retreat combines yoga, mindfulness, spa treatments, cultural exploration, and creativity in the serene landscapes of Nepal. Whether you're a wellness enthusiast or simply looking to recharge, this journey offers the perfect blend of tranquility and cultural immersion.",
             "duration": "4 Days",
             "priceRange": "$500 - $600",
             "image": "/assets/women/women-wellness.webp",
@@ -78,7 +79,7 @@ export const tourPackages: TourPackage[] =
             "highlights": [
                 "Yoga, meditation, sound healing & spa treatments for deep relaxation.",
                 "Scenic beauty, hiking & Buddhist teachings for a holistic wellness experience.",
-                "Hands-on art workshop with women artisans to nurture creativity.",
+                "Hands on art workshop with women artisans to nurture creativity.",
                 "Stay in serene retreats that blend modern comfort with Nepali culture."
             ],
             "includes": [
@@ -87,7 +88,7 @@ export const tourPackages: TourPackage[] =
                 "Spa treatments using Himalayan herbs and oils.",
                 "Creative art workshops with materials included.",
                 "Accommodation in serene wellness retreat.",
-                "All meals (organic and wellness-focused cuisine).",
+                "All meals (organic and wellness focused cuisine).",
                 "English speaking wellness guide and instructors.",
                 "All applicable taxes and service charges."
             ],
@@ -96,18 +97,18 @@ export const tourPackages: TourPackage[] =
             "itinerary": [
                 {
                     "day": 1,
-                    "title": "Arrival in Kathmandu – Yoga & Sound Healing",
-                    "description": "Warm Nepali welcome upon arrival and transfer to a serene retreat blending modern comfort with Nepali aesthetics. Calming yoga session with an experienced instructor to unwind from travel fatigue. Sound healing therapy using Tibetan singing bowls to restore inner peace. Organic dinner featuring wellness-focused Nepali flavors."
+                    "title": "Arrival in Kathmandu - Yoga & Sound Healing",
+                    "description": "Warm Nepali welcome upon arrival and transfer to a serene retreat blending modern comfort with Nepali aesthetics. Calming yoga session with an experienced instructor to unwind from travel fatigue. Sound healing therapy using Tibetan singing bowls to restore inner peace. Organic dinner featuring wellness focused Nepali flavors."
                 },
                 {
                     "day": 2,
-                    "title": "Day Trip to Namobuddha – Yoga, Hiking & Monastic Serenity",
+                    "title": "Day Trip to Namobuddha - Yoga, Hiking & Monastic Serenity",
                     "description": "Scenic drive to Namobuddha, a sacred Buddhist site with breathtaking Himalayan views. Gentle hike to Namobuddha Monastery, surrounded by peaceful nature. Yoga session in the tranquil monastery setting, harmonizing body and mind. Vegetarian lunch prepared by monks, followed by an insightful session on Buddhist teachings. Return to Kathmandu in the evening for relaxation at your retreat."
                 },
                 {
                     "day": 3,
                     "title": "Spa Indulgence & Creative Art Workshop",
-                    "description": "Rejuvenating spa treatments using Himalayan herbs and oils, with options like massages, herbal wraps, and aromatherapy sessions. Hands-on art workshop with local women artisans: pottery, bead-making, and traditional painting. Wellness-focused dinner and reflection on the day's experiences."
+                    "description": "Rejuvenating spa treatments using Himalayan herbs and oils, with options like massages, herbal wraps, and aromatherapy sessions. Hands on art workshop with local women artisans: pottery, bead-making, and traditional painting. Wellness focused dinner and reflection on the day's experiences."
                 },
                 {
                     "day": 4,
@@ -121,8 +122,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/spa-treatment.webp"
             ]
         },
+
         {
-            "id": 33,
+            "id": 3,
             "title": "Women-Only Luxury Travel Experience",
             "slug": "women-only-luxury-travel-nepal",
             "description": "Designed for solo female travelers seeking luxury, comfort, and safety, this 8-day exclusive tour offers an indulgent journey through Nepal's breathtaking landscapes, rich culture, and rejuvenating wellness experiences. From helicopter rides to Everest to Ayurvedic spa treatments, every detail is curated to offer the ultimate luxury experience while celebrating empowerment and adventure.",
@@ -132,7 +134,7 @@ export const tourPackages: TourPackage[] =
             "category": "Women Centric",
             "difficulty": "Easy",
             "highlights": [
-                "5-star boutique hotels with women-only wings",
+                "4 star boutique hotels with women only wings",
                 "Private Everest helicopter tour with brunch at Everest View Hotel",
                 "Personalized spa treatments, wellness plans & Ayurvedic consultations",
                 "Curated meals with gourmet wine pairings & mocktail options",
@@ -142,7 +144,7 @@ export const tourPackages: TourPackage[] =
             ],
             "includes": [
                 "Private luxury transportation throughout the tour",
-                "Accommodation in 5-star boutique hotels with women-only wings",
+                "Accommodation in 4 star boutique hotels with women only wings",
                 "All meals with gourmet wine pairings and premium dining experiences",
                 "Everest helicopter tour with brunch at Everest View Hotel",
                 "All domestic flights (Kathmandu-Pokhara, Chitwan-Kathmandu)",
@@ -203,11 +205,12 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/luxury-spa.webp"
             ]
         },
+
         {
-            "id": 34,
+            "id": 4,
             "title": "Nature & Photography Tour",
             "slug": "nature-photography-tour-kathmandu-rara-lake",
-            "description": "Designed for nature enthusiasts, aspiring photographers, and women seeking serenity, this 7-day immersive photography tour takes you from the cultural wonders of Kathmandu to the untouched landscapes of Rara Lake. With expert guidance, breathtaking locations, and hands-on workshops, this journey will help you enhance your photography skills while embracing Nepal’s beauty.",
+            "description": "Designed for nature enthusiasts, aspiring photographers, and women seeking serenity, this 7 day immersive photography tour takes you from the cultural wonders of Kathmandu to the untouched landscapes of Rara Lake. With expert guidance, breathtaking locations, and hands on workshops, this journey will help you enhance your photography skills while embracing Nepal’s beauty.",
             "duration": "7 Days",
             "priceRange": "$1200 - $1400",
             "image": "/assets/nepal/chitwan.webp",
@@ -283,7 +286,7 @@ export const tourPackages: TourPackage[] =
         },
 
         {
-            "id": 14,
+            "id": 5,
             "title": "Kailash Manasarovar",
             "slug": "kailash-manasarovar",
             "description": "A sacred pilgrimage to Mount Kailash and Lake Manasarovar via Kerung, offering a spiritual journey for foreign nationals in 2025. This overland group joining tour covers significant religious sites and provides an immersive experience in the Himalayan region.",
@@ -317,7 +320,7 @@ export const tourPackages: TourPackage[] =
                 "Complimentary Duffel Bag",
                 "Complimentary Shoulder Bag",
                 "Dawn Jacket on returnable basis",
-                "First aid-kit, Medical Oxygen and Pulse Oximetry",
+                "First aid kit, Medical Oxygen and Pulse Oximetry",
                 "A Qualified Medical Doctor stationed at Lake Manasarovar"
             ],
             "groupSize": "Minimum 16 participants",
@@ -405,11 +408,12 @@ export const tourPackages: TourPackage[] =
                 "https://images.unsplash.com/photo-1590453549641-3d2b2c9b2e8a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
             ]
         },
+
         {
-            "id": 15,
+            "id": 6,
             "title": "Nepal Mahadev Yatra",
             "slug": "nepal-mahadev-yatra",
-            "description": "8 Nights/ 9 Days. The MICE Connection Special. Nepal Mahadev Yatra: Where Faith Meets Himalaya. Outline Itinerary: Day 1: Arrival in Kathmandu – Welcome & Evening Aarati at Pashupatinath. Day 2: Pilgrimage Around Kathmandu Valley – Doleshwor Mahadev & Kailashnath. Day 3: Bhaleshwor Mahadev at Chandragiri & Drive to Pokhara. Day 4: Sacred Caves & Temples in Pokhara. Day 5: Drive from Pokhara to Jomsom (2,700 m) via Beni. Day 6: Visit Muktinath Temple & Explore Kagbeni. Day 7: Return to Pokhara. Day 8: Morning Flight to Kathmandu & Leisure Day with Shopping. Day 9: Special Pooja at Pashupatinath & Final Departure",
+            "description": "8 Nights/ 9 Days. The MICE Connection Special. Nepal Mahadev Yatra: Where Faith Meets Himalaya. Outline Itinerary: Day 1: Arrival in Kathmandu - Welcome & Evening Aarati at Pashupatinath. Day 2: Pilgrimage Around Kathmandu Valley – Doleshwor Mahadev & Kailashnath. Day 3: Bhaleshwor Mahadev at Chandragiri & Drive to Pokhara. Day 4: Sacred Caves & Temples in Pokhara. Day 5: Drive from Pokhara to Jomsom (2,700 m) via Beni. Day 6: Visit Muktinath Temple & Explore Kagbeni. Day 7: Return to Pokhara. Day 8: Morning Flight to Kathmandu & Leisure Day with Shopping. Day 9: Special Pooja at Pashupatinath & Final Departure",
             "duration": "9 Days",
             "priceRange": "$1100 - $1300",
             "image": "/assets/packages/mahadev.webp",
@@ -495,8 +499,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/lumbini.webp"
             ]
         },
+
         {
-            "id": 16,
+            "id": 7,
             "title": "Nepal Learning Adventure",
             "slug": "nepal-learning-adventure",
             "description": "Explore Nepal, Learn Beyond Classrooms! This 8 Nights / 9 Days package covers Kathmandu, Pokhara, Astam Annapurna Eco Village, Chitwan, and a Rafting Camp, offering educational and cultural immersion, wildlife adventure, and sustainable tourism experiences.",
@@ -511,7 +516,7 @@ export const tourPackages: TourPackage[] =
                 "Marvel at the world’s tallest Shiva statue in Sanga.",
                 "Ascend to Bhaleshwor Mahadev via scenic cable car.",
                 "Explore UNESCO World Heritage Sites: Swayambhunath Stupa, Boudhanath Stupa, Bhaktapur Durbar Square.",
-                "Hands-on workshop to learn traditional Nepali arts or pottery.",
+                "Hands on workshop to learn traditional Nepali arts or pottery.",
                 "Sunrise over the majestic Annapurna Range from Sarangkot.",
                 "Geological wonders: Devi’s Falls and Gupteshwor Cave.",
                 "International Mountain Museum and Tibetan Camp visit.",
@@ -520,12 +525,11 @@ export const tourPackages: TourPackage[] =
                 "Nature trail hike with discussions on flora, fauna, and conservation.",
                 "Interaction with local villagers and optional volunteering.",
                 "Participate in organic farming and learn about sustainable agriculture.",
-                "Ox-cart ride to a Tharu village and cultural dance performance.",
+                "Ox cart ride to a Tharu village and cultural dance performance.",
                 "Canoe ride along the Rapti River, visit Elephant Breeding Center.",
                 "Elephant safari in Chitwan National Park.",
                 "Exciting rafting experience on the Trishuli River.",
                 "Interactive workshops on sustainable tourism practices.",
-                "Momo-making session."
             ],
             "includes": [
                 "Accommodation in Kathmandu, Pokhara, Chitwan, Astam Annapurna Eco Village, and riverside camp.",
@@ -559,12 +563,12 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 4,
                     "title": "Journey to Astam Annapurna Eco Village",
-                    "description": "In the morning travel to Astam Annapurna Eco Village, a nearby rural village where you you will experience sustainable tourism in action. Activities: Nature trail hike with discussions on flora, fauna, and conservation. Interaction with local villagers to understand their lifestyle. Volunteer at a local school or community center. Participate in organic farming and learn about sustainable agriculture through hands-on activities. Experience Himalayan landscapes and local mountain culture. Educational briefing on Himalayan ecology and conservation. In the evening, gather around a bonfire for storytelling sessions and group reflections before staying overnight with host families or at a community guesthouse."
+                    "description": "In the morning travel to Astam Annapurna Eco Village, a nearby rural village where you you will experience sustainable tourism in action. Activities: Nature trail hike with discussions on flora, fauna, and conservation. Interaction with local villagers to understand their lifestyle. Volunteer at a local school or community center. Participate in organic farming and learn about sustainable agriculture through hands on activities. Experience Himalayan landscapes and local mountain culture. Educational briefing on Himalayan ecology and conservation. In the evening, gather around a bonfire for storytelling sessions and group reflections before staying overnight with host families or at a community guesthouse."
                 },
                 {
                     "day": 5,
                     "title": "Depart from Village and Drive to Chitwan",
-                    "description": "After breakfast, depart for Chitwan, enjoying scenic views along the way. Upon arrival, take an ox-cart ride to a Tharu village and learn about the indigenous Tharu community. In the evening, witness a vibrant Tharu cultural dance performance that showcases their unique traditions. Overnight stay at a resort in Chitwan."
+                    "description": "After breakfast, depart for Chitwan, enjoying scenic views along the way. Upon arrival, take an ox cart ride to a Tharu village and learn about the indigenous Tharu community. In the evening, witness a vibrant Tharu cultural dance performance that showcases their unique traditions. Overnight stay at a resort in Chitwan."
                 },
                 {
                     "day": 6,
@@ -594,8 +598,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/events/eventHero.webp"
             ]
         },
+
         {
-            "id": 17,
+            "id": 8,
             "title": "Kathmandu-Pokhara-Muktinath",
             "slug": "nepal-special-tour",
             "description": "5 Nights/ 6 Days. Package covers Kathmandu, Pokhara, and Jomsom, offering a journey through cultural sites and the sacred Muktinath Temple.",
@@ -668,8 +673,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/lumbini.webp"
             ]
         },
+
         {
-            "id": 18,
+            "id": 9,
             "title": "Ghorepani Poonhill",
             "slug": "ghorepani-poonhill-trek",
             "description": "8 Nights / 9 Days trek starting and ending at Kathmandu, offering stunning views of the Annapurna range and a glimpse into Gurung culture.",
@@ -680,13 +686,13 @@ export const tourPackages: TourPackage[] =
             "difficulty": "Moderate",
             "highlights": [
                 "Enjoy the bustling Thamel area in Kathmandu.",
-                "Scenic drive from Kathmandu to Pokhara with views of Trishuli River and snow-capped mountains.",
+                "Scenic drive from Kathmandu to Pokhara with views of Trishuli River and snow capped mountains.",
                 "Explore the charming lakeside neighborhood of Pokhara with views of Fishtail Mountain.",
                 "Trek through picturesque landscapes from Naya Pool to Tikhe Dhunga.",
                 "Challenging climb of over 3,000 steep stone steps to Ulleri village.",
                 "First glimpses of Annapurna I (8,091m) and Dhaulagiri (8,167m).",
                 "Spectacular sunrise over the Himalayan range from Poon Hill (3,210m).",
-                "Panoramic views of peaks like Hiuchuli, Nilgiri, Dhaulagiri, Tukuche, Annapurna South, Annapurna I- IV, Lamjung Himal, and Machhapuchhre (Fishtail).",
+                "Panoramic views of peaks like Hiuchuli, Nilgiri, Dhaulagiri, Tukuche, Annapurna South, Lamjung Himal, and Machhapuchhre (Fishtail).",
                 "Trek through Deurali Pass with breathtaking mountain views.",
                 "Explore Ghandruk, a large Gurung village, and its Culture Museum.",
                 "Experience the vibrant city nightlife of Pokhara."
@@ -713,12 +719,12 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 1,
                     "title": "Arrival in Kathmandu",
-                    "description": "Arrive in Kathmandu, the vibrant capital of Nepal. Upon arrival, you'll be transferred to your hotel for check-in and relaxation. After settling in, take some time to explore the local area at your leisure, or simply rest and recover from your journey. If you're up for it, explore the nearby attractions like the bustling Thamel area, where you can shop for souvenirs, enjoy local delicacies, or simply soak in the city's vibrant atmosphere."
+                    "description": "Arrive in Kathmandu, the vibrant capital of Nepal. Upon arrival, you'll be transferred to your hotel for check in and relaxation. After settling in, take some time to explore the local area at your leisure, or simply rest and recover from your journey. If you're up for it, explore the nearby attractions like the bustling Thamel area, where you can shop for souvenirs, enjoy local delicacies, or simply soak in the city's vibrant atmosphere."
                 },
                 {
                     "day": 2,
                     "title": "Kathmandu to Pokhara (Drive)",
-                    "description": "Begin your journey early, with time to enjoy a hearty breakfast before departing Kathmandu. The road winds down the valley wall, offering views of the Trishuli River below, where you may spot rafters navigating the whitewater—perhaps an activity for a future adventure. As you continue, snow-capped mountains emerge on the horizon, adding to the scenery. After reaching flatter terrain, stop for lunch, then proceed to Pokhara, the picturesque lakeside city. Upon arrival and check-in, you’ll have time to explore the charming neighborhood. Take a stroll along the serene lake promenade, explore the local shops and restaurants, and enjoy the stunning view of Fishtail Mountain towering over the city. Note: Comfortable tourist buses are provided for this route, but if you prefer a private car or flight, please inquire about add-ons during booking."
+                    "description": "Begin your journey early, with time to enjoy a hearty breakfast before departing Kathmandu. The road winds down the valley wall, offering views of the Trishuli River below, where you may spot rafters navigating the whitewater—perhaps an activity for a future adventure. As you continue, snow-capped mountains emerge on the horizon, adding to the scenery. After reaching flatter terrain, stop for lunch, then proceed to Pokhara, the picturesque lakeside city. Upon arrival and check in, you’ll have time to explore the charming neighborhood. Take a stroll along the serene lake promenade, explore the local shops and restaurants, and enjoy the stunning view of Fishtail Mountain towering over the city. Note: Comfortable tourist buses are provided for this route, but if you prefer a private car or flight, please inquire about add ons during booking."
                 },
                 {
                     "day": 3,
@@ -733,12 +739,12 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 5,
                     "title": "Ghorepani to Tadapani (Morning hike to Poon Hill)",
-                    "description": "Rise early to begin your hike up to Poon Hill (3,210m) for a spectacular sunrise over the Himalayan range. As the sun paints the sky, enjoy panoramic views of peaks like Hiuchuli, Nilgiri, Dhaulagiri, Tukuche, Annapurna South, Annapurna I- IV, Lamjung Himal, and Machhapuchhre (Fishtail). After soaking in the views and snapping plenty of photos, descend to Ghorepani for breakfast. Then, continue your trek to Tadapani, passing through the Deurali Pass. From here, enjoy a second breathtaking view of the mountains before settling for the night in Tadapani."
+                    "description": "Rise early to begin your hike up to Poon Hill (3,210m) for a spectacular sunrise over the Himalayan range. As the sun paints the sky, enjoy panoramic views of peaks like Hiuchuli, Nilgiri, Dhaulagiri, Tukuche, Annapurna South, Lamjung Himal, and Machhapuchhre (Fishtail). After soaking in the views and snapping plenty of photos, descend to Ghorepani for breakfast. Then, continue your trek to Tadapani, passing through the Deurali Pass. From here, enjoy a second breathtaking view of the mountains before settling for the night in Tadapani."
                 },
                 {
                     "day": 6,
                     "title": "Tadapani to Ghandruk",
-                    "description": "Today’s trek is shorter, giving you ample time to explore Ghandruk, a large Gurung village. The Gurung Culture Museum offers fascinating insights into the lives of the Gurung people, who are known for their service as Gurkha soldiers in the British and Indian armies. After your visit, enjoy the stunning views of snow-capped peaks and take some time to relax."
+                    "description": "Today’s trek is shorter, giving you ample time to explore Ghandruk, a large Gurung village. The Gurung Culture Museum offers fascinating insights into the lives of the Gurung people, who are known for their service as Gurkha soldiers in the British and Indian armies. After your visit, enjoy the stunning views of snow capped peaks and take some time to relax."
                 },
                 {
                     "day": 7,
@@ -762,8 +768,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/home/homeAbout.webp"
             ]
         },
+
         {
-            "id": 19,
+            "id": 10,
             "title": "Kathmandu-Pokhara-Chitwan",
             "slug": "mice-nepal-special-tour",
             "description": "7 Nights / 8 Days tour covering Kathmandu, Pokhara, and Chitwan, offering a blend of cultural immersion, sightseeing, and wildlife adventure.",
@@ -782,12 +789,11 @@ export const tourPackages: TourPackage[] =
                 "Visit International Mountain Museum and Tibetan Camp.",
                 "Boating experience on Phewa Lake, visiting Tal Barahi Temple.",
                 "Scenic cable car ride to Manakamana Temple.",
-                "Immerse in Tharu culture with ox-cart ride and cultural dance performance in Chitwan.",
+                "Immerse in Tharu culture with ox cart ride and cultural dance performance in Chitwan.",
                 "Wildlife adventure in Chitwan National Park: canoe ride, Elephant Breeding Center, Elephant safari.",
                 "Scenic cable car ride at Chandragiri Hills with panoramic views.",
                 "Sightseeing at historic Bhaktapur city: Dattatraya Temple and Nyatapola Temple.",
                 "Enjoy amazing sunset views and landscapes from Nagarkot.",
-                "Explore bustling Thamel market and participate in momo-making session."
             ],
             "includes": [
                 "All private drive for arrival and departure and sightseeing. (Comfortable AC Hiace )",
@@ -849,8 +855,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/chitwan.webp"
             ]
         },
+
         {
-            "id": 20,
+            "id": 11,
             "title": "Explore the Hidden Gems of Eastern Nepal",
             "slug": "mice-eastern-nepal-gems",
             "description": "8 Nights / 9 Days tour exploring the hidden gems of Eastern Nepal, including Kathmandu, Koshi Tappu, Dharan, Ilam, Taplejung, Bhojpur, Dhankuta, and Halesi Mahadev. A perfect mix of nature, culture, adventure, spirituality, and Himalayan beauty.",
@@ -890,7 +897,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 2,
                     "title": "Flight to Biratnagar – Drive to Koshi Tappu",
-                    "description": "Upon arrival at Biratnagar Airport, you will start a journey on a scenic drive to Koshi Tappu Wildlife Reserve, Nepal’s premier birdwatching destination (1.5 hrs). This Ramsar-listed wetland is home to over 500 bird species, including rare migratory birds and endangered waterfowl. In the evening, enjoy a guided nature walk in the serene surroundings before settling in for a comfortable stay at an eco-lodge."
+                    "description": "Upon arrival at Biratnagar Airport, you will start a journey on a scenic drive to Koshi Tappu Wildlife Reserve, Nepal’s premier birdwatching destination (1.5 hrs). This Ramsar listed wetland is home to over 500 bird species, including rare migratory birds and endangered waterfowl. In the evening, enjoy a guided nature walk in the serene surroundings before settling in for a comfortable stay at an eco-lodge."
                 },
                 {
                     "day": 3,
@@ -905,7 +912,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 5,
                     "title": "Ilam – Taplejung – Pathivara Temple",
-                    "description": "An early morning drive takes you to Taplejung, the gateway to Pathivara Temple (5-6 hrs), one of Nepal’s holiest pilgrimage sites located at 3,794m. Considered a powerful wish-fulfilling goddess, thousands of devotees visit this temple for blessings. The hike to Pathivara (around 3-4 hours) is both a spiritual and adventurous journey, with breathtaking views of Kanchenjunga, the world’s third-highest peak. After the spiritual visit, return to Taplejung for an overnight stay."
+                    "description": "An early morning drive takes you to Taplejung, the gateway to Pathivara Temple (5-6 hrs), one of Nepal’s holiest pilgrimage sites located at 3,794m. Considered a powerful wish-fulfilling goddess, thousands of devotees visit this temple for blessings. The hike to Pathivara (around 3-4 hours) is both a spiritual and adventurous journey, with breathtaking views of Kanchenjunga, the world’s third highest peak. After the spiritual visit, return to Taplejung for an overnight stay."
                 },
                 {
                     "day": 6,
@@ -934,8 +941,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/kathmandu.webp"
             ]
         },
+
         {
-            "id": 21,
+            "id": 12,
             "title": "Mardi Himal Trek",
             "slug": "mardi-himal-trek",
             "description": "8 Nights / 9 Days trek starting and ending at Kathmandu, offering stunning views of the Annapurna region, including Mardi Himal Viewpoint.",
@@ -953,7 +961,7 @@ export const tourPackages: TourPackage[] =
                 "Trek through dense rhododendron forests.",
                 "Stunning alpine meadows and breathtaking sunset views from High Camp.",
                 "Sunrise hike to Mardi Himal Viewpoint (4,500m) for panoramic views of Annapurna, Machhapuchhre, and Hiunchuli.",
-                "Peaceful evening at a well-maintained lodge surrounded by nature.",
+                "Peaceful evening at a well maintained lodge surrounded by nature.",
                 "Traditional Gurung settlement at Siding Village.",
                 "Cultural sightseeing in Kathmandu: Boudhanath Stupa, Patan Durbar Square."
             ],
@@ -977,12 +985,12 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 1,
                     "title": "Arrival in Kathmandu. Welcome to Nepal!!",
-                    "description": "Arrive in Kathmandu, the vibrant capital of Nepal. Upon arrival, you'll be transferred to your hotel for check-in and relaxation. If you have arrived early, after settling in, take some time to explore the local area at your leisure, or simply rest and recover from your journey. If you're up for it, explore the nearby attractions like the bustling Thamel area, where you can shop for souvenirs, enjoy local delicacies, or simply soak in the city's vibrant atmosphere."
+                    "description": "Arrive in Kathmandu, the vibrant capital of Nepal. Upon arrival, you'll be transferred to your hotel for check in and relaxation. If you have arrived early, after settling in, take some time to explore the local area at your leisure, or simply rest and recover from your journey. If you're up for it, explore the nearby attractions like the bustling Thamel area, where you can shop for souvenirs, enjoy local delicacies, or simply soak in the city's vibrant atmosphere."
                 },
                 {
                     "day": 2,
-                    "title": "Fly to Pokhara & Half-Day Sightseeing",
-                    "description": "After breakfast, take a scenic 25-minute flight from Kathmandu to Pokhara, the gateway to the Annapurna region. Upon arrival, a private transfer will take you to your lakeside hotel. Spend the day exploring Pokhara’s highlights, including boating on Phewa Lake, visiting Davis Falls, and enjoying panoramic views from the World Peace Pagoda. In the evening, relax with a spa session or a lakeside dinner at a restaurant."
+                    "title": "Fly to Pokhara & Half Day Sightseeing",
+                    "description": "After breakfast, take a scenic 25 minute flight from Kathmandu to Pokhara, the gateway to the Annapurna region. Upon arrival, a private transfer will take you to your lakeside hotel. Spend the day exploring Pokhara’s highlights, including boating on Phewa Lake, visiting Davis Falls, and enjoying panoramic views from the World Peace Pagoda. In the evening, relax with a spa session or a lakeside dinner at a restaurant."
                 },
                 {
                     "day": 3,
@@ -1002,7 +1010,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 6,
                     "title": "Hike to Mardi Himal Viewpoint (4,500m) & Trek to Forest Camp",
-                    "description": "Start your day early with a sunrise hike to Mardi Himal Viewpoint, the highest point of the trek. Witness the golden glow of the first light touching the snow-capped peaks of Annapurna, Machhapuchhre, and Hiunchuli. After spending some time soaking in the views, descend to High Camp for breakfast before trekking further down to Forest Camp. Enjoy a peaceful evening at a well-maintained lodge surrounded by nature."
+                    "description": "Start your day early with a sunrise hike to Mardi Himal Viewpoint, the highest point of the trek. Witness the golden glow of the first light touching the snow-capped peaks of Annapurna, Machhapuchhre, and Hiunchuli. After spending some time soaking in the views, descend to High Camp for breakfast before trekking further down to Forest Camp. Enjoy a peaceful evening at a well maintained lodge surrounded by nature."
                 },
                 {
                     "day": 7,
@@ -1026,8 +1034,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/pokhara.webp"
             ]
         },
+
         {
-            "id": 22,
+            "id": 13,
             "title": "Koshi Tappu Birdwatching Tour",
             "slug": "koshi-tappu-birdwatching",
             "description": "2 Nights / 3 Days tour to Koshi Tappu Wildlife Reserve, Nepal's premier birdwatching destination, offering opportunities to spot rare migratory birds and endangered waterfowl.",
@@ -1038,10 +1047,10 @@ export const tourPackages: TourPackage[] =
             "difficulty": "Easy",
             "highlights": [
                 "Arrive at Biratnagar Airport or travel via road to Koshi Tappu Wildlife Reserve.",
-                "Check-in at a riverside eco-lodge or wildlife resort, welcome drink, and briefing.",
-                "Leisure walk around the reserve’s buffer zone for the first glimpse of birds such as: Black-headed ibis, Ruddy shelduck, Purple heron.",
+                "Check in at a riverside eco-lodge or wildlife resort, welcome drink, and briefing.",
+                "Leisure walk around the reserve’s buffer zone for the first glimpse of birds such as: Black headed ibis, Ruddy shelduck, Purple heron.",
                 "Sunset by Koshi River, relaxation, and dinner with a briefing on next day’s birdwatching tour.",
-                "Early Morning (5:30 AM - 8:30 AM): Boat Safari on upper SaptaKoshi River. Spot water birds like bar-headed geese, black-necked storks, and endangered Bengal floricans. Chance to see Gangetic dolphins.",
+                "Early Morning (5:30 AM - 8:30 AM): Boat Safari on upper SaptaKoshi River. Spot water birds like bar headed geese, black necked storks, and endangered Bengal floricans. Chance to see Gangetic dolphins.",
                 "Thrilling jeep safari through the reserve to see exotic birds and other wildlife.",
                 "Walking safari in Wetlands & Jungle Edges. Search for migratory warblers, flycatchers, and lapwings. Observe Asian elephants and wild water buffaloes.",
                 "Campfire with a local Tharu cultural dance performance.",
@@ -1056,7 +1065,7 @@ export const tourPackages: TourPackage[] =
                 "Binoculars for birdwatching",
                 "Accommodation in Safari tent",
                 "All meals (Breakfast, Lunch, Dinner and Tea/Coffee).",
-                "Jungle activities which include Guided Jungle Walking Tour, Bird-Watching, River Raft Boat Safari on Saptakoshi River, Jeep Safari, Village Visit, Visits to Koshi Barrage, Bird Tower, Animal View Towers etc."
+                "Jungle activities which include Guided Jungle Walking Tour, Bird Watching, River Raft Boat Safari on Saptakoshi River, Jeep Safari, Village Visit, Visits to Koshi Barrage, Bird Tower, Animal View Towers etc."
             ],
             "groupSize": "Flexible",
             "bestSeason": "October - April (ideal for migratory birds)",
@@ -1064,12 +1073,12 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 1,
                     "title": "Arrival & Initial Exploration",
-                    "description": "Morning: Arrive at Biratnagar Airport or travel via road to Koshi Tappu Wildlife Reserve. Noon: Check-in at a riverside eco-lodge or wildlife resort, welcome drink, and briefing. Afternoon: Leisure walk around the reserve’s buffer zone for the first glimpse of birds such as: Black-headed ibis, Ruddy shelduck, Purple heron. Evening: Sunset by Koshi River, relaxation, and dinner with a briefing on next day’s birdwatching tour."
+                    "description": "Morning: Arrive at Biratnagar Airport or travel via road to Koshi Tappu Wildlife Reserve. Noon: Check in at a riverside eco-lodge or wildlife resort, welcome drink, and briefing. Afternoon: Leisure walk around the reserve’s buffer zone for the first glimpse of birds such as: Black-headed ibis, Ruddy shelduck, Purple heron. Evening: Sunset by Koshi River, relaxation, and dinner with a briefing on next day’s birdwatching tour."
                 },
                 {
                     "day": 2,
-                    "title": "Full-Day Birdwatching & Safari",
-                    "description": "Early Morning (5:30 AM - 8:30 AM): Boat Safari on upper SaptaKoshi River. Spot water birds like bar-headed geese, black-necked storks, and endangered Bengal floricans. Chance to see Gangetic dolphins. Breakfast at the lodge. Late Morning (9:30 AM - 12:30 PM): Jeep Safari & Grassland Exploration. Visit oxbow lakes & grasslands. Spot birds like swamp francolin, lesser adjutant stork, and pied kingfisher. Lunch & Rest at the Lodge. Afternoon (3:00 PM - 5:30 PM): Walking Safari in Wetlands & Jungle Edges. Search for migratory warblers, flycatchers, and lapwings. Observe Asian elephants and wild water buffaloes. Evening: Campfire with a local Tharu cultural dance performance."
+                    "title": "Full Day Birdwatching & Safari",
+                    "description": "Early Morning (5:30 AM - 8:30 AM): Boat Safari on upper SaptaKoshi River. Spot water birds like bar headed geese, black necked storks, and endangered Bengal floricans. Chance to see Gangetic dolphins. Breakfast at the lodge. Late Morning (9:30 AM - 12:30 PM): Jeep Safari & Grassland Exploration. Visit oxbow lakes & grasslands. Spot birds like swamp francolin, lesser adjutant stork, and pied kingfisher. Lunch & Rest at the Lodge. Afternoon (3:00 PM - 5:30 PM): Walking Safari in Wetlands & Jungle Edges. Search for migratory warblers, flycatchers, and lapwings. Observe Asian elephants and wild water buffaloes. Evening: Campfire with a local Tharu cultural dance performance."
                 },
                 {
                     "day": 3,
@@ -1083,8 +1092,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/works/sem.jpg"
             ]
         },
+
         {
-            "id": 23,
+            "id": 14,
             "title": "Everest Base Camp",
             "slug": "everest-base-camp-trekking",
             "description": "14 Nights / 15 Days trekking adventure to Everest Base Camp, starting and ending in Kathmandu, offering breathtaking mountain views and cultural immersion.",
@@ -1128,7 +1138,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 1,
                     "title": "Arrival at Kathmandu",
-                    "description": "Upon landing at Kathmandu's international airport, our representative will warmly welcome you and accompany you to hotel, where you can unwind and relax in top-class comfort. Later in the evening, we'll gather for a welcome dinner, providing you with the opportunity to learn more about Nepal, meet your fellow trekking companions, and get acquainted with your experienced trekking guide. During this gathering, the trekking leader will offer a comprehensive briefing on the upcoming journey, outlining essential preparations and answering any questions you may have. Additionally, our team will be on hand to assist you in purchasing or renting any necessary trekking gear, ensuring you're fully prepared for the adventure ahead."
+                    "description": "Upon landing at Kathmandu's international airport, our representative will warmly welcome you and accompany you to hotel, where you can unwind and relax in top class comfort. Later in the evening, we'll gather for a welcome dinner, providing you with the opportunity to learn more about Nepal, meet your fellow trekking companions, and get acquainted with your experienced trekking guide. During this gathering, the trekking leader will offer a comprehensive briefing on the upcoming journey, outlining essential preparations and answering any questions you may have. Additionally, our team will be on hand to assist you in purchasing or renting any necessary trekking gear, ensuring you're fully prepared for the adventure ahead."
                 },
                 {
                     "day": 2,
@@ -1207,8 +1217,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/pokhara.webp"
             ]
         },
+
         {
-            "id": 26,
+            "id": 15,
             "title": "Kathmandu-Pokhara",
             "slug": "mice-nepal-special-tour-kathmandu-pokhara",
             "description": "5 Nights/ 6 Days tour covering Kathmandu and Pokhara, offering a blend of cultural immersion, sightseeing, and adventure.",
@@ -1236,10 +1247,10 @@ export const tourPackages: TourPackage[] =
                 "Entrance fees to all monuments and UNESCO World Heritage Sites as per itinerary",
                 "All entrance ticket for sightseeing monuments in Kathmandu and Pokhara",
                 "All domestic flights and cable car tickets.",
-                "English/Russian speaking sightseeing guide. Local guide in Kathmandu and Pokhara.",
+                "English speaking sightseeing guide. Local guide in Kathmandu and Pokhara.",
                 "Accommodation in Kathmandu and Pokhara",
                 "Full board meals (breakfast, lunch, dinner) with less spicy menu options",
-                "Professional Russian-speaking licensed tour guide throughout the trip",
+                "Professional licensed tour guide throughout the trip",
                 "A Souvenir from The Mice Connection",
                 "Bottled drinking water provided daily on the bus",
                 "Cultural dance show during dinner in Kathmandu",
@@ -1262,7 +1273,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 3,
                     "title": "Early morning Sarangkot and Pokhara Sightseeing",
-                    "description": "Begin your day early with a visit to Sarangkot, where you’ll witness a stunning sunrise over the majestic Annapurna Range, including the iconic Fishtail Mountain. After breakfast, get on a day of exploration in Pokhara, starting with geological wonders like Devi’s Falls, an underground waterfall, and the mysterious Gupteshwor Cave, where the waterfall continues its journey below the surface. Dive into the region’s history and adventure at the International Mountain Museum, where you’ll get to know about mountaineering and the rich history of the Himalayas. Visit the Tibetan Camp to discover local craftsmanship and shop for unique handmade items. Later, enjoy Enjoy a serene boating experience on Phewa Lake, visiting the Tal Barahi Temple in the middle of the lake. View from Sarangkot Gupteshwor Cave Temple Tal Barahi Temple Flying to Pokhara is optional. Optional Adventure Activities: Paragliding, Ultralight Flight, Zip-lining"
+                    "description": "Begin your day early with a visit to Sarangkot, where you’ll witness a stunning sunrise over the majestic Annapurna Range, including the iconic Fishtail Mountain. After breakfast, get on a day of exploration in Pokhara, starting with geological wonders like Devi’s Falls, an underground waterfall, and the mysterious Gupteshwor Cave, where the waterfall continues its journey below the surface. Dive into the region’s history and adventure at the International Mountain Museum, where you’ll get to know about mountaineering and the rich history of the Himalayas. Visit the Tibetan Camp to discover local craftsmanship and shop for unique handmade items. Later, enjoy Enjoy a serene boating experience on Phewa Lake, visiting the Tal Barahi Temple in the middle of the lake. View from Sarangkot Gupteshwor Cave Temple Tal Barahi Temple Flying to Pokhara is optional. Optional Adventure Activities: Paragliding, Ultralight Flight, Zip lining"
                 },
                 {
                     "day": 4,
@@ -1277,7 +1288,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 6,
                     "title": "Departure",
-                    "description": "After a leisurely breakfast at the hotel, guests will have some free time for last-minute shopping or relaxing before check-out. At the designated time, the group will transfer comfortably in a private vehicle to Tribhuvan International Airport, leaving with fond memories of Nepal’s rich cultural and heritage experiences."
+                    "description": "After a leisurely breakfast at the hotel, guests will have some free time for last minute shopping or relaxing before check out. At the designated time, the group will transfer comfortably in a private vehicle to Tribhuvan International Airport, leaving with fond memories of Nepal’s rich cultural and heritage experiences."
                 }
             ],
             "gallery": [
@@ -1286,8 +1297,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/Annapurna.webp"
             ]
         },
+
         {
-            "id": 27,
+            "id": 16,
             "title": "Kathmandu",
             "slug": "mice-nepal-special-tour-kathmandu",
             "description": "4 Nights/ 5 Days tour covering Kathmandu, Bhaktapur, Patan, and Nagarkot, offering a blend of cultural immersion, heritage sightseeing, and scenic beauty.",
@@ -1299,7 +1311,7 @@ export const tourPackages: TourPackage[] =
             "highlights": [
                 "Warm welcome with traditional garlands upon arrival in Kathmandu.",
                 "Visit to Swayambhunath Stupa (Monkey Temple) with stunning views of Kathmandu Valley.",
-                "Full-day heritage tour of Kathmandu’s UNESCO World Heritage Sites.",
+                "Full day heritage tour of Kathmandu’s UNESCO World Heritage Sites.",
                 "Cultural immersion at sacred Pashupatinath Temple.",
                 "Explore serene Boudhanath Stupa and learn about Tibetan Buddhism.",
                 "Discover Patan Durbar Square, known for Newari architecture and ancient temples.",
@@ -1316,10 +1328,10 @@ export const tourPackages: TourPackage[] =
                 "All private drive for arrival and departure and sightseeing. (Comfortable AC Bus )",
                 "Entrance fees to all monuments and UNESCO World Heritage Sites as per itinerary",
                 "All entrance ticket for sightseeing monuments.",
-                "English/Russian speaking sightseeing guide. Local guide in Kathmandu and Pokhara.",
+                "English speaking sightseeing guide. Local guide in Kathmandu and Pokhara.",
                 "Accommodation in Kathmandu and Pokhara",
                 "Full board meals (breakfast, lunch, dinner) with less spicy menu options",
-                "Professional Russian-speaking licensed tour guide throughout the trip",
+                "Professional licensed tour guide throughout the trip",
                 "A Souvenir from The Mice Connection",
                 "Bottled drinking water provided daily on the bus",
                 "Cultural dance show during dinner in Kathmandu",
@@ -1337,7 +1349,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 2,
                     "title": "Heritage Sightseeing in Kathmandu",
-                    "description": "After a hearty breakfast at the hotel, the group will embark on a full-day heritage tour of Kathmandu’s UNESCO World Heritage Sites. The first stop is Pashupatinath Temple, a revered Hindu pilgrimage site on the banks of the Bagmati River, where the guide will provide respectful insights into its traditions. Continue to the serene Boudhanath Stupa, one of the largest and most beautiful stupas in the world, renowned for its spiritual significance. Learn about Tibetan Buddhism during an interactive session and explore the belief that circumambulating the stupa opens the door to heaven. Lunch will be served at a quality restaurant with mild, less spicy dishes. In the afternoon, the tour continues to Patan Durbar Square, a UNESCO World Heritage Site celebrated for its stunning Newari architecture, ancient temples, and the museum. Explore the intricately carved details of the courtyards and marvel at the artistic legacy of this historic royal square. Returning to the hotel, the day concludes with a delightful dinner accompanied by a Nepali cultural dance show, offering a warm immersion into local traditions. Overnight in Kathmandu. Pashupatinath Temple Patan Durbar Square Bouddhanath Stupa"
+                    "description": "After a hearty breakfast at the hotel, the group will embark on a full day heritage tour of Kathmandu’s UNESCO World Heritage Sites. The first stop is Pashupatinath Temple, a revered Hindu pilgrimage site on the banks of the Bagmati River, where the guide will provide respectful insights into its traditions. Continue to the serene Boudhanath Stupa, one of the largest and most beautiful stupas in the world, renowned for its spiritual significance. Learn about Tibetan Buddhism during an interactive session and explore the belief that circumambulating the stupa opens the door to heaven. Lunch will be served at a quality restaurant with mild, less spicy dishes. In the afternoon, the tour continues to Patan Durbar Square, a UNESCO World Heritage Site celebrated for its stunning Newari architecture, ancient temples, and the museum. Explore the intricately carved details of the courtyards and marvel at the artistic legacy of this historic royal square. Returning to the hotel, the day concludes with a delightful dinner accompanied by a Nepali cultural dance show, offering a warm immersion into local traditions. Overnight in Kathmandu. Pashupatinath Temple Patan Durbar Square Bouddhanath Stupa"
                 },
                 {
                     "day": 3,
@@ -1347,12 +1359,12 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 4,
                     "title": "Nagarkot to Kathmandu",
-                    "description": "Guests may choose an early morning outing to watch the sunrise over the Himalayas before breakfast at the resort. After check-out, the group will drive back toward Kathmandu, stopping en route at Changunarayan Temple, the oldest known temple complex in Nepal and a UNESCO site rich in history and art. Lunch will be enjoyed in Kathmandu at a selected restaurant. In the afternoon, guests will visit Kathmandu Durbar Square to explore its royal palace complex, the residence of the Living Goddess (Kumari), and intricate courtyards and temples. There will also be time for souvenir shopping in the vibrant streets of Thamel or New Road. Returning to the hotel, the evening features a special farewell dinner in an atmospheric restaurant or hotel venue, celebrating the cultural journey with warm hospitality. Overnight in Kathmandu."
+                    "description": "Guests may choose an early morning outing to watch the sunrise over the Himalayas before breakfast at the resort. After check out, the group will drive back toward Kathmandu, stopping en route at Changunarayan Temple, the oldest known temple complex in Nepal and a UNESCO site rich in history and art. Lunch will be enjoyed in Kathmandu at a selected restaurant. In the afternoon, guests will visit Kathmandu Durbar Square to explore its royal palace complex, the residence of the Living Goddess (Kumari), and intricate courtyards and temples. There will also be time for souvenir shopping in the vibrant streets of Thamel or New Road. Returning to the hotel, the evening features a special farewell dinner in an atmospheric restaurant or hotel venue, celebrating the cultural journey with warm hospitality. Overnight in Kathmandu."
                 },
                 {
                     "day": 5,
                     "title": "Departure",
-                    "description": "After a leisurely breakfast at the hotel, guests will have some free time for last-minute shopping or relaxing before check-out. At the designated time, the group will transfer comfortably in a private coach to Tribhuvan International Airport, leaving with fond memories of Nepal’s rich cultural and heritage experiences."
+                    "description": "After a leisurely breakfast at the hotel, guests will have some free time for last minute shopping or relaxing before check out. At the designated time, the group will transfer comfortably in a private coach to Tribhuvan International Airport, leaving with fond memories of Nepal’s rich cultural and heritage experiences."
                 }
             ],
             "gallery": [
@@ -1361,8 +1373,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/pokhara.webp"
             ]
         },
+
         {
-            "id": 29,
+            "id": 17,
             "title": "India to Nepal Circuit",
             "slug": "buddha-footsteps-india-nepal",
             "description": "11 Nights/ 12 Days spiritual journey following Buddha’s footsteps from India to Nepal, exploring significant Buddhist sites.",
@@ -1392,7 +1405,7 @@ export const tourPackages: TourPackage[] =
             "itinerary": [
                 {
                     "day": 1,
-                    "title": "Arrival in Bodhgaya India-The enlightenment site",
+                    "title": "Arrival in Bodhgaya India -The enlightenment site",
                     "description": "Arrive in Bodhgaya, India, the place where Siddhartha Gautama attained enlightenment under the Bodhi Tree. Check into your hotel and relax. In the evening, visit the Mahabodhi Temple complex and spend time in meditation or quiet contemplation."
                 },
                 {
@@ -1427,7 +1440,7 @@ export const tourPackages: TourPackage[] =
                 },
                 {
                     "day": 8,
-                    "title": "Travel to the self-created stupa (Kathmandu Valley) Bouddhanath, Kapan Monasteries and Swayambhu Nath (The Monkey Temple)",
+                    "title": "Travel to the self created stupa (Kathmandu Valley) Bouddhanath, Kapan Monasteries and Swayambhu Nath (The Monkey Temple)",
                     "description": "Explore the spiritual sites of Kathmandu Valley, including the colossal Boudhanath Stupa, Kapan Monastery, and Swayambhunath Stupa (Monkey Temple)."
                 },
                 {
@@ -1443,7 +1456,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 11,
                     "title": "Drive to Kathmandu and Sightseeing in Kathmandu",
-                    "description": "Drive back to Kathmandu. Spend the afternoon exploring more of Kathmandu's cultural sites or doing some last-minute souvenir shopping."
+                    "description": "Drive back to Kathmandu. Spend the afternoon exploring more of Kathmandu's cultural sites or doing some last minute souvenir shopping."
                 },
                 {
                     "day": 12,
@@ -1457,11 +1470,12 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/Annapurna.webp"
             ]
         },
+
         {
-            "id": 30,
+            "id": 18,
             "title": "Sacred Buddhist Sites",
             "slug": "serenity-trail-buddhist-sites",
-            "description": "8 Nights/ 9 Days. Discover Nepal’s Sacred Buddhist Sites. Day 1: Arrival in Kathmandu. Day 2: Travel to the self-created stupa around Kathmandu valley Bouddhanath, Kapan Monasteries and Swayambhu Nath (The Monkey Temple). Day 3: Visit to Pharphing - Patan. Day 4: Travel to Namo Buddha - Site of Buddha’s great compassion. Day 5: Travel to Lumbini. Day 6: Spiritual Exploration in Lumbini- The Birthplace of Lord Buddha. Day 7: Day Trip to Kapilvastu Region- Historical Buddha’s Life sites. Day 8: Travel to Kathmandu. Day 9: Final Departure. Highlights: The Himalayan Capital – Cultural charm of Kathmandu; Spiritual Heritage Walk around Stupas and UNESCO sites; Sacred Summit Site of Buddha’s great compassion; Footsteps of the Awakened One; Explore monasteries from around the world; Rest and recharge in natures lap; A Soulful Sendoff – Depart with spiritual memories.",
+            "description": "8 Nights/ 9 Days. Discover Nepal’s Sacred Buddhist Sites. Day 1: Arrival in Kathmandu. Day 2: Travel to the self created stupa around Kathmandu valley Bouddhanath, Kapan Monasteries and Swayambhu Nath (The Monkey Temple). Day 3: Visit to Pharphing - Patan. Day 4: Travel to Namo Buddha - Site of Buddha’s great compassion. Day 5: Travel to Lumbini. Day 6: Spiritual Exploration in Lumbini- The Birthplace of Lord Buddha. Day 7: Day Trip to Kapilvastu Region- Historical Buddha’s Life sites. Day 8: Travel to Kathmandu. Day 9: Final Departure. Highlights: The Himalayan Capital – Cultural charm of Kathmandu; Spiritual Heritage Walk around Stupas and UNESCO sites; Sacred Summit Site of Buddha’s great compassion; Footsteps of the Awakened One; Explore monasteries from around the world; Rest and recharge in natures lap; A Soulful Sendoff – Depart with spiritual memories.",
             "duration": "9 Days",
             "priceRange": "$850 - $950",
             "image": "/assets/packages/buddhist.webp",
@@ -1495,8 +1509,8 @@ export const tourPackages: TourPackage[] =
                 },
                 {
                     "day": 2,
-                    "title": "Travel to the self-created stupa around Kathmandu valley Bouddhanath, Kapan Monasteries and Swayambhu Nath (The Monkey Temple)",
-                    "description": "Travel to the self-created stupa around Kathmandu valley Bouddhanath, Kapan Monasteries and Swayambhu Nath (The Monkey Temple)."
+                    "title": "Travel to the self created stupa around Kathmandu valley Bouddhanath, Kapan Monasteries and Swayambhu Nath (The Monkey Temple)",
+                    "description": "Travel to the self created stupa around Kathmandu valley Bouddhanath, Kapan Monasteries and Swayambhu Nath (The Monkey Temple)."
                 },
                 {
                     "day": 3,
@@ -1540,8 +1554,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/Annapurna.webp"
             ]
         },
+
         {
-            "id": 35,
+            "id": 19,
             "title": "Family Tour in Nepal",
             "slug": "family-tour-nepal",
             "description": "An 8-day family adventure through Nepal's diverse landscapes and cultural heritage. This carefully curated tour offers the perfect blend of cultural exploration, natural beauty, and wildlife experiences, making it ideal for families with children. From UNESCO World Heritage Sites in Kathmandu to the serene lakes of Pokhara and the wild jungles of Chitwan, this journey creates unforgettable memories for the whole family.",
@@ -1556,17 +1571,17 @@ export const tourPackages: TourPackage[] =
                 "Sunrise from Sarangkot with panoramic Himalayan views",
                 "Tharu cultural dance performance and village experience",
                 "Cable car ride to Chandragiri Hills for stunning Himalayan vistas",
-                "Elephant-back or jeep safari to spot rhinos, deer, birds, and possibly Bengal tigers",
-                "Family-friendly activities suitable for all ages",
-                "Comfortable transportation and family-oriented accommodations"
+                "Elephant back or jeep safari to spot rhinos, deer, birds, and possibly Bengal tigers",
+                "Family friendly activities suitable for all ages",
+                "Comfortable transportation and family oriented accommodations"
             ],
             "includes": [
                 "All airport and hotel transfers by private vehicle",
-                "Accommodation in family-friendly hotels and resorts",
+                "Accommodation in family friendly hotels and resorts",
                 "All meals (breakfast, lunch, dinner) throughout the tour",
-                "Domestic flight (Kathmandu-Pokhara if flight option chosen)",
+                "Domestic flight (Kathmandu Pokhara if flight option chosen)",
                 "All entrance fees to monuments and heritage sites",
-                "Professional English-speaking tour guide",
+                "Professional English speaking tour guide",
                 "Wildlife safari activities in Chitwan National Park",
                 "Cable car ride to Chandragiri Hills",
                 "All government taxes and service charges",
@@ -1588,7 +1603,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 3,
                     "title": "Journey from Kathmandu to Pokhara",
-                    "description": "After breakfast, travel to Pokhara by scenic 6-7 hour drive or 25-minute domestic flight. Upon arrival, check into your hotel and relax. In the evening, visit the charming Lakeside area where you can stroll along Phewa Lake shore or take a peaceful boat ride. Pokhara's serene environment offers a refreshing contrast to Kathmandu's bustling streets."
+                    "description": "After breakfast, travel to Pokhara by scenic 6-7 hour drive or 25 minute domestic flight. Upon arrival, check into your hotel and relax. In the evening, visit the charming Lakeside area where you can stroll along Phewa Lake shore or take a peaceful boat ride. Pokhara's serene environment offers a refreshing contrast to Kathmandu's bustling streets."
                 },
                 {
                     "day": 4,
@@ -1603,7 +1618,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 6,
                     "title": "Wildlife Safari in Chitwan",
-                    "description": "Embark on an elephant or jeep safari in search of the park's famous inhabitants including one-horned rhinoceroses, deer, and various bird species. Enjoy a canoe ride along the Rapti River to spot crocodiles and water birds. Optional guided nature walk or bird watching tour. Relaxing evening at the resort."
+                    "description": "Embark on an elephant or jeep safari in search of the park's famous inhabitants including one horned rhinoceroses, deer, and various bird species. Enjoy a canoe ride along the Rapti River to spot crocodiles and water birds. Optional guided nature walk or bird watching tour. Relaxing evening at the resort."
                 },
                 {
                     "day": 7,
@@ -1624,11 +1639,12 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/kathmandu-heritage-family.webp"
             ]
         },
+
         {
-            "id": 36,
+            "id": 20,
             "title": "Nepal Buddhist Circuit",
             "slug": "nepal-buddhist-circuit",
-            "description": "A 7-day spiritual journey through Nepal's most revered Buddhist sites, including the birthplace of Buddha, Lumbini, and significant monasteries in Kathmandu Valley. This tour offers a deep dive into Buddhist philosophy, meditation, and cultural exploration.",
+            "description": "A 7 day spiritual journey through Nepal's most revered Buddhist sites, including the birthplace of Buddha, Lumbini, and significant monasteries in Kathmandu Valley. This tour offers a deep dive into Buddhist philosophy, meditation, and cultural exploration.",
             "duration": "7 Days",
             "priceRange": "$900 - $1100",
             "image": "/assets/packages/buddhist.webp",
@@ -1698,8 +1714,9 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/swayambhunath.webp"
             ]
         },
+
         {
-            "id": 37,
+            "id": 21,
             "title": "Luxury Annapurna Base Camp Trek",
             "slug": "luxury-annapurna-base-camp-trek",
             "description": "An exclusive 10-day luxury trekking experience to Annapurna Base Camp, combining breathtaking Himalayan scenery with comfort and personalized services. Enjoy premium accommodations, gourmet meals, and expert guides on this unforgettable adventure.",
@@ -1715,7 +1732,7 @@ export const tourPackages: TourPackage[] =
                 "Personalized trekking experience with expert guides and porters.",
                 "Acclimatization days for a safe and enjoyable trek.",
                 "Explore traditional Gurung villages and local culture.",
-                "Relaxing spa and massage treatments post-trek."
+                "Relaxing spa and massage treatments post trek."
             ],
             "includes": [
                 "Private airport transfers and domestic flights (Kathmandu-Pokhara-Kathmandu).",
@@ -1725,9 +1742,9 @@ export const tourPackages: TourPackage[] =
                 "Welcome and farewell dinners in Kathmandu.",
                 "Experienced, licensed trekking guide and porters.",
                 "Annapurna Conservation Area Permit (ACAP) and TIMS card.",
-                "High-quality trekking gear (sleeping bag, down jacket on returnable basis).",
+                "High quality trekking gear (sleeping bag, down jacket on returnable basis).",
                 "First aid kit and emergency oxygen supply.",
-                "Post-trek spa/massage session.",
+                "Post trek spa/massage session.",
                 "All government taxes and service charges."
             ],
             "groupSize": "Private or Small Group (Max 10)",
@@ -1736,7 +1753,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 1,
                     "title": "Arrival in Kathmandu & Luxury Stay",
-                    "description": "Arrive at Kathmandu International Airport. Private luxury transfer to your 5-star hotel. Welcome dinner and trek briefing with your guide."
+                    "description": "Arrive at Kathmandu International Airport. Private luxury transfer to your 4 star hotel. Welcome dinner and trek briefing with your guide."
                 },
                 {
                     "day": 2,
@@ -1790,11 +1807,12 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/luxury-lodge.webp"
             ]
         },
+
         {
-            "id": 38,
+            "id": 22,
             "title": "Himalayan Culture & Education Tour",
             "slug": "himalayan-culture-education-tour",
-            "description": "An immersive 8-day educational tour focusing on the rich culture and traditions of the Himalayan region. This tour combines academic learning with hands-on experiences, suitable for students and cultural enthusiasts.",
+            "description": "An immersive 8-day educational tour focusing on the rich culture and traditions of the Himalayan region. This tour combines academic learning with hands on experiences, suitable for students and cultural enthusiasts.",
             "duration": "8 Days",
             "priceRange": "$1100 - $1300",
             "image": "/assets/nepal/kathmandu.webp",
@@ -1806,11 +1824,11 @@ export const tourPackages: TourPackage[] =
                 "Interaction with local communities and cultural exchange programs.",
                 "Lectures on Himalayan history, geography, and ecology.",
                 "Exploration of UNESCO World Heritage Sites in Kathmandu Valley.",
-                "Hands-on cooking classes for traditional Nepali cuisine."
+                "Hands on cooking classes for traditional Nepali cuisine."
             ],
             "includes": [
                 "All private transportation for arrival, departure, and sightseeing.",
-                "Accommodation in 3-star hotels with cultural immersion options.",
+                "Accommodation in 4 star hotels with cultural immersion options.",
                 "All meals (breakfast, lunch, dinner) with authentic local flavors.",
                 "Expert local guides and academic facilitators.",
                 "Entrance fees to all monuments, museums, and educational sites.",
@@ -1834,7 +1852,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 3,
                     "title": "Bhaktapur & Patan: Art, Architecture & Craft",
-                    "description": "Full-day excursion to Bhaktapur and Patan Durbar Squares. Guided tours focusing on Newari architecture, wood carving, and metal crafts. Interactive session with local artisans."
+                    "description": "Full day excursion to Bhaktapur and Patan Durbar Squares. Guided tours focusing on Newari architecture, wood carving, and metal crafts. Interactive session with local artisans."
                 },
                 {
                     "day": 4,
@@ -1844,7 +1862,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 5,
                     "title": "Rural Life & Sustainable Practices",
-                    "description": "Day trip to a nearby rural village (e.g., Panauti or Bungamati) to observe traditional farming methods and sustainable living. Interaction with local families and community leaders. Hands-on cooking class for Nepali dishes."
+                    "description": "Day trip to a nearby rural village (e.g., Panauti or Bungamati) to observe traditional farming methods and sustainable living. Interaction with local families and community leaders. Hands on cooking class for Nepali dishes."
                 },
                 {
                     "day": 6,
@@ -1868,11 +1886,12 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/patan.webp"
             ]
         },
+
         {
-            "id": 39,
+            "id": 23,
             "title": "Nepal Wildlife & Environmental Education",
             "slug": "nepal-wildlife-environmental-education",
-            "description": "A 7-day educational tour focused on Nepal's diverse wildlife and environmental conservation efforts. This program offers students and nature enthusiasts an opportunity to learn about biodiversity, ecological challenges, and sustainable solutions in the context of Nepal's national parks.",
+            "description": "A 7 day educational tour focused on Nepal's diverse wildlife and environmental conservation efforts. This program offers students and nature enthusiasts an opportunity to learn about biodiversity, ecological challenges, and sustainable solutions in the context of Nepal's national parks.",
             "duration": "7 Days",
             "priceRange": "$1000 - $1200",
             "image": "/assets/nepal/chitwan.webp",
@@ -1887,7 +1906,7 @@ export const tourPackages: TourPackage[] =
                 "Study of flora and fauna in different ecosystems."
             ],
             "includes": [
-                "All private transportation for arrival, departure, and inter-city transfers.",
+                "All private transportation for arrival, departure, and inter city transfers.",
                 "Accommodation in eco-lodges and resorts near national parks.",
                 "All meals (breakfast, lunch, dinner) with focus on local and sustainable produce.",
                 "Experienced wildlife guides and environmental educators.",
@@ -1911,7 +1930,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 3,
                     "title": "Chitwan Wildlife Exploration & Conservation",
-                    "description": "Morning canoe ride on the Rapti River for birdwatching and crocodile spotting. Visit the Elephant Breeding Center for insights into their conservation. Afternoon jeep safari to observe rhinos, deer, and other wildlife in their natural habitat. Evening lecture on anti-poaching efforts."
+                    "description": "Morning canoe ride on the Rapti River for birdwatching and crocodile spotting. Visit the Elephant Breeding Center for insights into their conservation. Afternoon jeep safari to observe rhinos, deer, and other wildlife in their natural habitat. Evening lecture on anti poaching efforts."
                 },
                 {
                     "day": 4,
@@ -1926,7 +1945,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 6,
                     "title": "Bardia National Park: Deep Dive into Wilderness",
-                    "description": "Full day of exploration in Bardia National Park. Options include a full-day jungle walk (tiger tracking), jeep safari, or rafting on the Karnali River to spot Gangetic dolphins. Evening discussion on human-wildlife conflict and mitigation strategies."
+                    "description": "Full day of exploration in Bardia National Park. Options include a full day jungle walk (tiger tracking), jeep safari, or rafting on the Karnali River to spot Gangetic dolphins. Evening discussion on human wildlife conflict and mitigation strategies."
                 },
                 {
                     "day": 7,
@@ -1940,11 +1959,12 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/birdwatching.webp"
             ]
         },
+
         {
-            "id": 40,
+            "id": 24,
             "title": "Nepal Geography & Geology Expedition",
             "slug": "nepal-geography-geology-expedition",
-            "description": "A 9-day expedition designed for geography and geology students, exploring Nepal's unique topographical features, seismic activity, and geological formations. This tour combines field studies with expert lectures.",
+            "description": "A 9 day expedition designed for geography and geology students, exploring Nepal's unique topographical features, seismic activity, and geological formations. This tour combines field studies with expert lectures.",
             "duration": "9 Days",
             "priceRange": "$1300 - $1500",
             "image": "/assets/nepal/AnnapurnaRegion.webp",
@@ -1985,7 +2005,7 @@ export const tourPackages: TourPackage[] =
                 {
                     "day": 3,
                     "title": "Gorkha Earthquake Site Study",
-                    "description": "Full-day excursion to the Gorkha region, the epicenter of the 2015 earthquake. Field study of the geological impacts, landslides, and recovery efforts. Interaction with local communities about living in a seismically active zone."
+                    "description": "Full day excursion to the Gorkha region, the epicenter of the 2015 earthquake. Field study of the geological impacts, landslides, and recovery efforts. Interaction with local communities about living in a seismically active zone."
                 },
                 {
                     "day": 4,

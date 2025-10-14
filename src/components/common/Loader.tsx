@@ -63,10 +63,10 @@ const Loader: React.FC<LoaderProps> = ({ onLoaded, onAnimationComplete }) => {
                             setShow(false);
                             onLoaded();
                             onAnimationComplete();
-                        }, 700); // Match slide animation duration
-                    }, 1000);
+                        }, 300); // Match slide animation duration
+                    }, 400);
                 }
-            }, 600 + (index * 700));
+            }, 100 + (index * 300));
             intervals.push(timer);
         });
         return () => intervals.forEach(timer => clearTimeout(timer));

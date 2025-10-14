@@ -37,7 +37,7 @@ const IntroductionSection: React.FC = () => {
         },
         {
             title: "Ancient Temples & Heritage",
-            description: "Nepal boasts 10 UNESCO World Heritage Sites, with 7 in the Kathmandu Valley alone. The country is a living museum of ancient architecture, with pagoda-style temples, intricate wood carvings, and historic palaces. From the sacred Pashupatinath Temple to the Buddhist stupas of Swayambhunath and Boudhanath, Nepal's spiritual heritage spans over 2,000 years.",
+            description: "Nepal boasts 10 UNESCO World Heritage Sites, with 7 in the Kathmandu Valley alone. The country is a living museum of ancient architecture, with pagoda style temples, intricate wood carvings, and historic palaces. From the sacred Pashupatinath Temple to the Buddhist stupas of Swayambhunath and Boudhanath, Nepal's spiritual heritage spans over 2,000 years.",
             image: "/assets/nepal/kathmandu.webp",
             statistic: "10",
             statLabel: "UNESCO World Heritage Sites",

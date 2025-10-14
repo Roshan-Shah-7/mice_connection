@@ -124,45 +124,45 @@ const Testimonials = () => {
     const testimonials: Testimonial[] = [
         {
             id: 1,
-            name: "Sarah Chen, Singapore",
-            testimonial: "Our corporate retreat in Bali, organized by The MICE Connection, was executed flawlessly. Their attention to detail and ability to integrate local culture into our agenda made for a truly unique and impactful experience. Highly recommended for international events!",
+            name: "Sarah Chen",
+            testimonial: "The MICE Connection planned an incredible adventure for us through the Annapurna region. The guides were knowledgeable, and every detail, from accommodation to cultural experiences, was perfectly arranged. Truly an unforgettable journey!",
             rating: 5,
             featured: true
         },
         {
             id: 2,
-            name: "David Miller, UK",
-            testimonial: "The MICE Connection managed our conference in Dubai, and the results were outstanding. From venue selection to speaker coordination, everything was handled with utmost professionalism. Our delegates were thoroughly impressed.",
+            name: "David Miller",
+            testimonial: "The MICE Connection managed our conference, and the results were outstanding. From venue selection to speaker coordination, everything was handled with utmost professionalism. Our delegates were thoroughly impressed.",
             rating: 5,
         },
         {
             id: 3,
-            name: "Maria Garcia, Spain",
-            testimonial: "We tasked The MICE Connection with an incentive trip to the Maldives, and they delivered beyond our expectations. The personalized experiences and seamless logistics created an unforgettable reward for our team. Their global reach is truly impressive.",
+            name: "Maria Garcia",
+            testimonial: "Our family holiday to Chitwan National Park was made magical by The MICE Connection. The jungle safari and cultural programs were fantastic, and their team ensured our comfort throughout. A perfect blend of adventure and relaxation!",
             rating: 5,
         },
         {
             id: 4,
-            name: "Roshan Shah, Nepal",
-            testimonial: "My experience with The MICE Connection was exceptional from start to finish. The team were incredibly professional, attentive, and genuinely passionate about what they do. Every detail from travel planning to event coordination was handled with care and precision.",
+            name: "Roshan Shah",
+            testimonial: "The MICE Connection handled our recent corporate event with remarkable professionalism. From conceptualization to execution, their team ensured every aspect was perfect, leading to a highly successful and memorable gathering.",
             rating: 4,
         },
         {
             id: 5,
-            name: "Kenji Tanaka, Japan",
-            testimonial: "Our exhibition booth at the trade show in Berlin was a huge success, thanks to The MICE Connection. Their strategic planning and on-site support ensured maximum engagement and a significant return on investment. They are experts in international event management.",
+            name: "Kenji Tanaka",
+            testimonial: "Exploring the ancient city of Bhaktapur with The MICE Connection was an enriching experience. Their historical insights and seamless arrangements allowed us to truly immerse ourselves in Nepal's rich heritage. Highly recommended for cultural tours!",
             rating: 5,
         },
         {
             id: 6,
-            name: "Fatima Zahra, Morocco",
-            testimonial: "The MICE Connection organized our product launch in Paris, and it was a spectacular event. Their creative approach and meticulous execution ensured everything ran smoothly, leaving a lasting impression on our guests.",
+            name: "Priya Sharma",
+            testimonial: "The product launch organized by The MICE Connection was a resounding success! Their innovative ideas and meticulous planning created an impactful event that exceeded all our expectations.",
             rating: 5,
         },
         {
             id: 7,
-            name: "Liam O'Connell, Ireland",
-            testimonial: "For our team-building retreat in Thailand, The MICE Connection provided an exceptional experience. The activities were engaging, the accommodation superb, and the overall coordination was impeccable. A truly world-class service!",
+            name: "Suresh Karki",
+            testimonial: "Our trek to Everest Base Camp with The MICE Connection was a dream come true. The support team was incredible, and the entire journey was managed flawlessly. An adventure of a lifetime, thanks to their expertise!",
             rating: 5,
         },
     ];
@@ -326,7 +326,7 @@ const Testimonials = () => {
                 {/* Call to Action */}
                 <div className="text-center">
                     <div className="bg-white rounded-2xl shadow-lg p-8 max-w-2xl mx-auto">
-                        <h3 className="text-2xl font-bold text-[#0e332e] mb-4">Ready to Create Your Success Story?</h3>
+                        <h3 className="text-2xl font-bold text-[#0e332e] mb-4">Ready to Create Your Travel Story?</h3>
                         <p className="text-gray-700 mb-6">
                             Join our list of satisfied clients and let us help you create an unforgettable event experience.
                         </p>

@@ -30,10 +30,15 @@ const MobileNavLink: React.FC<{ to: string; children: React.ReactNode; onClick?:
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isHighlightsOpen, setIsHighlightsOpen] = useState(false); // New state for Highlights dropdown
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
+  const [isMobileHighlightsOpen, setIsMobileHighlightsOpen] = useState(false); // New state for Mobile Highlights dropdown
 
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
   useClickOutside(servicesDropdownRef, () => setIsServicesOpen(false));
+
+  const highlightsDropdownRef = useRef<HTMLDivElement>(null); // New ref for Highlights dropdown
+  useClickOutside(highlightsDropdownRef, () => setIsHighlightsOpen(false));
 
   const toggleMobileMenu = () => setIsMobileMenuOpen(prev => !prev);
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
@@ -92,7 +97,7 @@ const Header: React.FC = () => {
         <ul className="hidden lg:flex items-center gap-8 font-medium text-base">
           {navLinksLeft.map((link: NavLinkType) => (
             <li key={link.label} className="relative">
-              {link.hasDropdown ? (
+              {link.hasDropdown && link.label === "Our Services" ? (
                 <div
                   className="relative flex items-center gap-1.5 text-gray-700 transition-colors hover:text-[#0c3b32] cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#0c3b32] after:transition-all after:duration-300 hover:after:w-full"
                   onMouseEnter={() => setIsServicesOpen(true)}
@@ -116,6 +121,37 @@ const Header: React.FC = () => {
                           {servicesLinks.map((service: ServiceLinkType) => (
                             <Link key={service.label} to={service.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f0f7f5] hover:text-[#0c3b32] transition-colors duration-200">
                               {service.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : link.hasDropdown && link.label === "Highlights" ? ( // New dropdown for Highlights
+                <div
+                  className="relative flex items-center gap-1.5 text-gray-700 transition-colors hover:text-[#0c3b32] cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#0c3b32] after:transition-all after:duration-300 hover:after:w-full"
+                  onMouseEnter={() => setIsHighlightsOpen(true)}
+                  onMouseLeave={() => setIsHighlightsOpen(false)}
+                  ref={highlightsDropdownRef}
+                >
+                  <span>{link.label}</span>
+                  <motion.div animate={{ rotate: isHighlightsOpen ? 180 : 0 }}>
+                    <FaChevronDown className="text-xs" />
+                  </motion.div>
+                  <AnimatePresence>
+                    {isHighlightsOpen && (
+                      <motion.div
+                        variants={dropdownVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        className="absolute top-full left-0 mt-3 w-56 bg-white rounded-lg shadow-xl overflow-hidden border border-gray-100"
+                      >
+                        <div className="py-2">
+                          {link.subLinks?.map((subLink: NavLinkType) => (
+                            <Link key={subLink.label} to={subLink.href} className="block px-4 py-2 text-sm text-gray-700 hover:bg-[#f0f7f5] hover:text-[#0c3b32] transition-colors duration-200">
+                              {subLink.label}
                             </Link>
                           ))}
                         </div>
@@ -170,7 +206,7 @@ const Header: React.FC = () => {
           >
             {[...navLinksLeft, ...navLinksRight].map((link: NavLinkType) => (
               <div key={link.label} className="w-full border-b border-gray-200 last:border-b-0">
-                {link.hasDropdown ? (
+                {link.hasDropdown && link.label === "Our Services" ? (
                   <div>
                     <button
                       className="w-full flex justify-center items-center gap-2 py-3 text-lg text-gray-700"
@@ -193,6 +229,35 @@ const Header: React.FC = () => {
                           {servicesLinks.map((service: ServiceLinkType) => (
                             <MobileNavLink key={service.label} to={service.href} onClick={closeMobileMenu}>
                               <span className="text-base font-normal">{service.label}</span>
+                            </MobileNavLink>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ) : link.hasDropdown && link.label === "Highlights" ? ( // New mobile dropdown for Highlights
+                  <div>
+                    <button
+                      className="w-full flex justify-center items-center gap-2 py-3 text-lg text-gray-700"
+                      onClick={() => setIsMobileHighlightsOpen(!isMobileHighlightsOpen)}
+                    >
+                      <span>{link.label}</span>
+                      <motion.div animate={{ rotate: isMobileHighlightsOpen ? 180 : 0 }}>
+                        <FaChevronDown className="text-sm" />
+                      </motion.div>
+                    </button>
+                    <AnimatePresence>
+                      {isMobileHighlightsOpen && (
+                        <motion.div
+                          variants={mobileSubmenuVariants}
+                          initial="hidden"
+                          animate="visible"
+                          exit="exit"
+                          className="overflow-hidden bg-gray-50"
+                        >
+                          {link.subLinks?.map((subLink: NavLinkType) => (
+                            <MobileNavLink key={subLink.label} to={subLink.href} onClick={closeMobileMenu}>
+                              <span className="text-base font-normal">{subLink.label}</span>
                             </MobileNavLink>
                           ))}
                         </motion.div>

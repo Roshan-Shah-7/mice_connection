@@ -6,6 +6,7 @@ export interface ILatestWork {
     detailImages?: { image: string; text: string; }[];
     year: string;
     slug?: string;
+    type: "MICE" | "Tour";
 }
 
 export const latestWorks: ILatestWork[] = [
@@ -16,6 +17,7 @@ export const latestWorks: ILatestWork[] = [
         image: "/assets/works/wo.jpg",
         year: "2024",
         slug: "everest-womens-volleyball-league",
+        type: "MICE",
         detailImages: [
             {
                 image: "/assets/gallery/volly.webp",
@@ -34,6 +36,7 @@ export const latestWorks: ILatestWork[] = [
         image: "/assets/works/chi.jpg",
         year: "2023",
         slug: "honoring-chinese-paraglider",
+        type: "MICE",
         detailImages: [
             {
                 image: "/assets/gallery/hor2.webp",
@@ -52,6 +55,7 @@ export const latestWorks: ILatestWork[] = [
         image: "/assets/works/sem.jpg",
         year: "2023",
         slug: "seminar-economic-challenges-opportunities",
+        type: "MICE",
         detailImages: [
             {
                 image: "/assets/gallery/ch2.webp",
@@ -66,6 +70,7 @@ export const latestWorks: ILatestWork[] = [
         image: "/assets/works/Unsilenced.jpg",
         year: "2023",
         slug: "the-unsilenced-documentary",
+        type: "MICE",
         detailImages: [
             {
                 image: "/assets/gallery/doc2.webp",
@@ -84,6 +89,7 @@ export const latestWorks: ILatestWork[] = [
         image: "/assets/works/hgn3.webp",
         year: "2025",
         slug: "the-himalayan-guardian-nepal",
+        type: "MICE",
         detailImages: [
             {
                 image: "/assets/works/hgn1.webp",
@@ -102,6 +108,7 @@ export const latestWorks: ILatestWork[] = [
         image: "/assets/gallery/event.webp",
         year: "2025",
         slug: "charmimg-guangzhou-meets-nepal",
+        type: "MICE",
         detailImages: [
             {
                 image: "/assets/works/charming2.jpg",
@@ -120,6 +127,7 @@ export const latestWorks: ILatestWork[] = [
         image: "/assets/gallery/everest.webp",
         year: "2025",
         slug: "everest-summiteers-summit",
+        type: "MICE",
         detailImages: [
             {
                 image: "/assets/gallery/everest3.webp",
@@ -127,31 +135,102 @@ export const latestWorks: ILatestWork[] = [
             }
         ]
     },
+
     {
-        id: 9,
-        title: "Bangladesh Sales Mission",
-        description: "The MICE Connection actively participated in the Bangladesh Sales Mission, representing Nepal's tourism and events industry. Our engagement included networking with international stakeholders, exploring business opportunities, and promoting Nepal as a premier destination for meetings, incentives, conferences, and exhibitions.",
-        image: "/assets/works/participantion in bangladeshSales.webp",
-        year: "2025",
-        slug: "bangladesh-sales-mission",
+        id: 8,
+        title: "Bangkok Trip",
+        description: "An unforgettable journey through the vibrant city of Bangkok, experiencing its rich culture, bustling markets, and exquisite cuisine. Our meticulously planned tour ensured a seamless and enriching experience for all participants.",
+        image: "/assets/works/bangkokTrip.webp",
+        year: "2024",
+        slug: "bangkok-trip",
+        type: "Tour",
         detailImages: [
             {
-                image: "/public/assets/works/bang3.jpg",
-                text: "The MICE Connection team at the Bangladesh Sales Mission, promoting Nepal's tourism and events industry."
-            }
+                image: "/assets/works/bangkokTrip2.jpg",
+                text: "Exploring the Grand Palace in Bangkok, a true marvel of Thai architecture and history."
+            },
+        ]
+    },
+    {
+        id: 9,
+        title: "Japanese Guest Tour",
+        description: "A specially curated tour for our esteemed Japanese guests, showcasing the best of Nepal's cultural heritage and natural beauty. The tour included visits to ancient temples, scenic landscapes, and immersive cultural experiences.",
+        image: "/assets/works/japaneseGuestTour.webp",
+        year: "2024",
+        slug: "japanese-guest-tour",
+        type: "Tour",
+        detailImages: [
+            {
+                image: "/assets/works/japaneseGuest.jpg",
+                text: "Japanese guests enjoying a traditional Nepali dance performance."
+            },
         ]
     },
     {
         id: 10,
-        title: "IITM Bangalore Participation",
-        description: "The MICE Connection participated in the India International Travel Mart (IITM) Bangalore, strengthening our presence in the South Asian travel market. Our participation focused on building strategic partnerships, showcasing our event management expertise, and exploring new opportunities in the regional tourism and events industry.",
-        image: "/assets/works/iitmBangalore.webp",
-        year: "2025",
-        slug: "iitm-bangalore",
+        title: "Ladies Group Tour",
+        description: "An empowering and adventurous tour designed exclusively for women, focusing on safety, wellness, and authentic local experiences. The group explored diverse regions, engaged with local communities, and indulged in rejuvenating activities.",
+        image: "/assets/women/women-culture.webp",
+        year: "2023",
+        slug: "ladies-group-tour",
+        type: "Tour",
         detailImages: [
             {
-                image: "/assets/works/bang1.jpg",
-                text: "Our team at the India International Travel Mart (IITM) in Bangalore, building strategic partnerships."
+                image: "/assets/gallery/lades1.webp",
+                text: "The ladies group enjoying a serene yoga session amidst Nepal's natural beauty."
+            },
+            {
+                image: "/assets/gallery/lades2.webp",
+                text: "Engaging with local artisans and learning about traditional crafts."
+            },
+            {
+                image: "/assets/gallery/lades3.webp",
+                text: "A celebratory dinner with the ladies group, sharing stories and laughter."
+            }
+        ]
+    },
+    {
+        id: 11,
+        title: "Mr. Manas's Custom Tour",
+        description: "A personalized tour meticulously crafted for Mr. Manas, fulfilling his specific interests in adventure and cultural immersion. The itinerary included thrilling treks, spiritual retreats, and exclusive cultural interactions.",
+        image: "/assets/gallery/mr-nana.webp",
+        year: "2023",
+        slug: "mr-manas-custom-tour",
+        type: "Tour",
+        detailImages: [
+            {
+                image: "/assets/gallery/mr-nana.webp",
+                text: "Mr. Manas enjoying a panoramic view during his custom trek."
+            }
+        ]
+    },
+    {
+        id: 12,
+        title: "Mr. Namdeo's Cultural Expedition",
+        description: "An enriching cultural expedition designed for Mr. Namdeo, delving deep into Nepal's ancient traditions, historical sites, and vibrant festivals. The tour offered an authentic glimpse into the heart of Nepalese heritage.",
+        image: "/assets/gallery/mr-namdoe.webp",
+        year: "2024",
+        slug: "mr-namdeo-cultural-expedition",
+        type: "Tour",
+        detailImages: [
+            {
+                image: "/assets/works/mrNamdeo2.jpg",
+                text: "Mr. Namdeo exploring ancient temples and historical sites."
+            }
+        ]
+    },
+    {
+        id: 13,
+        title: "Mr. Suresh's Adventure Journey",
+        description: "A thrilling adventure journey tailored for Mr. Suresh, featuring adrenaline-pumping activities like paragliding, rafting, and mountain biking. The tour also included serene moments amidst nature's grandeur.",
+        image: "/assets/gallery/mr-suresh2.webp",
+        year: "2025",
+        slug: "mr-suresh-adventure-journey",
+        type: "Tour",
+        detailImages: [
+            {
+                image: "/assets/works/mrSuresh.jpg",
+                text: "Mr. Suresh preparing for a paragliding adventure with breathtaking views."
             }
         ]
     },

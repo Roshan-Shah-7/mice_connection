@@ -136,7 +136,7 @@ const DestinationsSection: React.FC = () => {
                         <div className="text-center p-6 bg-white rounded-xl shadow-md">
                             <div className="text-4xl mb-4">🐅</div>
                             <h4 className="text-xl font-bold text-[#143a31] mb-2">Wildlife Diversity</h4>
-                            <p className="text-gray-600">12 national parks protecting endangered species like Bengal tigers and one-horned rhinoceroses.</p>
+                            <p className="text-gray-600">12 national parks protecting endangered species like Bengal tigers and one horned rhinoceroses.</p>
                         </div>
                     </div>
                 </div>

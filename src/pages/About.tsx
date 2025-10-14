@@ -213,55 +213,49 @@ const AboutPage = () => {
                         <span className="inline-block px-4 py-2 text-sm font-medium bg-[#2a9d8f]/10 text-[#2a9d8f] rounded-full mb-6">
                             Our Journey
                         </span>
-                        <h3 className="text-3xl md:text-4xl font-serif font-bold text-[#0e332e] mb-6">About The MICE Connection</h3>
+                        <h3 className="text-3xl md:text-4xl font-serif font-bold text-[#0e332e] mb-6">Introducing The MICE Connection</h3>
                         <div className="w-24 h-1 bg-[#D4AF37] mx-auto"></div>
                     </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <div className="space-y-6 text-lg text-gray-700 leading-relaxed">
-                            <p>
-                                Welcome to The MICE Connection! We're passionate about transforming the Meetings, Incentives, Conferences, and Exhibitions (MICE) landscape in Nepal and beyond.
-                            </p>
-                            <p>
-                                Nepal is rapidly gaining recognition as a prime MICE destination, thanks to its unique charm and untapped potential. With over a decade of experience in the tourism industry, specializing in managing large-scale events, our dedication to promoting tourism and fostering cross-cultural connections led to the creation of The MICE Connection.
-                            </p>
-                            <p>
-                                My fascination with tourism, combined with Nepal's breathtaking landscapes and rich cultural heritage, inspired this venture. Having explored diverse cultures globally and witnessed tourism's profound impact on local economies, I was driven to contribute meaningfully to this industry. Nepal, nestled in the Himalayas, offers an irresistible blend of tradition, modernity, and unparalleled hospitality—making it an ideal choice for extraordinary event experiences.
-                            </p>
-                        </div>
-                        <div className="relative">
+                    <div className="flex flex-col lg:flex-row items-center gap-16">
+                        <div className="lg:w-1/2 relative">
                             <img
-                                src="/assets/about/team.webp" // Using the image from the removed "Our Story" section
-                                alt="The MICE Connection Team - Our Story"
-                                className="rounded-2xl shadow-xl w-full h-auto object-cover"
+                                src="/assets/about/managingDirector.webp"
+                                alt="Shradha Chhetri - Managing Director, The MICE Connection"
+                                className="rounded-3xl shadow-2xl w-full h-auto object-cover border-4 border-white transform rotate-3 hover:rotate-0 transition-transform duration-300"
                             />
-                            <div className="absolute -bottom-4 -left-4 bg-[#D4AF37] p-4 rounded-lg shadow-lg text-white font-bold text-center">
-                                <p className="text-xl">Crafting Unforgettable Moments</p>
+                            <div className="absolute -bottom-6 -left-6 bg-[#D4AF37] p-4 rounded-xl shadow-xl text-white font-bold text-center transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+                                <p className="text-xl font-serif">Shradha Chhetri</p>
+                                <p className="text-sm font-light">Managing Director</p>
                             </div>
+                        </div>
+                        <div className="lg:w-1/2 space-y-8 text-lg text-gray-700 leading-relaxed lg:pl-8">
+                            <p className="text-xl font-medium text-[#0e332e]">
+                                Welcome to The MICE Connection! As the Managing Director, I'm thrilled to share our passion for transforming the Meetings, Incentives, Conferences, and Exhibitions (MICE) landscape, not just in Nepal, but across the globe.
+                            </p>
+                            <p>
+                                I've seen Nepal rapidly emerge as a prime MICE destination, thanks to its unique charm and untapped potential. With over a decade of experience in the tourism industry, specializing in managing large-scale events, my dedication to promoting tourism and fostering cross-cultural connections led me to establish The MICE Connection.
+                            </p>
+                            <p>
+                                My journey into tourism was fueled by a deep fascination with Nepal's breathtaking landscapes and rich cultural heritage. Having explored diverse cultures worldwide and witnessed tourism's profound impact on local economies, I was inspired to contribute meaningfully to this industry. Nepal, nestled in the Himalayas, offers an irresistible blend of tradition, modernity, and unparalleled hospitality making it an ideal choice for your extraordinary event experiences.
+                            </p>
                         </div>
                     </div>
 
-                    <div className="mt-16 bg-[#0e332e] text-white p-10 rounded-2xl shadow-xl">
-                        <h4 className="text-2xl font-bold mb-6 text-center font-serif">Our Global & Local Reach</h4>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div>
-                                <p className="text-lg leading-relaxed mb-4 flex items-start">
-                                    <span className="text-3xl mr-3 text-[#D4AF37]">✈️</span>
-                                    At The MICE Connection, we bridge the gap between global organizations and Nepal’s vibrant offerings. We specialize in crafting impactful events, from international conferences, exhibitions, sales missions, and travel trade shows to corporate retreats infused with local essence.
-                                </p>
-                                <p className="text-lg leading-relaxed flex items-start">
-                                    <span className="text-3xl mr-3 text-[#D4AF37]">✅</span>
-                                    Our commitment is to deliver seamless experiences tailored to each client’s needs, from conceptualization to flawless execution.
+                    <div className="mt-16 bg-gradient-to-br from-[#0e332e] to-[#1a4d47] text-white p-10 md:p-16 rounded-3xl shadow-2xl relative overflow-hidden">
+                        <div className="absolute inset-0 opacity-10 bg-contain bg-center" style={{ backgroundImage: 'url("/public/assets/home/topography.svg")' }}></div>
+                        <h4 className="text-3xl md:text-4xl font-bold mb-8 text-center font-serif relative z-10">Our Global & Local Reach</h4>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 relative z-10">
+                            <div className="space-y-6">
+                                <p className="text-xl leading-relaxed flex items-start">
+                                    <span className="text-4xl mr-4 text-[#D4AF37] transform rotate-12">✈️</span>
+                                    At The MICE Connection, we bridge the gap between global organizations and Nepal’s vibrant offerings. We specialize in crafting impactful events, from international conferences, exhibitions, sales missions, and travel trade shows to corporate retreats infused with local essence. Our commitment is to deliver seamless experiences tailored to each client’s needs, from conceptualization to flawless execution.
                                 </p>
                             </div>
-                            <div>
-                                <p className="text-lg leading-relaxed mb-4 flex items-start">
-                                    <span className="text-3xl mr-3 text-[#D4AF37]">🌐</span>
-                                    But our services extend beyond Nepal! We empower Nepalese groups to shine on the global stage, fostering connections, exchanging ideas, and showcasing Nepal’s expertise worldwide. This unique approach elevates the MICE experience to a whole new level.
-                                </p>
-                                <p className="text-lg leading-relaxed flex items-start">
-                                    <span className="text-3xl mr-3 text-[#D4AF37]">🤝</span>
-                                    Establishing The MICE Connection in Nepal is more than just business; it's a dream to position Nepal firmly on the global MICE map. We are catalysts for cultural exchange, unlocking the true potential of Nepal's tourism.
+                            <div className="space-y-6">
+                                <p className="text-xl leading-relaxed flex items-start">
+                                    <span className="text-4xl mr-4 text-[#D4AF37] transform -rotate-12">🌐</span>
+                                    But our services extend beyond Nepal! We empower Nepalese groups to shine on the global stage, fostering connections, exchanging ideas, and showcasing Nepal’s expertise worldwide. This unique approach elevates the MICE experience to a whole new level, positioning Nepal firmly on the global MICE map. We are catalysts for cultural exchange, unlocking the true potential of Nepal's tourism.
                                 </p>
                             </div>
                         </div>

@@ -206,7 +206,7 @@ const LatestWork = () => {
                                         className="bg-white text-[#0e332e] px-6 py-2 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
                                         onClick={(e) => {
                                             e.stopPropagation(); // Prevent card click from firing
-                                            navigate(`/event-detail/${work.slug || work.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`);
+                                            navigate(`/managed-experiences-detail/${work.slug || work.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`);
                                         }}
                                     >
                                         View Project
@@ -235,7 +235,7 @@ const LatestWork = () => {
                                         className="flex items-center text-[#0e332e] group-hover:text-[#D4AF37] transition-colors duration-300 font-medium"
                                         onClick={(e) => {
                                             e.stopPropagation(); // Prevent card click from firing
-                                            navigate(`/event-detail/${work.slug || work.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`);
+                                            navigate(`/managed-experiences-detail/${work.slug || work.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`);
                                         }}
                                     >
                                         <span className="mr-2">Learn more</span>

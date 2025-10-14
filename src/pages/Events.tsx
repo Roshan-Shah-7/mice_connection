@@ -17,14 +17,16 @@ interface Event {
     category: string;
     featured?: boolean;
     slug?: string;
+    type: "MICE" | "Tour";
 }
 
 const EventsPage = () => {
     const heroRef = useRef<HTMLDivElement>(null);
     const eventsRef = useRef<HTMLDivElement>(null);
     const [imageLoaded, setImageLoaded] = useState(false);
+    const [activeFilter, setActiveFilter] = useState<"All" | "MICE" | "Tour">("All");
 
-    const events: Event[] = latestWorks
+    const allEvents: Event[] = latestWorks
         .sort((a, b) => parseInt(b.year) - parseInt(a.year)) // Sort by year in descending order
         .map(work => ({
             id: work.id,
@@ -35,8 +37,14 @@ const EventsPage = () => {
             imageUrl: work.image,
             category: "Corporate",
             featured: work.id <= 3, // Keep featured logic as is for now
-            slug: work.slug
+            slug: work.slug,
+            type: work.type,
         }));
+
+    const filteredEvents = allEvents.filter(event => {
+        if (activeFilter === "All") return true;
+        return event.type === activeFilter;
+    });
 
     useEffect(() => {
         // Enhanced hero section animation
@@ -112,7 +120,7 @@ const EventsPage = () => {
                 }
             );
         }
-    }, [events]);
+    }, [allEvents]);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -165,7 +173,7 @@ const EventsPage = () => {
                         <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
                             <span className="block transform transition-transform duration-700 hover:scale-105">Our</span>
                             <span className="block text-[#fcd10b] bg-gradient-to-r from-[#fcd10b] to-[#f8d947] bg-clip-text transform transition-transform duration-700 hover:scale-105">Successful</span>
-                            <span className="block transform transition-transform duration-700 hover:scale-105">Events</span>
+                            <span className="block transform transition-transform duration-700 hover:scale-105">Highlights</span>
                         </h1>
 
                         <div className="hero-line h-2 w-32 bg-gradient-to-r from-[#fcd10b] to-[#f8d947] my-8 rounded-full shadow-lg"></div>
@@ -192,18 +200,45 @@ const EventsPage = () => {
                 <div className="max-w-[1440px] mx-auto">
                     {/* Section Header */}
                     <div className="text-center mb-16">
-                        <div className="inline-flex items-center px-4 py-2 bg-[#10362e]/10 rounded-full mb-4">
-                            <span className="w-2 h-2 bg-[#fcd10b] rounded-full mr-2"></span>
-                            <span className="text-[#10362e] text-sm font-semibold uppercase tracking-wide">Portfolio</span>
-                        </div>
                         <h2 className="section-title text-4xl md:text-5xl lg:text-6xl font-bold text-[#10362e] mb-6">
-                            Event Portfolio
+                            Portfolio
                         </h2>
                         <p className="section-subtitle text-gray-600 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
                             Explore our diverse portfolio of successfully executed events across various industries and locations
                         </p>
                     </div>
 
+
+                    {/* Filter Buttons */}
+                    <div className="flex justify-center gap-4 mb-12">
+                        <button
+                            onClick={() => setActiveFilter("All")}
+                            className={`px-6 py-2 rounded-full font-medium transition-colors duration-300 ${activeFilter === "All"
+                                    ? "bg-[#10362e] text-white shadow-md"
+                                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                                }`}
+                        >
+                            All Highlights
+                        </button>
+                        <button
+                            onClick={() => setActiveFilter("MICE")}
+                            className={`px-6 py-2 rounded-full font-medium transition-colors duration-300 ${activeFilter === "MICE"
+                                    ? "bg-[#10362e] text-white shadow-md"
+                                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                                }`}
+                        >
+                            MICE Events
+                        </button>
+                        <button
+                            onClick={() => setActiveFilter("Tour")}
+                            className={`px-6 py-2 rounded-full font-medium transition-colors duration-300 ${activeFilter === "Tour"
+                                    ? "bg-[#10362e] text-white shadow-md"
+                                    : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                                }`}
+                        >
+                            Tours and Travel
+                        </button>
+                    </div>
 
                     {/* Enhanced Events Grid */}
                     <div className="relative">
@@ -213,9 +248,9 @@ const EventsPage = () => {
                         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-r from-[#fcd10b]/5 to-[#10362e]/5 rounded-full blur-2xl animate-pulse delay-500"></div>
 
                         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-                            {events.map((event: Event) => (
+                            {filteredEvents.map((event: Event) => (
                                 <Link
-                                    to={`/event-detail/${event.slug}`}
+                                    to={`/managed-experiences-detail/${event.slug}`}
                                     key={event.id}
                                     className={`event-card group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-8 ${event.featured ? 'md:col-span-2 xl:col-span-1' : ''
                                         }`}
@@ -244,7 +279,7 @@ const EventsPage = () => {
 
                                     {/* Enhanced Event Details */}
                                     <div className="p-6 md:p-8 relative">
-                                        Decorative Element
+                                        {/* Decorative Element */}
                                         <div className="absolute -top-4 left-6 w-8 h-1 bg-gradient-to-r from-[#fcd10b] to-[#f8d947] rounded-full"></div>
 
                                         <h3 className={`font-bold text-[#10362e] mb-4 group-hover:text-[#fcd10b] transition-colors duration-300 ${event.featured ? 'text-2xl md:text-3xl' : 'text-xl md:text-2xl'
