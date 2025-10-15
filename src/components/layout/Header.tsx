@@ -46,7 +46,7 @@ const Header: React.FC = () => {
   const socialLinks = [
     { href: "https://www.instagram.com/themiceconnectionnepal?igsh=anoyb3ZwN3RqOGly", icon: FaInstagram, label: "Instagram" },
     { href: "https://www.facebook.com/themiceconnection/", icon: FaFacebook, label: "Facebook" },
-    { href: "https://www.tiktok.com/@themiceconnection?_t=ZS-8zDsxZUgPmJ&_r=1", icon: FaTiktok, label: "TikTok" },
+    { href: "https://www.tiktok.com/@the_mice_connection", icon: FaTiktok, label: "TikTok" },
     { href: "https://www.linkedin.com/company/the-mice-connection/", icon: FaLinkedin, label: "LinkedIn" },
   ];
 
