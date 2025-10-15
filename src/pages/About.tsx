@@ -249,7 +249,7 @@ const AboutPage = () => {
 
                     <div className="mt-10 text-lg text-gray-700 leading-relaxed space-y-2">
                         <p>
-                            At The MICE Connection, we bridge the gap between global organizations and Nepal’s vibrant offerings. We’re all about crafting events that resonate—from international conferences, exhibitions, sales missions, and travel trade shows to corporate retreats infused with local essence. Our commitment lies in delivering seamless experiences tailored to each client’s needs, from conceptualization to flawless execution. And guess what? Our services go beyond Nepal! We love helping Nepalese groups step onto the global stage, connecting with others, exchanging ideas, and showcasing Nepal’s expertise worldwide. This elevates the MICE experience to a whole new level..
+                            At The MICE Connection, we bridge the gap between global organizations and Nepal’s vibrant offerings. We’re all about crafting events that resonate from international conferences, exhibitions, sales missions, and travel trade shows to corporate retreats infused with local essence. Our commitment lies in delivering seamless experiences tailored to each client’s needs, from conceptualization to flawless execution. And guess what? Our services go beyond Nepal! We love helping Nepalese groups step onto the global stage, connecting with others, exchanging ideas, and showcasing Nepal’s expertise worldwide. This elevates the MICE experience to a whole new level.
                         </p>
                         <p>
                             Establishing The MICE Connection in Nepal wasn’t just about business. It was a dream to put Nepal firmly on the MICE map globally. We’re more than an organization; we’re catalysts for cultural exchanges, unlocking the true potential of Nepal’s tourism.
@@ -257,7 +257,7 @@ const AboutPage = () => {
                     </div>
                     <div className="mt-2 text-lg text-gray-700 leading-relaxed">
                         <p>
-                            Come, let’s connect the world through The MICE Connection, where every event becomes an unforgettable adventure amidst Nepal’s awe-inspiring landscapes and vibrant culture. No matter the event—conferences, exhibitions, meetings, or any other occasion —we’ve got your back. Together, let’s create memories that last a lifetime.
+                            Come, let’s connect the world through The MICE Connection, where every event becomes an unforgettable adventure amidst Nepal’s inspiring landscapes and vibrant culture. No matter the event, conferences, exhibitions, meetings, or any other occasion we’ve got your back. Together, let’s create memories that last a lifetime.
                             Connecting Events, Connecting People, Connecting You.
                         </p>
                     </div>
@@ -338,10 +338,10 @@ const AboutPage = () => {
                     <div className="space-y-8 text-white">
                         <p className="text-xl md:text-2xl font-light">
                             To become a globally recognized leader in the MICE, tour, and trek industry, setting new standards of excellence,
-                            creativity, and client satisfaction—while positioning Nepal as a premier destination for world-class experiences.
+                            creativity, and client satisfaction while positioning Nepal as a premier destination for world-class experiences.
                         </p>
                         <p className="text-lg">
-                            At The MICE Connection, we are more than just an agency—we are your partner in success.
+                            At The MICE Connection, we are more than just an agency, we are your partner in success.
                             Every experience we design reflects our passion, dedication, and pursuit of perfection.
                         </p>
                     </div>

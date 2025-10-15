@@ -221,10 +221,6 @@ const About = () => {
                     </div>
                 </div>
 
-                <div>
-
-                </div>
-
                 {/* MICE Images Grid with Letter Reveal */}
                 <div className="mb-20 md:mb-24">
                     <div className="text-center mb-12">
@@ -335,7 +331,7 @@ const About = () => {
                             With over a decade of experience in tourism and event management, I founded The MICE Connection to bridge Nepal's rich culture, breathtaking landscapes, and warm hospitality with global event standards.
                         </p>
                         <p>
-                            Our mission is simple: to craft seamless, impactful experiences—whether it's an international conference, exhibition, incentive program, or corporate retreat.
+                            Our mission is simple: to craft seamless, impactful experiences whether it's an international conference, exhibition, incentive program, or corporate retreat.
                         </p>
                     </div>
                     <div className="mt-10 flex justify-center">
@@ -372,7 +368,7 @@ const About = () => {
                                     We don't just bring the world to Nepal; we also empower Nepalese groups to step onto global platforms, fostering cultural exchange and amplifying Nepal's presence in the international MICE industry.
                                 </p>
                                 <p className="text-gray-700 leading-relaxed text-lg">
-                                    At The MICE Connection, events are more than logistics—they're opportunities to connect people, ideas, and cultures. Together, let's create experiences that inspire and leave lasting memories.
+                                    At The MICE Connection, events are more than logistics they're opportunities to connect people, ideas, and cultures. Together, let's create experiences that inspire and leave lasting memories.
                                 </p>
                             </div>
                         </div>
@@ -410,7 +406,7 @@ const About = () => {
                             From serene Himalayan treks and thrilling jungle safaris to cultural tours of ancient cities and spiritual retreats, our expert team ensures every journey is seamless, enriching, and tailored to your preferences.
                         </p>
                         <p>
-                            Discover Nepal with us – where every trip is an adventure waiting to unfold.
+                            Discover Nepal with us where every trip is an adventure waiting to unfold.
                         </p>
                     </div>
                     <div className="mt-10 flex justify-center">

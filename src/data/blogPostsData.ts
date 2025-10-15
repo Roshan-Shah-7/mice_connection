@@ -39,7 +39,7 @@ export const blogPosts: BlogPost[] = [
         title: "Sustainable Tourism: Eco-Friendly Adventures for 2024",
         excerpt: "Discover how to explore the world responsibly with our guide to sustainable tourism practices and eco-conscious travel destinations.",
         content: `
-    <p class="mb-4">Sustainable tourism is no longer just a travel trend — it’s an urgent necessity. With climate change and over-tourism affecting some of the world’s most beautiful destinations, travelers are looking for ways to explore responsibly without compromising their experiences. In 2024, the movement toward eco-conscious travel is stronger than ever, offering opportunities to preserve natural habitats, respect local communities, and enrich your journey.</p>
+    <p class="mb-4">Sustainable tourism is no longer just a travel trend it’s an urgent necessity. With climate change and over-tourism affecting some of the world’s most beautiful destinations, travelers are looking for ways to explore responsibly without compromising their experiences. In 2024, the movement toward eco-conscious travel is stronger than ever, offering opportunities to preserve natural habitats, respect local communities, and enrich your journey.</p>
 
     <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Why Sustainable Tourism Matters</h3>
     <p class="mb-4">Mass tourism strains fragile ecosystems, disrupts wildlife, and can erode cultural heritage. By adopting a sustainable mindset, we ensure that destinations remain vibrant and viable for future generations. Sustainable travel is about creating positive impacts: supporting local economies, minimizing waste, and reducing your carbon footprint while enjoying transformative experiences.</p>
@@ -131,35 +131,35 @@ export const blogPosts: BlogPost[] = [
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Key Innovations in Guided Tours</h3>
   <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
       <li><strong>Augmented Reality Reconstructions:</strong> See historical sites as they once were. Point your phone at ruins and watch entire temples, palaces, or streets digitally rebuild themselves in real time.</li>
-      <li><strong>AI-Powered Tour Guides:</strong> Personalized recommendations and real-time Q&A powered by natural language processing, available in multiple languages.</li>
+      <li><strong>AI-Powered Tour Guides:</strong> Personalized recommendations and real time Q&A powered by natural language processing, available in multiple languages.</li>
       <li><strong>Virtual Reality Previews:</strong> Preview destinations before you visit — step into VR headsets to experience museums, hiking trails, or city streets.</li>
-      <li><strong>Smart Audio Guides:</strong> Bluetooth-enabled audio devices with location tracking and real-time translation services for international visitors.</li>
-      <li><strong>Interactive Maps:</strong> GPS-guided maps with gamified exploration, quizzes, and reward systems for completing tour stops.</li>
+      <li><strong>Smart Audio Guides:</strong> Bluetooth enabled audio devices with location tracking and real time translation services for international visitors.</li>
+      <li><strong>Interactive Maps:</strong> GPS guided maps with gamified exploration, quizzes, and reward systems for completing tour stops.</li>
   </ul>
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Why Travelers Love Tech-Enhanced Tours</h3>
-  <p class="mb-4">These innovations cater to modern travelers who crave both convenience and engagement. Tech-enhanced tours offer:</p>
+  <p class="mb-4">These innovations cater to modern travelers who crave both convenience and engagement. Tech enhanced tours offer:</p>
   <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
       <li>Seamless self-guided experiences without waiting for a group tour.</li>
       <li>Accessibility for travelers with disabilities through subtitles, audio descriptions, or haptic feedback.</li>
       <li>Deeper cultural immersion with contextual information tailored to your interests.</li>
-      <li>Real-time feedback, allowing guides and apps to adapt based on crowd levels or weather conditions.</li>
+      <li>Real time feedback, allowing guides and apps to adapt based on crowd levels or weather conditions.</li>
   </ul>
 
   <blockquote class="border-l-4 pl-4 italic text-gray-600 mb-4">
-  "The future of tourism is immersive, interactive, and on-demand."
+  "The future of tourism is immersive, interactive, and on demand."
   </blockquote>
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Case Studies: Destinations Leading the Way</h3>
   <p class="mb-4">Several destinations are already embracing these technologies. In Rome, visitors can don AR glasses to see the Colosseum as it stood two millennia ago. In Tokyo, AI-powered apps help tourists navigate train systems and provide instant translations of menus. In New York City, museums are integrating VR exhibits that transport you to the moments when iconic works of art were created.</p>
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Challenges and Ethical Considerations</h3>
-  <p class="mb-4">While tech enhances tours, it also raises concerns about data privacy, over-reliance on devices, and potential loss of human connection. Tour operators must balance innovation with inclusivity and ensure that digital experiences complement — not replace — local guides and authentic cultural interactions.</p>
+  <p class="mb-4">While tech enhances tours, it also raises concerns about data privacy, over-reliance on devices, and potential loss of human connection. Tour operators must balance innovation with inclusivity and ensure that digital experiences complement not replace local guides and authentic cultural interactions.</p>
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Preparing for the Future</h3>
   <p class="mb-4">Travelers planning their next adventure should look for tour providers who embrace technology responsibly. Consider downloading apps in advance, checking for compatibility with your devices, and verifying whether AR or VR gear is provided or available for rent.</p>
 
-  <p class="mb-4">Tech-enhanced tours are not just a trend — they represent a fundamental shift in how we experience the world. By blending storytelling, education, and interactivity, these innovations make travel richer, more inclusive, and unforgettable.</p>
+  <p class="mb-4">Tech enhanced tours are not just a trend they represent a fundamental shift in how we experience the world. By blending storytelling, education, and interactivity, these innovations make travel richer, more inclusive, and unforgettable.</p>
   `,
         date: "September 5, 2024",
         category: "Tour & Sightseeing",
@@ -173,7 +173,7 @@ export const blogPosts: BlogPost[] = [
         title: "Remote Work Retreats: Combining Productivity and Adventure",
         excerpt: "Explore how digital nomads are transforming the way we work and travel. Discover the best destinations and tips for blending productivity with exploration.",
         content: `
-  <p class="mb-4">Remote work has reshaped the global workforce. In 2024 and beyond, more professionals are breaking free from traditional offices, choosing instead to work from inspiring destinations around the globe. This movement has given rise to remote work retreats — immersive experiences that blend coworking, community, and adventure.</p>
+  <p class="mb-4">Remote work has reshaped the global workforce. In 2024 and beyond, more professionals are breaking free from traditional offices, choosing instead to work from inspiring destinations around the globe. This movement has given rise to remote work retreats immersive experiences that blend coworking, community, and adventure.</p>
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Why Remote Work Retreats?</h3>
   <p class="mb-4">Unlike solo travel or short vacations, remote work retreats provide structured environments where professionals can collaborate, network, and recharge. These retreats often include dedicated workspaces, reliable internet, wellness activities, and curated excursions.</p>
@@ -188,8 +188,8 @@ export const blogPosts: BlogPost[] = [
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Key Elements of a Great Remote Work Retreat</h3>
   <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
-      <li>Reliable high-speed internet and ergonomic workspaces.</li>
-      <li>Networking events and skill-sharing sessions with like-minded professionals.</li>
+      <li>Reliable high speed internet and ergonomic workspaces.</li>
+      <li>Networking events and skill sharing sessions with like-minded professionals.</li>
       <li>Wellness activities such as yoga, meditation, and fitness classes.</li>
       <li>Guided local experiences to foster cultural immersion.</li>
   </ul>
@@ -229,7 +229,7 @@ export const blogPosts: BlogPost[] = [
       <li>Respect local customs and fragile ecosystems.</li>
   </ul>
 
-  <p class="mb-4">An Arctic expedition is more than a trip; it’s a journey of discovery, reflection, and respect for our planet’s final frontiers. Whether on a cruise ship, icebreaker, or land-based camp, this experience offers memories that last a lifetime.</p>
+  <p class="mb-4">An Arctic expedition is more than a trip; it’s a journey of discovery, reflection, and respect for our planet’s final frontiers. Whether on a cruise ship, icebreaker, or land based camp, this experience offers memories that last a lifetime.</p>
   `,
         date: "January 15, 2025",
         category: "Trekking Adventures",
@@ -247,7 +247,7 @@ export const blogPosts: BlogPost[] = [
   <p class="mb-4">Food is one of the most powerful ways to connect with cultures. In 2024, culinary tourism is on the rise, attracting travelers eager to experience authentic flavors, learn traditional recipes, and share meals with local communities.</p>
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Why Culinary Travel Matters</h3>
-  <p class="mb-4">Culinary tours offer more than just tasting food — they provide a deeper understanding of local history, farming practices, and cultural rituals. It’s an immersive experience where every bite tells a story.</p>
+  <p class="mb-4">Culinary tours offer more than just tasting food they provide a deeper understanding of local history, farming practices, and cultural rituals. It’s an immersive experience where every bite tells a story.</p>
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Top Culinary Destinations</h3>
   <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
@@ -260,8 +260,8 @@ export const blogPosts: BlogPost[] = [
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Experiences to Try on Culinary Tours</h3>
   <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
       <li>Guided market tours with local chefs explaining ingredients and traditions.</li>
-      <li>Hands-on cooking classes using fresh, seasonal produce.</li>
-      <li>Farm-to-table dining experiences on organic farms.</li>
+      <li>Hands on cooking classes using fresh, seasonal produce.</li>
+      <li>Farm to table dining experiences on organic farms.</li>
       <li>Food and wine pairing sessions with sommeliers or tea masters.</li>
   </ul>
 
@@ -279,10 +279,10 @@ export const blogPosts: BlogPost[] = [
         title: "Wellness Cruises: Floating Retreats for Mind and Body",
         excerpt: "Sail into serenity with wellness-focused cruises in 2025 — blending luxury travel, spa treatments, and mindful activities on the open sea.",
         content: `
-  <p class="mb-4">In 2025, cruising is evolving beyond traditional sightseeing to become an immersive wellness journey. Wellness cruises combine world-class spa facilities, healthy dining, and mindful practices with the allure of ocean travel — creating floating sanctuaries for relaxation and rejuvenation.</p>
+  <p class="mb-4">In 2025, cruising is evolving beyond traditional sightseeing to become an immersive wellness journey. Wellness cruises combine world-class spa facilities, healthy dining, and mindful practices with the allure of ocean travel creating floating sanctuaries for relaxation and rejuvenation.</p>
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Why Choose a Wellness Cruise?</h3>
-  <p class="mb-4">Unlike standard cruises, wellness cruises focus on holistic well-being. Guests can enjoy sunrise yoga on deck, spa treatments inspired by global traditions, and workshops on nutrition, mindfulness, and fitness — all while sailing to breathtaking destinations.</p>
+  <p class="mb-4">Unlike standard cruises, wellness cruises focus on holistic well-being. Guests can enjoy sunrise yoga on deck, spa treatments inspired by global traditions, and workshops on nutrition, mindfulness, and fitness all while sailing to breathtaking destinations.</p>
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Key Features Onboard</h3>
   <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
@@ -302,7 +302,7 @@ export const blogPosts: BlogPost[] = [
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Planning Your Voyage</h3>
   <p class="mb-4">When booking, look for cruise lines certified in sustainability and wellness programming. Many offer all-inclusive packages with spa credits, guided excursions, and expert-led workshops. By choosing a wellness cruise, you’ll embark on a journey that nourishes both body and soul while supporting responsible tourism.</p>
 
-  <p class="mb-4">In 2025, wellness cruises redefine the meaning of travel — not just a trip but a transformative experience that floats you closer to your healthiest self.</p>
+  <p class="mb-4">In 2025, wellness cruises redefine the meaning of travel not just a trip but a transformative experience that floats you closer to your healthiest self.</p>
     `,
         date: "June 10, 2025",
         category: "Wellness & Retreats",
@@ -327,7 +327,7 @@ export const blogPosts: BlogPost[] = [
       <li><strong>Rara Lake:</strong> Nepal’s largest lake, located in a remote national park with pristine forests and turquoise waters.</li>
       <li><strong>Tsum Valley:</strong> A sacred Himalayan valley near the Tibetan border, rich in Buddhist culture and monasteries.</li>
       <li><strong>Badimalika Temple:</strong> A spiritual pilgrimage site in the far west, offering panoramic mountain views and untouched trails.</li>
-      <li><strong>Koshi Tappu Wildlife Reserve:</strong> A bird-watcher’s paradise in the Terai region, home to rare species and river dolphins.</li>
+      <li><strong>Koshi Tappu Wildlife Reserve:</strong> A bird watcher’s paradise in the Terai region, home to rare species and river dolphins.</li>
   </ul>
 
   <h3 class="text-2xl font-bold text-[#1f423b] mb-4">Cultural Experiences</h3>
