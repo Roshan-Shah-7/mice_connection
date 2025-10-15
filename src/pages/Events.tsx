@@ -23,6 +23,7 @@ interface Event {
 const EventsPage = () => {
     const heroRef = useRef<HTMLDivElement>(null);
     const eventsRef = useRef<HTMLDivElement>(null);
+    const hasAnimatedRef = useRef(false);
     const [imageLoaded, setImageLoaded] = useState(false);
     const [activeFilter, setActiveFilter] = useState<"All" | "MICE" | "Tour">("All");
 
@@ -47,6 +48,9 @@ const EventsPage = () => {
     });
 
     useEffect(() => {
+        // Only run animation once, not on every re-render
+        if (hasAnimatedRef.current) return;
+        
         // Enhanced hero section animation
         if (heroRef.current) {
             const heroTitle = heroRef.current.querySelector('.hero-title');
@@ -120,7 +124,9 @@ const EventsPage = () => {
                 }
             );
         }
-    }, [allEvents]);
+        
+        hasAnimatedRef.current = true;
+    }, []); // Remove [allEvents] dependency to prevent re-running
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -163,13 +169,6 @@ const EventsPage = () => {
 
                 <div className="relative z-20 h-full flex flex-col justify-center px-6 md:px-12 lg:px-20 w-full max-w-[1440px] mx-auto">
                     <div className="max-w-4xl">
-                        <div className="inline-flex items-center px-4 py-3 bg-white/15 backdrop-blur-sm rounded-2xl mb-8 border border-white/20">
-                            <span className="w-3 h-3 bg-[#fcd10b] rounded-full mr-3 animate-pulse"></span>
-                            <span className="text-white/95 text-sm font-semibold uppercase tracking-wider">
-                                Premium Event Management
-                            </span>
-                        </div>
-
                         <h1 className="hero-title text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
                             <span className="block transform transition-transform duration-700 hover:scale-105">Our</span>
                             <span className="block text-[#fcd10b] bg-gradient-to-r from-[#fcd10b] to-[#f8d947] bg-clip-text transform transition-transform duration-700 hover:scale-105">Successful</span>

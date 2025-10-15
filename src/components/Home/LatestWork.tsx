@@ -16,10 +16,13 @@ const LatestWork = () => {
     const subtitleRef = useRef<HTMLParagraphElement | null>(null);
     const underlineRef = useRef<HTMLDivElement | null>(null);
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const hasAnimatedRef = useRef(false);
 
     // GSAP animations with proper cleanup
     useGSAP(
         () => {
+            // Only run animation once, not on every re-render
+            if (hasAnimatedRef.current) return;
             // Initial animations
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -106,6 +109,8 @@ const LatestWork = () => {
                 });
             }
 
+            hasAnimatedRef.current = true;
+            
             // Cleanup function
             return () => {
                 ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -178,7 +183,7 @@ const LatestWork = () => {
                             itemProp="exampleOfWork"
                             itemScope
                             itemType="https://schema.org/CreativeWork"
-                            onClick={() => navigate(`/event-detail/${work.slug || work.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`)}
+                            onClick={() => navigate(`/managed-experiences-detail/${work.slug || work.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`)}
                         >
                             {/* Image Section */}
                             <div className="md:w-1/2 relative h-64 md:h-auto overflow-hidden">
@@ -251,8 +256,8 @@ const LatestWork = () => {
 
                 {/* View All Projects Button */}
                 <div className="text-center mt-16">
-                    <Link to="/events">
-                        <button className="px-8 py-3 bg-transparent border-2 border-[#0e332e] text-[#0e332e] font-medium rounded-full hover:bg-[#0e332e] hover:text-white transition-all duration-300 hover:shadow-lg">
+                    <Link to="/managed-experiences">
+                        <button className="px-8 py-3 cursor-pointer bg-transparent border-2 border-[#0e332e] text-[#0e332e] font-medium rounded-full hover:bg-[#0e332e] hover:text-white transition-all duration-300 hover:shadow-lg">
                             Explore All Projects
                         </button>
                     </Link>

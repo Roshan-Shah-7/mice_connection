@@ -11,24 +11,25 @@ const AboutPage = () => {
     const navigate = useNavigate();
     const heroRef = useRef<HTMLDivElement>(null);
     const valuesRef = useRef<HTMLDivElement>(null);
-    const timelineRef = useRef<HTMLDivElement>(null);
+    // const timelineRef = useRef<HTMLDivElement>(null);
     const expertiseRef = useRef<HTMLDivElement>(null);
     const visionRef = useRef<HTMLDivElement>(null);
     const ctaRef = useRef<HTMLDivElement>(null);
 
     // Animation for page elements
     useGSAP(() => {
-        // Hero animation
+        // Hero animation (only runs once on mount)
         gsap.fromTo(heroRef.current,
             { opacity: 0, y: 50 },
             { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out' }
         );
 
-        // Section animations with scroll trigger
-        const sections = [valuesRef, timelineRef, expertiseRef, visionRef, ctaRef];
+        // Section animations with scroll trigger - create unique scroll triggers
+        const sections = [valuesRef, expertiseRef, visionRef, ctaRef]; // Removed timelineRef as it's not used
 
         sections.forEach(section => {
             if (section.current) {
+                // Create a unique scroll trigger for each section
                 gsap.fromTo(section.current,
                     { opacity: 0, y: 80 },
                     {
@@ -37,7 +38,7 @@ const AboutPage = () => {
                         duration: 1,
                         scrollTrigger: {
                             trigger: section.current,
-                            start: 'top 85%',
+                            start: 'top 90%',
                             toggleActions: 'play none none none',
                         },
                     }
@@ -45,42 +46,46 @@ const AboutPage = () => {
             }
         });
 
-        // Value cards animation
-        gsap.fromTo('.value-card',
-            { opacity: 0, scale: 0.9 },
-            {
-                opacity: 1,
-                scale: 1,
-                duration: 0.8,
-                stagger: 0.2,
-                scrollTrigger: {
-                    trigger: valuesRef.current,
-                    start: 'top 75%',
-                    toggleActions: 'play none none none',
-                },
-            }
-        );
+        // Value cards animation with unique scroll trigger
+        if (valuesRef.current) {
+            gsap.fromTo('.value-card',
+                { opacity: 0, scale: 0.9 },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    duration: 0.6,
+                    stagger: 0.2,
+                    scrollTrigger: {
+                        trigger: valuesRef.current,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none',
+                    },
+                }
+            );
+        }
 
-        // Expertise cards animation
-        gsap.fromTo('.expertise-card',
-            { opacity: 0, y: 50 },
-            {
-                opacity: 1,
-                y: 0,
-                duration: 0.7,
-                stagger: 0.15,
-                scrollTrigger: {
-                    trigger: expertiseRef.current,
-                    start: 'top 75%',
-                    toggleActions: 'play none none none',
-                },
-            }
-        );
+        // Expertise cards animation with unique scroll trigger
+        if (expertiseRef.current) {
+            gsap.fromTo('.expertise-card',
+                { opacity: 0, y: 50 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 0.5,
+                    stagger: 0.15,
+                    scrollTrigger: {
+                        trigger: expertiseRef.current,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none',
+                    },
+                }
+            );
+        }
 
-        // Cleanup
-        return () => {
-            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-        };
+        // Make sure all ScrollTriggers are properly cleaned up
+        // return () => {
+        //     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        // };
     }, []);
 
     // Core values data

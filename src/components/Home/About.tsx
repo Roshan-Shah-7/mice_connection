@@ -14,6 +14,7 @@ const About = () => {
     const tourTravelRef = useRef<HTMLDivElement>(null); // New ref for Tour and Travel section
     const imageRefs = useRef<(HTMLDivElement | null)[]>([]);
     const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+    const hasAnimatedRef = useRef(false);
 
     const [hoveredLetter, setHoveredLetter] = useState<string | null>(null);
     const [centerHovered, setCenterHovered] = useState(false);
@@ -22,6 +23,8 @@ const About = () => {
     // GSAP animations with proper cleanup
     useGSAP(
         () => {
+            // Only run animation once, not on every re-render
+            if (hasAnimatedRef.current) return;
             // Initial animations
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -136,6 +139,8 @@ const About = () => {
                 });
             });
 
+            hasAnimatedRef.current = true;
+            
             // Cleanup function
             return () => {
                 ScrollTrigger.getAll().forEach(trigger => trigger.kill());

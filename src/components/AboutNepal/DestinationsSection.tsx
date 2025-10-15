@@ -10,8 +10,12 @@ const DestinationsSection: React.FC = () => {
     const navigate = useNavigate();
     const destinationsRef = useRef<HTMLDivElement>(null);
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const hasAnimatedRef = useRef(false);
 
     useEffect(() => {
+        // Only run animation once, not on every re-render
+        if (hasAnimatedRef.current) return;
+        
         if (destinationsRef.current) {
             gsap.fromTo(destinationsRef.current.children,
                 { opacity: 0, x: -50 },
@@ -26,6 +30,7 @@ const DestinationsSection: React.FC = () => {
                     }
                 }
             );
+            hasAnimatedRef.current = true;
         }
 
         // Add hover animations for each card

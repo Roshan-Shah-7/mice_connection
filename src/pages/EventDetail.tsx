@@ -11,11 +11,15 @@ const EventDetail: React.FC = () => {
     const navigate = useNavigate();
     const contentRef = useRef<HTMLDivElement>(null);
     const heroRef = useRef<HTMLDivElement>(null);
+    const hasAnimatedRef = useRef(false);
     const [imageLoaded, setImageLoaded] = useState(false);
 
     const event = latestWorks.find((work) => work.slug === slug);
 
     useEffect(() => {
+        // Only run animation once, not on every re-render
+        if (hasAnimatedRef.current) return;
+        
         // Hero section animation
         if (heroRef.current) {
             gsap.fromTo(
@@ -45,6 +49,8 @@ const EventDetail: React.FC = () => {
                 }
             );
         }
+        
+        hasAnimatedRef.current = true;
     }, [event]);
 
     useEffect(() => {

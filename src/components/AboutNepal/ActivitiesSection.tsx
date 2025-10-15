@@ -8,8 +8,12 @@ const ActivitiesSection: React.FC = () => {
     const activitiesRef = useRef<HTMLDivElement>(null);
     const [hoveredActivity, setHoveredActivity] = useState<number | null>(null);
     const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const hasAnimatedRef = useRef(false);
 
     useEffect(() => {
+        // Only run animation once, not on every re-render
+        if (hasAnimatedRef.current) return;
+        
         if (activitiesRef.current) {
             gsap.fromTo(activitiesRef.current.children,
                 { opacity: 0, y: 30 },
@@ -24,6 +28,7 @@ const ActivitiesSection: React.FC = () => {
                     }
                 }
             );
+            hasAnimatedRef.current = true;
         }
     }, []);
 

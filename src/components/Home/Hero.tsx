@@ -18,35 +18,39 @@ const categories = [
         title: 'Meetings',
         description: 'Productive & professional setups',
         image: '/assets/tour/meetings.jpg',
-        path: '/services/meetings'
+        path: '/meetings'
     },
     {
         icon: <TbGift size={28} className="text-green-600" />,
         title: 'Incentives',
         description: 'Rewarding travel experiences',
         image: '/assets/tour/incentives.jpg',
-        path: '/services/incentives'
+        path: '/incentives'
     },
     {
         icon: <TbBuildingCommunity size={28} className="text-purple-600" />,
         title: 'Conferences',
         description: 'Large-scale corporate events',
         image: '/assets/tour/conferences.jpg',
-        path: '/services/conferences'
+        path: '/conferences'
     },
     {
         icon: <TbPodium size={28} className="text-red-600" />,
         title: 'Exhibitions',
         description: 'Showcasing products & services',
         image: '/assets/tour/exhibitions.jpg',
-        path: '/services/exhibitions'
+        path: '/exhibitions'
     },
 ];
 
 const Hero: React.FC = () => {
     const containerRef = useRef<HTMLElement>(null);
+    const hasAnimatedRef = useRef(false);
 
     useGSAP(() => {
+        // Only run animation once, not on every re-render
+        if (hasAnimatedRef.current) return;
+        
         const tl = gsap.timeline({
             defaults: { ease: 'power3.out', duration: 1 }
         });
@@ -70,6 +74,8 @@ const Hero: React.FC = () => {
                 { y: 0, opacity: 1 },
                 "-=0.5"
             );
+            
+        hasAnimatedRef.current = true;
 
     }, { scope: containerRef });
 
@@ -135,13 +141,13 @@ const Hero: React.FC = () => {
 
                         <div className="flex flex-col sm:flex-row gap-4">
                             <Link to="/contact">
-                                <button className="bg-amber-500 hover:bg-amber-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
+                                <button className="bg-amber-500 hover:bg-amber-600 cursor-pointer text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg flex items-center justify-center">
                                     Get Started
                                     <TbArrowRight className="ml-2" />
                                 </button>
                             </Link>
                             <Link to="/about">
-                                <button className="border border-gray-300 hover:border-amber-500 text-gray-700 hover:text-amber-600 font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center">
+                                <button className="border border-gray-300 cursor-pointer hover:border-amber-500 text-gray-700 hover:text-amber-600 font-medium py-3 px-6 rounded-lg transition-all duration-300 flex items-center justify-center">
                                     Learn More
                                 </button>
                             </Link>

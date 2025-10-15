@@ -13,8 +13,12 @@ gsap.registerPlugin(ScrollTrigger);
 const CultureSection: React.FC = () => {
     const cultureRef = useRef<HTMLDivElement>(null);
     const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+    const hasAnimatedRef = useRef(false);
 
     useEffect(() => {
+        // Only run animation once, not on every re-render
+        if (hasAnimatedRef.current) return;
+        
         if (cultureRef.current) {
             gsap.fromTo(cultureRef.current.children,
                 { opacity: 0, rotationX: 90 },
@@ -29,6 +33,7 @@ const CultureSection: React.FC = () => {
                     }
                 }
             );
+            hasAnimatedRef.current = true;
         }
 
         // Add hover animations for cards

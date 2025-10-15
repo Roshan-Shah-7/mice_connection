@@ -25,11 +25,14 @@ const TourPackageOverview = () => {
     const headingRef = useRef<HTMLHeadingElement | null>(null);
     const introRef = useRef<HTMLParagraphElement | null>(null);
     const swiperRef = useRef<HTMLDivElement | null>(null);
+    const hasAnimatedRef = useRef(false);
     const [isSwiperInitialized, setIsSwiperInitialized] = useState(false);
 
     // GSAP animations with proper cleanup
     useGSAP(
         () => {
+            // Only run animation once, not on every re-render
+            if (hasAnimatedRef.current) return;
             // Initial animations
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -101,6 +104,8 @@ const TourPackageOverview = () => {
                 });
             }
 
+            hasAnimatedRef.current = true;
+            
             // Cleanup function
             return () => {
                 ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -247,7 +252,7 @@ const TourPackageOverview = () => {
                             Can't find exactly what you're looking for? We can create a custom tour package tailored to your interests, budget, and schedule. Whether it's a family vacation, corporate retreat, or special celebration, we'll craft the perfect Nepalese experience for you.
                         </p>
                         <Link to="/contact">
-                            <button className="px-8 py-3 bg-transparent border-2 border-[#0e332e] text-[#0e332e] font-medium rounded-full hover:bg-[#0e332e] hover:text-white transform transition-all duration-500 hover:scale-105">
+                            <button className="px-8 py-3 bg-transparent border-2 cursor-pointer border-[#0e332e] text-[#0e332e] font-medium rounded-full hover:bg-[#0e332e] hover:text-white transform transition-all duration-500 hover:scale-105">
                                 Create Custom Tour
                             </button>
                         </Link>

@@ -127,6 +127,7 @@ const TourPackagesPage: React.FC = () => {
     const [showFilter, setShowFilter] = useState(window.innerWidth >= 1024); // Initially visible on large screens, hidden on small
     const [showScrollFilterButton, setShowScrollFilterButton] = useState(false); // State for compact filter button on scroll
     const filterRef = useRef<HTMLDivElement>(null); // Ref for click outside detection
+    const hasRestoredScroll = useRef(false); // Ref to track if we've restored scroll position
 
     const categories = useMemo(() => [
         { name: "All", icon: "🗺️" }, { name: "Women Centric", icon: "👯‍♀️" }, { name: "Cultural", icon: "🏛️" }, { name: "Educational", icon: "📚" }, { name: "Adventure", icon: "🪂" }, { name: "Wildlife", icon: "🦒" }, { name: "Spiritual", icon: "🙏" }, { name: "Family", icon: "👨‍👩‍👧‍👦" }
@@ -198,13 +199,18 @@ const TourPackagesPage: React.FC = () => {
 
     // Manage scroll position restoration
     useEffect(() => {
-        // Restore scroll position when component mounts
-        const savedScrollPosition = sessionStorage.getItem('tourPackagesScrollPosition');
-        if (savedScrollPosition) {
-            // Use setTimeout to ensure the DOM is rendered before scrolling
-            setTimeout(() => {
-                window.scrollTo(0, parseInt(savedScrollPosition, 10));
-            }, 0);
+        // Restore scroll position when component mounts, but only once
+        if (!hasRestoredScroll.current) {
+            const savedScrollPosition = sessionStorage.getItem('tourPackagesScrollPosition');
+            if (savedScrollPosition) {
+                // Use setTimeout to ensure the DOM is rendered before scrolling
+                setTimeout(() => {
+                    window.scrollTo(0, parseInt(savedScrollPosition, 10));
+                    hasRestoredScroll.current = true; // Mark that we've restored scroll position
+                }, 0);
+            } else {
+                hasRestoredScroll.current = true; // If no saved position, still mark as restored
+            }
         }
         
         // Save scroll position when navigating away

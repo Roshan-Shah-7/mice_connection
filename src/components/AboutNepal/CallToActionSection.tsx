@@ -7,8 +7,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CallToActionSection: React.FC = () => {
     const ctaRef = useRef<HTMLDivElement>(null);
+    const hasAnimatedRef = useRef(false);
 
     useEffect(() => {
+        // Only run animation once, not on every re-render
+        if (hasAnimatedRef.current) return;
+        
         if (ctaRef.current) {
             gsap.fromTo(ctaRef.current,
                 { opacity: 0, y: 50 },
@@ -22,6 +26,7 @@ const CallToActionSection: React.FC = () => {
                     }
                 }
             );
+            hasAnimatedRef.current = true;
         }
     }, []);
 

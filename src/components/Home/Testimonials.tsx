@@ -28,11 +28,14 @@ const Testimonials = () => {
     const headingRef = useRef<HTMLHeadingElement | null>(null);
     const subtitleRef = useRef<HTMLParagraphElement | null>(null);
     const swiperRef = useRef<HTMLDivElement | null>(null);
+    const hasAnimatedRef = useRef(false);
     const [isSwiperInitialized, setIsSwiperInitialized] = useState(false);
 
     // GSAP animations with proper cleanup
     useGSAP(
         () => {
+            // Only run animation once, not on every re-render
+            if (hasAnimatedRef.current) return;
             // Initial animations
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -104,6 +107,8 @@ const Testimonials = () => {
                 });
             }
 
+            hasAnimatedRef.current = true;
+            
             // Cleanup function
             return () => {
                 ScrollTrigger.getAll().forEach(trigger => trigger.kill());
@@ -125,7 +130,7 @@ const Testimonials = () => {
         {
             id: 1,
             name: "Sarah Chen",
-            testimonial: "The MICE Connection planned an incredible adventure for us through the Annapurna region. The guides were knowledgeable, and every detail, from accommodation to cultural experiences, was perfectly arranged. Truly an unforgettable journey!",
+            testimonial: "The MICE Connection planned an incredible 'Annapurna Cultural Trek' for us. The guides were knowledgeable, and every detail, from accommodation to cultural experiences, was perfectly arranged. Truly an unforgettable journey!",
             rating: 5,
             featured: true
         },
@@ -139,31 +144,31 @@ const Testimonials = () => {
         {
             id: 2,
             name: "David Miller",
-            testimonial: "The MICE Connection managed our conference, and the results were outstanding. From venue selection to speaker coordination, everything was handled with utmost professionalism. Our delegates were thoroughly impressed.",
+            testimonial: "The MICE Connection managed our 'Corporate Leadership Summit' conference, and the results were outstanding. From venue selection to speaker coordination, everything was handled with utmost professionalism. Our delegates were thoroughly impressed.",
             rating: 5,
         },
         {
             id: 3,
             name: "Maria Garcia",
-            testimonial: "Our family holiday to Chitwan National Park was made magical by The MICE Connection. The jungle safari and cultural programs were fantastic, and their team ensured our comfort throughout. A perfect blend of adventure and relaxation!",
+            testimonial: "Our family holiday 'Chitwan Wildlife Safari' was made magical by The MICE Connection. The jungle safari and cultural programs were fantastic, and their team ensured our comfort throughout. A perfect blend of adventure and relaxation!",
             rating: 5,
         },
         {
             id: 8,
             name: "Emily White",
-            testimonial: "The MICE Connection orchestrated a flawless incentive trip to Thailand for our top performers. The itinerary was perfectly balanced, combining luxury, adventure, and cultural immersion. Truly an exceptional experience!",
+            testimonial: "The MICE Connection orchestrated a flawless 'Thailand Incentive Experience' for our top performers. The itinerary was perfectly balanced, combining luxury, adventure, and cultural immersion. Truly an exceptional experience!",
             rating: 5,
         },
         {
             id: 4,
             name: "Roshan Shah",
-            testimonial: "The MICE Connection handled our recent corporate event with remarkable professionalism. From conceptualization to execution, their team ensured every aspect was perfect, leading to a highly successful and memorable gathering.",
+            testimonial: "The MICE Connection handled our 'Annual Corporate Retreat' with remarkable professionalism. From conceptualization to execution, their team ensured every aspect was perfect, leading to a highly successful and memorable gathering.",
             rating: 4,
         },
         {
             id: 5,
             name: "Kenji Tanaka",
-            testimonial: "Exploring the ancient city of Bhaktapur with The MICE Connection was an enriching experience. Their historical insights and seamless arrangements allowed us to truly immerse ourselves in Nepal's rich heritage. Highly recommended for cultural tours!",
+            testimonial: "Exploring the ancient city of Bhaktapur with The MICE Connection's 'Heritage Discovery Tour' was an enriching experience. Their historical insights and seamless arrangements allowed us to truly immerse ourselves in Nepal's rich heritage. Highly recommended for cultural tours!",
             rating: 5,
         },
         {
@@ -175,13 +180,7 @@ const Testimonials = () => {
         {
             id: 7,
             name: "Suresh Karki",
-            testimonial: "Our trek to Everest Base Camp with The MICE Connection was a dream come true. The support team was incredible, and the entire journey was managed flawlessly. An adventure of a lifetime, thanks to their expertise!",
-            rating: 5,
-        },
-        {
-            id: 9,
-            name: "Carlos Rodriguez",
-            testimonial: "Our international conference in Dubai was a massive undertaking, but The MICE Connection handled every detail with precision. From delegate management to cutting-edge tech support, they delivered beyond our expectations.",
+            testimonial: "Our 'Everest Base Camp Expedition' with The MICE Connection was a dream come true. The support team was incredible, and the entire journey was managed flawlessly. An adventure of a lifetime, thanks to their expertise!",
             rating: 5,
         },
     ];
@@ -342,8 +341,8 @@ const Testimonials = () => {
                         <p className="text-gray-700 mb-6">
                             Join our list of satisfied clients and let us help you create an unforgettable event experience.
                         </p>
-                        <Link to="/contact" className='cursor-pointer'>
-                            <button className="px-8 py-3 bg-[#0e332e] text-white font-medium rounded-full hover:bg-[#D4AF37] hover:text-[#0e332e] transform transition-all duration-500 hover:scale-105">
+                        <Link to="/contact">
+                            <button className="px-8 py-3 cursor-pointer bg-[#0e332e] text-white font-medium rounded-full hover:bg-[#D4AF37] hover:text-[#0e332e] transform transition-all duration-500 hover:scale-105">
                                 Get in Touch
                             </button>
                         </Link>
