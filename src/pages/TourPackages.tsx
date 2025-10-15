@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { useClickOutside } from '../hooks/useClickOutside';
 import { useNavigate } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -123,6 +124,9 @@ const TourPackagesPage: React.FC = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [sortOption, setSortOption] = useState('featured');
     const [tourTypeFilter, setTourTypeFilter] = useState('All');
+    const [showFilter, setShowFilter] = useState(window.innerWidth >= 1024); // Initially visible on large screens, hidden on small
+    const [showScrollFilterButton, setShowScrollFilterButton] = useState(false); // State for compact filter button on scroll
+    const filterRef = useRef<HTMLDivElement>(null); // Ref for click outside detection
 
     const categories = useMemo(() => [
         { name: "All", icon: "🗺️" }, { name: "Women Centric", icon: "👯‍♀️" }, { name: "Cultural", icon: "🏛️" }, { name: "Educational", icon: "📚" }, { name: "Adventure", icon: "🪂" }, { name: "Wildlife", icon: "🦒" }, { name: "Spiritual", icon: "🙏" }, { name: "Family", icon: "👨‍👩‍👧‍👦" }
@@ -190,6 +194,71 @@ const TourPackagesPage: React.FC = () => {
         setSortOption('featured');
     };
 
+    useClickOutside(filterRef, () => setShowFilter(false));
+
+    // Manage scroll position restoration
+    useEffect(() => {
+        // Restore scroll position when component mounts
+        const savedScrollPosition = sessionStorage.getItem('tourPackagesScrollPosition');
+        if (savedScrollPosition) {
+            // Use setTimeout to ensure the DOM is rendered before scrolling
+            setTimeout(() => {
+                window.scrollTo(0, parseInt(savedScrollPosition, 10));
+            }, 0);
+        }
+        
+        // Save scroll position when navigating away
+        const saveScrollPosition = () => {
+            sessionStorage.setItem('tourPackagesScrollPosition', window.scrollY.toString());
+        };
+
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+                setShowFilter(true); // Always show filter on large screens
+                setShowScrollFilterButton(false);
+            } else {
+                // On small screens, maintain current filter visibility state
+                // Don't automatically hide the filter on resize to prevent layout shifts
+            }
+        };
+
+        // Save scroll position before navigating away
+        window.addEventListener('beforeunload', saveScrollPosition);
+        window.addEventListener('popstate', saveScrollPosition); // When user uses back button
+        window.addEventListener('resize', handleResize);
+
+        // Initial check on mount
+        handleResize();
+
+        // Set up scroll listener to continuously save position while scrolling
+        let scrollTimeout: NodeJS.Timeout;
+        const handleScroll = () => {
+            // Debounce scroll events to avoid excessive sessionStorage writes
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                sessionStorage.setItem('tourPackagesScrollPosition', window.scrollY.toString());
+            }, 100);
+            
+            if (window.innerWidth < 1024) { // Only show compact filter button on small screens when scrolled
+                if (window.scrollY > 200) {
+                    setShowScrollFilterButton(true);
+                } else {
+                    setShowScrollFilterButton(false);
+                }
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('beforeunload', saveScrollPosition);
+            window.removeEventListener('popstate', saveScrollPosition);
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('scroll', handleScroll);
+            clearTimeout(scrollTimeout);
+        };
+    }, []);
+
     return (
         <div className="min-h-screen bg-brand-light font-sans">
             <Hero />
@@ -201,41 +270,66 @@ const TourPackagesPage: React.FC = () => {
                         <p className="text-lg text-neutral-600 max-w-3xl mx-auto">Whether you're a solo traveler, a small group of friends, or a large private group, we have the perfect experience for you. Explore our curated list of tours across the beautiful landscapes of Nepal.</p>
                     </div>
 
+                    {/* Compact Filter Button for small screens when scrolled */}
+                    {showScrollFilterButton && (
+                        <div className="fixed bottom-4 right-4 lg:hidden z-50">
+                            <button
+                                onClick={() => setShowFilter(true)} // Show main filter when compact button is clicked
+                                className="bg-[#1c4038] text-white p-4 rounded-full shadow-lg flex items-center justify-center gap-2"
+                                aria-label="Show Filters"
+                            >
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    )}
+
+                    {/* Filter Toggle Button for small screens (before scroll) */}
+                    <div className="lg:hidden mb-6">
+                        <button
+                            onClick={() => setShowFilter(!showFilter)}
+                            className="w-full bg-[#1c4038] text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2"
+                        >
+                            {showFilter ? 'Hide Filters' : 'Show Filters'}
+                            <svg className={`w-4 h-4 transition-transform duration-300 ${showFilter ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                    </div>
+
                     {/* Control Panel */}
-                    <div className="sticky top-30 bg-white/70 backdrop-blur-lg p-4 rounded-2xl shadow-lg border border-neutral-200 z-20 mb-12">
+                    {/* The filter panel is hidden by default on small screens and shown only when showFilter is true */}
+                    <div ref={filterRef} className={`bg-white/70 backdrop-blur-lg p-4 rounded-2xl shadow-lg border border-neutral-200 z-20 mb-12 transition-all duration-300 ease-in-out ${showFilter ? 'block opacity-100' : 'opacity-0 pointer-events-none absolute h-0 overflow-hidden lg:block lg:opacity-100 lg:pointer-events-auto lg:relative lg:h-auto lg:overflow-visible'} lg:block`}>
                         <div className="space-y-4">
                             {/* Row 1: Category & Difficulty */}
-                            <div className="flex flex-col lg:flex-row gap-4">
-                                <div className="flex-grow">
-                                    <label className="block text-sm font-bold text-brand-dark mb-2">Category</label>
-                                    <div className="flex flex-wrap items-center gap-2">
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                <div>
+                                    <label htmlFor="category-select" className="block text-sm font-bold text-brand-dark mb-2">Category</label>
+                                    <select id="category-select" value={activeCategory} onChange={(e) => setActiveCategory(e.target.value)}
+                                        className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent transition">
                                         {categories.map((category) => (
-                                            <button key={category.name} onClick={() => setActiveCategory(category.name)} className={`flex items-center space-x-2 px-3 py-1.5 rounded-lg transition-all duration-300 text-sm font-semibold border ${activeCategory === category.name ? 'bg-[#11342f] text-white border-brand-dark' : 'bg-white text-neutral-700 border-neutral-200 hover:bg-neutral-100'}`}>
-                                                <span>{category.icon}</span>
-                                                <span>{category.name}</span>
-                                            </button>
+                                            <option key={category.name} value={category.name}>{category.icon} {category.name}</option>
                                         ))}
-                                    </div>
+                                    </select>
                                 </div>
-                                <div className="flex-shrink-0">
-                                    <label className="block text-sm font-bold text-brand-dark mb-2">Difficulty</label>
-                                    <div className="flex flex-wrap items-center gap-2">
+                                <div>
+                                    <label htmlFor="difficulty-select" className="block text-sm font-bold text-brand-dark mb-2">Difficulty</label>
+                                    <select id="difficulty-select" value={difficultyFilter} onChange={(e) => setDifficultyFilter(e.target.value)}
+                                        className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent transition">
                                         {difficulties.map((level) => (
-                                            <button key={level} onClick={() => setDifficultyFilter(level)} className={`px-3 py-1.5 rounded-lg transition-all duration-300 text-sm font-semibold border ${difficultyFilter === level ? 'bg-[#11342f] text-white border-brand-dark' : 'bg-white text-neutral-700 border-neutral-200 hover:bg-neutral-100'}`}>
-                                                {level}
-                                            </button>
+                                            <option key={level} value={level}>{level}</option>
                                         ))}
-                                    </div>
+                                    </select>
                                 </div>
-                                <div className="flex-shrink-0">
-                                    <label className="block text-sm font-bold text-brand-dark mb-2">Tour Type</label>
-                                    <div className="flex flex-wrap items-center gap-2">
+                                <div>
+                                    <label htmlFor="tour-type-select" className="block text-sm font-bold text-brand-dark mb-2">Tour Type</label>
+                                    <select id="tour-type-select" value={tourTypeFilter} onChange={(e) => setTourTypeFilter(e.target.value)}
+                                        className="w-full px-4 py-2.5 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-brand-yellow focus:border-transparent transition">
                                         {tourTypes.map((type) => (
-                                            <button key={type} onClick={() => setTourTypeFilter(type)} className={`px-3 py-1.5 rounded-lg transition-all duration-300 text-sm font-semibold border ${tourTypeFilter === type ? 'bg-[#11342f] text-white border-brand-dark' : 'bg-white text-neutral-700 border-neutral-200 hover:bg-neutral-100'}`}>
-                                                {type}
-                                            </button>
+                                            <option key={type} value={type}>{type}</option>
                                         ))}
-                                    </div>
+                                    </select>
                                 </div>
                             </div>
 

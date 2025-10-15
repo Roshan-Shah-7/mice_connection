@@ -357,7 +357,6 @@ const ContactPage = () => {
                                         <h3 className="text-lg font-medium text-gray-900">Phone Number</h3>
                                         <p className="mt-1 text-gray-600">
                                             +977-9851363229<br />
-                                            (Ms. Shradha Chhetri, Managing Director)
                                         </p>
                                     </div>
                                 </div>

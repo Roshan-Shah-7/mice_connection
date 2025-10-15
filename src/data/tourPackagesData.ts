@@ -238,7 +238,7 @@ export const tourPackages: TourPackage[] =
                 "All government taxes and service charges"
             ],
             "groupSize": "Small Group (Max 8 participants)",
-            "bestSeason": "Spring (March-May) and Autumn (September-November) :cite[2]:cite[3]",
+            "bestSeason": "Spring (March-May) and Autumn (September-November)",
             "itinerary": [
                 {
                     "day": 1,

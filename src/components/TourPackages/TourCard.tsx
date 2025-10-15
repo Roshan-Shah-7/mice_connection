@@ -15,7 +15,7 @@ interface TourCardProps {
 }
 
 const StatIcon: React.FC<{ icon: string; label: string; value: string; }> = ({ icon, label, value }) => (
-    <div className="flex items-center space-x-2 text-sm text-neutral-600" aria-label={`${label}: ${value}`}>
+    <div className="flex items-center space-x-2 text-sm text-neutral-600 w-full" aria-label={`${label}: ${value}`}>
         <span className="text-lg" role="img" aria-hidden="true">{icon}</span>
         <span>{value}</span>
     </div>
@@ -52,10 +52,14 @@ const TourCard: React.FC<TourCardProps> = ({ tour, isRecommended, recommendation
                 <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-brand-dark px-3 py-1 rounded-full text-xs font-semibold shadow">{tour.category}</div>
                 <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${getDifficultyClass(tour.difficulty)}`}>{tour.difficulty}</div>
             </div>
-            <div className="p-5 flex-grow flex flex-col">
+            <div className="p-4 flex-grow flex flex-col">
                 <h3 className="text-lg font-bold text-brand-dark mb-3 line-clamp-2 leading-tight">{tour.title}</h3>
 
-                <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-4">
+                <p className="text-sm text-neutral-600 mb-3 line-clamp-3">{tour.description}</p>
+
+                <div className="h-px w-full bg-neutral-200 my-3"></div>
+
+                <div className="grid grid-cols-1 gap-x-2 gap-y-2 mb-4">
                     <StatIcon icon="⏱️" label="Duration" value={tour.duration} />
                     <StatIcon icon="👥" label="Group Size" value={tour.groupSize} />
                     <StatIcon icon="☀️" label="Best Season" value={tour.bestSeason} />
