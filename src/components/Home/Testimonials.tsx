@@ -130,6 +130,13 @@ const Testimonials = () => {
             featured: true
         },
         {
+            id: 10,
+            name: "Sophie Dubois",
+            testimonial: "Planning our destination wedding in Bali with The MICE Connection was stress-free and magical. Every element, from the stunning venue to the exquisite catering, was meticulously arranged, creating memories we'll cherish forever.",
+            rating: 5,
+        },
+
+        {
             id: 2,
             name: "David Miller",
             testimonial: "The MICE Connection managed our conference, and the results were outstanding. From venue selection to speaker coordination, everything was handled with utmost professionalism. Our delegates were thoroughly impressed.",
@@ -139,6 +146,12 @@ const Testimonials = () => {
             id: 3,
             name: "Maria Garcia",
             testimonial: "Our family holiday to Chitwan National Park was made magical by The MICE Connection. The jungle safari and cultural programs were fantastic, and their team ensured our comfort throughout. A perfect blend of adventure and relaxation!",
+            rating: 5,
+        },
+        {
+            id: 8,
+            name: "Emily White",
+            testimonial: "The MICE Connection orchestrated a flawless incentive trip to Thailand for our top performers. The itinerary was perfectly balanced, combining luxury, adventure, and cultural immersion. Truly an exceptional experience!",
             rating: 5,
         },
         {
@@ -165,8 +178,14 @@ const Testimonials = () => {
             testimonial: "Our trek to Everest Base Camp with The MICE Connection was a dream come true. The support team was incredible, and the entire journey was managed flawlessly. An adventure of a lifetime, thanks to their expertise!",
             rating: 5,
         },
+        {
+            id: 9,
+            name: "Carlos Rodriguez",
+            testimonial: "Our international conference in Dubai was a massive undertaking, but The MICE Connection handled every detail with precision. From delegate management to cutting-edge tech support, they delivered beyond our expectations.",
+            rating: 5,
+        },
     ];
- 
+
     // Render star rating
     const renderRating = (rating: number) => {
         return (
@@ -268,13 +287,6 @@ const Testimonials = () => {
                                         itemScope
                                         itemType="https://schema.org/Review"
                                     >
-                                        {/* Featured badge */}
-                                        {testimonial.featured && (
-                                            <div className="absolute top-4 right-4 bg-[#D4AF37] text-white px-3 py-1 rounded-full text-sm font-medium z-20">
-                                                FEATURED
-                                            </div>
-                                        )}
-
                                         {/* Gold accent border on hover */}
                                         <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#D4AF37] rounded-2xl transition-all duration-500"></div>
 
@@ -294,7 +306,7 @@ const Testimonials = () => {
 
                                             {/* Testimonial Text */}
                                             <blockquote
-                                                className="text-gray-700 mb-6 line-clamp-4"
+                                                className="text-gray-700 mb-6"
                                                 itemProp="reviewBody"
                                             >
                                                 "{testimonial.testimonial}"

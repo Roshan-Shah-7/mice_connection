@@ -466,7 +466,7 @@ const ContactPage = () => {
                                     <div className="ml-4">
                                         <h3 className="text-lg font-medium text-gray-900">Email Address</h3>
                                         <p className="mt-1 text-gray-600">
-                                            sales@themiceconnection.com <br />miceconnectionpvtltd@gmail.com<br />
+                                            sales@themiceconnection.com <br />
                                             (Ms. Madhu Kaithwas, Business Development Manager)
                                         </p>
                                     </div>

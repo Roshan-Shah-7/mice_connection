@@ -83,11 +83,18 @@ const Header: React.FC = () => {
               ))}
             </div>
           </div>
-          <Link to="/contact">
-            <button className="bg-[#0e332e] text-white px-5 py-2 rounded-full font-semibold text-xs tracking-wide uppercase hover:bg-[#145f4a] transition-all hover:scale-105 duration-300 shadow-md hover:shadow-lg">
-              Book Now
-            </button>
-          </Link>
+          <div>
+            <a href="/brocher.pdf" target="_blank" rel="noopener noreferrer" className="mr-4">
+              <button className="bg-gray-100 text-black cursor-pointer px-5 py-2 rounded-full font-semibold text-xs tracking-wide uppercase hover:bg-[#0e332e] hover:text-white transition-all hover:scale-105 duration-300 shadow-md hover:shadow-lg">
+                Brochure
+              </button>
+            </a>
+            <Link to="/contact">
+              <button className="bg-[#0e332e] text-white px-5 py-2 rounded-full font-semibold text-xs tracking-wide uppercase hover:bg-[#145f4a] transition-all hover:scale-105 duration-300 shadow-md hover:shadow-lg">
+                Book Now
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
 
@@ -271,6 +278,11 @@ const Header: React.FC = () => {
                 )}
               </div>
             ))}
+            <div className="w-full border-b border-gray-200 last:border-b-0">
+              <MobileNavLink to="/brochure.pdf" onClick={closeMobileMenu}>
+                <span className="text-base font-normal">Brochure</span>
+              </MobileNavLink>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
