@@ -14,8 +14,6 @@ const BlogPage = () => {
     const navigate = useNavigate();
     const [selectedCategory, setSelectedCategory] = useState<string>('all');
     const [searchQuery, setSearchQuery] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [subscribed, setSubscribed] = useState<boolean>(false);
     const blogContainerRef = useRef<HTMLDivElement>(null);
     const blogCardRefs = useRef<(HTMLDivElement | null)[]>([]);
     const featuredPostRef = useRef<HTMLDivElement>(null);
@@ -86,21 +84,6 @@ const BlogPage = () => {
     // Featured post
     const featuredPost = blogPosts.find(post => post.featured);
 
-    // Handle newsletter subscription
-    const handleSubscribe = (e: React.FormEvent) => {
-        e.preventDefault();
-        if (email && email.includes('@')) {
-            // In a real app, you would send this to your backend
-            console.log('Subscribed with email:', email);
-            setSubscribed(true);
-            setEmail('');
-
-            // Reset subscription status after 5 seconds
-            setTimeout(() => {
-                setSubscribed(false);
-            }, 5000);
-        }
-    };
 
     // Animation effects
     useEffect(() => {
@@ -332,7 +315,7 @@ const BlogPage = () => {
                                     </div>
                                     {/* The button itself will not navigate, the entire div is clickable */}
                                     <button
-                                        className="px-6 py-3 bg-[#1f423b] text-white font-medium rounded-lg hover:bg-opacity-90 transition duration-300 flex items-center"
+                                        className="px-6 py-3 bg-[#1f423b] cursor-pointer text-white font-medium rounded-lg hover:bg-opacity-90 transition duration-300 flex items-center"
                                         onClick={(e) => { e.stopPropagation(); navigate(`/blogs/${featuredPost.slug}`); }}
                                     >
                                         Read Full Article
@@ -347,7 +330,7 @@ const BlogPage = () => {
                 )}
 
                 {/* Additional Sections Container */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
                     {/* Recently Added Blogs */}
                     <div ref={recentPostsRef} className="bg-white rounded-xl shadow-lg p-6">
                         <h3 className="text-xl font-bold text-[#1f423b] mb-4 flex items-center">
@@ -358,14 +341,18 @@ const BlogPage = () => {
                         </h3>
                         <div className="space-y-4">
                             {recentPosts.map((post) => (
-                                <div key={post.id} className="flex items-start space-x-3 pb-4 border-b border-gray-100 last:border-0 last:pb-0">
+                                <div
+                                    key={post.id}
+                                    className="flex items-start space-x-3 pb-4 border-b border-gray-100 last:border-0 last:pb-0 cursor-pointer"
+                                    onClick={() => navigate(`/blogs/${post.slug}`)}
+                                >
                                     <img
                                         className="w-16 h-16 rounded-lg object-cover flex-shrink-0"
                                         src={post.imageUrl}
                                         alt={post.title}
                                     />
                                     <div>
-                                        <h4 className="font-medium text-[#1f423b] hover:text-[#fcd00d] transition-colors duration-300 cursor-pointer">
+                                        <h4 className="font-medium text-[#1f423b] hover:text-[#fcd00d] transition-colors duration-300">
                                             {post.title}
                                         </h4>
                                         <p className="text-sm text-gray-500 mt-1">{formatDate(post.date)}</p>
@@ -385,12 +372,16 @@ const BlogPage = () => {
                         </h3>
                         <div className="space-y-4">
                             {popularPosts.map((post, index) => (
-                                <div key={post.id} className="flex items-start space-x-3 pb-4 border-b border-gray-100 last:border-0 last:pb-0">
+                                <div
+                                    key={post.id}
+                                    className="flex items-start space-x-3 pb-4 border-b border-gray-100 last:border-0 last:pb-0 cursor-pointer"
+                                    onClick={() => navigate(`/blogs/${post.slug}`)}
+                                >
                                     <div className="flex-shrink-0 w-8 h-8 rounded-full bg-[#fcd00d]/20 flex items-center justify-center text-[#1f423b] font-bold">
                                         {index + 1}
                                     </div>
                                     <div>
-                                        <h4 className="font-medium text-[#1f423b] hover:text-[#fcd00d] transition-colors duration-300 cursor-pointer">
+                                        <h4 className="font-medium text-[#1f423b] hover:text-[#fcd00d] transition-colors duration-300">
                                             {post.title}
                                         </h4>
                                         <p className="text-sm text-gray-500 mt-1">{post.views} views</p>
@@ -400,44 +391,6 @@ const BlogPage = () => {
                         </div>
                     </div>
 
-                    {/* Newsletter Subscription */}
-                    <div ref={newsletterRef} className="bg-gradient-to-br from-[#1f423b] to-[#2d5f55] rounded-xl shadow-lg p-6 text-white">
-                        <h3 className="text-xl font-bold mb-4 flex items-center">
-                            <svg className="w-5 h-5 mr-2 text-[#fcd00d]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                            </svg>
-                            Subscribe to Our Newsletter
-                        </h3>
-                        <p className="mb-4 text-gray-200">
-                            Get the latest travel tips, destination guides, and exclusive offers delivered to your inbox.
-                        </p>
-                        {subscribed ? (
-                            <div className="bg-green-500 text-white py-3 px-4 rounded-lg text-center">
-                                Thank you for subscribing!
-                            </div>
-                        ) : (
-                            <form onSubmit={handleSubscribe} className="space-y-3">
-                                <input
-                                    type="email"
-                                    placeholder="Your email address"
-                                    className="w-full px-4 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#fcd00d]"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    required
-                                />
-                                <button
-                                    type="submit"
-                                    className="w-full bg-[#fcd00d] text-[#1f423b] font-bold py-3 rounded-lg hover:bg-opacity-90 transition duration-300"
-                                >
-                                    Subscribe
-                                </button>
-                            </form>
-                        )}
-                        <p className="text-xs text-gray-300 mt-3">
-                            We respect your privacy. Unsubscribe at any time.
-                        </p>
-                    </div>
                 </div>
 
                 {/* Tags Cloud */}
@@ -534,7 +487,7 @@ const BlogPage = () => {
                                 <div className="flex items-center justify-between">
                                     <button
                                         onClick={() => navigate(`/blogs/${post.slug}`)}
-                                        className="text-[#1f423b] hover:text-[#fcd00d] font-medium text-sm flex items-center transition-colors duration-300"
+                                        className="text-[#1f423b] cursor-pointer hover:text-[#fcd00d] font-medium text-sm flex items-center transition-colors duration-300"
                                     >
                                         Read more
                                         <svg className="ml-1 w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

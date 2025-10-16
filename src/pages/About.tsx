@@ -181,7 +181,7 @@ const AboutPage = () => {
                     </p>
                     <button
                         onClick={() => window.scrollTo({ top: valuesRef.current?.offsetTop ? valuesRef.current.offsetTop - 100 : 0, behavior: 'smooth' })}
-                        className="px-8 py-3 bg-[#D4AF37] text-[#0e332e] font-medium rounded-full hover:bg-[#c19c2d] transition-colors duration-300 group"
+                        className="px-8 py-3 bg-[#D4AF37] text-[#0e332e] cursor-pointer font-medium rounded-full hover:bg-[#c19c2d] transition-colors duration-300 group"
                     >
                         Learn More
                         <svg className="w-4 h-4 ml-2 inline-block group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -371,13 +371,13 @@ const AboutPage = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <button
                             onClick={() => navigate('/contact')}
-                            className="px-8 py-3 bg-[#D4AF37] text-[#0e332e] border-2 border-[#0e332e] font-medium rounded-full hover:bg-[#c19c2d] transition-colors duration-300"
+                            className="px-8 py-3 cursor-pointer bg-[#D4AF37] text-[#0e332e] border-2 border-[#0e332e] font-medium rounded-full hover:bg-[#c19c2d] transition-colors duration-300"
                         >
                             Start Planning
                         </button>
                         <button
-                            onClick={() => navigate('/events')}
-                            className="px-8 py-3 border-2 bg-white text-black font-medium rounded-full hover:bg-white hover:text-[#0e332e] transition-colors duration-300"
+                            onClick={() => navigate('/crafted-moments')}
+                            className="px-8 py-3 border-2 cursor-pointer bg-white text-black font-medium rounded-full hover:bg-white hover:text-[#0e332e] transition-colors duration-300"
                         >
                             See Our Work
                         </button>

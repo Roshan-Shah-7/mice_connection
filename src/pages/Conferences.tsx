@@ -310,7 +310,7 @@ const ConferencesPage = () => {
                     <Link to="/contact">
                         <button
                             onClick={handleGetInTouch}
-                            className="px-8 py-4 bg-[#fcd00d] text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
+                            className="px-8 py-4 bg-[#fcd00d] cursor-pointer text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
                         >
                             Plan Your Conference
                         </button>
@@ -474,7 +474,7 @@ const ConferencesPage = () => {
                         <Link to="/contact">
                             <button
                                 onClick={handleGetInTouch}
-                                className="px-8 py-4 bg-[#fcd00d] text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
+                                className="px-8 py-4 bg-[#fcd00d] cursor-pointer text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
                             >
                                 Get in Touch
                             </button>

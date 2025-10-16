@@ -345,7 +345,7 @@ const IncentivesPage = () => {
                     <Link to="/contact">
                         <button
                             onClick={handleGetInTouch}
-                            className="px-8 py-4 bg-[#fcd00d] text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
+                            className="px-8 py-4 bg-[#fcd00d] cursor-pointer text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
                         >
                             Design Your Incentive Trip
                         </button>
@@ -473,160 +473,6 @@ const IncentivesPage = () => {
                 </div>
             </div>
 
-            {/* Sample Programs */}
-            {/* <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#1f423b] mb-4">Sample Programs</h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Explore our curated incentive itineraries designed to inspire and reward
-                        </p>
-                    </div>
-
-                    <div ref={programsRef} className="relative">
-                        <Swiper
-                            modules={[Navigation, Pagination, Autoplay]}
-                            spaceBetween={30}
-                            slidesPerView={1}
-                            navigation={{
-                                nextEl: '.program-button-next',
-                                prevEl: '.program-button-prev',
-                            }}
-                            pagination={{
-                                clickable: true,
-                                el: '.program-pagination',
-                            }}
-                            autoplay={{
-                                delay: 5000,
-                                disableOnInteraction: false,
-                            }}
-                            breakpoints={{
-                                768: {
-                                    slidesPerView: 2,
-                                },
-                                1024: {
-                                    slidesPerView: 3,
-                                },
-                            }}
-                            className="programs-swiper"
-                        >
-                            {samplePrograms.map((program, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
-                                        <div className="h-48 overflow-hidden relative">
-                                            <img
-                                                className="w-full h-full object-cover"
-                                                src={program.image}
-                                                alt={program.title}
-                                            />
-                                            <div className="absolute top-4 right-4 bg-[#fcd00d] text-[#1f423b] text-sm font-bold py-1 px-3 rounded-full">
-                                                {program.duration}
-                                            </div>
-                                        </div>
-                                        <div className="p-6 flex-grow flex flex-col">
-                                            <h3 className="text-xl font-bold text-[#1f423b] mb-2">{program.title}</h3>
-                                            <p className="text-gray-600 mb-4">{program.description}</p>
-                                            <div className="mt-4">
-                                                <h4 className="font-medium text-gray-900 mb-2">Highlights:</h4>
-                                                <ul className="space-y-2">
-                                                    {program.highlights.map((highlight, idx) => (
-                                                        <li key={idx} className="flex items-start text-sm text-gray-600">
-                                                            <svg className="w-4 h-4 text-[#fcd00d] mt-0.5 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                            </svg>
-                                                            {highlight}
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                            <div className="mt-auto pt-4">
-                                                <button
-                                                    onClick={handleGetInTouch}
-                                                    className="w-full py-2 bg-[#fcd00d] text-[#1f423b] font-medium rounded-lg hover:bg-opacity-90 transition duration-300"
-                                                >
-                                                    Request Full Itinerary
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-
-                        <div className="program-button-next text-[#1f423b] after:text-2xl"></div>
-                        <div className="program-button-prev text-[#1f423b] after:text-2xl"></div>
-
-                        <div className="program-pagination mt-8"></div>
-                    </div>
-                </div>
-            </div> */}
-
-            {/* Visual Gallery */}
-            {/* <div className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-4xl font-bold text-[#1f423b] mb-4">Experience Gallery</h2>
-                        <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                            Glimpses of our unforgettable incentive journeys in Nepal
-                        </p>
-                    </div>
-
-                    <div ref={galleryRef} className="relative">
-                        <Swiper
-                            modules={[Navigation, Pagination, Autoplay]}
-                            spaceBetween={20}
-                            slidesPerView={1}
-                            navigation={{
-                                nextEl: '.gallery-button-next',
-                                prevEl: '.gallery-button-prev',
-                            }}
-                            pagination={{
-                                clickable: true,
-                                el: '.gallery-pagination',
-                            }}
-                            autoplay={{
-                                delay: 4000,
-                                disableOnInteraction: false,
-                            }}
-                            breakpoints={{
-                                640: {
-                                    slidesPerView: 2,
-                                },
-                                768: {
-                                    slidesPerView: 3,
-                                },
-                                1024: {
-                                    slidesPerView: 4,
-                                },
-                            }}
-                            className="gallery-swiper"
-                        >
-                            {galleryImages.map((image, index) => (
-                                <SwiperSlide key={index}>
-                                    <div className="relative group">
-                                        <div className="overflow-hidden rounded-xl">
-                                            <img
-                                                className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                                                src={image.image}
-                                                alt={image.caption}
-                                            />
-                                        </div>
-                                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                                            <p className="text-white text-sm">{image.caption}</p>
-                                        </div>
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-
-                        <div className="gallery-button-next text-[#1f423b] after:text-2xl"></div>
-                        <div className="gallery-button-prev text-[#1f423b] after:text-2xl"></div>
-
-                        <div className="gallery-pagination mt-8"></div>
-                    </div>
-                </div>
-            </div> */}
-
             {/* Call-to-Action Banner */}
             <div
                 ref={ctaRef}
@@ -665,7 +511,7 @@ const IncentivesPage = () => {
                         <Link to="/contact">
                             <button
                                 onClick={handleGetInTouch}
-                                className="px-8 py-4 bg-[#fcd00d] text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
+                                className="px-8 py-4 bg-[#fcd00d] cursor-pointer text-[#1f423b] font-bold text-lg rounded-lg hover:bg-opacity-90 transition duration-300 transform hover:-translate-y-1 shadow-lg"
                             >
                                 Start Planning
                             </button>
