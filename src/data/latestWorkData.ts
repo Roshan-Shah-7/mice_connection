@@ -97,7 +97,7 @@ export const latestWorks: ILatestWork[] = [
             },
             {
                 image: "/assets/works/hgn2.webp",
-                text: "Welcoming guests and stakeholders at the launch event of The Himalayan Guardian Nepal."
+                text: "A warm welcome ceremony organized by The MICE Connection for Himalayan Guardian Nepal, where delegates were greeted with traditional khada  symbolizing respect and goodwill."
             }
         ]
     },
