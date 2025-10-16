@@ -97,7 +97,7 @@ export const latestWorks: ILatestWork[] = [
             },
             {
                 image: "/assets/works/hgn2.webp",
-                text: "Strategic planning and logistical coordination ensured a seamless and impactful launch."
+                text: "Welcoming guests and stakeholders at the launch event of The Himalayan Guardian Nepal."
             }
         ]
     },
@@ -111,12 +111,12 @@ export const latestWorks: ILatestWork[] = [
         type: "MICE",
         detailImages: [
             {
-                image: "/assets/works/charming2.jpg",
-                text: "A vibrant cultural performance showcasing the rich heritage of Guangzhou and Nepal."
+                image: "/assets/events/topCharming.jpg",
+                text: "Elegant venue setup for the 'Charming Guangzhou Meets Nepal' city image showcase organized by The MICE Connection, to promote friendship and cultural exchange between Nepal and China."
             },
             {
-                image: "/assets/works/charming3.jpg",
-                text: "Delegates from Guangzhou and Nepal engaging in discussions to strengthen cultural and economic ties."
+                image: "/assets/events/danceCharming.jpg",
+                text: "A vibrant cultural performance showcasing the rich culture of Guangzhou. The event highlighted the city’s culture, charm, and artistic spirit."
             }
         ]
     },
@@ -124,18 +124,19 @@ export const latestWorks: ILatestWork[] = [
         id: 7,
         title: "Everest Summiteers Summit",
         description: "The MICE Connection organized the prestigious Everest Summiteers Summit, bringing together accomplished mountaineers and adventure enthusiasts. Our professional event management encompassed all aspects from conceptualization to execution, creating a platform for knowledge sharing, networking, and celebrating extraordinary achievements in mountaineering.",
-        image: "/assets/gallery/everest.webp",
+        image: "/assets/events/summiteersMain.jpeg",
         year: "2025",
         slug: "everest-summiteers-summit",
         type: "MICE",
         detailImages: [
             {
-                image: "/assets/gallery/everest3.webp",
-                text: "Accomplished mountaineers sharing their experiences and insights at the Everest Summiteers Summit."
+                image: "/assets/events/summiteersinner.jpeg",
+                text: "The event was graced by Honorable Tourism Minister Mr. Badri Pandey, celebrating the Everest Summiteers Summit 2025, a historic gathering honoring mountaineering legends and inspiring future climbers, with The MICE Connection as the event planner."
             }
         ]
     },
 
+    // Tour Projects
     {
         id: 8,
         title: "Bangkok Trip",
@@ -221,16 +222,16 @@ export const latestWorks: ILatestWork[] = [
     },
     {
         id: 13,
-        title: "Mr. Suresh's Adventure Journey",
-        description: "A thrilling adventure journey tailored for Mr. Suresh, featuring adrenaline-pumping activities like paragliding, rafting, and mountain biking. The tour also included serene moments amidst nature's grandeur.",
+        title: "Mr. Suresh Explores The Magic of Nepal's Golden Triangle",
+        description: "Mr. Suresh's family explores the magic of Nepal's Golden Triangle. The journey takes him through Nepal's most iconic destinations: Kathmandu, Pokhara, and Chitwan. It offered a perfect blend of culture, heritage, and natural beauty. Every stop reveals the unique spirit and charm of this incredible region.",
         image: "/assets/gallery/mr-suresh2.webp",
         year: "2025",
-        slug: "mr-suresh-adventure-journey",
+        slug: "mr-suresh-explores-golden-triangle",
         type: "Tour",
         detailImages: [
             {
                 image: "/assets/works/mrSuresh.jpg",
-                text: "Mr. Suresh preparing for a paragliding adventure with breathtaking views."
+                text: "On the final day, our MD, Ms. Chhetri, personally bid them farewell, handing over souvenirs as a token of appreciation and fond memories from their journey."
             }
         ]
     },
