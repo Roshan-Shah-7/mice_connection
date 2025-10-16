@@ -220,7 +220,7 @@ const EventDetail: React.FC = () => {
                             {/* Action buttons */}
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-16 pt-8 border-t border-gray-200/50">
                                 <button
-                                    onClick={() => navigate('/managed-experiences')}
+                                    onClick={() => navigate('/crafted-moments')}
                                     className="px-10 py-4 bg-gradient-to-r cursor-pointer from-[#10362e] to-[#1a4d42] text-white font-bold rounded-xl hover:from-[#fcd10b] hover:to-[#f8d947] hover:text-[#10362e] transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center group"
                                 >
                                     <svg className="w-5 h-5 mr-3 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

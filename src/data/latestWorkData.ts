@@ -21,11 +21,11 @@ export const latestWorks: ILatestWork[] = [
         detailImages: [
             {
                 image: "/assets/gallery/volly.webp",
-                text: "The MICE Connection team actively participating in the Everest Women's Volleyball League, showing our support for women in sports."
+                text: "Celebrating a moment with the winning team, Lalitpur Queensin."
             },
             {
                 image: "/assets/gallery/volly2.webp",
-                text: "Celebrating the spirit of sportsmanship and empowerment at the Everest Women's Volleyball League with the Lalitpur Queens."
+                text: "A spiritual moment with Lalitpur Queens in Pashupatinath Temple."
             }
         ]
     },
@@ -39,12 +39,12 @@ export const latestWorks: ILatestWork[] = [
         type: "MICE",
         detailImages: [
             {
-                image: "/assets/gallery/hor2.webp",
+                image: "/assets/events/Li Shengtao.jpg",
                 text: "Mr. Li Shengtao, the Chinese paraglider, being honored for his incredible feat of paragliding from Mount Everest."
             },
             {
                 image: "/assets/gallery/hor3.webp",
-                text: "Government officials and tourism leaders attending the prestigious ceremony, highlighting Nepal's adventure tourism potential."
+                text: "A memorable group photo with Mr. Li Shengtao, the Chinese paraglider, and other amazing guests, capturing the joy and camaraderie of the moment."
             }
         ]
     },
@@ -59,7 +59,7 @@ export const latestWorks: ILatestWork[] = [
         detailImages: [
             {
                 image: "/assets/gallery/ch2.webp",
-                text: "Distinguished guests, including the Chinese Ambassador and Nepal's Tourism Minister, at the high-level seminar."
+                text: "The MICE Connection hosted a high-level seminar with distinguished guests, including the Chinese Ambassador, economist Mr. Wu Xiabo, and Nepal’s Tourism Minister Hit Bahadur Tamang, fostering dialogue on economic collaboration and tourism development while welcoming more than eighty participants."
             },
         ]
     },
@@ -74,12 +74,8 @@ export const latestWorks: ILatestWork[] = [
         detailImages: [
             {
                 image: "/assets/gallery/doc2.webp",
-                text: "Behind-the-scenes look at the making of 'The Unsilenced' documentary."
+                text: "A moment of pride and joy celebrating the award-winning documentary ‘The Unsilenced,’ honoring the inspiring stories of four extraordinary women and their powerful journeys."
             },
-            {
-                image: "/assets/gallery/doc3.webp",
-                text: "The MICE Connection team at the premiere of 'The Unsilenced' documentary in Nepal."
-            }
         ]
     },
     {
@@ -148,7 +144,7 @@ export const latestWorks: ILatestWork[] = [
         detailImages: [
             {
                 image: "/assets/works/bangkokTrip2.jpg",
-                text: "Exploring the Grand Palace in Bangkok, a true marvel of Thai architecture and history."
+                text: "A truly happy moment, filled with joy and unforgettable memories in Bangkok."
             },
         ]
     },
@@ -163,7 +159,7 @@ export const latestWorks: ILatestWork[] = [
         detailImages: [
             {
                 image: "/assets/works/japaneseGuest.jpg",
-                text: "Beautiful moment with Japanese guests."
+                text: "Had a beautiful moment sharing laughter and stories with our Japanese guests."
             },
         ]
     },
@@ -178,16 +174,12 @@ export const latestWorks: ILatestWork[] = [
         detailImages: [
             {
                 image: "/assets/gallery/lades1.webp",
-                text: "The ladies group enjoying a serene yoga session amidst Nepal's natural beauty."
+                text: "A spiritual moment for the ladies’ group at Pashupatinath Temple, filled with peace, reflection, and togetherness."
             },
             {
                 image: "/assets/gallery/lades2.webp",
-                text: "Engaging with local artisans and learning about traditional crafts."
+                text: "A small gift from The MICE Connection, shared with love and happiness to make the moment special for everyone."
             },
-            {
-                image: "/assets/gallery/lades3.webp",
-                text: "A celebratory dinner with the ladies group, sharing stories and laughter."
-            }
         ]
     },
     {
@@ -216,7 +208,7 @@ export const latestWorks: ILatestWork[] = [
         detailImages: [
             {
                 image: "/assets/works/mrNamdeo2.jpg",
-                text: "Mr. Namdeo exploring ancient temples and historical sites."
+                text: "The MICE Connection gift card, accompanied by a heartfelt message and a beautiful photo, makes for a truly special and memorable gift."
             }
         ]
     },
