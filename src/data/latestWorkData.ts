@@ -163,7 +163,7 @@ export const latestWorks: ILatestWork[] = [
         detailImages: [
             {
                 image: "/assets/works/japaneseGuest.jpg",
-                text: "Japanese guests enjoying a traditional Nepali dance performance."
+                text: "Beautiful moment with Japanese guests."
             },
         ]
     },
