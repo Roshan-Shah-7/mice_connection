@@ -92,7 +92,7 @@ export const latestWorks: ILatestWork[] = [
         type: "MICE",
         detailImages: [
             {
-                image: "/assets/works/hgn1.webp",
+                image: "/assets/events/hgn1.jpg",
                 text: "The MICE Connection team at the successful launch event of The Himalayan Guardian Nepal."
             },
             {

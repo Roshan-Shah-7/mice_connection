@@ -221,7 +221,7 @@ const EventDetail: React.FC = () => {
                             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-16 pt-8 border-t border-gray-200/50">
                                 <button
                                     onClick={() => navigate('/managed-experiences')}
-                                    className="px-10 py-4 bg-gradient-to-r from-[#10362e] to-[#1a4d42] text-white font-bold rounded-xl hover:from-[#fcd10b] hover:to-[#f8d947] hover:text-[#10362e] transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center group"
+                                    className="px-10 py-4 bg-gradient-to-r cursor-pointer from-[#10362e] to-[#1a4d42] text-white font-bold rounded-xl hover:from-[#fcd10b] hover:to-[#f8d947] hover:text-[#10362e] transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center group"
                                 >
                                     <svg className="w-5 h-5 mr-3 group-hover:rotate-180 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -230,7 +230,7 @@ const EventDetail: React.FC = () => {
                                 </button>
                                 <button
                                     onClick={() => navigate('/contact')}
-                                    className="px-10 py-4 bg-gradient-to-r from-[#fcd10b] to-[#f8d947] text-[#10362e] font-bold rounded-xl hover:from-[#10362e] hover:to-[#1a4d42] hover:text-white transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center group"
+                                    className="px-10 py-4 bg-gradient-to-r cursor-pointer from-[#fcd10b] to-[#f8d947] text-[#10362e] font-bold rounded-xl hover:from-[#10362e] hover:to-[#1a4d42] hover:text-white transition-all duration-500 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center group"
                                 >
                                     Plan Your Event
                                     <svg className="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
