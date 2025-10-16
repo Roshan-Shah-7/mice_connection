@@ -56,8 +56,8 @@ const App = () => {
             <Route path="/tour-packages" element={<TourPackages />} />
             <Route path="/tour-packages/:slug" element={<TourPackageDetail />} />
             <Route path="/detaildestation/:slug" element={<DetailDestination />} />
-            <Route path="/managed-experiences" element={<EventsPage />} />
-            <Route path="/managed-experiences-detail/:slug" element={<EventDetail />} />
+            <Route path="/crafted-moments" element={<EventsPage />} />
+            <Route path="/crafted-moments/:slug" element={<EventDetail />} />
             <Route path="/our-presence" element={<OurPresencePage />} />
             <Route path="/our-presence-detail/:slug" element={<OurPresenceDetail />} />
             <Route path="/about" element={<AboutPage />} />

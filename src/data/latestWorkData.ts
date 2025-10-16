@@ -93,7 +93,7 @@ export const latestWorks: ILatestWork[] = [
         detailImages: [
             {
                 image: "/assets/events/hgn1.jpg",
-                text: "The MICE Connection team at the successful launch event of The Himalayan Guardian Nepal."
+                text: "The ribbon cutting ceremony marked the official launch of Himalayan Guardian Nepal, attended by distinguished delegates from Nepal and China. The event celebrated a new initiative dedicated to enhancing the safety and wellbeing of travelers in Nepal, symbolizing a strong step toward responsible and secure tourism."
             },
             {
                 image: "/assets/works/hgn2.webp",

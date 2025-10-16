@@ -249,7 +249,7 @@ const EventsPage = () => {
                         <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
                             {filteredEvents.map((event: Event) => (
                                 <Link
-                                    to={`/managed-experiences-detail/${event.slug}`}
+                                    to={`/crafted-moments/${event.slug}`}
                                     key={event.id}
                                     className={`event-card group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-700 transform hover:-translate-y-8 ${event.featured ? 'md:col-span-2 xl:col-span-1' : ''
                                         }`}

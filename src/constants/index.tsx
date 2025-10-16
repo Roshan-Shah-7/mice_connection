@@ -18,7 +18,7 @@ export const navLinksLeft: NavLink[] = [
         href: "#",
         hasDropdown: true,
         subLinks: [
-            { label: "Managed Experiences", href: "/managed-experiences" },
+            { label: "Crafted Moments", href: "/crafted-moments" },
             { label: "Our Presence", href: "/our-presence" },
         ],
     },
