@@ -19,7 +19,7 @@ export const ourPresenceData: IPresence[] = [
         detailImages: [
             {
                 image: "/assets/works/bang1.jpg",
-                text: "Our team at the India International Travel Mart (IITM) in Bangalore, building strategic partnerships."
+                text: "Our team at the India International Travel Mart (IITM) in Bangalore."
             }
         ]
     },
@@ -32,8 +32,8 @@ export const ourPresenceData: IPresence[] = [
         slug: "bangladesh-sales-mission",
         detailImages: [
             {
-                image: "/public/assets/works/bang3.jpg",
-                text: "The MICE Connection team at the Bangladesh Sales Mission, promoting Nepal's tourism and events industry."
+                image: "/assets/works/bang3.jpg",
+                text: "The MICE Connection team at the Bangladesh Sales Mission, promoting Nepal's tourism and main highlights of Nepal."
             }
         ]
     },
@@ -61,7 +61,7 @@ export const ourPresenceData: IPresence[] = [
         detailImages: [
             {
                 image: "/assets/works/iteBanglore.jpg",
-                text: "Our team at the India International Travel Exhibition (ITE) in Bangalore, building strategic partnerships."
+                text: "At the India International Travel Exhibition (ITE) in Bangalore, forging meaningful partnerships for future growth."
             }
         ]
     },
