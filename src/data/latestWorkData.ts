@@ -185,7 +185,7 @@ export const latestWorks: ILatestWork[] = [
     {
         id: 11,
         title: "Mr. Manas's Custom Tour",
-        description: "A personalized tour meticulously crafted for Mr. Manas, fulfilling his specific interests in adventure and cultural immersion. The itinerary included thrilling treks, spiritual retreats, and exclusive cultural interactions.",
+        description: "A personalized family tour carefully crafted for Mr. Manas, tailored to his interests in cultural experiences and memorable family moments. The itinerary included visits to heritage sites, local experiences, and special activities for the whole family to enjoy together.",
         image: "/assets/gallery/mr-nana.webp",
         year: "2023",
         slug: "mr-manas-custom-tour",
@@ -193,7 +193,7 @@ export const latestWorks: ILatestWork[] = [
         detailImages: [
             {
                 image: "/assets/gallery/mr-nana.webp",
-                text: "Mr. Manas enjoying a panoramic view during his custom trek."
+                text: "A happy family photo capturing joyful moments, laughter, and togetherness during their memorable and special tour."
             }
         ]
     },
