@@ -1,69 +1,85 @@
-# React + TypeScript + Vite
+# The MICE Connection Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the website for The MICE Connection, featuring a React frontend with a Node.js/Express backend for handling email sending functionality.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `src/` - Frontend React components and code
+- `server/` - Backend Express server code
+- `public/` - Static assets
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Node.js 18+
+- npm or yarn package manager
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### Development
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Install dependencies:
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Create a `.env` file in the project root with your email credentials:
+```env
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_gmail_app_password
 ```
+
+3. Run both frontend and backend:
+```bash
+npm run start-all
+```
+
+This will start the frontend on `http://localhost:5173` and backend on `http://localhost:3001`.
+
+### Running Backend Only
+
+```bash
+npm run server
+```
+
+### Building for Production
+
+```bash
+# Build frontend
+npm run build
+
+# Build backend
+npm run build:server
+```
+
+## Environment Variables
+
+Create a `.env` file in your project root with the following variables:
+
+```
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_gmail_app_password
+```
+
+For production deployment, you may also need:
+
+```
+VITE_API_BASE_URL=https://your-backend-domain.com
+FRONTEND_URL=https://your-frontend-domain.com
+```
+
+## Deployment
+
+For detailed deployment instructions, see [DEPLOYMENT.md](DEPLOYMENT.md).
+
+## Backend API
+
+The backend provides a single endpoint:
+- `POST /api/send-email` - Send an email with the provided data
+
+## Technologies Used
+
+- Frontend: React 19, TypeScript, Vite
+- Styling: Tailwind CSS
+- Backend: Node.js, Express, TypeScript
+- Email: Nodemailer with Gmail SMTP
+- Animation: GSAP, Framer Motion

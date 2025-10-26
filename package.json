@@ -6,10 +6,13 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:server": "tsc --project tsconfig.server.json",
     "lint": "eslint .",
     "preview": "vite preview",
     "server": "ts-node-dev --respawn --esm server/server.ts",
-    "start-all": "concurrently \"npm run server\" \"npm run dev\""
+    "start": "node dist/server.js",
+    "start-all": "concurrently \"npm run server\" \"npm run dev\"",
+    "prepare": "npm run build:server"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

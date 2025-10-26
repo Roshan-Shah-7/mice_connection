@@ -4,8 +4,16 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config();
 const app = express();
-const port = 3001;
-app.use(cors());
+const port = process.env.PORT || 3001;
+// Configure CORS for production deployment
+const corsOptions = {
+    origin: process.env.FRONTEND_URL 
+        ? [process.env.FRONTEND_URL, 'https://themiceconnection.com', 'https://www.themiceconnection.com', 'http://localhost:5173', 'http://localhost:3000'] 
+        : ['https://themiceconnection.com', 'https://www.themiceconnection.com', 'http://localhost:5173', 'http://localhost:3000'],
+    credentials: true,
+    optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.post('/api/send-email', async (req, res) => {
     const { name, email, phone, subject, message, tourName } = req.body;
@@ -26,14 +34,45 @@ app.post('/api/send-email', async (req, res) => {
         to: 'rs6433688@gmail.com',
         subject: subject || `Tour Booking Inquiry for ${tourName}`,
         html: `
-            <h3>New Contact Form Submission</h3>
-            <p><strong>Name:</strong> ${name}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-            <p><strong>Subject:</strong> ${subject}</p>
-            <p><strong>Message:</strong></p>
-            <p>${message}</p>
-            ${tourName ? `<p><strong>Tour Name:</strong> ${tourName}</p>` : ''}
+        <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; border: 1px solid #ddd; border-radius: 8px; overflow: hidden;">
+            <div style="background-color: #1f423b; color: white; padding: 20px; text-align: center;">
+                <h1 style="margin: 0; font-size: 24px;">New Inquiry from Your Website</h1>
+            </div>
+            <div style="padding: 20px;">
+                <h2 style="color: #1f423b; border-bottom: 2px solid #fcd00d; padding-bottom: 10px;">Contact Details</h2>
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px; font-weight: bold; width: 120px;">Name:</td>
+                        <td style="padding: 10px;">${name}</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px; font-weight: bold;">Email:</td>
+                        <td style="padding: 10px;">${email}</td>
+                    </tr>
+                    ${phone ? `
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px; font-weight: bold;">Phone:</td>
+                        <td style="padding: 10px;">${phone}</td>
+                    </tr>` : ''}
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px; font-weight: bold;">Subject:</td>
+                        <td style="padding: 10px;">${subject}</td>
+                    </tr>
+                    ${tourName ? `
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="padding: 10px; font-weight: bold;">Tour Name:</td>
+                        <td style="padding: 10px;">${tourName}</td>
+                    </tr>` : ''}
+                </table>
+                <h2 style="color: #1f423b; border-bottom: 2px solid #fcd00d; padding-bottom: 10px; margin-top: 20px;">Message</h2>
+                <div style="background-color: #f9f9f9; padding: 15px; border-radius: 5px;">
+                    <p style="margin: 0;">${message}</p>
+                </div>
+            </div>
+            <div style="background-color: #f2f2f2; color: #777; padding: 15px; text-align: center; font-size: 12px;">
+                <p>This email was sent from the contact form on The MICE Connection website.</p>
+            </div>
+        </div>
         `
     };
     console.log('Attempting to send email with the following options:');
@@ -56,5 +95,6 @@ if (!emailUser || !emailPass) {
     process.exit(1);
 }
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on port ${port}`);
+    console.log(`API endpoints available at: http://localhost:${port}/api/send-email`);
 });

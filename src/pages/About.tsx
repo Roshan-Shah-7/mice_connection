@@ -258,7 +258,6 @@ const AboutPage = () => {
                     <div className="mt-2 text-lg text-gray-700 leading-relaxed">
                         <p>
                             Come, let’s connect the world through The MICE Connection, where every event becomes an unforgettable adventure amidst Nepal’s inspiring landscapes and vibrant culture. No matter the event, conferences, exhibitions, meetings, or any other occasion we’ve got your back. Together, let’s create memories that last a lifetime.
-                            Connecting Events, Connecting People, Connecting You.
                         </p>
                     </div>
 
@@ -272,7 +271,6 @@ const AboutPage = () => {
                     </div>
                 </div>
             </section>
-
 
             {/* Core Values Section */}
             <section ref={valuesRef} className="py-20 px-4 md:px-8 bg-[#f8f9fa] relative overflow-hidden">

@@ -14,7 +14,7 @@ export const latestWorks: ILatestWork[] = [
         id: 1,
         title: "TMC in Everest Women's Volleyball League",
         description: "The MICE Connection proudly supported the Lalitpur Queens in the historic Everest Women's Volleyball League - South Asia's first women's volleyball league. Our partnership demonstrated our commitment to advancing gender equality and empowering women in sports. We celebrated the athletes' exceptional skill, determination, and leadership, contributing to a groundbreaking movement that inspires women to break barriers and achieve excellence both on and off the court.",
-        image: "/assets/works/wo.jpg",
+        image: "/assets/works/wo.webp",
         year: "2024",
         slug: "everest-womens-volleyball-league",
         type: "MICE",
@@ -33,13 +33,13 @@ export const latestWorks: ILatestWork[] = [
         id: 2,
         title: "Honoring Chinese Paraglider in Nepal",
         description: "The MICE Connection collaborated with Babu Adventure Paragliding, Seven Summit Treks Pvt. Ltd., and Nepal Big Mountain Travels to honor Chinese paraglider Mr. Li Shengtao for his extraordinary achievement of paragliding from Mount Everest at 8,000 meters. This prestigious ceremony, attended by government officials and tourism leaders, highlighted Nepal's growing adventure tourism potential. Mr. Li's remarkable feat, culminating from years of training and dedication, showcases Nepal's position as a premier destination for extreme sports and adventure tourism.",
-        image: "/assets/works/chi.jpg",
+        image: "/assets/works/chi.webp",
         year: "2023",
         slug: "honoring-chinese-paraglider",
         type: "MICE",
         detailImages: [
             {
-                image: "/assets/events/Li Shengtao.jpg",
+                image: "/assets/events/Li Shengtao.webp",
                 text: "Mr. Li Shengtao, the Chinese paraglider, being honored for his incredible feat of paragliding from Mount Everest."
             },
             {
@@ -52,7 +52,7 @@ export const latestWorks: ILatestWork[] = [
         id: 3,
         title: "Seminar on Economic Challenges and Opportunities & Cultural Exchange Event",
         description: "The MICE Connection successfully organized a high-level seminar featuring distinguished guests including the Chinese Ambassador, renowned economist Mr. Wu Xiabo, and Nepal's Tourism Minister Hit Bahadur Tamang. This landmark event facilitated meaningful dialogue on economic collaboration and tourism development between Nepal and China. The comprehensive program included insightful discussions, cultural performances, sightseeing tours, and networking events, strengthening bilateral relations and attracting over eighty international participants to Nepal.",
-        image: "/assets/works/sem.jpg",
+        image: "/assets/works/sem.webp",
         year: "2023",
         slug: "seminar-economic-challenges-opportunities",
         type: "MICE",
@@ -67,7 +67,7 @@ export const latestWorks: ILatestWork[] = [
         id: 4,
         title: "The Unsilenced Documentary - Powered by The MICE Connection",
         description: "The MICE Connection played a pivotal role in the award-winning documentary 'The Unsilenced,' showcasing the powerful stories of four remarkable women. Our comprehensive services included digital marketing strategy, media mobilization, public relations, and event management. The documentary has received international acclaim and multiple awards, with premieres held in Nepal and scheduled screenings in Australia and the United States, amplifying important voices and stories globally.",
-        image: "/assets/works/Unsilenced.jpg",
+        image: "/assets/works/Unsilenced.webp",
         year: "2023",
         slug: "the-unsilenced-documentary",
         type: "MICE",
@@ -88,7 +88,7 @@ export const latestWorks: ILatestWork[] = [
         type: "MICE",
         detailImages: [
             {
-                image: "/assets/events/hgn1.jpg",
+                image: "/assets/events/hgn1.webp",
                 text: "The ribbon cutting ceremony marked the official launch of Himalayan Guardian Nepal, attended by distinguished delegates from Nepal and China. The event celebrated a new initiative dedicated to enhancing the safety and wellbeing of travelers in Nepal, symbolizing a strong step toward responsible and secure tourism."
             },
             {
@@ -107,11 +107,11 @@ export const latestWorks: ILatestWork[] = [
         type: "MICE",
         detailImages: [
             {
-                image: "/assets/events/topCharming.jpg",
+                image: "/assets/events/topCharming.webp",
                 text: "Elegant venue setup for the 'Charming Guangzhou Meets Nepal' city image showcase organized by The MICE Connection, to promote friendship and cultural exchange between Nepal and China."
             },
             {
-                image: "/assets/events/danceCharming.jpg",
+                image: "/assets/events/danceCharming.webp",
                 text: "A vibrant cultural performance showcasing the rich culture of Guangzhou. The event highlighted the city’s culture, charm, and artistic spirit."
             }
         ]
@@ -120,13 +120,13 @@ export const latestWorks: ILatestWork[] = [
         id: 7,
         title: "Everest Summiteers Summit",
         description: "The MICE Connection organized the prestigious Everest Summiteers Summit, bringing together accomplished mountaineers and adventure enthusiasts. Our professional event management encompassed all aspects from conceptualization to execution, creating a platform for knowledge sharing, networking, and celebrating extraordinary achievements in mountaineering.",
-        image: "/assets/events/summiteersMain.jpeg",
+        image: "/assets/events/summiteersMain.webp",
         year: "2025",
         slug: "everest-summiteers-summit",
         type: "MICE",
         detailImages: [
             {
-                image: "/assets/events/summiteersinner.jpeg",
+                image: "/assets/events/summiteersinner.webp",
                 text: "The event was graced by Honorable Tourism Minister Mr. Badri Pandey, celebrating the Everest Summiteers Summit 2025, a historic gathering honoring mountaineering legends and inspiring future climbers, with The MICE Connection as the event planner."
             }
         ]
@@ -143,7 +143,7 @@ export const latestWorks: ILatestWork[] = [
         type: "Tour",
         detailImages: [
             {
-                image: "/assets/works/bangkokTrip2.jpg",
+                image: "/assets/works/bangkokTrip2.webp",
                 text: "A truly happy moment, filled with joy and unforgettable memories in Bangkok."
             },
         ]
@@ -158,7 +158,7 @@ export const latestWorks: ILatestWork[] = [
         type: "Tour",
         detailImages: [
             {
-                image: "/assets/works/japaneseGuest.jpg",
+                image: "/assets/works/japaneseGuest.webp",
                 text: "Had a beautiful moment sharing laughter and stories with our Japanese guests."
             },
         ]
@@ -207,7 +207,7 @@ export const latestWorks: ILatestWork[] = [
         type: "Tour",
         detailImages: [
             {
-                image: "/assets/works/mrNamdeo2.jpg",
+                image: "/assets/works/mrNamdeo2.webp",
                 text: "The MICE Connection gift card, accompanied by a heartfelt message and a beautiful photo, makes for a truly special and memorable gift."
             }
         ]
@@ -222,7 +222,7 @@ export const latestWorks: ILatestWork[] = [
         type: "Tour",
         detailImages: [
             {
-                image: "/assets/works/mrSuresh.jpg",
+                image: "/assets/works/mrSuresh.webp",
                 text: "On the final day, our MD, Ms. Chhetri, personally bid them farewell, handing over souvenirs as a token of appreciation and fond memories from their journey."
             }
         ]

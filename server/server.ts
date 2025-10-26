@@ -7,13 +7,34 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
-app.use(cors());
+// Configure CORS for production deployment
+const corsOptions = {
+  origin: process.env.FRONTEND_URL 
+    ? [process.env.FRONTEND_URL, 'https://themiceconnection.com', 'https://www.themiceconnection.com', 'http://localhost:5173', 'http://localhost:3000'] 
+    : ['https://themiceconnection.com', 'https://www.themiceconnection.com', 'http://localhost:5173', 'http://localhost:3000'],
+  credentials: true,
+  optionsSuccessStatus: 200
+};
+app.use(cors(corsOptions));
 app.use(express.json());
+
+// Add a root handler to return JSON instead of default "It works!" text
+app.get('/', (req, res) => {
+    res.json({ message: 'The MICE Connection API Server' });
+});
 
 app.post('/api/send-email', async (req, res) => {
     const { name, email, phone, subject, message, tourName } = req.body;
+
+    // Validate required fields
+    if (!name || !email || !message) {
+        return res.status(400).json({ 
+            success: false, 
+            message: 'Name, email, and message are required fields.' 
+        });
+    }
 
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -79,7 +100,6 @@ app.post('/api/send-email', async (req, res) => {
     console.log(mailOptions);
     console.log('Using transporter with user:', process.env.EMAIL_USER);
 
-
     try {
         await transporter.sendMail(mailOptions);
         console.log('Email sent successfully!');
@@ -88,6 +108,22 @@ app.post('/api/send-email', async (req, res) => {
         console.error('Error sending email:', error);
         res.status(500).json({ success: false, message: 'Failed to send email. Check server logs for details.' });
     }
+});
+
+// Add a catch-all route handler for any non-API routes to prevent "It works!" response
+app.get('*', (req, res) => {
+    res.status(404).json({ 
+        error: 'Route not found',
+        message: 'The requested endpoint does not exist'
+    });
+});
+
+// Add a catch-all route handler for any non-API POST routes
+app.post('*', (req, res) => {
+    res.status(404).json({ 
+        error: 'Route not found', 
+        message: 'The requested endpoint does not exist'
+    });
 });
 
 const emailUser = process.env.EMAIL_USER;
@@ -99,5 +135,6 @@ if (!emailUser || !emailPass) {
 }
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on port ${port}`);
+    console.log(`API endpoints available at: http://localhost:${port}/api/send-email`);
 });
