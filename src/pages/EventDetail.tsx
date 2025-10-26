@@ -178,11 +178,19 @@ const EventDetail: React.FC = () => {
                                     </svg>
                                     Key Highlights
                                 </h3>
-                                <p className="text-gray-600 leading-relaxed">
-                                    This event showcased our expertise in delivering exceptional experiences while maintaining
-                                    the highest standards of professionalism and creativity. Our team ensured every detail was
-                                    meticulously planned and executed to perfection.
-                                </p>
+                                {event.keyHighlights && event.keyHighlights.length > 0 ? (
+                                    <ul className="list-disc list-inside text-gray-600 leading-relaxed space-y-2">
+                                        {event.keyHighlights.map((highlight, index) => (
+                                            <li key={index}>{highlight}</li>
+                                        ))}
+                                    </ul>
+                                ) : (
+                                    <p className="text-gray-600 leading-relaxed">
+                                        This event showcased our expertise in delivering exceptional experiences while maintaining
+                                        the highest standards of professionalism and creativity. Our team ensured every detail was
+                                        meticulously planned and executed to perfection.
+                                    </p>
+                                )}
                             </div>
 
                             {/* Enhanced detail images section */}

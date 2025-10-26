@@ -129,14 +129,14 @@ const Testimonials = () => {
     const testimonials: Testimonial[] = [
         {
             id: 1,
-            name: "Sarah Chen",
+            name: "Sophie Dubois",
             testimonial: "The MICE Connection planned an incredible 'Annapurna Cultural Trek' for us. The guides were knowledgeable, and every detail, from accommodation to cultural experiences, was perfectly arranged. Truly an unforgettable journey!",
             rating: 5,
             featured: true
         },
         {
             id: 10,
-            name: "Sophie Dubois",
+            name: "Sarah Chen",
             testimonial: "Planning our destination wedding in Bali with The MICE Connection was stress-free and magical. Every element, from the stunning venue to the exquisite catering, was meticulously arranged, creating memories we'll cherish forever.",
             rating: 5,
         },

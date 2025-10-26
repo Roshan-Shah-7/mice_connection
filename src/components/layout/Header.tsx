@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink as RouterNavLink } from "react-router-dom";
 import { FaInstagram, FaFacebook, FaTiktok, FaLinkedin, FaYoutube, FaChevronDown } from "react-icons/fa";
 import { HiMenu, HiX } from "react-icons/hi";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,13 +8,17 @@ import { navLinksLeft, navLinksRight, servicesLinks, type NavLink as NavLinkType
 import { useClickOutside } from '../../hooks/useClickOutside';
 
 const NavLink: React.FC<{ to: string; children: React.ReactNode; onClick?: () => void; className?: string }> = ({ to, children, onClick, className }) => (
-  <Link
+  <RouterNavLink
     to={to}
     onClick={onClick}
-    className={`relative text-gray-700 transition-colors hover:text-[#0c3b32] after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#0c3b32] after:transition-all after:duration-300 hover:after:w-full ${className || ''}`}
+    className={({ isActive }) =>
+      `relative text-gray-700 transition-colors hover:text-[#0c3b32] after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#0c3b32] after:transition-all after:duration-300 hover:after:w-full ${
+        isActive ? 'text-[#0c3b32] after:w-full' : ''
+      } ${className || ''}`
+    }
   >
-  {children}
-  </Link>
+    {children}
+  </RouterNavLink>
 );
 
 const MobileNavLink: React.FC<{ to: string; children: React.ReactNode; onClick?: () => void; className?: string }> = ({ to, children, onClick, className }) => (
@@ -118,7 +122,7 @@ const Header: React.FC = () => {
             <li key={link.label} className="relative">
               {link.hasDropdown && link.label === "Our Services" ? (
                 <div
-                  className="relative flex items-center gap-1.5 text-gray-700 transition-colors hover:text-[#0c3b32] cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#0c3b32] after:transition-all after:duration-300 hover:after:w-full focus:outline-none focus:ring-2 focus:ring-[#0c3b32] focus:rounded"
+                  className="relative flex items-center gap-1.5 text-gray-700 transition-colors hover:text-[#0c3b32] cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#0c3b32] after:transition-all after:duration-300 hover:after:w-full"
                   onMouseEnter={() => setIsServicesOpen(true)}
                   onMouseLeave={() => setIsServicesOpen(false)}
                   onFocus={() => setIsServicesOpen(true)}
@@ -167,7 +171,7 @@ const Header: React.FC = () => {
                 </div>
               ) : link.hasDropdown && link.label === "Highlights" ? ( // New dropdown for Highlights
                 <div
-                  className="relative flex items-center gap-1.5 text-gray-700 transition-colors hover:text-[#0c3b32] cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#0c3b32] after:transition-all after:duration-300 hover:after:w-full focus:outline-none focus:ring-2 focus:ring-[#0c3b32] focus:rounded"
+                  className="relative flex items-center gap-1.5 text-gray-700 transition-colors hover:text-[#0c3b32] cursor-pointer after:content-[''] after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-0 after:bg-[#0c3b32] after:transition-all after:duration-300 hover:after:w-full"
                   onMouseEnter={() => setIsHighlightsOpen(true)}
                   onMouseLeave={() => setIsHighlightsOpen(false)}
                   onFocus={() => setIsHighlightsOpen(true)}
@@ -215,7 +219,7 @@ const Header: React.FC = () => {
                   </AnimatePresence>
                 </div>
               ) : (
-                <NavLink to={link.href} className="focus:outline-none focus:ring-2 focus:ring-[#0c3b32] focus:rounded">{link.label}</NavLink>
+                <NavLink to={link.href}>{link.label}</NavLink>
               )}
             </li>
           ))}
@@ -234,7 +238,7 @@ const Header: React.FC = () => {
         <ul className="hidden md:flex items-center gap-4 sm:gap-6 lg:gap-8 font-medium text-base">
           {navLinksRight.map((link: NavLinkType) => (
             <li key={link.label}>
-              <NavLink to={link.href} className="focus:outline-none focus:ring-2 focus:ring-[#0c3b32] focus:rounded">{link.label}</NavLink>
+              <NavLink to={link.href}>{link.label}</NavLink>
             </li>
           ))}
         </ul>

@@ -33,82 +33,6 @@ const OurPresencePage = () => {
         }));
 
     useEffect(() => {
-        // Enhanced hero section animation
-        if (heroRef.current) {
-            const heroTitle = heroRef.current.querySelector('.hero-title');
-            const heroSubtitle = heroRef.current.querySelector('.hero-subtitle');
-            const heroLine = heroRef.current.querySelector('.hero-line');
-            const heroImage = heroRef.current.querySelector('.hero-image');
-            const floatingElements = heroRef.current.querySelectorAll('.floating-element');
-
-            const tl = gsap.timeline();
-
-            tl.fromTo(heroTitle,
-                { y: 100, opacity: 0, rotationX: 45 },
-                { y: 0, opacity: 1, rotationX: 0, duration: 1.2, ease: "power3.out" }
-            )
-                .fromTo(heroSubtitle,
-                    { y: 60, opacity: 0, scale: 0.8 },
-                    { y: 0, opacity: 1, scale: 1, duration: 1, ease: "back.out(1.7)" }, "-=0.5"
-                )
-                .fromTo(heroLine,
-                    { width: 0, opacity: 0 },
-                    { width: "120px", opacity: 1, duration: 1, ease: "power3.out" }, "-=0.3"
-                )
-                .fromTo(heroImage,
-                    { scale: 1.3, opacity: 0 },
-                    { scale: 1, opacity: 1, duration: 1, ease: "power2.out" }, "-=1"
-                )
-                .fromTo(floatingElements,
-                    { y: 30, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.5"
-                );
-        }
-
-        // Enhanced presence section animation
-        if (presenceRef.current) {
-            const sectionTitle = presenceRef.current.querySelector('.section-title');
-            const sectionSubtitle = presenceRef.current.querySelector('.section-subtitle');
-            const presenceCards = presenceRef.current.querySelectorAll('.presence-card');
-
-            gsap.fromTo([sectionTitle, sectionSubtitle],
-                { y: 80, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1,
-                    stagger: 0.3,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: sectionTitle,
-                        start: "top 85%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-
-            gsap.fromTo(presenceCards,
-                { y: 100, opacity: 0, scale: 0.8 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.8,
-                    stagger: 0.15,
-                    ease: "back.out(1.7)",
-                    scrollTrigger: {
-                        trigger: presenceCards,
-                        start: "top 90%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        }
-    }, [allPresence]);
-
-    useEffect(() => {
         window.scrollTo(0, 0);
     }, [location.pathname]);
 
@@ -118,8 +42,8 @@ const OurPresencePage = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100/50 overflow-hidden">
-            {/* Enhanced Hero Section */}
-            <div ref={heroRef} className="relative h-screen overflow-hidden">
+            {/* Hero Section */}
+            <div ref={heroRef} className="relative h-screen overflow-hidden lg:mt-30">
                 {/* Background Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-r from-[#10362e]/60 via-[#10362e]/60 to-[#10362e]/40 z-10"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/20 z-10"></div>
@@ -136,7 +60,7 @@ const OurPresencePage = () => {
 
                 {/* Background Image */}
                 <img
-                    src="/assets/works/iitmPune.jpg" // Reusing eventHero for now, can be changed later
+                    src="/assets/works/iitmPune.webp" // Reusing eventHero for now, can be changed later
                     alt="Our Presence background"
                     className={`hero-image absolute inset-0 w-full h-full object-cover transition-all duration-1000 ${imageLoaded ? 'opacity-100' : 'opacity-0'
                         }`}

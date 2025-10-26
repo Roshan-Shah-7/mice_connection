@@ -338,7 +338,7 @@ const About = () => {
                         <div className="flex items-center space-x-4 p-4 bg-[#0e332e]/5 rounded-2xl">
                             <div className="flex-shrink-0">
                                 <div className="w-12 h-12 bg-[#2a9d8f] rounded-full flex items-center justify-center">
-                                    <span className="text-white font-bold">2+</span>
+                                    <span className="text-white font-bold">2</span>
                                 </div>
                             </div>
                             <p className="text-gray-700">Years of experience in tourism and event management</p>
@@ -413,7 +413,7 @@ const About = () => {
                         <div className="flex items-center space-x-4 p-4 bg-[#0e332e]/5 rounded-2xl">
                             <div className="flex-shrink-0">
                                 <div className="w-12 h-12 bg-[#2a9d8f] rounded-full flex items-center justify-center">
-                                    <span className="text-white font-bold">2+</span>
+                                    <span className="text-white font-bold">2</span>
                                 </div>
                             </div>
                             <p className="text-gray-700">Years of crafting memorable travel experiences</p>

@@ -33,7 +33,11 @@ const BookingForm: React.FC<BookingFormProps> = ({ tourTitle, onClose }) => {
         } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
             newErrors.email = 'Please enter a valid email address';
         }
-        if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
+        if (!formData.phone.trim()) {
+            newErrors.phone = 'Phone number is required';
+        } else if (!/^[0-9-+\s()]{7,20}$/.test(formData.phone)) {
+            newErrors.phone = 'Please enter a valid phone number.';
+        }
         if (!formData.message.trim()) newErrors.message = 'Please tell us about your travel plans';
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -42,7 +46,9 @@ const BookingForm: React.FC<BookingFormProps> = ({ tourTitle, onClose }) => {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!validate()) {
+            // Set a general error status to inform the user that validation failed.
             setSubmitStatus('error');
+            // The individual error messages will be displayed by the fields.
             return;
         }
 
@@ -61,15 +67,17 @@ const BookingForm: React.FC<BookingFormProps> = ({ tourTitle, onClose }) => {
 
             if (response.success) {
                 setSubmitStatus('success');
-                alert('Your inquiry has been sent! We will contact you shortly.');
-                setFormData({
-                    name: '',
-                    email: '',
-                    phone: '',
-                    message: '',
-                    tourName: tourTitle,
-                });
-                onClose();
+                // The success message will be shown, and the form will close after a short delay.
+                setTimeout(() => {
+                    setFormData({
+                        name: '',
+                        email: '',
+                        phone: '',
+                        message: '',
+                        tourName: tourTitle,
+                    });
+                    onClose();
+                }, 2000); // Close after 2 seconds
             } else {
                 setSubmitStatus('error');
             }
@@ -84,13 +92,18 @@ const BookingForm: React.FC<BookingFormProps> = ({ tourTitle, onClose }) => {
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4 animate-fadeIn">
             <div className="bg-white rounded-2xl shadow-2xl w-full max-w-lg transform transition-all duration-300 scale-100 hover:scale-[1.02]">
                 {submitStatus === 'success' && (
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-lg shadow-md z-50">
-                        Inquiry sent successfully!
+                    <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-green-500 text-white px-4 py-2 rounded-lg shadow-md z-50 animate-fadeIn">
+                        Inquiry sent successfully! We'll be in touch shortly.
                     </div>
                 )}
-                {submitStatus === 'error' && (
-                    <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded-lg shadow-md z-50">
-                        Failed to send inquiry. Please try again.
+                {submitStatus === 'error' && Object.keys(errors).length > 0 && (
+                    <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-yellow-500 text-white px-4 py-2 rounded-lg shadow-md z-50 animate-fadeIn">
+                        Please fill out all required fields correctly.
+                    </div>
+                )}
+                {submitStatus === 'error' && Object.keys(errors).length === 0 && (
+                     <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-red-500 text-white px-4 py-2 rounded-lg shadow-md z-50 animate-fadeIn">
+                        An unexpected error occurred. Please try again.
                     </div>
                 )}
                 {/* Header */}

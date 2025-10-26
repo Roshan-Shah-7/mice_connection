@@ -9,7 +9,7 @@ export const tourPackages: TourPackage[] =
             "slug": "cultural-heritage-crafts-tour-women",
             "description": "Step into the rich cultural heritage of Nepal with a specially curated 4 day Cultural Heritage & Crafts Tour for Women. Explore the artistic treasures of Kathmandu, Patan, Bhaktapur, Bungamati, and Khokana while engaging in immersive craft workshops, interacting with inspiring women artisans, and witnessing the beauty of Nepal’s timeless traditions. This unique experience offers hands on sessions in pottery, painting, woodcarving, and jewelry making, along with visits to women led enterprises and vibrant markets. Discover the artistry, history, and cultural resilience of Nepalese women through this unforgettable journey!",
             "duration": "5 Days",
-            "priceRange": "$600 - $700",
+            "priceRange": "$950 - $1150",
             "image": "/assets/women/women-culture.webp",
             "category": "Women Centric",
             "difficulty": "Easy",
@@ -72,7 +72,7 @@ export const tourPackages: TourPackage[] =
             "slug": "womens-wellness-escape-retreat",
             "description": "Take a break from the everyday hustle and immerse yourself in a 4 day Women's Wellness Escape, designed for relaxation, self care, and inner balance. This thoughtfully curated retreat combines yoga, mindfulness, spa treatments, cultural exploration, and creativity in the serene landscapes of Nepal. Whether you're a wellness enthusiast or simply looking to recharge, this journey offers the perfect blend of tranquility and cultural immersion.",
             "duration": "4 Days",
-            "priceRange": "$500 - $600",
+            "priceRange": "$850 - $1050",
             "image": "/assets/women/women-wellness.webp",
             "category": "Women Centric",
             "difficulty": "Easy",
@@ -129,7 +129,7 @@ export const tourPackages: TourPackage[] =
             "slug": "women-only-luxury-travel-nepal",
             "description": "Designed for solo female travelers seeking luxury, comfort, and safety, this 8-day exclusive tour offers an indulgent journey through Nepal's breathtaking landscapes, rich culture, and rejuvenating wellness experiences. From helicopter rides to Everest to Ayurvedic spa treatments, every detail is curated to offer the ultimate luxury experience while celebrating empowerment and adventure.",
             "duration": "8 Days",
-            "priceRange": "$3100 - $3300",
+            "priceRange": "$3800 - $4200",
             "image": "/assets/gallery/lades1.webp",
             "category": "Women Centric",
             "difficulty": "Easy",
@@ -212,7 +212,7 @@ export const tourPackages: TourPackage[] =
             "slug": "nature-photography-tour-kathmandu-rara-lake",
             "description": "Designed for nature enthusiasts, aspiring photographers, and women seeking serenity, this 7 day immersive photography tour takes you from the cultural wonders of Kathmandu to the untouched landscapes of Rara Lake. With expert guidance, breathtaking locations, and hands on workshops, this journey will help you enhance your photography skills while embracing Nepal’s beauty.",
             "duration": "7 Days",
-            "priceRange": "$1200 - $1400",
+            "priceRange": "$1800 - $2200",
             "image": "/assets/nepal/chitwan.webp",
             "category": "Photography",
             "difficulty": "Moderate",
@@ -291,7 +291,7 @@ export const tourPackages: TourPackage[] =
             "slug": "kailash-manasarovar",
             "description": "A sacred pilgrimage to Mount Kailash and Lake Manasarovar via Kerung, offering a spiritual journey for foreign nationals in 2025. This overland group joining tour covers significant religious sites and provides an immersive experience in the Himalayan region.",
             "duration": "15 Days",
-            "priceRange": "$2800 - $3200",
+            "priceRange": "$3500 - $4000",
             "image": "/assets/packages/kailash.webp",
             "category": "Spiritual",
             "difficulty": "Challenging",
@@ -415,7 +415,7 @@ export const tourPackages: TourPackage[] =
             "slug": "nepal-mahadev-yatra",
             "description": "8 Nights/ 9 Days. The MICE Connection Special. Nepal Mahadev Yatra: Where Faith Meets Himalaya. Outline Itinerary: Day 1: Arrival in Kathmandu - Welcome & Evening Aarati at Pashupatinath. Day 2: Pilgrimage Around Kathmandu Valley – Doleshwor Mahadev & Kailashnath. Day 3: Bhaleshwor Mahadev at Chandragiri & Drive to Pokhara. Day 4: Sacred Caves & Temples in Pokhara. Day 5: Drive from Pokhara to Jomsom (2,700 m) via Beni. Day 6: Visit Muktinath Temple & Explore Kagbeni. Day 7: Return to Pokhara. Day 8: Morning Flight to Kathmandu & Leisure Day with Shopping. Day 9: Special Pooja at Pashupatinath & Final Departure",
             "duration": "9 Days",
-            "priceRange": "$1100 - $1300",
+            "priceRange": "$1400 - $1600",
             "image": "/assets/packages/mahadev.webp",
             "category": "Spiritual",
             "difficulty": "Moderate",
@@ -506,7 +506,7 @@ export const tourPackages: TourPackage[] =
             "slug": "nepal-learning-adventure",
             "description": "Explore Nepal, Learn Beyond Classrooms! This 8 Nights / 9 Days package covers Kathmandu, Pokhara, Astam Annapurna Eco Village, Chitwan, and a Rafting Camp, offering educational and cultural immersion, wildlife adventure, and sustainable tourism experiences.",
             "duration": "9 Days",
-            "priceRange": "$1400 - $1600",
+            "priceRange": "$1700 - $1900",
             "image": "/assets/packages/nepalLearningAdventure.webp",
             "category": "Cultural",
             "difficulty": "Moderate",
@@ -605,7 +605,7 @@ export const tourPackages: TourPackage[] =
             "slug": "nepal-special-tour",
             "description": "5 Nights/ 6 Days. Package covers Kathmandu, Pokhara, and Jomsom, offering a journey through cultural sites and the sacred Muktinath Temple.",
             "duration": "6 Days",
-            "priceRange": "$950 - $1050",
+            "priceRange": "$1250 - $1450",
             "image": "/assets/nepal/pokhara.webp",
             "category": "Cultural",
             "difficulty": "Moderate",
@@ -680,7 +680,7 @@ export const tourPackages: TourPackage[] =
             "slug": "ghorepani-poonhill-trek",
             "description": "8 Nights / 9 Days trek starting and ending at Kathmandu, offering stunning views of the Annapurna range and a glimpse into Gurung culture.",
             "duration": "9 Days",
-            "priceRange": "$1000 - $1200",
+            "priceRange": "$1300 - $1500",
             "image": "/assets/packages/poonhillTrek.webp",
             "category": "Adventure",
             "difficulty": "Moderate",
@@ -775,7 +775,7 @@ export const tourPackages: TourPackage[] =
             "slug": "mice-nepal-special-tour",
             "description": "7 Nights / 8 Days tour covering Kathmandu, Pokhara, and Chitwan, offering a blend of cultural immersion, sightseeing, and wildlife adventure.",
             "duration": "8 Days",
-            "priceRange": "$1000 - $1200",
+            "priceRange": "$1300 - $1500",
             "image": "/assets/packages/chitwan.webp",
             "category": "Wildlife",
             "difficulty": "Easy",
@@ -862,7 +862,7 @@ export const tourPackages: TourPackage[] =
             "slug": "mice-eastern-nepal-gems",
             "description": "8 Nights / 9 Days tour exploring the hidden gems of Eastern Nepal, including Kathmandu, Koshi Tappu, Dharan, Ilam, Taplejung, Bhojpur, Dhankuta, and Halesi Mahadev. A perfect mix of nature, culture, adventure, spirituality, and Himalayan beauty.",
             "duration": "9 Days",
-            "priceRange": "$1300 - $1400",
+            "priceRange": "$1600 - $1800",
             "image": "/assets/packages/Ilam.webp",
             "category": "Cultural",
             "difficulty": "Moderate",
@@ -948,7 +948,7 @@ export const tourPackages: TourPackage[] =
             "slug": "mardi-himal-trek",
             "description": "8 Nights / 9 Days trek starting and ending at Kathmandu, offering stunning views of the Annapurna region, including Mardi Himal Viewpoint.",
             "duration": "9 Days",
-            "priceRange": "$1100 - $1300",
+            "priceRange": "$1400 - $1600",
             "image": "/assets/packages/mardi.webp",
             "category": "Adventure",
             "difficulty": "Challenging",
@@ -1041,7 +1041,7 @@ export const tourPackages: TourPackage[] =
             "slug": "koshi-tappu-birdwatching",
             "description": "2 Nights / 3 Days tour to Koshi Tappu Wildlife Reserve, Nepal's premier birdwatching destination, offering opportunities to spot rare migratory birds and endangered waterfowl.",
             "duration": "3 Days",
-            "priceRange": "$350 - $450",
+            "priceRange": "$550 - $650",
             "image": "/assets/packages/Koshi.webp",
             "category": "Wildlife",
             "difficulty": "Easy",
@@ -1099,7 +1099,7 @@ export const tourPackages: TourPackage[] =
             "slug": "everest-base-camp-trekking",
             "description": "14 Nights / 15 Days trekking adventure to Everest Base Camp, starting and ending in Kathmandu, offering breathtaking mountain views and cultural immersion.",
             "duration": "15 Days",
-            "priceRange": "$2500 - $3000",
+            "priceRange": "$2900 - $3400",
             "image": "/assets/nepal/everest.webp",
             "category": "Adventure",
             "difficulty": "Challenging",
@@ -1224,7 +1224,7 @@ export const tourPackages: TourPackage[] =
             "slug": "mice-nepal-special-tour-kathmandu-pokhara",
             "description": "5 Nights/ 6 Days tour covering Kathmandu and Pokhara, offering a blend of cultural immersion, sightseeing, and adventure.",
             "duration": "5 Nights / 6 Days",
-            "priceRange": "$750 - $850",
+            "priceRange": "$950 - $1150",
             "image": "/assets/nepal/kathmandu.webp",
             "category": "Cultural",
             "difficulty": "Easy",
@@ -1304,7 +1304,7 @@ export const tourPackages: TourPackage[] =
             "slug": "mice-nepal-special-tour-kathmandu",
             "description": "4 Nights/ 5 Days tour covering Kathmandu, Bhaktapur, Patan, and Nagarkot, offering a blend of cultural immersion, heritage sightseeing, and scenic beauty.",
             "duration": "4 Nights / 5 Days",
-            "priceRange": "$650 - $750",
+            "priceRange": "$850 - $950",
             "image": "/assets/packages/kathmandu.webp",
             "category": "Cultural",
             "difficulty": "Easy",
@@ -1380,7 +1380,7 @@ export const tourPackages: TourPackage[] =
             "slug": "buddha-footsteps-india-nepal",
             "description": "11 Nights/ 12 Days spiritual journey following Buddha’s footsteps from India to Nepal, exploring significant Buddhist sites.",
             "duration": "11 Nights / 12 Days",
-            "priceRange": "$1400 - $1600",
+            "priceRange": "$1800 - $2200",
             "image": "/assets/packages/Nepal_India.webp",
             "category": "Spiritual",
             "difficulty": "Moderate",
@@ -1477,7 +1477,7 @@ export const tourPackages: TourPackage[] =
             "slug": "serenity-trail-buddhist-sites",
             "description": "8 Nights/ 9 Days. Discover Nepal’s Sacred Buddhist Sites. Day 1: Arrival in Kathmandu. Day 2: Travel to the self created stupa around Kathmandu valley Bouddhanath, Kapan Monasteries and Swayambhu Nath (The Monkey Temple). Day 3: Visit to Pharphing - Patan. Day 4: Travel to Namo Buddha - Site of Buddha’s great compassion. Day 5: Travel to Lumbini. Day 6: Spiritual Exploration in Lumbini- The Birthplace of Lord Buddha. Day 7: Day Trip to Kapilvastu Region- Historical Buddha’s Life sites. Day 8: Travel to Kathmandu. Day 9: Final Departure. Highlights: The Himalayan Capital – Cultural charm of Kathmandu; Spiritual Heritage Walk around Stupas and UNESCO sites; Sacred Summit Site of Buddha’s great compassion; Footsteps of the Awakened One; Explore monasteries from around the world; Rest and recharge in natures lap; A Soulful Sendoff – Depart with spiritual memories.",
             "duration": "9 Days",
-            "priceRange": "$850 - $950",
+            "priceRange": "$1150 - $1350",
             "image": "/assets/packages/buddhist.webp",
             "category": "Spiritual",
             "difficulty": "Easy",
@@ -1721,7 +1721,7 @@ export const tourPackages: TourPackage[] =
             "slug": "luxury-annapurna-base-camp-trek",
             "description": "An exclusive 10-day luxury trekking experience to Annapurna Base Camp, combining breathtaking Himalayan scenery with comfort and personalized services. Enjoy premium accommodations, gourmet meals, and expert guides on this unforgettable adventure.",
             "duration": "10 Days",
-            "priceRange": "$2000 - $2500",
+            "priceRange": "$2500 - $3000",
             "image": "/assets/nepal/Annapurna.webp",
             "category": "Adventure",
             "difficulty": "Challenging",
@@ -1814,7 +1814,7 @@ export const tourPackages: TourPackage[] =
             "slug": "himalayan-culture-education-tour",
             "description": "An immersive 8-day educational tour focusing on the rich culture and traditions of the Himalayan region. This tour combines academic learning with hands on experiences, suitable for students and cultural enthusiasts.",
             "duration": "8 Days",
-            "priceRange": "$1100 - $1300",
+            "priceRange": "$1400 - $1600",
             "image": "/assets/nepal/kathmandu.webp",
             "category": "Educational",
             "difficulty": "Easy",
@@ -1893,7 +1893,7 @@ export const tourPackages: TourPackage[] =
             "slug": "nepal-wildlife-environmental-education",
             "description": "A 7 day educational tour focused on Nepal's diverse wildlife and environmental conservation efforts. This program offers students and nature enthusiasts an opportunity to learn about biodiversity, ecological challenges, and sustainable solutions in the context of Nepal's national parks.",
             "duration": "7 Days",
-            "priceRange": "$1000 - $1200",
+            "priceRange": "$1300 - $1500",
             "image": "/assets/nepal/chitwan.webp",
             "category": "Educational",
             "difficulty": "Moderate",
@@ -1966,7 +1966,7 @@ export const tourPackages: TourPackage[] =
             "slug": "nepal-geography-geology-expedition",
             "description": "A 9 day expedition designed for geography and geology students, exploring Nepal's unique topographical features, seismic activity, and geological formations. This tour combines field studies with expert lectures.",
             "duration": "9 Days",
-            "priceRange": "$1300 - $1500",
+            "priceRange": "$1600 - $1800",
             "image": "/assets/nepal/AnnapurnaRegion.webp",
             "category": "Educational",
             "difficulty": "Moderate",
@@ -2043,5 +2043,136 @@ export const tourPackages: TourPackage[] =
                 "/assets/nepal/seti-river-gorge.webp",
                 "/assets/nepal/gorkha-earthquake.webp"
             ]
+        },
+
+        {
+            "id": 25,
+            "title": "Golf Tourism in Nepal",
+            "slug": "golf-tourism-in-nepal",
+            "description": "A 6-day golf focused tour in Nepal, combining rounds of golf at some of the country's finest courses. The Gokarna Forest Golf Resort in Kathmandu is a world-class property featuring a PGA standard 18-hole course set within a preserved forest sanctuary. The Himalayan Golf Course in Pokhara is globally recognized for its dramatic design nestled in a canyon carved by the Bijaypur River and framed by the towering Annapurna range and the iconic Mt. Fishtail.",
+            "duration": "5 Nights / 6 Days",
+            "priceRange": "$1900 - $2500",
+            "image": "/assets/packages/golf.webp",
+            "category": "Adventure",
+            "difficulty": "Moderate",
+            "highlights": [
+                "Play a full 18-hole round at the world-class Gokarna Forest Golf Resort in a pristine forest sanctuary.",
+                "Experience the challenging and dramatically scenic Himalayan Golf Course in Pokhara with Mt. Fishtail views.",
+                "Enjoy a scenic, round-trip domestic flight between Kathmandu and Pokhara.",
+                "Leisure time for boating on Phewa Lake and exploring Pokhara's vibrant lakeside.",
+                "Optional cultural visits to UNESCO World Heritage Sites in Kathmandu (Pashupatinath, Boudhanath).",
+                "Opportunity for adventure activities like paragliding or a cable car ride to Sarangkot for sunrise (optional)."
+            ],
+            "includes": [
+                "All private transportation (arrival, departure, and transfers to golf courses/airports).",
+                "5 Nights Accommodation in comfortable hotels and resorts (e.g., Gokarna Forest Resort/Lakeside Hotel).",
+                "Daily Breakfast (B) and select meals as per the itinerary (L/D).",
+                "Two Rounds of Golf (Green Fees) at Gokarna Forest Golf Resort and Himalayan Golf Course.",
+                "Mandatory Caddy fees for the two featured rounds.",
+                "Round-trip domestic flight ticket (Kathmandu-Pokhara-Kathmandu).",
+                "English-speaking local guide for city sightseeing (Day 2/Day 4/Day 5 options).",
+                "Entrance fees to cultural/sightseeing sites during the city tours.",
+                "All applicable government taxes and service charges."
+            ],
+            "groupSize": "Small Groups (Min 4, Max 12)",
+            "bestSeason": "October - April",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu",
+                    "description": "Once arrive at Tribhuvan International Airport, Kathmandu you will be greeted and transferred to the serene Gokarna Forest Resort. The rest of the day is at leisure to relax in the tranquil forest surroundings, with the option to indulge in a rejuvenating spa session."
+                },
+                {
+                    "day": 2,
+                    "title": "Golf in Kathmandu",
+                    "description": "On the second day begin your day with a full 18-hole round at the prestigious Gokarna Forest Golf Course, set amidst lush greenery and wildlife. In the afternoon, you may choose to take a cultural tour of the city, visiting iconic landmarks such as Pashupatinath Temple and the Bouddhanath Stupa. The evening is free for leisure back at the resort."
+                },
+                {
+                    "day": 3,
+                    "title": "Travel to Pokhara",
+                    "description": "After breakfast, depart for Pokhara, either by a short 25-minute flight or a scenic six-hour drive through the Himalayan foothills. On arrival, you will be transferred to your lakeside hotel or resort. The evening offers a leisurely stroll around the enchanting Phewa Lake."
+                },
+                {
+                    "day": 4,
+                    "title": "Golf in Pokhara",
+                    "description": "Today you will experience a memorable round at the Himalayan Golf Course, uniquely set in a dramatic river canyon with breathtaking views of Mt. Fishtail. Following the game, you may opt for sightseeing around Pokhara, including visits to Davis Falls, Gupteshwor Cave, and the World Peace Pagoda."
+                },
+                {
+                    "day": 5,
+                    "title": "Leisure Day in Pokhara",
+                    "description": "The day is at your own pace with several exciting options to choose from. Adventure seekers can try paragliding or a cable car ride to Sarangkot for a Himalayan sunrise, while those seeking relaxation may enjoy boating on Phewa Lake, lakeside dining, or an Ayurvedic massage."
+                },
+                {
+                    "day": 6,
+                    "title": "Return to Kathmandu and Final Departure",
+                    "description": "In the morning, take a flight back to Kathmandu. Depending on your schedule, you can enjoy last minute shopping or leisure time in the city before your departure flight."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/Annapurna.webp",
+                "/assets/nepal/seti-river-gorge.webp",
+                "/assets/nepal/gorkha-earthquake.webp"
+            ]
+        },
+
+        {
+            "id": 26,
+            "title": "Kathmandu Golf Experience",
+            "slug": "kathmandu-golf-experience",
+            "description": "A focused 4-day golf and cultural tour centered exclusively in Kathmandu. This package features rounds at the world-class Gokarna Forest Golf Resort and the historic Royal Nepal Golf Club, complemented by guided visits to UNESCO World Heritage Sites.",
+            "duration": "3 Nights / 4 Days",
+            "priceRange": "$1150 - $1550",
+            "image": "/assets/packages/golfKTM.webp",
+            "category": "Adventure",
+            "difficulty": "Moderate",
+            "highlights": [
+                "Play a full 18-hole round at the PGA-standard Gokarna Forest Golf Resort.",
+                "Experience the historic Royal Nepal Golf Club, one of South Asia's oldest courses.",
+                "Explore the ancient artistry of Patan Durbar Square (UNESCO World Heritage Site).",
+                "Visit the iconic Swayambhunath Stupa (Monkey Temple) for panoramic city views.",
+                "Option to stay at a serene forest resort or a centrally located 4-star city hotel.",
+                "Leisure time for shopping in Thamel or a spa treatment."
+            ],
+            "includes": [
+                "3 Nights Accommodation in 4-Star category hotel or Gokarna Forest Resort.",
+                "Daily Breakfast (B).",
+                "All private ground transfers (airport arrival/departure and all golf course transfers).",
+                "Green Fees for 18 Holes at Gokarna Forest Golf Resort.",
+                "Green Fees for 9 or 18 Holes at Royal Nepal Golf Club.",
+                "Caddy/Buggy fees (as per club rules, included for featured rounds).",
+                "Guided sightseeing tour (Patan Durbar Square and Swayambhunath).",
+                "Entrance fees to cultural/sightseeing sites (as per itinerary).",
+                "All applicable government taxes and service charges."
+            ],
+            "groupSize": "Flexible (Suggested 4 - 15 Golfers)",
+            "bestSeason": "October - April",
+            "itinerary": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Kathmandu",
+                    "description": "On arrival at Tribhuvan International Airport (TIA), you will be greeted and transferred to your chosen accommodation (either a city hotel or the Gokarna Forest Resort). The evening is at leisure—enjoy a walk through Thamel or relax at the Garden of Dreams."
+                },
+                {
+                    "day": 2,
+                    "title": "Golf at Gokarna Forest Resort",
+                    "description": "Your day begins with a full 18-hole round at the prestigious Gokarna Forest Golf Resort, set within a lush forest sanctuary. The afternoon is for relaxation with an optional spa therapy or a guided forest walk, followed by a free evening to dine in the city or enjoy the resort’s ambiance."
+                },
+                {
+                    "day": 3,
+                    "title": "Golf at Royal Nepal Golf Club & Sightseeing",
+                    "description": "Play a morning round (9 or 18 holes) at the Royal Nepal Golf Club, located conveniently near the airport. In the afternoon, explore the cultural treasures of Patan Durbar Square and the iconic Swayambhunath Stupa (Monkey Temple). In the evening, you may opt for a cultural dance dinner show."
+                },
+                {
+                    "day": 4,
+                    "title": "Departure from Kathmandu",
+                    "description": "Enjoy some free time in the morning for souvenir shopping or a final spa treatment. Later, you will be transferred to the airport for your departure flight, marking the end of your Kathmandu golf escape."
+                }
+            ],
+            "gallery": [
+                "/assets/nepal/PatanDurbarSquare.webp",
+                "/assets/nepal/SwayambhunathStupa.webp",
+                "/assets/nepal/GokarnaGolfCourse.webp"
+            ]
         }
+
     ]

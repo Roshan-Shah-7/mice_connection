@@ -15,6 +15,7 @@ const ContactPage = () => {
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [errors, setErrors] = useState<Partial<typeof formData>>({});
 
     const formRef = useRef<HTMLDivElement>(null);
     const contactInfoRef = useRef<HTMLDivElement>(null);
@@ -29,8 +30,43 @@ const ContactPage = () => {
     };
 
     // Handle form submission
+    const validateForm = () => {
+        const newErrors: Partial<typeof formData> = {};
+
+        if (!formData.name.trim()) {
+            newErrors.name = 'Full name is required.';
+        }
+
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email address is required.';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'Please enter a valid email address.';
+        }
+
+        if (formData.phone && !/^[0-9-+\s()]*$/.test(formData.phone)) {
+            newErrors.phone = 'Please enter a valid phone number.';
+        }
+
+        if (!formData.subject) {
+            newErrors.subject = 'Please select a subject.';
+        }
+
+        if (!formData.message.trim()) {
+            newErrors.message = 'Message is required.';
+        }
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    // Handle form submission
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        
+        if (!validateForm()) {
+            return;
+        }
+
         setIsSubmitting(true);
         setSubmitStatus('idle');
 
@@ -52,6 +88,7 @@ const ContactPage = () => {
                     subject: '',
                     message: ''
                 });
+                setErrors({});
             } else {
                 setSubmitStatus('error');
             }
@@ -229,6 +266,7 @@ const ContactPage = () => {
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fcd00d] focus:border-transparent"
                                         required
                                     />
+                                    {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name}</p>}
                                 </div>
                                 <div>
                                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
@@ -243,6 +281,7 @@ const ContactPage = () => {
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fcd00d] focus:border-transparent"
                                         required
                                     />
+                                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
                                 </div>
                             </div>
 
@@ -259,6 +298,7 @@ const ContactPage = () => {
                                         onChange={handleInputChange}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fcd00d] focus:border-transparent"
                                     />
+                                    {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
                                 </div>
                                 <div>
                                     <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-1">
@@ -284,6 +324,7 @@ const ContactPage = () => {
                                         <option value="Personal Celebrations & Tours">Personal Celebrations & Tours</option>
                                         <option value="General Inquiry">General Inquiry</option>
                                     </select>
+                                    {errors.subject && <p className="text-red-500 text-sm mt-1">{errors.subject}</p>}
                                 </div>
                             </div>
 
@@ -300,6 +341,7 @@ const ContactPage = () => {
                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#fcd00d] focus:border-transparent"
                                     required
                                 ></textarea>
+                                {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
                             </div>
 
                             <button

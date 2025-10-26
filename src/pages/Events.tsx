@@ -23,7 +23,6 @@ interface Event {
 const EventsPage = () => {
     const heroRef = useRef<HTMLDivElement>(null);
     const eventsRef = useRef<HTMLDivElement>(null);
-    const hasAnimatedRef = useRef(false);
     const [imageLoaded, setImageLoaded] = useState(false);
     const [activeFilter, setActiveFilter] = useState<"All" | "MICE" | "Tour">("All");
 
@@ -47,86 +46,6 @@ const EventsPage = () => {
         return event.type === activeFilter;
     });
 
-    useEffect(() => {
-        // Only run animation once, not on every re-render
-        if (hasAnimatedRef.current) return;
-        
-        // Enhanced hero section animation
-        if (heroRef.current) {
-            const heroTitle = heroRef.current.querySelector('.hero-title');
-            const heroSubtitle = heroRef.current.querySelector('.hero-subtitle');
-            const heroLine = heroRef.current.querySelector('.hero-line');
-            const heroImage = heroRef.current.querySelector('.hero-image');
-            const floatingElements = heroRef.current.querySelectorAll('.floating-element');
-
-            const tl = gsap.timeline();
-
-            tl.fromTo(heroTitle,
-                { y: 100, opacity: 0, rotationX: 45 },
-                { y: 0, opacity: 1, rotationX: 0, duration: 1.2, ease: "power3.out" }
-            )
-                .fromTo(heroSubtitle,
-                    { y: 60, opacity: 0, scale: 0.8 },
-                    { y: 0, opacity: 1, scale: 1, duration: 1, ease: "back.out(1.7)" }, "-=0.5"
-                )
-                .fromTo(heroLine,
-                    { width: 0, opacity: 0 },
-                    { width: "120px", opacity: 1, duration: 1, ease: "power3.out" }, "-=0.3"
-                )
-                .fromTo(heroImage,
-                    { scale: 1.3, opacity: 0 },
-                    { scale: 1, opacity: 1, duration: 1, ease: "power2.out" }, "-=1"
-                )
-                .fromTo(floatingElements,
-                    { y: 30, opacity: 0 },
-                    { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "back.out(1.7)" }, "-=0.5"
-                );
-        }
-
-        // Enhanced events section animation
-        if (eventsRef.current) {
-            const sectionTitle = eventsRef.current.querySelector('.section-title');
-            const sectionSubtitle = eventsRef.current.querySelector('.section-subtitle');
-            const eventCards = eventsRef.current.querySelectorAll('.event-card');
-
-            gsap.fromTo([sectionTitle, sectionSubtitle],
-                { y: 80, opacity: 0 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    duration: 1,
-                    stagger: 0.3,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: sectionTitle,
-                        start: "top 85%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-
-            gsap.fromTo(eventCards,
-                { y: 100, opacity: 0, scale: 0.8 },
-                {
-                    y: 0,
-                    opacity: 1,
-                    scale: 1,
-                    duration: 0.8,
-                    stagger: 0.15,
-                    ease: "back.out(1.7)",
-                    scrollTrigger: {
-                        trigger: eventCards,
-                        start: "top 90%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none"
-                    }
-                }
-            );
-        }
-        
-        hasAnimatedRef.current = true;
-    }, []); // Remove [allEvents] dependency to prevent re-running
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -288,12 +207,6 @@ const EventsPage = () => {
 
                                         {/* Enhanced Meta Information */}
                                         <div className="space-y-3 mb-6">
-                                            {/* <div className="flex items-center text-gray-600 bg-gray-50/50 rounded-lg p-3">
-                                                <svg className="w-5 h-5 mr-3 text-[#fcd10b] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fillRule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clipRule="evenodd" />
-                                                </svg>
-                                                <span className="font-medium">{event.date}</span>
-                                            </div> */}
                                             <div className="flex items-center text-gray-600 bg-gray-50/50 rounded-lg p-3">
                                                 <svg className="w-5 h-5 mr-3 text-[#fcd10b] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />

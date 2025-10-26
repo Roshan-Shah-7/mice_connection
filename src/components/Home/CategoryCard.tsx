@@ -5,11 +5,12 @@ interface CategoryCardProps {
     icon: React.ReactNode;
     title: string;
     description: string;
-    image: string;
     path: string;
+    itemScope?: boolean;
+    itemType?: string;
 }
 
-const CategoryCard: React.FC<CategoryCardProps> = ({ icon, title, description, image, path }) => {
+const CategoryCard: React.FC<CategoryCardProps> = ({ icon, title, description, path, itemScope, itemType }) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -20,11 +21,9 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ icon, title, description, i
         <div
             className="category-card group relative p-4 rounded-xl overflow-hidden bg-white shadow-md border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer"
             onClick={handleClick}
+            {...(itemScope && { itemScope: true })}
+            {...(itemType && { itemType: itemType })}
         >
-            <div
-                className="absolute inset-0 bg-cover bg-center transition-opacity duration-300 opacity-0 group-hover:opacity-20"
-                style={{ backgroundImage: `url(${image})` }}
-            />
             <div className="relative z-10">
                 <div className="flex items-start justify-between">
                     <div className="space-y-1">
@@ -38,4 +37,4 @@ const CategoryCard: React.FC<CategoryCardProps> = ({ icon, title, description, i
     );
 };
 
-export default CategoryCard;
+export default React.memo(CategoryCard);

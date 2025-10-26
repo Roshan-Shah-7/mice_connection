@@ -7,6 +7,7 @@ export interface ILatestWork {
     year: string;
     slug?: string;
     type: "MICE" | "Tour";
+    keyHighlights?: string[];
 }
 
 export const latestWorks: ILatestWork[] = [
@@ -37,6 +38,10 @@ export const latestWorks: ILatestWork[] = [
         year: "2023",
         slug: "honoring-chinese-paraglider",
         type: "MICE",
+        keyHighlights: [
+            "Empowered women in sports through partnership with Lalitpur Queens.",
+            "Celebrated exceptional skill and leadership of female athletes."
+        ],
         detailImages: [
             {
                 image: "/assets/events/Li Shengtao.webp",
@@ -56,6 +61,10 @@ export const latestWorks: ILatestWork[] = [
         year: "2023",
         slug: "seminar-economic-challenges-opportunities",
         type: "MICE",
+        keyHighlights: [
+            "Honored Chinese paraglider Mr. Li Shengtao for his Everest achievement.",
+            "Highlighted Nepal as a premier destination for extreme sports.",
+        ],
         detailImages: [
             {
                 image: "/assets/gallery/ch2.webp",
@@ -80,12 +89,22 @@ export const latestWorks: ILatestWork[] = [
     },
     {
         id: 5,
-        title: "Launch Event of The Himalayan Guardian Nepal",
-        description: "The MICE Connection expertly managed the successful launch event of The Himalayan Guardian Nepal, providing end-to-end event solutions including strategic planning, logistical coordination, and on-site execution. Our professional approach ensured a seamless and impactful launch that effectively introduced the publication to its target audience and stakeholders.",
+        title: "Himalayan Guardian Nepal",
+        description: `The Plaza hosted the grand launch of Himalayan Guardian Nepal, a pioneering initiative designed to make travel and trekking in Nepal safer than ever. On this launch event, Himalayan Guardian Nepal introduces a Comprehensive Tourism Guard for Travelers, integrating smart safety devices, insurance coverage, and 24/7 rescue services for trekkers and travelers across the country. MICE Connection proudly served as the event planner, arranging a seamless and impactful launch experience for HGN.
+The launch event brought together industry leaders, travel companies, travel enthusiasts, and media representatives to witness the unveiling of this innovative safety program. Guests had the opportunity to learn about the features and benefits of the program, interact with the team behind the initiative, and explore live demonstrations of the safety devices.
+`,
         image: "/assets/works/hgn3.webp",
         year: "2025",
         slug: "the-himalayan-guardian-nepal",
         type: "MICE",
+        keyHighlights: [
+            'Grand launch at The Plaza with distinguished guests and media coverage.',
+            'Introduction of the Comprehensive Tourism Guard for Travelers.',
+            'Demonstrations of smart safety devices and 24/7 rescue services.',
+            'Insightful presentations on travel insurance and safety measures.',
+            'Networking opportunities for travel professionals and industry stakeholders.',
+            'Organized and managed professionally by MICE Connection.'
+        ],
         detailImages: [
             {
                 image: "/assets/events/hgn1.webp",
@@ -135,42 +154,66 @@ export const latestWorks: ILatestWork[] = [
     // Tour Projects
     {
         id: 8,
-        title: "Bangkok Trip",
-        description: "An unforgettable journey through the vibrant city of Bangkok, experiencing its rich culture, bustling markets, and exquisite cuisine. Our meticulously planned tour ensured a seamless and enriching experience for all participants.",
+        title: "Thailand Trip",
+        description: `MICE Connection, in collaboration with Bangkok Corporate Training (CTB) Thailand & Thai Seva, successfully organized a 10-day training program on Advanced Construction and Project Management for Trishuli Jal Vidyut Company Limited.
+        The program focused on enhancing technical, managerial, and operational skills through expert led sessions, corporate visits, and practical exposure. Participants were also able to enjoy city tours of Bangkok, Pattaya, and Phuket, experiencing Thailand’s culture and hospitality alongside professional learning.`,
         image: "/assets/works/bangkokTrip.webp",
         year: "2024",
         slug: "bangkok-trip",
         type: "Tour",
+        keyHighlights: [
+            "10-day professional training in Bangkok, Thailand.",
+            "Organized by MICE Connection, CTB Thailand and Thai Seva.",
+            "Tailored for Trishuli Jal Vidyut Company Limited.",
+            "Focus on Advanced Construction and Project Management.",
+            "Included interactive sessions, case studies, and field exposure.",
+            "City tours in Bangkok, Pattaya, and Phuket for cultural learning."
+        ],
         detailImages: [
             {
                 image: "/assets/works/bangkokTrip2.webp",
-                text: "A truly happy moment, filled with joy and unforgettable memories in Bangkok."
+                text: `	Participants from Trishuli Jal Vidyut Company Limited proudly received their certificates from the Thai trainer on the final day of the training session on Advanced Construction and Project Management Program.`
             },
         ]
     },
     {
         id: 9,
         title: "Japanese Guest Tour",
-        description: "A specially curated tour for our esteemed Japanese guests, showcasing the best of Nepal's cultural heritage and natural beauty. The tour included visits to ancient temples, scenic landscapes, and immersive cultural experiences.",
+        description: `Nepal’s majestic Himalayas have long captured the hearts of travelers and adventurers from around the world. Recently, a Japanese guest, accompanied by the MICE Connection team, completed a remarkable 12-day trek to the Everest Base Camp. Organized by MICE Connection, this journey combined breathtaking mountain vistas, immersive cultural experiences, and the thrill of reaching one of the world’s most iconic destinations.`,
         image: "/assets/works/japaneseGuestTour.webp",
         year: "2024",
         slug: "japanese-guest-tour",
         type: "Tour",
+        keyHighlights: [
+            "Scenic trekking to Everest Base Camp with panoramic mountain views.",
+            "Visiting the Sherpa villages and Namche Bazaar for authentic cultural experiences.",
+            "Stunning flights over Everest and surrounding peaks.",
+            "Flight experience on one of the world’s most challenging runways",
+            "Opportunities to enjoy traditional Nepali cuisine and hospitality",
+            "Photography and nature exploration in some of the world’s most dramatic landscapes.",
+        ],
         detailImages: [
             {
                 image: "/assets/works/japaneseGuest.webp",
-                text: "Had a beautiful moment sharing laughter and stories with our Japanese guests."
+                text: "Our Japanese guest, accompanied by the MICE Connection team, enjoyed a truly memorable trek, embracing the spirit of adventure and achievement."
             },
         ]
     },
     {
         id: 10,
         title: "Ladies Group Tour",
-        description: "An empowering and adventurous tour designed exclusively for women, focusing on safety, wellness, and authentic local experiences. The group explored diverse regions, engaged with local communities, and indulged in rejuvenating activities.",
+        description: `A group of ladies embarked on a 14-day journey across Nepal, organized by MICE Connection, discovering the Nepal’s rich culture, religion, history, and natural beauty. The Trip starting from Gorakhpur and concluding in Darbhanga, offered a perfect blend of exploration, relaxation, and cultural immersion tailored specifically for women travelers by The MICE Connection.`,
         image: "/assets/women/women-culture.webp",
         year: "2023",
         slug: "ladies-group-tour",
         type: "Tour",
+        keyHighlights: [
+            "Exploring historic, religious and cultural landmarks of Nepal.",
+            "Immersive experiences in local villages and markets.",
+            "Scenic drives and sightseeing from Gorakhpur to Darbhanga.",
+            "Enjoying traditional Nepali cuisine and hospitality.",
+            "Enjoyed group activities and bonding among participants."
+        ],
         detailImages: [
             {
                 image: "/assets/gallery/lades1.webp",
@@ -178,7 +221,7 @@ export const latestWorks: ILatestWork[] = [
             },
             {
                 image: "/assets/gallery/lades2.webp",
-                text: "A small gift from The MICE Connection, shared with love and happiness to make the moment special for everyone."
+                text: "Celebrating friendship, spiritual, and unforgettable memories; the ladies group enjoying their 14-day Nepal journey with the MICE Connection team"
             },
         ]
     },
@@ -214,16 +257,24 @@ export const latestWorks: ILatestWork[] = [
     },
     {
         id: 13,
-        title: "Mr. Suresh Explores The Magic of Nepal's Golden Triangle",
-        description: "Mr. Suresh's family explores the magic of Nepal's Golden Triangle. The journey takes him through Nepal's most iconic destinations: Kathmandu, Pokhara, and Chitwan. It offered a perfect blend of culture, heritage, and natural beauty. Every stop reveals the unique spirit and charm of this incredible region.",
+        title: "Family and Friends Gateway: Exploring Pokhara, Chitwan & Kathmandu",
+        description: `Mr. Suresh, along with his family and friends, enjoyed a memorable holiday across three of Nepal’s most captivating destinations: Pokhara, Chitwan, and Kathmandu. Organized by MICE Connection, the journey beautifully blended adventure, nature, culture, and relaxation, offering the group an authentic taste of Nepal’s diverse experiences.`,
         image: "/assets/gallery/mr-suresh2.webp",
         year: "2025",
         slug: "mr-suresh-explores-golden-triangle",
         type: "Tour",
+        keyHighlights: [
+            'Serene boat rides and sightseeing in Pokhara with views of the Annapurna range.',
+            'Jungle safari and Tharu cultural show experiences in Chitwan National Park.',
+            'Exploration of Kathmandu’s UNESCO World Heritage Sites.',
+            'Authentic Nepali cuisine and local hospitality throughout the trip.',
+            'Family & friendly adventure and bonding moments in beautiful settings.',
+            'Organized and coordinated by MICE Connection for a seamless experience.'
+        ],
         detailImages: [
             {
                 image: "/assets/works/mrSuresh.webp",
-                text: "On the final day, our MD, Ms. Chhetri, personally bid them farewell, handing over souvenirs as a token of appreciation and fond memories from their journey."
+                text: "On the final day, Mr. Suresh and his family & friends celebrated their memorable journey through Pokhara, Chitwan, and Kathmandu with the MICE Connection team, proudly holding the banner and souvenirs."
             }
         ]
     },

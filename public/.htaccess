@@ -1,0 +1,46 @@
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Handle CORS Preflight (OPTIONS) Requests
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L]
+
+# For React or Vite SPA Routing (Fallback to index.html)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  # Exclude /api routes from being redirected to index.html
+  RewriteCond %{REQUEST_URI} !^/api/
+  # Don't rewrite existing files or directories
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  # Redirect everything else to index.html
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Set cache control headers (optional, improves performance)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 day"
+  ExpiresByType image/jpg "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
+
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/linktrix/mice-backend"
+PassengerBaseURI "/"
+PassengerNodejs "/home/linktrix/nodevenv/mice-backend/20/bin/node"
+PassengerAppType node
+PassengerStartupFile dist/server.js
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
