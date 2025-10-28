@@ -397,7 +397,7 @@ const TourPage = () => {
                 ref={ctaRef}
                 className="py-20 px-4 sm:px-6 lg:px-8"
                 style={{
-                    backgroundImage: "url('/public/assets/nepal/calltoaction.webp')",
+                    backgroundImage: "url('/assets/nepal/calltoaction.webp')",
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
                 }}

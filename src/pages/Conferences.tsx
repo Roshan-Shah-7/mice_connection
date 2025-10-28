@@ -372,7 +372,7 @@ const ConferencesPage = () => {
                             <div className="md:w-1/2">
                                 <img
                                     className="w-full h-full object-cover"
-                                    src="/public/assets/home/homeConference.webp"
+                                    src="/assets/home/homeConference.webp"
                                     alt="Conference hall in Nepal"
                                 />
                             </div>

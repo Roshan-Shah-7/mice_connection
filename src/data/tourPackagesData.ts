@@ -692,7 +692,7 @@ export const tourPackages: TourPackage[] =
                 "Challenging climb of over 3,000 steep stone steps to Ulleri village.",
                 "First glimpses of Annapurna I (8,091m) and Dhaulagiri (8,167m).",
                 "Spectacular sunrise over the Himalayan range from Poon Hill (3,210m).",
-                "Panoramic views of peaks like Hiuchuli, Nilgiri, Dhaulagiri, Tukuche, Annapurna South, Lamjung Himal, and Machhapuchhre (Fishtail).",
+                "Panoramic views of peaks like Hiunchuli, Nilgiri, Dhaulagiri, Tukuche, Annapurna South, Lamjung Himal, and Machhapuchhre (Fishtail).",
                 "Trek through Deurali Pass with breathtaking mountain views.",
                 "Explore Ghandruk, a large Gurung village, and its Culture Museum.",
                 "Experience the vibrant city nightlife of Pokhara."
@@ -1087,9 +1087,9 @@ export const tourPackages: TourPackage[] =
                 }
             ],
             "gallery": [
-                "/assets/works/wo.jpg",
-                "/assets/works/chi.jpg",
-                "/assets/works/sem.jpg"
+                "/assets/works/wo.webp",
+                "/assets/works/chi.webp",
+                "/assets/works/sem.webp"
             ]
         },
 

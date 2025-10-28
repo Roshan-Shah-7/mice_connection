@@ -92,7 +92,7 @@ const Footer = () => {
                         </p>
                         <div className="mt-6">
                             <h5 className="text-md font-semibold mb-2 text-[#D4AF37]">Proudly Associated with:</h5>
-                            <img src="/assets/partners/patner.png" alt="PATA International" className="h-12 md:h-20 lg:h-30" />
+                            <img src="/assets/partners/patner.webp" alt="PATA International" className="h-12 md:h-20 lg:h-30" />
                         </div>
                     </div>
 
@@ -156,7 +156,7 @@ const Footer = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                                 <span>
-                                    info@miceconnection.com
+                                    info@themiceconnection.com
                                 </span>
                             </div>
                         </div>

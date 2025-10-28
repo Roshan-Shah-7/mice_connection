@@ -155,7 +155,7 @@ The launch event brought together industry leaders, travel companies, travel ent
     {
         id: 8,
         title: "Thailand Trip",
-        description: `MICE Connection, in collaboration with Bangkok Corporate Training (CTB) Thailand & Thai Seva, successfully organized a 10-day training program on Advanced Construction and Project Management for Trishuli Jal Vidyut Company Limited.
+        description: `The MICE Connection, in collaboration with Bangkok Corporate Training (CTB) Thailand & Thai Seva, successfully organized a 10-day training program on Advanced Construction and Project Management for Trishuli Jal Vidyut Company Limited.
         The program focused on enhancing technical, managerial, and operational skills through expert led sessions, corporate visits, and practical exposure. Participants were also able to enjoy city tours of Bangkok, Pattaya, and Phuket, experiencing Thailand’s culture and hospitality alongside professional learning.`,
         image: "/assets/works/bangkokTrip.webp",
         year: "2024",
@@ -172,7 +172,7 @@ The launch event brought together industry leaders, travel companies, travel ent
         detailImages: [
             {
                 image: "/assets/works/bangkokTrip2.webp",
-                text: `	Participants from Trishuli Jal Vidyut Company Limited proudly received their certificates from the Thai trainer on the final day of the training session on Advanced Construction and Project Management Program.`
+                text: `Participants from Trishuli Jal Vidyut Company Limited proudly received their certificates from the Thai trainer on the final day of the training session on Advanced Construction and Project Management Program.`
             },
         ]
     },

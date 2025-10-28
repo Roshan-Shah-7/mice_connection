@@ -437,7 +437,7 @@ const DetailDestination: React.FC = () => {
                                                 </div>
                                                 <Link
                                                     to={`/tour-packages/${pkg.slug}`}
-                                                    className="block w-full bg-[#10362e] text-white text-center font-semibold py-3 rounded-lg hover:bg-[#fcd10b] hover:text-[#10362e] transition-colors duration-300"
+                                                    className="block w-full bg-[#10362e] cursor-pointer text-white text-center font-semibold py-3 rounded-lg hover:bg-[#fcd10b] hover:text-[#10362e] transition-colors duration-300"
                                                 >
                                                     View Package Details
                                                 </Link>
@@ -458,12 +458,12 @@ const DetailDestination: React.FC = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link to="/contact">
-                            <button className="bg-[#fcd10b] text-[#10362e] font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition-colors">
+                            <button className="bg-[#fcd10b] cursor-pointer text-[#10362e] font-bold py-3 px-8 rounded-full hover:bg-yellow-400 transition-colors">
                                 Contact Us
                             </button>
                         </Link>
                         <Link to="/tour-packages">
-                            <button className="border-2 border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-[#10362e] transition-colors">
+                            <button className="border-2 cursor-pointer border-white text-white font-bold py-3 px-8 rounded-full hover:bg-white hover:text-[#10362e] transition-colors">
                                 View All Packages
                             </button>
                         </Link>
